@@ -161,12 +161,20 @@
                 <!-- BEGIN CONTENT -->
                 <div class="page-content-wrapper">
 					<img src="../image/home3.jpg" alt="homePage" style="width: 100%; height: auto;"/>
+					<br />
+					<br/>
 					 <div class="page-content">
                         <div class="container">
                         	<div class="page-content-inner">
                         		<div class="row">
                      				 <div class="col-md-12">
-                       					 here
+                       					  <div class="portlet light ">
+	                       					  <div class="portlet-body">
+	                       					   SwimMate
+	                       					   <br/>
+	                       					   Here is about our website.
+	                       					  </div>
+                       					  </div>
                        				</div>
                        			</div>
                         	</div>
