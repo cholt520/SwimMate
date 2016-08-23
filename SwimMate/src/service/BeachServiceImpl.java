@@ -28,12 +28,6 @@ public class BeachServiceImpl implements BeachService{
 
 	@Override
 	public void deleteBeachById(int id) {
-System.out.println("sdjafhsajkhfskfhjksdh");
-System.out.println("dashabi");		
-
-System.out.println("dashabi");		
-System.out.println("here");
-
 	}
 
 	public BeachDao getBeachDao() {
