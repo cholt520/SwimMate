@@ -11,7 +11,6 @@ public class BeachServiceImpl implements BeachService{
 
 	@Override
 	public List<Beach> getAllBeach() {
-		// TODO Auto-generated method stub
 		return beachDao.getAllBeach();
 	}
 
@@ -24,7 +23,6 @@ public class BeachServiceImpl implements BeachService{
 
 	@Override
 	public Beach modifyBeach(Beach beach) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
