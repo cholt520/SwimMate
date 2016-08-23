@@ -28,8 +28,7 @@ public class BeachServiceImpl implements BeachService{
 
 	@Override
 	public void deleteBeachById(int id) {
-		// TODO Auto-generated method stub
-		
+System.out.println("sdjafhsajkhfskfhjksdh");		
 	}
 
 	public BeachDao getBeachDao() {
