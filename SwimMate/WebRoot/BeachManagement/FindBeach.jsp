@@ -88,7 +88,7 @@
 					<div class="page-header-menu">
 						<div class="container">
 							<!-- BEGIN HEADER SEARCH BOX -->
-							<form class="search-form" action="page_general_search.html"
+							<%-- <form class="search-form" action="page_general_search.html"
 								method="GET">
 								<div class="input-group">
 									<input type="text" class="form-control" placeholder="Search"
@@ -98,7 +98,7 @@
 									</a>
 									</span>
 								</div>
-							</form>
+							</form> --%>
 							<!-- END HEADER SEARCH BOX -->
 							<!-- BEGIN MEGA MENU -->
 							<!-- DOC: Apply "hor-menu-light" class after the "hor-menu" class below to have a horizontal menu with white background -->
@@ -112,16 +112,16 @@
 											<li class=" "><a href="beach.action" class="nav-link  ">
 													<i class="fa fa-search font-green-sharp"></i> Find a Beach
 											</a></li>
-											<li class=" "><a href="dashboard_2.html"
+											<!-- <li class=" "><a href="dashboard_2.html"
 												class="nav-link  "> <i class="icon-bulb font-green-sharp"></i>
 													SubFunction2
 											</a></li>
 											<li class=" "><a href="dashboard_3.html"
 												class="nav-link  "> <i class="icon-graph font-green-sharp"></i>
 													SubFunction3
-											</a></li>
+											</a></li> -->
 										</ul></li>
-									<li class="menu-dropdown mega-menu-dropdown  "><a
+									<%-- <li class="menu-dropdown mega-menu-dropdown  "><a
 										href="javascript:;"> Function2 <span class="arrow"></span>
 									</a>
 										<ul class="dropdown-menu pull-left">
@@ -152,7 +152,7 @@
 												class="nav-link  "> <i class="icon-graph font-green-sharp"></i>
 													SubFunction3
 											</a></li>
-										</ul></li>
+										</ul></li> --%>
 								</ul>
 							</div>
 							<!-- END MEGA MENU -->
@@ -269,9 +269,7 @@
 																	</a>
 																</h2>
 																<p class="search-desc">
-																	Here is
-																	<s:property value="beach_name" />
-																	info
+																	<s:property value="beach_name"/>, <s:property value="region"/>, <s:property value="state"/>
 																</p>
 															</div>
 														</li>
@@ -312,12 +310,14 @@
 				<div class="page-prefooter">
 					<div class="container">
 						<div class="row">
-							<div class="col-md-3 col-sm-6 col-xs-12 footer-block">
+							<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
 								<h2>About Us</h2>
-								<p>This is about us.</p>
+								<p>C.A.R.T. Solutions 
+								<br />
+								-- Creativity, Aesthetics, Robustness and good Technology.</p>
 							</div>
 
-							<div class="col-md-3 col-sm-6 col-xs-12 footer-block">
+							<!-- <div class="col-md-3 col-sm-6 col-xs-12 footer-block">
 								<h2>Follow Us On</h2>
 								<ul class="social-icons">
 									<li><a href="javascript:;" data-original-title="rss"
@@ -335,12 +335,13 @@
 									<li><a href="javascript:;" data-original-title="vimeo"
 										class="vimeo"></a></li>
 								</ul>
-							</div>
-							<div class="col-md-3 col-sm-6 col-xs-12 footer-block">
+							</div> -->
+							<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
 								<h2>Contacts</h2>
 								<address class="margin-bottom-40">
-									Phone: 0000000000 <br> Email: <a
-										href="mailto:info@metronic.com">here is an Email</a>
+									Phone: 0431003341 
+									<br/> 
+									Email: <a href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
 								</address>
 							</div>
 						</div>

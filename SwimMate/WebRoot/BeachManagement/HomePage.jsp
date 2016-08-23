@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
     <!-- <meta charset="utf-8" /> -->
-    <title>Beach Information</title>
+    <title>SwimMate Home Page</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="" name="description" />
@@ -166,7 +166,7 @@
                         <div class="container">
                             <!-- BEGIN PAGE TITLE -->
                             <div class="page-title">
-                                <h1>Find a Beach
+                                <h1>Welcome to SwemMate
                                 </h1>
                             </div>
                             <!-- END PAGE TITLE -->
@@ -184,7 +184,7 @@
                                     <i class="fa fa-circle"></i>
                                 </li>
                                 <li>
-                                    <span>Find a Beach</span>
+                                    <span>Welcome to SwimMate</span>
                                 </li>
                             </ul>
                             <!-- END PAGE BREADCRUMBS -->
