@@ -28,7 +28,6 @@ public class BeachServiceImpl implements BeachService{
 
 	@Override
 	public void deleteBeachById(int id) {
-		System.out.println("dfjhsdjkfhskhfksdh");
 		
 	}
 
