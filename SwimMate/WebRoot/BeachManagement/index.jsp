@@ -160,7 +160,7 @@
             <div class="page-container">
                 <!-- BEGIN CONTENT -->
                 <div class="page-content-wrapper">
-					<img src="../image/home3.jpg" alt="homePage" style="width: 100%; height: auto;"/>
+					<img src="../image/swimmer-in-ocean.jpg" alt="homePage" style="width: 100%; height: auto;"/>
 					<br />
 					<br/>
 					 <div class="page-content">

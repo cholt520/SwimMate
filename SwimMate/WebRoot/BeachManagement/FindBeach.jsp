@@ -195,6 +195,13 @@
 								<!-- BEGIN PAGE CONTENT INNER -->
 								<div class="page-content-inner">
 									<div class="search-page search-content-2">
+										<div class="row">
+											<div class="col-md-12">
+												<img src="../image/beach1.jpg" alt="St_Kilda_Beach" style="width: 100%; height: auto;"/>
+											</div>
+		                                </div>
+		                                <br/>
+		                                <br/>
 										<!--Search Bar-->
 										<div class="search-bar ">
 											<div class="row">
@@ -259,24 +266,27 @@
 										<div class="row" style="Margin:2px;">
 											<div class="search-container ">
 												<ul class="search-container">
-
-													 <s:iterator value="beachList" status="userStatus">
-														<li class="search-item clearfix">
-															<div class="search-content text-left">
-																<h2 class="search-title">
-																	<a href="beachInfo.action?id=<s:property value="beach_id" />" >
-																		<s:property value="beach_name" />
-																	</a>
-																</h2>
-																<p class="search-desc">
-																	<s:property value="beach_name"/>, <s:property value="region"/>, <s:property value="state"/>
-																</p>
-															</div>
-														</li>
-													</s:iterator> 
+												
+														<s:iterator value="beachList" status="userStatus">
+															<li class="search-item clearfix">
+																<div class="search-content text-left">
+																	<h2 class="search-title">
+																		<a href="beachInfo.action?id=<s:property value="beach_id" />" >
+																			<s:property value="beach_name" />
+																		</a>
+																	</h2>
+																	<p class="search-desc">
+																		<s:property value="beach_name"/>, <s:property value="region"/>, <s:property value="state"/>
+																	</p>
+																</div>
+															</li>
+														</s:iterator>  
+														
+													 
 
 												</ul>
 												<div class="search-pagination">
+												
 													<ul class="pagination">
 														<li class="page-active"><a href="javascript:;"> 1
 														</a></li>
@@ -384,6 +394,10 @@
 		type="text/javascript"></script>
 	<!-- END CORE PLUGINS -->
 	<!-- BEGIN PAGE LEVEL PLUGINS -->
+	<script src="../assets/global/plugins/jquery.pulsate.min.js" type="text/javascript"></script>
+    <script src="../assets/global/plugins/jquery-bootpag/jquery.bootpag.min.js" type="text/javascript"></script>
+    <script src="../assets/global/plugins/holder.js" type="text/javascript"></script>
+    
 	<script
 		src="../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"
 		type="text/javascript"></script>
@@ -400,8 +414,9 @@
 		type="text/javascript"></script>
 	<script src="../assets/pages/scripts/search.min.js"
 		type="text/javascript"></script>
-		 <script src="../assets/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
-        <script src="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
+	 <script src="../assets/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
+     <script src="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
+	<script src="../assets/pages/scripts/ui-general.min.js" type="text/javascript"></script>
 	<!-- END PAGE LEVEL SCRIPTS -->
 	<!-- BEGIN THEME LAYOUT SCRIPTS -->
 	<script src="../assets/layouts/layout3/scripts/layout.min.js"
