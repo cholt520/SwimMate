@@ -170,13 +170,52 @@
                      				 <div class="col-md-12">
                        					  <div class="portlet light ">
 	                       					  <div class="portlet-body">
-	                       					   SwimMate
-	                       					   <br/>
-	                       					   Here is about our website.
+                       					  		<h4 class="bold font-green-sharp">
+	                       					  	 	How can we help you by using SwimMate?
+                       					   		</h4>
+	                       					   	<p >
+	                       					   		The SwimMate website is designed for people like to swim at the beach in Australia. It benefits swimmers in Australia to find beast beaches nearby based on different criteria like water quality, tide information, weather updates, marine dangers and patrol Information.
+	                       					  	 </p>
+	                       					  	 <div class="row">
+	                       					   		<div class="col-md-4">
+			                       					   <h4>
+				                       					   <a href="beach.action" class="font-green-sharp" >
+				                       					   Finding an ideal beach
+				                       					   </a>
+			                       					   </h4>
+														<p>
+														It is quite normal for people in Australia to swim at the beach. SwimMate can provide a range of beach information to promote swimmers to make swimming decision.
+														</p>
+	                       					   		</div>
+	                       					   		<div class="col-md-4">
+			                       					   <h4 class="font-green-sharp">Ensuring the safety of swimmer</h4>
+														<p>
+														Royal Life Saving Report (2015) indicated that around 10 people are rescued from beaches every day in Australia, and there were 55 drowning deaths at beaches in Australia in the year of 2015. SwimMate informs everything swimmers need to know to ensure that they can keep themselves safe at he beaches. 
+														</p>
+	                       					  		 </div>
+	                       					   		<div class="col-md-4">
+	                       					  		 	<h4 class="font-green-sharp">User Interaction</h4>
+														<p>		
+														With Swimmers’ involvement, SwimMate can provide a more customized notification and reminder for them to manage their swimming plan. 
+														</p>
+	                       					  		 </div>
+                       					   		</div>
 	                       					  </div>
                        					  </div>
                        				</div>
                        			</div>
+                       			<div class="row">
+                     				 <div class="col-md-12">
+                       					  <div class="portlet light ">
+	                       					  <h3 style="text-align: center;">
+	                       					  <a href="beach.action" class="font-green-sharp" >
+	                       					  <i class="fa fa-search font-green-sharp"></i>
+	                       					  Get Started
+	                       					  </a>
+	                       					  </h3>
+                    					  </div>
+                   					  </div>
+                				</div>
                         	</div>
                         </div>
                      </div>	
@@ -243,7 +282,7 @@
             <!-- BEGIN INNER FOOTER -->
             <div class="page-footer">
                 <div class="container"> 2016 &copy; Swim Mate By
-                    <a target="_blank" href="">C.A.R.T. Solutions</a>
+                    <a target="_blank" href="index.action">C.A.R.T. Solutions</a>
                 </div>
             </div>
             <div class="scroll-to-top">
@@ -284,31 +323,5 @@
 <script src="../assets/layouts/layout3/scripts/demo.min.js" type="text/javascript"></script>
 <script src="../assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
 <!-- END THEME LAYOUT SCRIPTS -->
-<script>
-      function initMap() {
-      var longitude = document.getElementById('longitude').value;
-      var latitude = document.getElementById('latitude').value;
-      var beachName = document.getElementById('beachName').value;
-      
-      var latitude1 = parseFloat(latitude);
-      var longitude1 = parseFloat(longitude);
-    
-        var myLatLng = {lat: latitude1, lng: longitude1};
-
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 12,
-          center: myLatLng
-        });
-        var marker = new google.maps.Marker({
-          position: myLatLng,
-          map: map,
-          title: beachName
-        });
-      }
-    </script>
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUuudit4OFSnhG3ZVXncE3ThuiP6xo25s&callback=initMap">
-</script>
 </body>
-</html>
-
+</html>		

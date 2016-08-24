@@ -351,7 +351,7 @@
 				<!-- BEGIN INNER FOOTER -->
 				<div class="page-footer">
 					<div class="container">
-						2016 &copy; Swim Mate By <a target="_blank" href="">C.A.R.T.
+						2016 &copy; Swim Mate By <a target="_blank" href="index.action">C.A.R.T.
 							Solutions</a>
 					</div>
 				</div>

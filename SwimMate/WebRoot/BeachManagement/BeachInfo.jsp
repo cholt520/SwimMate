@@ -243,7 +243,6 @@
 			                                                	<br/>
 			                                                	Humidity: <s:property value="weather.humidity" /> %
 			                                                	<br/>
-			                                                	sjjfjsaff
 			                                                </p>
 	                                                	</div>
 	                                                	<div class="col-md-6">
@@ -374,7 +373,7 @@
             <!-- BEGIN INNER FOOTER -->
             <div class="page-footer">
                 <div class="container"> 2016 &copy; Swim Mate By
-                    <a target="_blank" href="">C.A.R.T. Solutions</a>
+                    <a target="_blank" href="index.action">C.A.R.T. Solutions</a>
                 </div>
             </div>
             <div class="scroll-to-top">
