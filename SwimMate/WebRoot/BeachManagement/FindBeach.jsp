@@ -71,7 +71,7 @@
 						<div class="container">
 							<!-- BEGIN LOGO -->
 							<div class="page-logo" style="height:100px;">
-								<a href="beach.action"> <img
+								<a href="index.action"> <img
 									src="../image/swimmate-logo-nobg.png" alt="logo"
 									class="logo-default" style="width:160px; height:98px; margin-top:2px;">
 								</a>
@@ -187,7 +187,7 @@
 							<div class="container">
 								<!-- BEGIN PAGE BREADCRUMBS -->
 								<ul class="page-breadcrumb breadcrumb ">
-									<li><a href="beach.action" class="font-green-sharp">Home</a> <i class="fa fa-circle"></i>
+									<li><a href="index.action" class="font-green-sharp">Home</a> <i class="fa fa-circle"></i>
 									</li>
 									<li><span>Find a Beach</span></li>
 								</ul>

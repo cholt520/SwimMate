@@ -48,7 +48,7 @@
                     <div class="container">
                         <!-- BEGIN LOGO -->
                         <div class="page-logo" style="height:100px;">
-								<a href="beach.action"> <img
+								<a href="index.action"> <img
 									src="../image/swimmate-logo-nobg.png" alt="logo"
 									class="logo-default" style="width:160px; height:98px; margin-top:2px;">
 								</a>
@@ -180,7 +180,7 @@
                             <!-- BEGIN PAGE BREADCRUMBS -->
                             <ul class="page-breadcrumb breadcrumb">
                                 <li>
-                                    <a href="beach.action" class="font-green-sharp">Home</a>
+                                    <a href="index.action" class="font-green-sharp">Home</a>
                                     <i class="fa fa-circle"></i>
                                 </li>
                                 <li>
@@ -194,7 +194,7 @@
 									<div class="page-content-inner">
 										<div class="row">
 											<div class="col-md-12">
-											<img src="../image/Melbourne_St_Kilda_Banner.jpg" alt="St_Kilda_Beach" style="width: 100%; height: auto;"/>
+												<img src="../image/Melbourne_St_Kilda_Banner.jpg" alt="St_Kilda_Beach" style="width: 100%; height: auto;"/>
 											</div>
 		                                </div>
 	                                <br />
@@ -294,7 +294,6 @@
 		                                               			sssssssss
 		                                               		</s:if> --%>
 		                                               		For swimming this is considered cold and even the most hardy among us would find any more than a few minutes in the water uncomfortable.
-		                                               	
 		                                               	</p>
                                              	</div>
                                              </div>

@@ -48,7 +48,7 @@
                     <div class="container">
                         <!-- BEGIN LOGO -->
                         <div class="page-logo" style="height:100px;">
-								<a href="beach.action"> <img
+								<a href="index.action"> <img
 									src="../image/swimmate-logo-nobg.png" alt="logo"
 									class="logo-default" style="width:160px; height:98px; margin-top:2px;">
 								</a>
@@ -160,163 +160,23 @@
             <div class="page-container">
                 <!-- BEGIN CONTENT -->
                 <div class="page-content-wrapper">
-                    <!-- BEGIN CONTENT BODY -->
-                    <!-- BEGIN PAGE HEAD-->
-                    <div class="page-head">
+					<img src="../image/home3.jpg" alt="homePage" style="width: 100%; height: auto;"/>
+					 <div class="page-content">
                         <div class="container">
-                            <!-- BEGIN PAGE TITLE -->
-                            <div class="page-title">
-                                <h1>Welcome to SwemMate
-                                </h1>
-                            </div>
-                            <!-- END PAGE TITLE -->
-
+                        	<div class="page-content-inner">
+                        		<div class="row">
+                     				 <div class="col-md-12">
+                       					 here
+                       				</div>
+                       			</div>
+                        	</div>
                         </div>
-                    </div>
-                    <!-- END PAGE HEAD-->
-                    <!-- BEGIN PAGE CONTENT BODY -->
-                    <div class="page-content">
-                        <div class="container">
-                            <!-- BEGIN PAGE BREADCRUMBS -->
-                            <ul class="page-breadcrumb breadcrumb">
-                                <li>
-                                    <a href="beach.action" class="font-green-sharp">Home</a>
-                                    <i class="fa fa-circle"></i>
-                                </li>
-                                <li>
-                                    <span>Welcome to SwimMate</span>
-                                </li>
-                            </ul>
-                            <!-- END PAGE BREADCRUMBS -->
-                            <!-- BEGIN PAGE CONTENT INNER -->
-                            <div class="page-content-inner">
-                                <div class="search-page search-content-2">
-									<div class="page-content-inner">
-										<div class="row">
-											<div class="col-md-12">
-											<img src="../image/Melbourne_St_Kilda_Banner.jpg" alt="St_Kilda_Beach" style="width: 100%; height: auto;"/>
-											</div>
-		                                </div>
-	                                <br />
-	                                <br />
-	                                
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portlet light ">
-
-                                            <div class="portlet-title">
-                                                <div class="caption">
-                                                	
-                                                    <span class="caption-subject font-green-sharp bold uppercase">
-	                                                    <i class="fa fa-map-pin"></i>
-	                                                    <s:property value="currentBeach.beach_name"/>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="portlet-body">
-                                            <div class="row">
-                                            	 <div class="col-md-6">
-                                            	 
-                                            	 	<h4 class="font-green-sharp">
-	                                            	 	<i class="fa fa-map-marker font-green-sharp"></i>
-	                                            	 	Location
-                                            	 	</h4>
-	                                                <p>
-		                                                <a href="http://maps.google.com/?q=<s:property value="currentBeach.latitude" />,<s:property value="currentBeach.longitude"/> " target="_blank" >
-															<s:property value="currentBeach.beach_name"/>, <s:property value="currentBeach.region"/>, <s:property value="currentBeach.state"/>
-															<s:hidden id="latitude" value="%{currentBeach.latitude}" name="latitude"/>
-															<s:hidden id="longitude" value="%{currentBeach.longitude}" name="longitude"/>
-															<s:hidden id="beachName" value="%{currentBeach.beach_name}" name="beachName"/>
-														</a>
-	                                                </p>
-	                                                <div class="row">
-	                                                	<div class="col-md-6">
-	                                                		
-	                                                		<h4 class="font-green-sharp">
-	                                                		<i class="fa fa-sun-o font-green-sharp"/></i>
-	                                                			Weather
-                                                			</h4>
-			                                                <p>
-			                                                	Tempreture: <s:property value="weather.temp"/> °C
-			                                                	<br />
-			                                                	Pressure: <s:property value="weather.pressure" /> mb
-			                                                	<br/>
-			                                                	Humidity: <s:property value="weather.humidity" /> %
-			                                                	<br/>
-			                                                	sjjfjsaff
-			                                                </p>
-	                                                	</div>
-	                                                	<div class="col-md-6">
-	                                                	<h4 class="font-green-sharp">
-	                                                		<i class="fa fa-flag font-green-sharp"/></i>
-	                                                		Wind
-                                                		</h4>
-	                                                	<p>
-		                                                	Speed: <s:property value="wind.speed"/>
-		                                                	<br />
-		                                                	Degree: <s:property value="wind.deg" />
-		                                                	<br />
-		                                                	Gust: <s:property value="wind.gust"/>
-		                                                	<br />
-		                                                </p>
-	                                                	</div>
-	                                                </div>
-	                                                <div class="row">
-	                                                	<div class="col-md-6">
-	                                                		<h4 class="font-green-sharp">
-		                                                		<i class="fa fa-info-circle font-green-sharp"/></i>
-		                                                		Water Quality
-	                                                		</h4>
-		                                                	<p>
-		                                                		N/A
-		                                                	</p>
-	                                                	</div>
-	                                                </div>
-                                            	 </div>
-                                            	 <div class="col-md-6">
-                                            	 	<div id="gmap_basic" class="gmaps"> 
-                                            	 		<div id="map" style="height:100%;overflow:hidden;display:block;"></div>
-                                            	 		<!-- <div style="height:100%;overflow:hidden;display:block;background: url(http://maps.googleapis.com/maps/api/staticmap?center=-37.8679,144.9740&amp;size=640x300&amp;sensor=true&amp;zoom=5) no-repeat 50% 50%;">
-                                                        	<img src="http://maps.googleapis.com/maps/api/staticmap?center=-37.8679,144.9740&amp;size=640x300&amp;sensor=true&amp;zoom=16" style="visibility:hidden" alt="" /> 
-                                                        </div> -->
-                                            	 	</div>
-                                            	 </div>
-                                            </div>
-                                            <br />
-                                             <div class="row">
-                                             	<div class="col-md-6">
-                                             		<h4 class="font-green-sharp">
-	                                             		<i class="fa fa-tag font-green-sharp"/></i>
-	                                             		Suggestion
-                                             		</h4>
-		                                               	<p>
-		                                               		<%-- <s:if test="%{#weather.temp>=0 }">
-		                                               			sssssssss
-		                                               		</s:if> --%>
-		                                               		For swimming this is considered cold and even the most hardy among us would find any more than a few minutes in the water uncomfortable.
-		                                               	
-		                                               	</p>
-                                             	</div>
-                                             </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br/>
-                                <br/>
-                            </div>
-                                </div>
-                                <br/>
-                                <br/>
-                            </div>
-                            <!-- END PAGE CONTENT INNER -->
-                        </div>
-                    </div>
-                    <!-- END PAGE CONTENT BODY -->
-                    <!-- END CONTENT BODY -->
-                </div>
+                     </div>	
+				</div>
+				<br />
+				<br />
+				
                 <!-- END CONTENT -->
-
             </div>
             <!-- END CONTAINER -->
         </div>
