@@ -81,7 +81,7 @@
                         <div class="hor-menu  ">
                             <ul class="nav navbar-nav">
                                 <li class="menu-dropdown classic-menu-dropdown ">
-                                    <a href="javascript:; "> Home Page
+                                    <a href="javascript:;"> Home Page
                                         <span class="arrow"></span>
                                     </a>
                                     <ul class="dropdown-menu pull-left">
@@ -101,6 +101,8 @@
                                         </li> -->
                                     </ul>
                                 </li>
+                                
+                                
                                <%--  <li class="menu-dropdown mega-menu-dropdown  ">
                                     <a href="javascript:;"> Function2
                                         <span class="arrow"></span>
