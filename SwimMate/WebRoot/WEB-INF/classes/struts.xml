@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="structs.action.extension" value="," />
+	<package name="helloworld" namespace="/BeachManagement" extends="struts-default">
+
+		<action name="index">
+			<result>/index.jsp</result>
+		</action>
+
+		<action name="hello" class="action.HelloWorldAction" method="execute">
+			<result name="success">/HelloWorld.jsp</result>
+		</action>
+		
+		<action name="beach" class="action.BeachAction" method="execute">
+			<result name="success">/BeachManagement/FindBeach.jsp</result>
+		</action>
+		
+		<action name="beachInfo" class="action.BeachInfoAction" method="execute">
+			<result name="success">/BeachManagement/BeachInfo.jsp</result>
+		</action>
+
+		<action name="getBeachByState" class="action.BeachAction" method="getBeachByState">
+			<result name="success">/BeachManagement/FindBeach.jsp</result>
+		</action>
+		
+		<action name="getBeachByName" class="action.BeachAction" method="getBeachByName">
+			<result name="success">/BeachManagement/FindBeach.jsp</result>
+		</action>
+
+	</package>
+
+</struts>    

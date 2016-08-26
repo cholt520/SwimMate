@@ -11,6 +11,7 @@ import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 import entity.Beach;
+import entity.Recommandation;
 
 public class BeachDaoImpl extends HibernateDaoSupport implements BeachDao{
 
@@ -60,6 +61,10 @@ public class BeachDaoImpl extends HibernateDaoSupport implements BeachDao{
 		System.out.println(list.get(0).getBeach_name() + "     gdsdfdhrgadsgsfg");
 		return list.get(0);
 		//return (Beach) getHibernateTemplate().find("from Beach as beach where beach.beach_name='" + beachName + "'" ).get(0);
+	}
+
+	public Recommandation getRecommandationByWaterTemp(int water_temp) {
+		return (Recommandation) getHibernateTemplate().find("from recommandation where water_temp="+water_temp).get(0);
 	}
 	
 

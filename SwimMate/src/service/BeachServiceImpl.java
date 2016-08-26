@@ -4,6 +4,7 @@ import java.util.List;
 
 import dao.BeachDao;
 import entity.Beach;
+import entity.Recommandation;
 
 public class BeachServiceImpl implements BeachService{
 	
@@ -28,7 +29,9 @@ public class BeachServiceImpl implements BeachService{
 
 	@Override
 	public void deleteBeachById(int id) {
-		
+           System.out.println("dsjhfkshf");
+           System.out.println("dsjhfkshf");
+
 	}
 
 	public BeachDao getBeachDao() {
@@ -48,5 +51,11 @@ public class BeachServiceImpl implements BeachService{
 	@Override
 	public Beach getBeachByName(String beachName) {
 		return beachDao.getBeachByName(beachName);
+	}
+
+	@Override
+	public Recommandation getRecommandationByWaterTemp(int water_temp) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

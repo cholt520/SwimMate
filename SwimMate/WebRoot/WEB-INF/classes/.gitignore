@@ -1,10 +1,6 @@
-/.DS_Store
-/Beach.hbm.xml
 /action/
-/applicationContext.xml
 /dao/
 /entity/
-/hibernate.cfg.xml
 /service/
-/struts.xml
-/weather.properties
+/hibernate.cfg.xml
+/BeachServiceImpl/

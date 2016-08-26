@@ -80,8 +80,6 @@ private static final long serialVersionUID = 1L;
 			Beach newBeach = beachService.getBeachByName(beachName);
 			beachList.clear();
 			beachList.add(newBeach);
-			
-			System.out.println(beachList.size());
 					
 		} catch (Exception e) {
 			e.printStackTrace();
