@@ -5,11 +5,7 @@
 	<package name="helloworld" namespace="/BeachManagement" extends="struts-default">
 
 		<action name="index">
-			<result>/index.jsp</result>
-		</action>
-
-		<action name="hello" class="action.HelloWorldAction" method="execute">
-			<result name="success">/HelloWorld.jsp</result>
+			<result>/BeachManagement/index.jsp</result>
 		</action>
 		
 		<action name="beach" class="action.BeachAction" method="execute">

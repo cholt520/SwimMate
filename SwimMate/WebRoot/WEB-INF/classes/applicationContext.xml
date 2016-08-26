@@ -27,7 +27,13 @@
 			</props>
 		</property>
 
-		
+		<property name="mappingResources">
+			<list>
+				<value>Beach.hbm.xml</value>
+				<value>Recommandation.hbm.xml</value>
+			</list>
+		</property>
+
 	</bean>
 
 	<bean id="beachService" class="service.BeachServiceImpl">

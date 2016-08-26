@@ -58,8 +58,8 @@ public class BeachInfoAction implements ModelDriven{
 			Weather weatherInF = weatherService.getWeatherByBeach(currentBeach);
 			weather = weatherService.changeTempToC(weatherInF);
 			wind = weather.getWind();
-			recommandation = beachService.getRecommandationByWaterTemp(Integer.parseInt(weather.getTemp()+""));
-			System.out.println(recommandation.getRecommandation());
+			//recommandation = beachService.getRecommandationByWaterTemp(Integer.parseInt(weather.getTemp()+""));
+			//System.out.println(recommandation.getRecommandation());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
