@@ -12,6 +12,6 @@ public interface BeachService {
 	public void deleteBeachById(int id);
 	public List<Beach> getBeachByState(String state);
 	public Beach getBeachByName(String beachName);
-    public Recommandation getRecommandationByWaterTemp(int water_temp);
+    public Recommandation getRecommandationByWaterTemp(double water_temp);
 
 }

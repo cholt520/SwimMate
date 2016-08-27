@@ -54,8 +54,26 @@ public class BeachServiceImpl implements BeachService{
 	}
 
 	@Override
-	public Recommandation getRecommandationByWaterTemp(int water_temp) {
-		// TODO Auto-generated method stub
-		return null;
+	public Recommandation getRecommandationByWaterTemp(double water_temp) {
+		
+		int waterTemp = 0;
+		
+		if(water_temp<0){
+			waterTemp = 0;	
+		}else if(water_temp>0&&water_temp<8){
+			waterTemp = 8;
+		}else if(water_temp>8&&water_temp<13){
+			waterTemp = 13;
+		}else if(water_temp>13&&water_temp<16){
+			waterTemp = 16;
+		}else if(water_temp>16&&water_temp<19){
+			waterTemp = 19;
+		}else if(water_temp>19&&water_temp<22){
+			waterTemp = 22;
+		}else if(water_temp>22&&water_temp<26){
+			waterTemp = 26;
+		}
+		
+		return beachDao.getRecommandationByWaterTemp(waterTemp);
 	}
 }

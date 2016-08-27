@@ -54,12 +54,10 @@ public class BeachInfoAction implements ModelDriven{
 	public String execute(){
 		try {
 			currentBeach = beachService.getBeachById(id);
-			System.out.println(currentBeach.getBeach_name());
 			Weather weatherInF = weatherService.getWeatherByBeach(currentBeach);
 			weather = weatherService.changeTempToC(weatherInF);
 			wind = weather.getWind();
-			//recommandation = beachService.getRecommandationByWaterTemp(Integer.parseInt(weather.getTemp()+""));
-			//System.out.println(recommandation.getRecommandation());
+			recommandation = beachService.getRecommandationByWaterTemp(weather.getTemp());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -88,6 +86,14 @@ public class BeachInfoAction implements ModelDriven{
 
 	public void setCurrentBeach(Beach currentBeach) {
 		this.currentBeach = currentBeach;
+	}
+
+	public Recommandation getRecommandation() {
+		return recommandation;
+	}
+
+	public void setRecommandation(Recommandation recommandation) {
+		this.recommandation = recommandation;
 	}
 	
 }

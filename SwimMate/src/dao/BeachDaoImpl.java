@@ -48,8 +48,6 @@ public class BeachDaoImpl extends HibernateDaoSupport implements BeachDao{
 
 	@Override
 	public List<Beach> getBeachByState(String state) {
-		//return (List<Beach>) getHibernateTemplate().find("from Beach where state= :" + state.toUpperCase());
-
 		return (List<Beach>) getHibernateTemplate().find("from Beach as beach where beach.state like '%" + state.toUpperCase() + "%'");
 	}
 
@@ -58,13 +56,11 @@ public class BeachDaoImpl extends HibernateDaoSupport implements BeachDao{
 		
 		List<Beach> list = new ArrayList<Beach>();
 		list = (List<Beach>) getHibernateTemplate().find("from Beach as beach where beach.beach_name like '%" + beachName + "%'" );		
-		System.out.println(list.get(0).getBeach_name() + "     gdsdfdhrgadsgsfg");
 		return list.get(0);
-		//return (Beach) getHibernateTemplate().find("from Beach as beach where beach.beach_name='" + beachName + "'" ).get(0);
 	}
 
 	public Recommandation getRecommandationByWaterTemp(int water_temp) {
-		return (Recommandation) getHibernateTemplate().find("from recommandation where water_temp="+water_temp).get(0);
+		return (Recommandation) getHibernateTemplate().find("from Recommandation where water_temp="+water_temp).get(0);
 	}
 	
 

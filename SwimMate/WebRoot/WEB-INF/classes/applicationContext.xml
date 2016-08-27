@@ -12,6 +12,7 @@
 		<property name="maxIdle" value="30" />
 		<property name="maxWait" value="16000" />
 		<property name="minIdle" value="0" />
+		
 	</bean>
 
 	<bean id="sessionFactory"

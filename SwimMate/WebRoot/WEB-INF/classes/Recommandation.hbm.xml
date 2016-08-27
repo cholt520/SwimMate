@@ -4,12 +4,12 @@
  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
 
 <hibernate-mapping>
-   <class name="entity.Recommandation" table="recommandation">
+   <class name="entity.Recommandation" table="recomandation">
    
       <id name="id" type="int" column="id">
          <generator class="native"/>
       </id>
-      <property name="water_temp" column="water_temp" type="string"/>
-      <property name="recommandation" column="recommandation" type="string"/>
+      <property name="water_temp" column="water_temp" type="int"/>
+      <property name="recommandation" column="recomandation" type="string"/>
    </class>
 </hibernate-mapping>

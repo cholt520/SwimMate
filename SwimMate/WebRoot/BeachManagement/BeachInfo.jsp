@@ -290,10 +290,7 @@
 	                                             		Suggestion
                                              		</h4>
 		                                               	<p>
-		                                               		<%-- <s:if test="%{#weather.temp>=0 }">
-		                                               			sssssssss
-		                                               		</s:if> --%>
-		                                               		For swimming this is considered cold and even the most hardy among us would find any more than a few minutes in the water uncomfortable.
+		                                               	<s:property value="recommandation.recommandation"/>
 		                                               	</p>
                                              	</div>
                                              </div>
