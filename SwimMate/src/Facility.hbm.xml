@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="entity.Facility" table="Facility">
+   
+      <id name="id" type="int" column="id">
+         <generator class="native"/>
+      </id>
+      <property name="beachid" column="beachid" type="int"/>
+      <property name="showers" column="showers" type="string"/>
+      <property name="pools" column="pools" type="string"/>
+      <property name="cafe" column="cafe" type="string"/>
+      <property name="parks" column="parks" type="string"/>
+      <property name="boat_ramp" column="boat_ramp" type="string"/>
+      <property name="carparking" column="carparking" type="string"/>
+      
+   </class>
+</hibernate-mapping>
