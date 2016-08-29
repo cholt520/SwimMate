@@ -13,5 +13,6 @@ public interface BeachService {
 	public List<Beach> getBeachByState(String state);
 	public Beach getBeachByName(String beachName);
     public Recommandation getRecommandationByWaterTemp(double water_temp);
-   //jggjhggjjgjjg
+
+    //kghslghosihgeroiwhgsojgfsighsoh
 }
