@@ -31,4 +31,14 @@ public class TrainingServiceImpl implements TrainingService{
 	public void modifyTraining(Training training) {		
 	}
 
+	public TrainingDao getTrainingDao() {
+		return trainingDao;
+	}
+
+	public void setTrainingDao(TrainingDao trainingDao) {
+		this.trainingDao = trainingDao;
+	}
+	
+	
+
 }
