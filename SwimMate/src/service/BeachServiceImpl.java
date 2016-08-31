@@ -16,37 +16,30 @@ public class BeachServiceImpl implements BeachService{
 
 	@Override
 	public Beach getBeachById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return beachDao.getBeachbyId(id);
 	}
 
 	@Override
 	public Beach modifyBeach(Beach beach) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void deleteBeachById(int id) {
-		// TODO Auto-generated method stub
-		
+	public void deleteBeachById(int id) {		
 	}
 
 	@Override
 	public List<Beach> getBeachByState(String state) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Beach getBeachByName(String beachName) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Recommandation getRecommandationByWaterTemp(double water_temp) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

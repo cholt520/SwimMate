@@ -54,6 +54,7 @@ public class BeachInfoAction implements ModelDriven{
 	public String execute(){
 		try {
 			currentBeach = beachService.getBeachById(id);
+			System.out.println(id);
 			Weather weatherInF = weatherService.getWeatherByBeach(currentBeach);
 			weather = weatherService.changeTempToC(weatherInF);
 			wind = weather.getWind();

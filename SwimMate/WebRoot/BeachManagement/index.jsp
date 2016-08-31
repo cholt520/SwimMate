@@ -101,28 +101,33 @@
                                         </li> -->
                                     </ul>
                                 </li>
-                               <%--  <li class="menu-dropdown mega-menu-dropdown  ">
-                                    <a href="javascript:;"> Function2
+                               <li class="menu-dropdown mega-menu-dropdown  ">
+                                    <a href="javascript:;">Beach Nearby Info 
                                         <span class="arrow"></span>
                                     </a>
                                     <ul class="dropdown-menu pull-left">
                                         <li class=" ">
-                                            <a href="" class="nav-link  ">
-                                                <i class="icon-bar-chart font-green-sharp"></i> SubFunction1
+                                            <a href="Training.action" class="nav-link  ">
+                                                <i class="icon-bar-chart font-green-sharp"></i> Training
                                             </a>
                                         </li>
                                         <li class=" ">
-                                            <a href="dashboard_2.html" class="nav-link  ">
-                                                <i class="icon-bulb font-green-sharp"></i> SubFunction2 </a>
+                                            <a href="Patrol.action" class="nav-link  ">
+                                                <i class="icon-bulb font-green-sharp"></i> Patrol </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="Facility.action" class="nav-link  ">
+                                                <i class="icon-graph font-green-sharp"></i> Facility
+                                            </a>
                                         </li>
                                         <li class=" ">
                                             <a href="dashboard_3.html" class="nav-link  ">
-                                                <i class="icon-graph font-green-sharp"></i> SubFunction3
+                                                <i class="icon-graph font-green-sharp"></i> Tide 
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="menu-dropdown classic-menu-dropdown ">
+                                 <%-- <li class="menu-dropdown classic-menu-dropdown ">
                                     <a href="javascript:;"> Function3
                                         <span class="arrow"></span>
                                     </a>
