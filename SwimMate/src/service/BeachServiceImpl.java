@@ -35,7 +35,7 @@ public class BeachServiceImpl implements BeachService{
 
 	@Override
 	public Beach getBeachByName(String beachName) {
-		return null;
+		return beachDao.getBeachByName(beachName);
 	}
 
 	@Override
