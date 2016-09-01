@@ -106,7 +106,7 @@
 							<div class="hor-menu  ">
 								<ul class="nav navbar-nav ">
 									<li class="menu-dropdown classic-menu-dropdown "><a
-										href="javascript:;" > Home Page <span class="arrow"></span>
+										href="javascript:;" > Home <span class="arrow"></span>
 									</a>
 										<ul class="dropdown-menu pull-left">
 											<li class=" "><a href="beach.action" class="nav-link  ">

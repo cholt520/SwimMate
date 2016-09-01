@@ -8,6 +8,18 @@
 			<result>/BeachManagement/index.jsp</result>
 		</action>
 		
+		<action name="Training">
+			<result>/BeachManagement/Training.jsp</result>
+		</action>
+		
+		<action name="Facility">
+			<result>/BeachManagement/Facility.jsp</result>
+		</action>
+		
+		<action name="Patrol">
+			<result>/BeachManagement/Patrol.jsp</result>
+		</action>
+		
 		<action name="beach" class="action.BeachAction" method="execute">
 			<result name="success">/BeachManagement/FindBeach.jsp</result>
 		</action>
