@@ -177,7 +177,7 @@
 																			href="http://maps.google.com/?q=<s:property value="currentBeach.latitude" />,<s:property value="currentBeach.longitude"/> "
 																			target="_blank"> <s:property
 																				value="currentBeach.beach_name" />, <s:property
-																				value="currentBeach.region" />, <s:property
+																				value="currentBeach.address" />, <s:property
 																				value="currentBeach.state" /> <s:hidden
 																				id="latitude" value="%{currentBeach.latitude}"
 																				name="latitude" /> <s:hidden id="longitude"

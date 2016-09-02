@@ -12,7 +12,6 @@ public class BeachServiceImpl implements BeachService{
 	@Override
 	public List<Beach> getAllBeach() {
 		return beachDao.getAllBeach();
-		//sfjhskjfhsdjkh
 	}
 
 	@Override
@@ -31,7 +30,7 @@ public class BeachServiceImpl implements BeachService{
 
 	@Override
 	public List<Beach> getBeachByState(String state) {
-		return null;
+		return beachDao.getBeachByState(state);
 	}
 
 	@Override

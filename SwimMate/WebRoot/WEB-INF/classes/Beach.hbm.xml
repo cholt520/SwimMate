@@ -10,10 +10,9 @@
          <generator class="native"/>
       </id>
       <property name="beach_name" column="beach_name" type="string"/>
-      <property name="region" column="region" type="string"/>
-      <property name="council" column="council" type="string"/>
+       <property name="address" column="address" type="string"/>
       <property name="state" column="state" type="string"/>
-      <property name="longitude" column="longitude" type="string"/>
       <property name="latitude" column="latitude" type="string"/>
+      <property name="longitude" column="longitude" type="string"/>
    </class>
 </hibernate-mapping>

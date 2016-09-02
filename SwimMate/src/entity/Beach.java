@@ -3,8 +3,7 @@ package entity;
 public class Beach {
 	private int beach_id;
 	private String beach_name;
-	private String region;
-	private String council;
+	private String address;
 	private String state;
 	private String longitude;
 	private String latitude;
@@ -21,17 +20,11 @@ public class Beach {
 	public void setBeach_name(String beach_name) {
 		this.beach_name = beach_name;
 	}
-	public String getRegion() {
-		return region;
+	public String getAddress() {
+		return address;
 	}
-	public void setRegion(String region) {
-		this.region = region;
-	}
-	public String getCouncil() {
-		return council;
-	}
-	public void setCouncil(String council) {
-		this.council = council;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	public String getState() {
 		return state;
