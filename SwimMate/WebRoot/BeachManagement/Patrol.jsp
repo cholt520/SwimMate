@@ -6,6 +6,7 @@
 
 <html lang="en">
 <head>
+<!-- <meta charset="utf-8" /> -->
 <title>Find Patrol Information</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -194,13 +195,13 @@
 								<!-- BEGIN PAGE CONTENT INNER -->
 								<div class="page-content-inner">
 									<div class="search-page search-content-2">
-										<div class="row">
+										<!-- <div class="row">
 											<div class="col-md-12">
 												<img src="../image/beach1.jpg" alt="St_Kilda_Beach" style="width: 100%; height: auto;"/>
 											</div>
 		                                </div>
 		                                <br/>
-		                                <br/>
+		                                <br/> -->
 										<!--Search Bar-->
 										<div class="search-bar ">
 											<div class="row">
@@ -330,6 +331,7 @@
                                                         </table>
                                                     </div>
                                                 </div>
+                                                
                                                 <!-- END SAMPLE TABLE PORTLET-->
 														
 													 

@@ -35,8 +35,11 @@
 <link
 	href="../assets/global/plugins/fancybox/source/jquery.fancybox.css"
 	rel="stylesheet" type="text/css" />
-	 <link href="../assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
-        <link href="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../assets/global/plugins/datatables/datatables.min.css"
+	rel="stylesheet" type="text/css" />
+<link
+	href="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css"
+	rel="stylesheet" type="text/css" />
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN THEME GLOBAL STYLES -->
 <link href="../assets/global/css/components-rounded.min.css"
@@ -73,7 +76,8 @@
 							<div class="page-logo" style="height:100px;">
 								<a href="index.action"> <img
 									src="../image/swimmate-logo-nobg.png" alt="logo"
-									class="logo-default" style="width:160px; height:98px; margin-top:2px;">
+									class="logo-default"
+									style="width:160px; height:98px; margin-top:2px;">
 								</a>
 							</div>
 							<!-- END LOGO -->
@@ -106,54 +110,16 @@
 							<div class="hor-menu  ">
 								<ul class="nav navbar-nav ">
 									<li class="menu-dropdown classic-menu-dropdown "><a
-										href="javascript:;" > Home Page <span class="arrow"></span>
+										href="javascript:;"> Home Page <span class="arrow"></span>
 									</a>
 										<ul class="dropdown-menu pull-left">
 											<li class=" "><a href="beach.action" class="nav-link  ">
-													<i class="fa fa-search font-green-sharp"></i> Find Training Information
+													<i class="fa fa-search font-green-sharp"></i> Find Training
+													Information
 											</a></li>
-											<!-- <li class=" "><a href="dashboard_2.html"
-												class="nav-link  "> <i class="icon-bulb font-green-sharp"></i>
-													SubFunction2
-											</a></li>
-											<li class=" "><a href="dashboard_3.html"
-												class="nav-link  "> <i class="icon-graph font-green-sharp"></i>
-													SubFunction3
-											</a></li> -->
-										</ul></li>
-									<%-- <li class="menu-dropdown mega-menu-dropdown  "><a
-										href="javascript:;"> Function2 <span class="arrow"></span>
-									</a>
-										<ul class="dropdown-menu pull-left">
-											<li class=" "><a href="index.html" class="nav-link  ">
-													<i class="icon-bar-chart font-green-sharp"></i> SubFunction1
-											</a></li>
-											<li class=" "><a href="dashboard_2.html"
-												class="nav-link  "> <i class="icon-bulb font-green-sharp" ></i>
-													SubFunction2
-											</a></li>
-											<li class=" "><a href="dashboard_3.html"
-												class="nav-link  "> <i class="icon-graph font-green-sharp"></i>
-													SubFunction3
-											</a></li>
-										</ul></li>
-									<li class="menu-dropdown classic-menu-dropdown "><a
-										href="javascript:;"> Function3 <span class="arrow"></span>
-									</a>
-										<ul class="dropdown-menu pull-left">
-											<li class=" "><a href="index.html" class="nav-link  ">
-													<i class="icon-bar-chart font-green-sharp"></i> SubFunction1
-											</a></li>
-											<li class=" "><a href="dashboard_2.html"
-												class="nav-link  "> <i class="icon-bulb font-green-sharp"></i>
-													SubFunction2
-											</a></li>
-											<li class=" "><a href="dashboard_3.html"
-												class="nav-link  "> <i class="icon-graph font-green-sharp"></i>
-													SubFunction3
-											</a></li>
-										</ul></li> --%>
+											
 								</ul>
+							
 							</div>
 							<!-- END MEGA MENU -->
 						</div>
@@ -168,8 +134,9 @@
 				<!-- BEGIN CONTAINER -->
 				<div class="page-container">
 					<!-- BEGIN CONTENT -->
-					<div class="page-content-wrapper">
-						<!-- BEGIN CONTENT BODY -->
+					<
+											div class="page-content-wrapper">
+											<!-- BEGIN CONTENT BODY -->
 						<!-- BEGIN PAGE HEAD-->
 						<div class="page-head">
 							<div class="container">
@@ -195,13 +162,13 @@
 								<!-- BEGIN PAGE CONTENT INNER -->
 								<div class="page-content-inner">
 									<div class="search-page search-content-2">
-										<div class="row">
+										<!-- <div class="row">
 											<div class="col-md-12">
 												<img src="../image/beach1.jpg" alt="St_Kilda_Beach" style="width: 100%; height: auto;"/>
 											</div>
 		                                </div>
 		                                <br/>
-		                                <br/>
+		                                <br/> -->
 										<!--Search Bar-->
 										<div class="search-bar ">
 											<div class="row">

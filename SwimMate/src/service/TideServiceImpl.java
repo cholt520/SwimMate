@@ -50,8 +50,6 @@ public class TideServiceImpl implements TideService{
 			tide = tideGson.fromJson(tideJson, Tide.class);
 
 
-			//testsjfdhsdkjhfskajhfksajhfksdj
-
 			
 		} catch (IOException e) {
 			e.printStackTrace();
