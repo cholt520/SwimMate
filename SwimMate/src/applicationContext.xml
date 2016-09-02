@@ -34,6 +34,7 @@
 				<value>Recommandation.hbm.xml</value>
 				<value>Patrol.hbm.xml</value>
 				<value>Training.hbm.xml</value>
+				<value>Facility.hbm.xml</value>
 			</list>
 		</property>
 

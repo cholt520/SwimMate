@@ -12,6 +12,7 @@ public class BeachServiceImpl implements BeachService{
 	@Override
 	public List<Beach> getAllBeach() {
 		return beachDao.getAllBeach();
+		//sfjhskjfhsdjkh
 	}
 
 	@Override
