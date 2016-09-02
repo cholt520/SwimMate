@@ -12,7 +12,11 @@
 			<result>/BeachManagement/Training.jsp</result>
 		</action>
 		
-		<action name="Facility">
+		<action name="Facility" class="action.FacilityAction" method="execute" >
+			<result>/BeachManagement/Facility.jsp</result>
+		</action>
+		
+		<action name="getFacility" class="action.FacilityAction" method="getFacility" >
 			<result>/BeachManagement/Facility.jsp</result>
 		</action>
 		

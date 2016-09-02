@@ -15,7 +15,7 @@ public class FacilityServiceImpl implements FacilityService{
 
 	@Override
 	public List<Facility> getAllFacility() {
-		return null;
+		return facilityDao.getAllFacility();
 	}
 
 	@Override
@@ -38,6 +38,11 @@ public class FacilityServiceImpl implements FacilityService{
 
 	public void setFacilityDao(FacilityDao facilityDao) {
 		this.facilityDao = facilityDao;
+	}
+
+	@Override
+	public List<Facility> getFacilityByName(String name) {
+		return facilityDao.getFacilityByName(name);
 	}
 
 }

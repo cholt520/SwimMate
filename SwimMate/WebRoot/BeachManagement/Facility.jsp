@@ -35,8 +35,11 @@
 <link
 	href="../assets/global/plugins/fancybox/source/jquery.fancybox.css"
 	rel="stylesheet" type="text/css" />
-	 <link href="../assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
-        <link href="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../assets/global/plugins/datatables/datatables.min.css"
+	rel="stylesheet" type="text/css" />
+<link
+	href="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css"
+	rel="stylesheet" type="text/css" />
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN THEME GLOBAL STYLES -->
 <link href="../assets/global/css/components-rounded.min.css"
@@ -73,7 +76,8 @@
 							<div class="page-logo" style="height:100px;">
 								<a href="index.action"> <img
 									src="../image/swimmate-logo-nobg.png" alt="logo"
-									class="logo-default" style="width:160px; height:98px; margin-top:2px;">
+									class="logo-default"
+									style="width:160px; height:98px; margin-top:2px;">
 								</a>
 							</div>
 							<!-- END LOGO -->
@@ -106,11 +110,12 @@
 							<div class="hor-menu  ">
 								<ul class="nav navbar-nav ">
 									<li class="menu-dropdown classic-menu-dropdown "><a
-										href="javascript:;" > Home Page <span class="arrow"></span>
+										href="javascript:;"> Home Page <span class="arrow"></span>
 									</a>
 										<ul class="dropdown-menu pull-left">
 											<li class=" "><a href="beach.action" class="nav-link  ">
-													<i class="fa fa-search font-green-sharp"></i> Find Facility Information
+													<i class="fa fa-search font-green-sharp"></i> Find Facility
+													Information
 											</a></li>
 											<!-- <li class=" "><a href="dashboard_2.html"
 												class="nav-link  "> <i class="icon-bulb font-green-sharp"></i>
@@ -175,7 +180,7 @@
 							<div class="container">
 								<!-- BEGIN PAGE TITLE -->
 								<div class="page-title">
-									<h1 >Find Facility Information</h1>
+									<h1>Find Facility Information</h1>
 								</div>
 								<!-- END PAGE TITLE -->
 
@@ -187,30 +192,27 @@
 							<div class="container">
 								<!-- BEGIN PAGE BREADCRUMBS -->
 								<ul class="page-breadcrumb breadcrumb ">
-									<li><a href="index.action" class="font-green-sharp">Home</a> <i class="fa fa-circle"></i>
-									</li>
+									<li><a href="index.action" class="font-green-sharp">Home</a>
+										<i class="fa fa-circle"></i></li>
 									<li><span>Find Facility Information</span></li>
 								</ul>
 								<!-- END PAGE BREADCRUMBS -->
 								<!-- BEGIN PAGE CONTENT INNER -->
 								<div class="page-content-inner">
 									<div class="search-page search-content-2">
-										<div class="row">
-											<div class="col-md-12">
-												<img src="../image/beach1.jpg" alt="St_Kilda_Beach" style="width: 100%; height: auto;"/>
-											</div>
-		                                </div>
-		                                <br/>
-		                                <br/>
+										
+										<br /> <br />
 										<!--Search Bar-->
 										<div class="search-bar ">
 											<div class="row">
 												<div class="col-md-12">
-                                           			<s:form action="getBeachByName.action">
+													<s:form action="getFacility.action">
 														<div class="input-group">
-															<input name="beachName" type="text" class="form-control" placeholder="Search Facility" >
-															<span class="input-group-btn">
-																 <button class="btn green-sharp uppercase bold" type="submit">Search</button>
+															<input name="facilityName" type="text" class="form-control"
+																placeholder="Search Facility"> <span
+																class="input-group-btn">
+																<button class="btn green-sharp uppercase bold"
+																	type="submit">Search</button>
 															</span>
 														</div>
 													</s:form>
@@ -218,125 +220,64 @@
 											</div>
 										</div>
 										<!--End Search Bar-->
-											
-										 	
-										 	
+
+
+
 										<!--Result Table-->
 										<div class="row" style="Margin:2px;">
 											<div class="search-container ">
 												<ul class="search-container">
-												
-														 <!-- BEGIN SAMPLE TABLE PORTLET-->
-                                                <div class="portlet box green">
-                                                    <div class="portlet-title">
-                                                        <div class="caption">
-                                                            <i class="fa fa-cogs"></i>Facility Information </div>
-                                                        <div class="tools">
-                                                            <a href="javascript:;" class="collapse"> </a>
-                                                            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
-                                                            <a href="javascript:;" class="reload"> </a>
-                                                            <a href="javascript:;" class="remove"> </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="portlet-body flip-scroll">
-                                                        <table class="table table-bordered table-striped table-condensed flip-content">
-                                                            <thead class="flip-content">
-                                                                <tr>
-                                                                    <th width="20%"> Name </th>
-                                                                    <th> Coarch </th>
-                                                                    <th class="numeric"> Beach Name </th>
-                                                                    <th class="numeric"> Location </th>
-                                                                    
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td> AAC </td>
-                                                                    <td> AUSTRALIAN AGRICULTURAL COMPANY LIMITED. </td>
-                                                                    <td class="numeric"> &nbsp; </td>
-                                                                    <td class="numeric"> -0.01 </td>
-                                                                    
-                                                                </tr>
-                                                                <tr>
-                                                                    <td> AAD </td>
-                                                                    <td> ARDENT LEISURE GROUP </td>
-                                                                    <td class="numeric"> $1.15 </td>
-                                                                    <td class="numeric"> +0.02 </td>
-                                                                    
-                                                                </tr>
-                                                                <tr>
-                                                                    <td> AAX </td>
-                                                                    <td> AUSENCO LIMITED </td>
-                                                                    <td class="numeric"> $4.00 </td>
-                                                                    <td class="numeric"> -0.04 </td>
-                                                                    
-                                                                </tr>
-                                                                <tr>
-                                                                    <td> ABC </td>
-                                                                    <td> ADELAIDE BRIGHTON LIMITED </td>
-                                                                    <td class="numeric"> $3.00 </td>
-                                                                    <td class="numeric"> +0.06 </td>
-                                                                    
-                                                                </tr>
-                                                                <tr>
-                                                                    <td> ABP </td>
-                                                                    <td> ABACUS PROPERTY GROUP </td>
-                                                                    <td class="numeric"> $1.91 </td>
-                                                                    <td class="numeric"> 0.00 </td>
-                                                                    
-                                                                </tr>
-                                                                <tr>
-                                                                    <td> ABY </td>
-                                                                    <td> ADITYA BIRLA MINERALS LIMITED </td>
-                                                                    <td class="numeric"> $0.77 </td>
-                                                                    <td class="numeric"> +0.02 </td>
-                                                                    
-                                                                </tr>
-                                                                <tr>
-                                                                    <td> ACR </td>
-                                                                    <td> ACRUX LIMITED </td>
-                                                                    <td class="numeric"> $3.71 </td>
-                                                                    <td class="numeric"> +0.01 </td>
-                                                                    
-                                                                </tr>
-                                                                <tr>
-                                                                    <td> ADU </td>
-                                                                    <td> ADAMUS RESOURCES LIMITED </td>
-                                                                    <td class="numeric"> $0.72 </td>
-                                                                    <td class="numeric"> 0.00 </td>
-                                                                    
-                                                                </tr>
-                                                                <tr>
-                                                                    <td> AGG </td>
-                                                                    <td> ANGLOGOLD ASHANTI LIMITED </td>
-                                                                    <td class="numeric"> $7.81 </td>
-                                                                    <td class="numeric"> -0.22 </td>
-                                                                    
-                                                                </tr>
-                                                                <tr>
-                                                                    <td> AGK </td>
-                                                                    <td> AGL ENERGY LIMITED </td>
-                                                                    <td class="numeric"> $13.82 </td>
-                                                                    <td class="numeric"> +0.02 </td>
-                                                                    
-                                                                </tr>
-                                                                <tr>
-                                                                    <td> AGO </td>
-                                                                    <td> ATLAS IRON LIMITED </td>
-                                                                    <td class="numeric"> $3.17 </td>
-                                                                    <td class="numeric"> -0.02 </td>
-                                                                    
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                                <!-- END SAMPLE TABLE PORTLET-->
-														
-													 
+
+													<!-- BEGIN SAMPLE TABLE PORTLET-->
+													<div class="portlet box green">
+														<div class="portlet-title">
+															<div class="caption">
+																<i class="fa fa-cogs"></i>Facility Information
+															</div>
+															<div class="tools">
+																<a href="javascript:;" class="collapse"> </a> <a
+																	href="#portlet-config" data-toggle="modal"
+																	class="config"> </a> <a href="javascript:;"
+																	class="reload"> </a> <a href="javascript:;"
+																	class="remove"> </a>
+															</div>
+														</div>
+														<div class="portlet-body flip-scroll">
+															<table
+																class="table table-bordered table-striped table-condensed flip-content">
+																<thead class="flip-content">
+																	<tr>
+																		<th width="20%">Name</th>
+																		<th>Address</th>
+																		<th>State</th>
+																		<th>Parking</th>
+																		<th>Baby Change</th>
+																		<th>Showers</th>
+																		<th>Drinking Water</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<s:iterator value="facilitiesList"  id="facility">
+																		<tr>
+																			<td><s:property value="#facility.name" /></td>
+																			<td><s:property value="#facility.address" /></td>
+																			<td><s:property value="#facility.state" /></td>
+																			<td><s:property value="#facility.parking" /></td>
+																			<td><s:property value="#facility.babychange" /></td>
+																			<td><s:property value="#facility.showers" /></td>
+																			<td><s:property value="#facility.drinkingwater" /></td>
+																		</tr>
+																	</s:iterator>
+																</tbody>
+															</table>
+														</div>
+													</div>
+													<!-- END SAMPLE TABLE PORTLET-->
+
+
 
 												</ul>
-												
+
 											</div>
 										</div>
 										<!--End Result Table-->
@@ -364,9 +305,10 @@
 						<div class="row">
 							<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
 								<h2>About Us</h2>
-								<p>C.A.R.T. Solutions 
-								<br />
-								-- Creativity, Aesthetics, Robustness and good Technology.</p>
+								<p>
+									C.A.R.T. Solutions <br /> -- Creativity, Aesthetics,
+									Robustness and good Technology.
+								</p>
 							</div>
 
 							<!-- <div class="col-md-3 col-sm-6 col-xs-12 footer-block">
@@ -391,9 +333,8 @@
 							<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
 								<h2>Contacts</h2>
 								<address class="margin-bottom-40">
-									Phone: 0431003341 
-									<br/> 
-									Email: <a href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
+									Phone: 0431003341 <br /> Email: <a
+										href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
 								</address>
 							</div>
 						</div>
@@ -436,10 +377,13 @@
 		type="text/javascript"></script>
 	<!-- END CORE PLUGINS -->
 	<!-- BEGIN PAGE LEVEL PLUGINS -->
-	<script src="../assets/global/plugins/jquery.pulsate.min.js" type="text/javascript"></script>
-    <script src="../assets/global/plugins/jquery-bootpag/jquery.bootpag.min.js" type="text/javascript"></script>
-    <script src="../assets/global/plugins/holder.js" type="text/javascript"></script>
-    
+	<script src="../assets/global/plugins/jquery.pulsate.min.js"
+		type="text/javascript"></script>
+	<script
+		src="../assets/global/plugins/jquery-bootpag/jquery.bootpag.min.js"
+		type="text/javascript"></script>
+	<script src="../assets/global/plugins/holder.js" type="text/javascript"></script>
+
 	<script
 		src="../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"
 		type="text/javascript"></script>
@@ -456,9 +400,13 @@
 		type="text/javascript"></script>
 	<script src="../assets/pages/scripts/search.min.js"
 		type="text/javascript"></script>
-	 <script src="../assets/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
-     <script src="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
-	<script src="../assets/pages/scripts/ui-general.min.js" type="text/javascript"></script>
+	<script src="../assets/global/plugins/datatables/datatables.min.js"
+		type="text/javascript"></script>
+	<script
+		src="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js"
+		type="text/javascript"></script>
+	<script src="../assets/pages/scripts/ui-general.min.js"
+		type="text/javascript"></script>
 	<!-- END PAGE LEVEL SCRIPTS -->
 	<!-- BEGIN THEME LAYOUT SCRIPTS -->
 	<script src="../assets/layouts/layout3/scripts/layout.min.js"
@@ -469,7 +417,8 @@
 		type="text/javascript"></script>
 	<!-- END THEME LAYOUT SCRIPTS -->
 	<!-- BEGIN PAGE LEVEL SCRIPTS -->
-        <script src="../assets/pages/scripts/table-datatables-managed.min.js" type="text/javascript"></script>
-        <!-- END PAGE LEVEL SCRIPTS -->
+	<script src="../assets/pages/scripts/table-datatables-managed.min.js"
+		type="text/javascript"></script>
+	<!-- END PAGE LEVEL SCRIPTS -->
 </body>
 </html>
