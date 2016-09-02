@@ -72,10 +72,9 @@
 					<div class="page-header-top">
 						<div class="container">
 							<!-- BEGIN LOGO -->
-							<div class="page-logo" >
-								<a href="index.action"> <img
-									src="../image/logo_green.jpg" alt="logo"
-									class="logo-default"
+							<div class="page-logo">
+								<a href="index.action"> <img src="../image/logo_green.jpg"
+									alt="logo" class="logo-default"
 									style="width:230px; height:45px; margin-top:18px;">
 								</a>
 							</div>
@@ -99,7 +98,8 @@
 									<li class="active"><a href="beach.action"> Find Beach
 									</a></li>
 
-									<li class=""><a href="javascript:; "> Find Facility </a></li>
+									<li class=""><a href="FindFacility.jsp "> Find
+											Facility </a></li>
 
 								</ul>
 							</div>
@@ -163,9 +163,9 @@
 										</div>
 										<!--End Search Bar-->
 
-										<!-- Start Find Beach By State -->
 										<div class="row">
-											<div class="col-md-12">
+											<!-- Start Find Beach By State -->
+											<div class="col-md-6">
 												<div class="portlet light ">
 													<div class="portlet-title">
 														<div class="caption">
@@ -178,22 +178,25 @@
 													</div>
 													<div class="portlet-body">
 														<div class="row" style="margin: 6px;">
-															<div class="col-md-3">
+															<div class="col-md-6">
 																<a href="getBeachByState.action?selectedState=VIC"
 																	style="font-size:18px;" class="font-blue-oleo">
 																	Victoria </a>
 															</div>
-															<div class="col-md-3">
+															<div class="col-md-6">
 																<a href="getBeachByState.action?selectedState=NSW"
 																	style="font-size:18px;" class="font-blue-oleo"> New
 																	South Wales </a>
 															</div>
-															<div class="col-md-3">
+														</div>
+														<br />
+														<div class="row" style="margin: 6px;">
+															<div class="col-md-6">
 																<a href="getBeachByState.action?selectedState=QS"
 																	style="font-size:18px;" class="font-blue-oleo">
 																	Queensland </a>
 															</div>
-															<div class="col-md-3">
+															<div class="col-md-6">
 																<a href="getBeachByState.action?selectedState=NT"
 																	style="font-size:18px;" class="font-blue-oleo">
 																	Northern Territory </a>
@@ -201,40 +204,46 @@
 														</div>
 														<br />
 														<div class="row" style="margin: 6px;">
-															<div class="col-md-3">
+															<div class="col-md-6">
 																<a href="getBeachByState.action?selectedState=WA"
 																	style="font-size:18px;" class="font-blue-oleo">
 																	Western Australia </a>
 															</div>
-															<div class="col-md-3">
+															<div class="col-md-6">
 																<a href="getBeachByState.action?selectedState=SA"
 																	style="font-size:18px;" class="font-blue-oleo">
 																	South Australia </a>
 															</div>
-															<div class="col-md-3">
+														</div>
+														<br />
+														<div class="row" style="margin: 6px;">
+															<div class="col-md-6">
 																<a href="getBeachByState.action?selectedState=TA"
 																	style="font-size:18px;" class="font-blue-oleo">
 																	Tasmania </a>
 															</div>
 														</div>
+														<br /> <br>
 													</div>
 												</div>
 											</div>
-										</div>
-										<!-- End Find Beach By State -->
-										<br />
+											<!-- End Find Beach By State -->
 
-										<!-- Start Map -->
-										<div class="row">
-											<div class="col-md-12">
-												<div id="gmap_basic" class="gmaps">
-													<div id="map"
-														style="height:100%;overflow:hidden;display:block;"></div>
+											<!-- Start Map -->
+											<div class="col-md-6">
+												<div class="portlet light ">
+													<div class="portlet-body">
+														<div id="gmap_basic" class="gmaps">
+															<div id="map"
+																style="height:100%;overflow:hidden;display:block;"></div>
+														</div>
+													</div>
 												</div>
 											</div>
+											<!-- End Map -->
 										</div>
-										<!-- End Map -->
-										<br /> <br />
+
+										<br />
 										<!--Result Table-->
 										<div class="row" style="Margin:2px;">
 											<div class="search-container ">
@@ -258,7 +267,6 @@
 															</div>
 														</li>
 													</s:iterator>
-
 												</ul>
 												<div class="search-pagination">
 
@@ -306,7 +314,7 @@
 							<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
 								<h2>Contacts</h2>
 								<address class="margin-bottom-40">
-									Phone: 0431003341 <br /> Email: <a
+									Phone: 0400000000 <br /> Email: <a
 										href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
 								</address>
 							</div>
@@ -329,10 +337,7 @@
 			</div>
 		</div>
 	</div>
-	<!--[if lt IE 9]>
-<script src="../assets/global/plugins/respond.min.js"></script>
-<script src="../assets/global/plugins/excanvas.min.js"></script> 
-<![endif]-->
+
 	<!-- BEGIN CORE PLUGINS -->
 	<script src="../assets/global/plugins/jquery.min.js"
 		type="text/javascript"></script>
@@ -395,20 +400,22 @@
 	<!-- END PAGE LEVEL SCRIPTS -->
 
 	<script>
-      function initMap() {
-
-        var myLatLng = {lat: -33.890542, lng: 151.274856};
-
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 12,
-          center: myLatLng
-        });
-        var marker = new google.maps.Marker({
-          position: myLatLng,
-          map: map,
-        });
-      }
-    </script>
+		function initMap() {
+			var myLatLng = {
+				lat : -33.890542,
+				lng : 151.274856
+			};
+	
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom : 12,
+				center : myLatLng
+			});
+			var marker = new google.maps.Marker({
+				position : myLatLng,
+				map : map,
+			});
+		}
+	</script>
 	<script async defer
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUuudit4OFSnhG3ZVXncE3ThuiP6xo25s&callback=initMap">
 </script>

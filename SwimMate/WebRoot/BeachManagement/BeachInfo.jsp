@@ -95,7 +95,7 @@
 									<li class="active"><a href="beach.action"> Find Beach
 									</a></li>
 
-									<li class=""><a href="javascript:; "> Find Facility </a></li>
+									<li class=""><a href="FindFacility.jsp "> Find Facility </a></li>
 
 								</ul>
 							</div>
@@ -283,36 +283,10 @@
 								</p>
 							</div>
 
-							<!-- <div class="col-md-3 col-sm-6 col-xs-12 footer-block">
-                            <h2>Follow Us On</h2>
-                            <ul class="social-icons">
-                                <li>
-                                    <a href="javascript:;" data-original-title="rss" class="rss"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;" data-original-title="facebook" class="facebook"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;" data-original-title="twitter" class="twitter"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;" data-original-title="googleplus" class="googleplus"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;" data-original-title="linkedin" class="linkedin"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;" data-original-title="youtube" class="youtube"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;" data-original-title="vimeo" class="vimeo"></a>
-                                </li>
-                            </ul>
-                        </div> -->
 							<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
 								<h2>Contacts</h2>
 								<address class="margin-bottom-40">
-									Phone: 0431003341 <br /> Email: <a
+									Phone: 0400000000 <br /> Email: <a
 										href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
 								</address>
 							</div>
@@ -335,10 +309,7 @@
 			</div>
 		</div>
 	</div>
-	<!--[if lt IE 9]>
-<script src="../assets/global/plugins/respond.min.js"></script>
-<script src="../assets/global/plugins/excanvas.min.js"></script>
-<![endif]-->
+
 	<!-- BEGIN CORE PLUGINS -->
 	<script src="../assets/global/plugins/jquery.min.js"
 		type="text/javascript"></script>
