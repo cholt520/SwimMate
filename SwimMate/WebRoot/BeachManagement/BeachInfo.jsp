@@ -68,9 +68,10 @@
 						<div class="container">
 							<!-- BEGIN LOGO -->
 							<div class="page-logo">
-								<a href="index.action"> <img src="../image/logo.jpg"
-									alt="logo" class="logo-default"
-									style="width:200px; height:60px; margin-top:10px;">
+								<a href="index.action"> <img
+									src="../image/logo_green.jpg" alt="logo"
+									class="logo-default"
+									style="width:230px; height:45px; margin-top:18px;">
 								</a>
 							</div>
 							<!-- END LOGO -->
