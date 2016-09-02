@@ -6,7 +6,6 @@
 
 <html lang="en">
 <head>
-<!-- <meta charset="utf-8" /> -->
 <title>Find a Beach</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -35,8 +34,11 @@
 <link
 	href="../assets/global/plugins/fancybox/source/jquery.fancybox.css"
 	rel="stylesheet" type="text/css" />
-	 <link href="../assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
-        <link href="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../assets/global/plugins/datatables/datatables.min.css"
+	rel="stylesheet" type="text/css" />
+<link
+	href="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css"
+	rel="stylesheet" type="text/css" />
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN THEME GLOBAL STYLES -->
 <link href="../assets/global/css/components-rounded.min.css"
@@ -70,89 +72,37 @@
 					<div class="page-header-top">
 						<div class="container">
 							<!-- BEGIN LOGO -->
-							<div class="page-logo" style="height:100px;">
+							<div class="page-logo" >
 								<a href="index.action"> <img
-									src="../image/swimmate-logo-nobg.png" alt="logo"
-									class="logo-default" style="width:160px; height:98px; margin-top:2px;">
+									src="../image/logo.jpg" alt="logo"
+									class="logo-default"
+									style="width:200px; height:60px; margin-top:10px;">
 								</a>
 							</div>
 							<!-- END LOGO -->
 							<!-- BEGIN RESPONSIVE MENU TOGGLER -->
 							<a href="javascript:;" class="menu-toggler"></a>
 							<!-- END RESPONSIVE MENU TOGGLER -->
-
 						</div>
 					</div>
 					<!-- END HEADER TOP -->
 					<!-- BEGIN HEADER MENU -->
 					<div class="page-header-menu">
 						<div class="container">
-							<!-- BEGIN HEADER SEARCH BOX -->
-							<%-- <form class="search-form" action="page_general_search.html"
-								method="GET">
-								<div class="input-group">
-									<input type="text" class="form-control" placeholder="Search"
-										name="query"> <span class="input-group-btn"> <a
-										href="javascript:;" class="btn submit"> <i
-											class="icon-magnifier"></i>
-									</a>
-									</span>
-								</div>
-							</form> --%>
-							<!-- END HEADER SEARCH BOX -->
+
 							<!-- BEGIN MEGA MENU -->
 							<!-- DOC: Apply "hor-menu-light" class after the "hor-menu" class below to have a horizontal menu with white background -->
 							<!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the dropdown opening on mouse hover -->
 							<div class="hor-menu  ">
-								<ul class="nav navbar-nav ">
-									<li class="menu-dropdown classic-menu-dropdown "><a
-										href="javascript:;" > Home <span class="arrow"></span>
-									</a>
-										<ul class="dropdown-menu pull-left">
-											<li class=" "><a href="beach.action" class="nav-link  ">
-													<i class="fa fa-search font-green-sharp"></i> Find a Beach
-											</a></li>
-											<!-- <li class=" "><a href="dashboard_2.html"
-												class="nav-link  "> <i class="icon-bulb font-green-sharp"></i>
-													SubFunction2
-											</a></li>
-											<li class=" "><a href="dashboard_3.html"
-												class="nav-link  "> <i class="icon-graph font-green-sharp"></i>
-													SubFunction3
-											</a></li> -->
-										</ul></li>
-									<%-- <li class="menu-dropdown mega-menu-dropdown  "><a
-										href="javascript:;"> Function2 <span class="arrow"></span>
-									</a>
-										<ul class="dropdown-menu pull-left">
-											<li class=" "><a href="index.html" class="nav-link  ">
-													<i class="icon-bar-chart font-green-sharp"></i> SubFunction1
-											</a></li>
-											<li class=" "><a href="dashboard_2.html"
-												class="nav-link  "> <i class="icon-bulb font-green-sharp" ></i>
-													SubFunction2
-											</a></li>
-											<li class=" "><a href="dashboard_3.html"
-												class="nav-link  "> <i class="icon-graph font-green-sharp"></i>
-													SubFunction3
-											</a></li>
-										</ul></li>
-									<li class="menu-dropdown classic-menu-dropdown "><a
-										href="javascript:;"> Function3 <span class="arrow"></span>
-									</a>
-										<ul class="dropdown-menu pull-left">
-											<li class=" "><a href="index.html" class="nav-link  ">
-													<i class="icon-bar-chart font-green-sharp"></i> SubFunction1
-											</a></li>
-											<li class=" "><a href="dashboard_2.html"
-												class="nav-link  "> <i class="icon-bulb font-green-sharp"></i>
-													SubFunction2
-											</a></li>
-											<li class=" "><a href="dashboard_3.html"
-												class="nav-link  "> <i class="icon-graph font-green-sharp"></i>
-													SubFunction3
-											</a></li>
-										</ul></li> --%>
+								<ul class="nav navbar-nav">
+
+									<li class=><a href="index.action"> Home </a></li>
+
+									<li class="active"><a href="beach.action"> Find Beach
+									</a></li>
+
+									<li class=""><a href="javascript:; "> Find Facility </a></li>
+
 								</ul>
 							</div>
 							<!-- END MEGA MENU -->
@@ -175,7 +125,7 @@
 							<div class="container">
 								<!-- BEGIN PAGE TITLE -->
 								<div class="page-title">
-									<h1 >Find a Beach</h1>
+									<h1>Find Beach</h1>
 								</div>
 								<!-- END PAGE TITLE -->
 
@@ -187,30 +137,26 @@
 							<div class="container">
 								<!-- BEGIN PAGE BREADCRUMBS -->
 								<ul class="page-breadcrumb breadcrumb ">
-									<li><a href="index.action" class="font-green-sharp">Home</a> <i class="fa fa-circle"></i>
-									</li>
+									<li><a href="index.action" class="font-green-sharp">Home</a>
+										<i class="fa fa-circle"></i></li>
 									<li><span>Find a Beach</span></li>
 								</ul>
 								<!-- END PAGE BREADCRUMBS -->
 								<!-- BEGIN PAGE CONTENT INNER -->
 								<div class="page-content-inner">
 									<div class="search-page search-content-2">
-										<div class="row">
-											<div class="col-md-12">
-												<img src="../image/beach1.jpg" alt="St_Kilda_Beach" style="width: 100%; height: auto;"/>
-											</div>
-		                                </div>
-		                                <br/>
-		                                <br/>
+
 										<!--Search Bar-->
 										<div class="search-bar ">
 											<div class="row">
 												<div class="col-md-12">
-                                           			<s:form action="getBeachByName.action">
+													<s:form action="getBeachByName.action">
 														<div class="input-group">
-															<input name="beachName" type="text" class="form-control" placeholder="Search a Beach" >
-															<span class="input-group-btn">
-																 <button class="btn green-sharp uppercase bold" type="submit">Search</button>
+															<input name="beachName" type="text" class="form-control"
+																placeholder="Search a Beach"> <span
+																class="input-group-btn">
+																<button class="btn green-sharp uppercase bold"
+																	type="submit">Search</button>
 															</span>
 														</div>
 													</s:form>
@@ -218,75 +164,106 @@
 											</div>
 										</div>
 										<!--End Search Bar-->
-											<div class="row">
-												<div class="col-md-12">
-												 	<div class="portlet light ">
-												 		<div class="portlet-title">
-		                                                	<div class="caption">
-		                                                		<span class="caption-subject font-green-sharp bold uppercase" style="font-size:20px;">
-                                                    				<i class="fa fa-search"></i>
-                                                    				Find a beach by state
-	                                                    		</span>
-	                                                   		 </div>
-                                                   		 </div>
-                                                   		 <div class="portlet-body" >
-                                                   		 	<div class="row" style="margin: 6px;">
-                                                   		 		<div class="col-md-3">
-                                                   		 			<a href="getBeachByState.action?selectedState=VIC" style="font-size:18px;" class="font-blue-oleo"> Victoria </a>
-                                                   		 		</div>
-                                                   		 		<div class="col-md-3">
-                                                   		 			<a href="getBeachByState.action?selectedState=NSW" style="font-size:18px;" class="font-blue-oleo"> New South Wales </a>
-                                                   		 		</div>
-                                                   		 		<div class="col-md-3">
-                                                   		 			<a href="getBeachByState.action?selectedState=QS" style="font-size:18px;" class="font-blue-oleo"> Queensland </a>	
-                                                   		 		</div>
-                                                   		 		<div class="col-md-3">
-                                                   		 			<a href="getBeachByState.action?selectedState=NT" style="font-size:18px;" class="font-blue-oleo"> Northern Territory </a>
-                                                   		 		</div>
-                                                 		 	</div>
-                                                 		 	<br/>
-                                                 		 	<div class="row" style="margin: 6px;">
-                                                 		 		<div class="col-md-3">
-                                                 		 			<a href="getBeachByState.action?selectedState=WA" style="font-size:18px;" class="font-blue-oleo"> Western Australia </a>
-                                                   		 		</div>
-                                                   		 		<div class="col-md-3">
-                                                   		 			<a href="getBeachByState.action?selectedState=SA" style="font-size:18px;" class="font-blue-oleo"> South Australia </a>
-                                                   		 		</div>
-                                                   		 		<div class="col-md-3">
-                                                   		 			<a href="getBeachByState.action?selectedState=TA" style="font-size:18px;" class="font-blue-oleo"> Tasmania </a>
-                                                   		 		</div>
-                                                 		 	</div>   
-                                                   		 </div>
-                                            		 </div>
-                                            	</div>    
-										 	</div>
-										 	
-										 	
+
+										<!-- Start Find Beach By State -->
+										<div class="row">
+											<div class="col-md-12">
+												<div class="portlet light ">
+													<div class="portlet-title">
+														<div class="caption">
+															<span
+																class="caption-subject font-green-sharp bold uppercase"
+																style="font-size:20px;"> <i class="fa fa-search"></i>
+																Find a beach by state
+															</span>
+														</div>
+													</div>
+													<div class="portlet-body">
+														<div class="row" style="margin: 6px;">
+															<div class="col-md-3">
+																<a href="getBeachByState.action?selectedState=VIC"
+																	style="font-size:18px;" class="font-blue-oleo">
+																	Victoria </a>
+															</div>
+															<div class="col-md-3">
+																<a href="getBeachByState.action?selectedState=NSW"
+																	style="font-size:18px;" class="font-blue-oleo"> New
+																	South Wales </a>
+															</div>
+															<div class="col-md-3">
+																<a href="getBeachByState.action?selectedState=QS"
+																	style="font-size:18px;" class="font-blue-oleo">
+																	Queensland </a>
+															</div>
+															<div class="col-md-3">
+																<a href="getBeachByState.action?selectedState=NT"
+																	style="font-size:18px;" class="font-blue-oleo">
+																	Northern Territory </a>
+															</div>
+														</div>
+														<br />
+														<div class="row" style="margin: 6px;">
+															<div class="col-md-3">
+																<a href="getBeachByState.action?selectedState=WA"
+																	style="font-size:18px;" class="font-blue-oleo">
+																	Western Australia </a>
+															</div>
+															<div class="col-md-3">
+																<a href="getBeachByState.action?selectedState=SA"
+																	style="font-size:18px;" class="font-blue-oleo">
+																	South Australia </a>
+															</div>
+															<div class="col-md-3">
+																<a href="getBeachByState.action?selectedState=TA"
+																	style="font-size:18px;" class="font-blue-oleo">
+																	Tasmania </a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- End Find Beach By State -->
+										<br />
+
+										<!-- Start Map -->
+										<div class="row">
+											<div class="col-md-12">
+												<div id="gmap_basic" class="gmaps">
+													<div id="map"
+														style="height:100%;overflow:hidden;display:block;"></div>
+												</div>
+											</div>
+										</div>
+										<!-- End Map -->
+										<br /> <br />
 										<!--Result Table-->
 										<div class="row" style="Margin:2px;">
 											<div class="search-container ">
 												<ul class="search-container">
-												
-														<s:iterator value="beachList" status="userStatus">
-															<li class="search-item clearfix">
-																<div class="search-content text-left">
-																	<h2 class="search-title">
-																		<a href="beachInfo.action?id=<s:property value="beach_id" />" >
-																			<s:property value="beach_name" />
-																		</a>
-																	</h2>
-																	<p class="search-desc">
-																		<s:property value="beach_name"/>, <s:property value="region"/>, <s:property value="state"/>
-																	</p>
-																</div>
-															</li>
-														</s:iterator>  
-														
-													 
+													<s:iterator value="beachList" status="userStatus">
+														<li class="search-item clearfix">
+															<div class="search-content text-left">
+																<h2 class="search-title">
+																	<a
+																		href="beachInfo.action?id=<s:property value="beach_id" />">
+																		<s:property value="beach_name" />
+																	</a>
+																</h2>
+																<p class="search-desc">
+																	<s:property value="beach_name" />
+																	,
+																	<s:property value="region" />
+																	,
+																	<s:property value="state" />
+																</p>
+															</div>
+														</li>
+													</s:iterator>
 
 												</ul>
 												<div class="search-pagination">
-												
+
 													<ul class="pagination">
 														<li class="page-active"><a href="javascript:;"> 1
 														</a></li>
@@ -322,36 +299,17 @@
 						<div class="row">
 							<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
 								<h2>About Us</h2>
-								<p>C.A.R.T. Solutions 
-								<br />
-								-- Creativity, Aesthetics, Robustness and good Technology.</p>
+								<p>
+									C.A.R.T. Solutions <br /> -- Creativity, Aesthetics,
+									Robustness and good Technology.
+								</p>
 							</div>
 
-							<!-- <div class="col-md-3 col-sm-6 col-xs-12 footer-block">
-								<h2>Follow Us On</h2>
-								<ul class="social-icons">
-									<li><a href="javascript:;" data-original-title="rss"
-										class="rss"></a></li>
-									<li><a href="javascript:;" data-original-title="facebook"
-										class="facebook"></a></li>
-									<li><a href="javascript:;" data-original-title="twitter"
-										class="twitter"></a></li>
-									<li><a href="javascript:;"
-										data-original-title="googleplus" class="googleplus"></a></li>
-									<li><a href="javascript:;" data-original-title="linkedin"
-										class="linkedin"></a></li>
-									<li><a href="javascript:;" data-original-title="youtube"
-										class="youtube"></a></li>
-									<li><a href="javascript:;" data-original-title="vimeo"
-										class="vimeo"></a></li>
-								</ul>
-							</div> -->
 							<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
 								<h2>Contacts</h2>
 								<address class="margin-bottom-40">
-									Phone: 0431003341 
-									<br/> 
-									Email: <a href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
+									Phone: 0431003341 <br /> Email: <a
+										href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
 								</address>
 							</div>
 						</div>
@@ -394,10 +352,13 @@
 		type="text/javascript"></script>
 	<!-- END CORE PLUGINS -->
 	<!-- BEGIN PAGE LEVEL PLUGINS -->
-	<script src="../assets/global/plugins/jquery.pulsate.min.js" type="text/javascript"></script>
-    <script src="../assets/global/plugins/jquery-bootpag/jquery.bootpag.min.js" type="text/javascript"></script>
-    <script src="../assets/global/plugins/holder.js" type="text/javascript"></script>
-    
+	<script src="../assets/global/plugins/jquery.pulsate.min.js"
+		type="text/javascript"></script>
+	<script
+		src="../assets/global/plugins/jquery-bootpag/jquery.bootpag.min.js"
+		type="text/javascript"></script>
+	<script src="../assets/global/plugins/holder.js" type="text/javascript"></script>
+
 	<script
 		src="../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"
 		type="text/javascript"></script>
@@ -414,9 +375,13 @@
 		type="text/javascript"></script>
 	<script src="../assets/pages/scripts/search.min.js"
 		type="text/javascript"></script>
-	 <script src="../assets/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
-     <script src="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
-	<script src="../assets/pages/scripts/ui-general.min.js" type="text/javascript"></script>
+	<script src="../assets/global/plugins/datatables/datatables.min.js"
+		type="text/javascript"></script>
+	<script
+		src="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js"
+		type="text/javascript"></script>
+	<script src="../assets/pages/scripts/ui-general.min.js"
+		type="text/javascript"></script>
 	<!-- END PAGE LEVEL SCRIPTS -->
 	<!-- BEGIN THEME LAYOUT SCRIPTS -->
 	<script src="../assets/layouts/layout3/scripts/layout.min.js"
@@ -427,7 +392,27 @@
 		type="text/javascript"></script>
 	<!-- END THEME LAYOUT SCRIPTS -->
 	<!-- BEGIN PAGE LEVEL SCRIPTS -->
-        <script src="../assets/pages/scripts/table-datatables-managed.min.js" type="text/javascript"></script>
-        <!-- END PAGE LEVEL SCRIPTS -->
+	<script src="../assets/pages/scripts/table-datatables-managed.min.js"
+		type="text/javascript"></script>
+	<!-- END PAGE LEVEL SCRIPTS -->
+
+	<script>
+      function initMap() {
+
+        var myLatLng = {lat: -33.890542, lng: 151.274856};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: myLatLng
+        });
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+        });
+      }
+    </script>
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUuudit4OFSnhG3ZVXncE3ThuiP6xo25s&callback=initMap">
+</script>
 </body>
 </html>

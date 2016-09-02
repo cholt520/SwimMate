@@ -58,11 +58,11 @@
 					<div class="page-header-top" style="margin-top:0px;">
 						<div class="container">
 							<!-- BEGIN LOGO -->
-							<div class="page-logo" style="height:100px;">
+							<div class="page-logo" >
 								<a href="index.action"> <img
-									src="../image/swimmate-logo-nobg.png" alt="logo"
+									src="../image/logo.jpg" alt="logo"
 									class="logo-default"
-									style="width:160px; height:98px; margin-top:2px;">
+									style="width:200px; height:60px; margin-top:10px;">
 								</a>
 							</div>
 							<!-- END LOGO -->
