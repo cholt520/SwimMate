@@ -141,7 +141,7 @@
 							<div class="content-section-a">
 								<div class="container">
 									<div class="row">
-										<div class="col-lg-5 col-sm-6">
+										<div class="col-lg-5 col-sm-6" >
 											<hr class="section-heading-spacer">
 											<div class="clearfix"></div>
 											<h2 class="section-heading">

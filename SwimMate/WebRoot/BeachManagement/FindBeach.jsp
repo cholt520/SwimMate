@@ -399,6 +399,7 @@
 		type="text/javascript"></script>
 	<!-- END PAGE LEVEL SCRIPTS -->
 
+<!-- Start Map Scripts -->
 	<script>
 		function initMap() {
 			var myLatLng = {
@@ -419,5 +420,6 @@
 	<script async defer
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUuudit4OFSnhG3ZVXncE3ThuiP6xo25s&callback=initMap">
 </script>
+<!-- End Map Scripts -->
 </body>
 </html>

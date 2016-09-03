@@ -26,6 +26,13 @@
 	href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css"
 	rel="stylesheet" type="text/css" />
 <!-- END GLOBAL MANDATORY STYLES -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<link href="../assets/global/plugins/select2/css/select2.min.css"
+	rel="stylesheet" type="text/css" />
+<link
+	href="../assets/global/plugins/select2/css/select2-bootstrap.min.css"
+	rel="stylesheet" type="text/css" />
+<!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN THEME GLOBAL STYLES -->
 <link href="../assets/global/css/components-rounded.min.css"
 	rel="stylesheet" id="style_components" type="text/css" />
@@ -41,8 +48,7 @@
 	rel="stylesheet" type="text/css" />
 <!-- END THEME LAYOUT STYLES -->
 <link rel="shortcut icon" href="favicon.ico" />
-</he
-ad>
+</head>
 <!-- END HEAD -->
 
 
@@ -123,61 +129,112 @@ ad>
 								<!-- END PAGE BREADCRUMBS -->
 								<!-- BEGIN PAGE CONTENT INNER -->
 								<div class="page-content-inner">
-								
+
+									<div class="row">
+										<div class="col-md-12">
+											<div class="portlet light">
+												<div class="portlet-title">
+													<div class="caption">
+														<i class="fa fa-search font-green"></i> <span
+															class="caption-subject font-green bold uppercase">Find
+															facilities for swimmer</span>
+													</div>
+												</div>
+												<div class="portlet-body">
+
+													<!-- Start Search Facility Bar -->
+													<div class="row">
+														<div class="col-md-12">
+															<div class="form-group">
+																<div class="input-group select2-bootstrap-prepend">
+																	<span class="input-group-btn">
+																		<button class="btn btn-default" type="button"
+																			data-select2-open="single-prepend-text">
+																			<span class="glyphicon glyphicon-search"></span>
+																		</button>
+																	</span> <select id="single-prepend-text"
+																		class="form-control select2">
+																		<option></option>
+																		<option value="A">Parking Place</option>
+																		<option value="B">Changing Room</option>
+																		<option value="C">Shower</option>
+																		<option value="C">Water Drinking</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+													</div>
+													<!-- End Search Facility Bar -->
+													<br />
+													<!-- Start Map -->
+													<div class="row">
+														<div class="col-md-12">
+															<div id="gmap_basic" class="gmaps">
+																<div id="map"
+																	style="height:100%;overflow:hidden;display:block;"></div>
+															</div>
+														</div>
+													</div>
+													<!-- End Map -->
+													<br /> <br />
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- END PAGE CONTENT INNER -->
 								</div>
-								<!-- END PAGE CONTENT INNER -->
+							</div>
+							<!-- END PAGE CONTENT BODY -->
+							<!-- END CONTENT BODY -->
+
+						</div>
+					</div>
+					<br /> <br />
+
+					<!-- END CONTENT -->
+				</div>
+				<!-- END CONTAINER -->
+			</div>
+		</div>
+		<div class="page-wrapper-row">
+			<div class="page-wrapper-bottom">
+				<!-- BEGIN FOOTER -->
+				<!-- BEGIN PRE-FOOTER -->
+				<div class="page-prefooter">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
+								<h2>About Us</h2>
+								<p>
+									C.A.R.T. Solutions <br /> -- Creativity, Aesthetics,
+									Robustness and good Technology.
+								</p>
+							</div>
+
+							<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
+								<h2>Contacts</h2>
+								<address class="margin-bottom-40">
+									Phone: 0400000000 <br /> Email: <a
+										href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
+								</address>
 							</div>
 						</div>
-						<!-- END PAGE CONTENT BODY -->
-						<!-- END CONTENT BODY -->
-
 					</div>
 				</div>
-				<br /> <br />
-
-				<!-- END CONTENT -->
-			</div>
-			<!-- END CONTAINER -->
-		</div>
-	</div>
-	<div class="page-wrapper-row">
-		<div class="page-wrapper-bottom">
-			<!-- BEGIN FOOTER -->
-			<!-- BEGIN PRE-FOOTER -->
-			<div class="page-prefooter">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
-							<h2>About Us</h2>
-							<p>
-								C.A.R.T. Solutions <br /> -- Creativity, Aesthetics, Robustness
-								and good Technology.
-							</p>
-						</div>
-
-						<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
-							<h2>Contacts</h2>
-							<address class="margin-bottom-40">
-								Phone: 0400000000 <br /> Email: <a
-									href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
-							</address>
-						</div>
+				<!-- END PRE-FOOTER -->
+				<!-- BEGIN INNER FOOTER -->
+				<div class="page-footer">
+					<div class="container">
+						2016 &copy; Swim Mate By <a target="_blank" href="index.action">C.A.R.T.
+							Solutions</a>
 					</div>
 				</div>
-			</div>
-			<!-- END PRE-FOOTER -->
-			<!-- BEGIN INNER FOOTER -->
-			<div class="page-footer">
-				<div class="container">
-					2016 &copy; Swim Mate By <a target="_blank" href="index.action">C.A.R.T.
-						Solutions</a>
+				<div class="scroll-to-top">
+					<i class="icon-arrow-up"></i>
 				</div>
+				<!-- END INNER FOOTER -->
+				<!-- END FOOTER -->
 			</div>
-			<div class="scroll-to-top">
-				<i class="icon-arrow-up"></i>
-			</div>
-			<!-- END INNER FOOTER -->
-			<!-- END FOOTER -->
 		</div>
 	</div>
 
@@ -209,5 +266,36 @@ ad>
 	<script src="../assets/layouts/global/scripts/quick-sidebar.min.js"
 		type="text/javascript"></script>
 	<!-- END THEME LAYOUT SCRIPTS -->
+	<!-- BEGIN PAGE LEVEL PLUGINS -->
+	<script src="../assets/global/plugins/select2/js/select2.full.min.js"
+		type="text/javascript"></script>
+	<!-- END PAGE LEVEL PLUGINS -->
+	<!-- BEGIN PAGE LEVEL SCRIPTS -->
+	<script src="../assets/pages/scripts/components-select2.min.js"
+		type="text/javascript"></script>
+	<!-- END PAGE LEVEL SCRIPTS -->
+
+	<!-- Start Map Scripts -->
+	<script>
+		function initMap() {
+			var myLatLng = {
+				lat : -33.890542,
+				lng : 151.274856
+			};
+	
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom : 12,
+				center : myLatLng
+			});
+			var marker = new google.maps.Marker({
+				position : myLatLng,
+				map : map,
+			});
+		}
+	</script>
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUuudit4OFSnhG3ZVXncE3ThuiP6xo25s&callback=initMap">
+</script>
+	<!-- End Map Scripts -->
 </body>
 </html>
