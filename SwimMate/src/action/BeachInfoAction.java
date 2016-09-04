@@ -6,10 +6,12 @@ import java.util.List;
 import com.opensymphony.xwork2.ModelDriven;
 
 import entity.Beach;
+import entity.Facility;
 import entity.Recommandation;
 import entity.Weather;
 import entity.Wind;
 import service.BeachService;
+import service.FacilityService;
 import service.WeatherService;
 
 public class BeachInfoAction implements ModelDriven{
@@ -26,7 +28,25 @@ public class BeachInfoAction implements ModelDriven{
 	private Weather weather;
 	private Wind wind;
 	private Recommandation recommandation;
+	private FacilityService facilityService;
+	private Facility facility;
 	
+	public Facility getFacility() {
+		return facility;
+	}
+
+	public void setFacility(Facility facility) {
+		this.facility = facility;
+	}
+
+	public FacilityService getFacilityService() {
+		return facilityService;
+	}
+
+	public void setFacilityService(FacilityService facilityService) {
+		this.facilityService = facilityService;
+	}
+
 	public Wind getWind() {
 		return wind;
 	}
@@ -54,11 +74,12 @@ public class BeachInfoAction implements ModelDriven{
 	public String execute(){
 		try {
 			currentBeach = beachService.getBeachById(id);
-			System.out.println(id);
+			//System.out.println(id);
 			Weather weatherInF = weatherService.getWeatherByBeach(currentBeach);
 			weather = weatherService.changeTempToC(weatherInF);
 			wind = weather.getWind();
 			recommandation = beachService.getRecommandationByWaterTemp(weather.getTemp());
+			facility = facilityService.findFacilityByBeachID(id);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -409,10 +409,10 @@
 	
 		function initMap() {
 			var map = new google.maps.Map(document.getElementById('mapFindBeachByState'), {
-				zoom : 10,
+				zoom : 5,
 				center : {
-					lat : -33.9,
-					lng : 151.2
+					lat : -33,
+					lng : 148.2
 				}
 			});
 	

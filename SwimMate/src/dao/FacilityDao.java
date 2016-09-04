@@ -11,5 +11,5 @@ public interface FacilityDao {
 	public void addFacility(Facility facility);
 	public void modifyFacility(Facility facility);
 	public List<Facility> getFacilityByName(String name);
-
+    public Facility findFacilityByBeachID(int id);
 }

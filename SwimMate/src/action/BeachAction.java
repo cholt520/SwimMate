@@ -69,6 +69,7 @@ private static final long serialVersionUID = 1L;
 	public String getBeachByState() {
 		try {
 			beachList = beachService.getBeachByState(selectedState);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -188,7 +188,6 @@
 																	</p>
 																	<div class="row">
 																		<div class="col-md-6">
-
 																			<h4 class="font-green-sharp">
 																				<i class="fa fa-sun-o font-green-sharp" /></i> Weather
 																			</h4>
@@ -224,6 +223,26 @@
 																				Water Quality
 																			</h4>
 																			<p>N/A</p>
+																		</div>
+																		<div class="col-md-6">
+																			<h4 class="font-green-sharp">
+																				<i class="fa fa-info-circle font-green-sharp" /></i>
+																				Facilities
+																			</h4>
+																			<p>
+																			Parking place:
+																			<s:property value="facility.parking" />
+																			<br/>
+																			Changing Room:
+																			<s:property value="facility.babychange" />
+																			<br/>
+																			Shower:
+																			<s:property value="facility.showers" />
+																			<br/>
+																			Water Drinking:
+																			<s:property value="facility.drinkingwater" />
+																			<br/>
+																			</p>
 																		</div>
 																	</div>
 																</div>
