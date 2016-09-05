@@ -111,7 +111,7 @@ public class WeatherServiceImpl implements WeatherService{
 
 	@Override
 	public Weather changeTempToC(Weather weather) {
-		double tempC = (weather.getTemp()-249)/1.8; 
+		double tempC = (weather.getTemp()-273.15); 
 		BigDecimal   b   =   new   BigDecimal(tempC);  
 		double   tempreture   =   b.setScale(2,   BigDecimal.ROUND_HALF_UP).doubleValue();  
 		weather.setTemp(tempreture);

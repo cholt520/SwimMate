@@ -21,7 +21,7 @@ public class BeachDaoImpl extends HibernateDaoSupport implements BeachDao{
         return (List<Beach>) template.execute(new HibernateCallback() {
             public Object doInHibernate(Session session) throws HibernateException {
                 Query query = session.createQuery("from Beach");
-                query.setMaxResults(35);
+                query.setMaxResults(534);
                 query.setFirstResult(0);
                 return query.list();
             }

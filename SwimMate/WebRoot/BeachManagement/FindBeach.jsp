@@ -234,7 +234,7 @@
 												<div class="portlet light ">
 													<div class="portlet-body">
 														<div id="gmap_basic" class="gmaps">
-															<div id="mapFindBeachByState"
+															<div id="map"
 																style="height:100%;overflow:hidden;display:block;"></div>
 														</div>
 													</div>
@@ -403,36 +403,29 @@
 	<!-- Start Map Scripts -->
 	<script>
 	
-		// The following example creates complex markers to indicate beaches near
-	// Sydney, NSW, Australia. Note that the anchor is set to (0,32) to correspond
-	// to the base of the flagpole.
-	
 		function initMap() {
-			var map = new google.maps.Map(document.getElementById('mapFindBeachByState'), {
-				zoom : 5,
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom : 4,
 				center : {
-					lat : -33,
-					lng : 148.2
+					lat : -29,
+					lng : 140.2
 				}
 			});
 	
 			setMarkers(map);
 		}
-	
 		// Data for the markers consisting of a name, a LatLng and a zIndex for the
 		// order in which these markers should display on top of each other.
 		var beaches = [];
 		<s:iterator value="beachList" status="userStatus">
-			var latitude = '<s:property value="latitude"/>';
-			var latitude1 = parseFloat(latitude);
-			var longitude = '<s:property value="longitude"/>';
-			var longitude1 = parseFloat(longitude);
-				     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
-				    </s:iterator>
+				var latitude = '<s:property value="latitude"/>';
+				var latitude1 = parseFloat(latitude);
+				var longitude = '<s:property value="longitude"/>';
+				var longitude1 = parseFloat(longitude);
+	     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
+	    </s:iterator>
 	
-	
-	    /* window.alert(beaches.length); */
-	
+	   
 		function setMarkers(map) {
 			// Adds markers to the map.
 	
@@ -465,7 +458,6 @@
 						lng : beach[2]
 					},
 					map : map,
-					icon : image,
 					shape : shape,
 					title : beach[0],
 					zIndex : beach[3]

@@ -17,7 +17,7 @@
 		</action>
 		
 		<action name="getFacility" class="action.FacilityAction" method="getFacility" >
-			<result>/BeachManagement/Facility.jsp</result>
+			<result>/BeachManagement/FindFacility.jsp</result>
 		</action>
 		
 		<action name="Patrol">

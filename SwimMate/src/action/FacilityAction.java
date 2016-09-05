@@ -22,7 +22,11 @@ public class FacilityAction {
 		}
 		
 		public String getFacility(){
-			facilitiesList = facilityService.getFacilityByName(facilityName);
+			try {
+				facilitiesList = facilityService.getFacilityByName(facilityName);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			return "success";
 		}
 
