@@ -18,6 +18,8 @@
       <property name="drinkingwater" column="drinkingwater" type="string"/>
       <property name="latitude" column="latitude" type="double"/>
       <property name="longitude" column="longitude" type="double"/>
+      <property name="patrolled" column="patrolled" type="string"/>
+      
           
    </class>
 </hibernate-mapping>
