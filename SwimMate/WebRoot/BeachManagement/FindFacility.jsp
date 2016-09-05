@@ -291,13 +291,6 @@
 		// Data for the markers consisting of a name, a LatLng and a zIndex for the
 		// order in which these markers should display on top of each other.
 		var beaches = [];
-		<s:iterator value="facilitiesList" status="userStatus">
-				var latitude = '<s:property value="latitude"/>';
-				var latitude1 = parseFloat(latitude);
-				var longitude = '<s:property value="longitude"/>';
-				var longitude1 = parseFloat(longitude);
-	     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
-	    </s:iterator>
 	
 	   
 		function setMarkers(map) {

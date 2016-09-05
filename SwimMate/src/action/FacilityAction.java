@@ -9,8 +9,16 @@ public class FacilityAction {
 		private FacilityService facilityService;
 		
 		private List<Facility> facilitiesList;
-		
+		private String selectedFacility = "";
 		private String facilityName = "";
+		
+		public String getSelectedFacility() {
+			return selectedFacility;
+		}
+
+		public void setSelectedFacility(String selectedFacility) {
+			this.selectedFacility = selectedFacility;
+		}
 		
 		public String execute(){
 			try {
