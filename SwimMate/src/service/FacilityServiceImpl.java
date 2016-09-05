@@ -50,4 +50,9 @@ public class FacilityServiceImpl implements FacilityService{
 		return facilityDao.findFacilityByBeachID(id);
 	}
 
+	@Override
+	public List<Facility> getBeachByFacility(String selectedFacility) {
+		return facilityDao.getBeachByFacility(selectedFacility);
+	}
+
 }

@@ -158,10 +158,10 @@
 																		<select id="single-prepend-text" 
 																		class="form-control select2" name="selectedFacility">
 																		<option></option>
-																		<option  value="Parking Place">Parking Place</option>
-																		<option value="Changing Room">Changing Room</option>
-																		<option value="Shower">Shower</option>
-																		<option value="Water Drinking">Water Drinking</option>
+																		<option  value="parking">Parking Place</option>
+																		<option value="babychange">Changing Room</option>
+																		<option value="showers">Shower</option>
+																		<option value="drinkingwater">Water Drinking</option>
 																	</select> 
 																	</div>
 																</s:form>

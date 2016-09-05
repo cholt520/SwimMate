@@ -49,10 +49,17 @@ public class FacilityDaoImpl extends HibernateDaoSupport implements FacilityDao 
 	public List<Facility> getFacilityByName(String name) {
 		return (List<Facility>)getHibernateTemplate().find("from Facility as facility where facility.name like '%" + name + "%'");
 	}
+	
+	
 
 	@Override
 	public Facility findFacilityByBeachID(int id) {
 		return (Facility) getHibernateTemplate().find("from Facility where id=" + id).get(0);
+	}
+
+	@Override
+	public List<Facility> getBeachByFacility(String selectedFacility) {
+		return (List<Facility>)getHibernateTemplate().find("from Facility as facility where facility." + selectedFacility + " like '%TRUE%'");
 	}
 
 }

@@ -33,8 +33,6 @@ public class FacilityAction{
 		public String getFacility(){
 			try {
 				facilitiesList = facilityService.getAllFacility();
-				System.out.println(facilitiesList.size());
-				//facilitiesList = facilityService.getFacilityByName(facilityName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -44,10 +42,7 @@ public class FacilityAction{
 		//Find beach by facility
 		public String findBeachByFacility() {
 			try {
-				facilitiesList = facilityService.getAllFacility();
-				System.out.println(facilitiesList.size());
-				System.out.println(selectedFacility);
-				//facilitiesList = facilityService.getFacilityByName(facilityName);
+				facilitiesList = facilityService.getBeachByFacility(selectedFacility);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
