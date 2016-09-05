@@ -84,7 +84,8 @@ public class BeachInfoAction implements ModelDriven{
 			wind = weather.getWind();
 			recommandation = beachService.getRecommandationByWaterTemp(weather.getTemp());
 			facility = facilityService.findFacilityByBeachID(id);
-			tide = tideService.getTideByBeach(currentBeach);
+			Tide tide1 = tideService.getTideByBeach(currentBeach);
+			tide = tideService.changeTideData(tide1);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

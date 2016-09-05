@@ -5,4 +5,5 @@ import entity.Tide;
 
 public interface TideService {
 	public Tide getTideByBeach(Beach beach);
+	public Tide changeTideData(Tide tide);
 }

@@ -5,7 +5,7 @@ import java.util.List;
 import entity.Facility;
 import service.FacilityService;
 
-public class FacilityAction {
+public class FacilityAction{
 		private FacilityService facilityService;
 		
 		private List<Facility> facilitiesList;
@@ -29,15 +29,31 @@ public class FacilityAction {
 			return "success";
 		}
 		
+		//FindFacility initial page
 		public String getFacility(){
 			try {
-				facilitiesList = facilityService.getFacilityByName(facilityName);
+				facilitiesList = facilityService.getAllFacility();
+				System.out.println(facilitiesList.size());
+				//facilitiesList = facilityService.getFacilityByName(facilityName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			return "success";
 		}
 
+		//Find beach by facility
+		public String findBeachByFacility() {
+			try {
+				facilitiesList = facilityService.getAllFacility();
+				System.out.println(facilitiesList.size());
+				System.out.println(selectedFacility);
+				//facilitiesList = facilityService.getFacilityByName(facilityName);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return "success";
+		}
+		
 		public FacilityService getFacilityService() {
 			return facilityService;
 		}

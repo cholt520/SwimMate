@@ -3,9 +3,13 @@ package service;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.math.BigDecimal;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
@@ -53,24 +57,22 @@ public class TideServiceImpl implements TideService{
 			
 			tide = tideList.get(0);
 			
-
-			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return tide;
 	}
-	
-	public static void main(String[] args){
-		TideServiceImpl t = new TideServiceImpl();
-		Beach beach = new Beach();
-		beach.setLatitude("-31.921836");
-		beach.setLongitude("115.9502062");
-		Tide tide = t.getTideByBeach(beach);
-		System.out.println(tide.getHeight());
-		System.out.println(tide.getDt());
-		System.out.println(tide.getDate());
-		
-	}
 
+	@Override
+	public Tide changeTideData(Tide tide) {
+		double height = tide.getHeight();
+		BigDecimal   b   =   new   BigDecimal(height);  
+		double   height1   =   b.setScale(2,   BigDecimal.ROUND_HALF_UP).doubleValue();  
+		tide.setHeight(height1);
+		
+		String originalString = tide.getDate();
+		String [] date = originalString.split("T");
+		tide.setDate(date[0]);
+		return tide;
+	}
 }

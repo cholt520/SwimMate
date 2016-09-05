@@ -98,7 +98,7 @@
 									<li class="active"><a href="beach.action"> Find Beach
 									</a></li>
 
-									<li class=""><a href="FindFacility.jsp "> Find
+									<li class=""><a href="getFacility.action "> Find
 											Facility </a></li>
 
 								</ul>

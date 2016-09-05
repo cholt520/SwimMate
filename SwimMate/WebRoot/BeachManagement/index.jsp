@@ -89,7 +89,7 @@
 									</li>
 									
 									<li class="">
-										<a href="FindFacility.jsp " > Find Facility 
+										<a href="getFacility.action " > Find Facility 
 										</a>
 									</li>
 								</ul>

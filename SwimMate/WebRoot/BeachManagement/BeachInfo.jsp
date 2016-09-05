@@ -95,7 +95,7 @@
 									<li class="active"><a href="beach.action"> Find Beach
 									</a></li>
 
-									<li class=""><a href="FindFacility.jsp "> Find Facility </a></li>
+									<li class=""><a href="getFacility.action "> Find Facility </a></li>
 
 								</ul>
 							</div>
@@ -203,16 +203,18 @@
 																		</div>
 																		<div class="col-md-6">
 																			<h4 class="font-green-sharp">
-																				<i class="fa fa-flag font-green-sharp" /></i> Wind
+																				<i class="fa fa-flag font-green-sharp" /></i> Tide
 																			</h4>
 																			<p>
-																				Speed:
-																				<s:property value="wind.speed" />
-																				<br /> Degree:
-																				<s:property value="wind.deg" />
-																				<br /> Gust:
-																				<s:property value="wind.gust" />
-																				<br />
+																				Daylight Times:
+																				<s:property value="tide.dt" />
+																				<br /> Height:
+																				<s:property value="tide.height" />
+																				m
+																				<br /> Update Date:
+																				<s:property value="tide.date" />
+																				<br /> Type:
+																				<s:property value="tide.type" />
 																			</p>
 																		</div>
 																	</div>

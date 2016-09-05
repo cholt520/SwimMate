@@ -16,8 +16,8 @@
 			<result>/BeachManagement/Training.jsp</result>
 		</action>
 		
-		<action name="Facility" class="action.FacilityAction" method="execute" >
-			<result>/BeachManagement/Facility.jsp</result>
+		<action name="findBeachByFacility" class="action.FacilityAction" method="findBeachByFacility" >
+			<result>/BeachManagement/FindFacility.jsp</result>
 		</action>
 		
 		<action name="getFacility" class="action.FacilityAction" method="getFacility" >

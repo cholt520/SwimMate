@@ -25,7 +25,7 @@ public class FacilityDaoImpl extends HibernateDaoSupport implements FacilityDao 
         return (List<Facility>) template.execute(new HibernateCallback() {
             public Object doInHibernate(Session session) throws HibernateException {
                 Query query = session.createQuery("from Facility");
-                query.setMaxResults(10);
+                query.setMaxResults(534);
                 query.setFirstResult(0);
                 return query.list();
             }

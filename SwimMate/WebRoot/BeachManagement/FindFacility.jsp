@@ -85,7 +85,7 @@
 
 									<li class=""><a href="beach.action"> Find Beach </a></li>
 
-									<li class="active"><a href="FindFacility.jsp"> Find
+									<li class="active"><a href="getFacility.action"> Find
 											Facility </a></li>
 								</ul>
 							</div>
@@ -146,21 +146,25 @@
 													<div class="row">
 														<div class="col-md-12">
 															<div class="form-group">
-																<div class="input-group select2-bootstrap-prepend">
-																	<span class="input-group-btn">
-																		<button class="btn btn-default" type="button"
-																			data-select2-open="single-prepend-text">
-																			<span class="glyphicon glyphicon-search"></span>
-																		</button>
-																	</span> <select id="single-prepend-text"
-																		class="form-control select2">
+																<s:form action="findBeachByFacility.action"
+																	namespace="/">
+																	<div class="input-group select2-bootstrap-prepend">
+																		<span class="input-group-btn">
+																			<button class="btn btn-default" 
+																				data-select2-open="single-prepend-text" type="submit">
+																				<span class="glyphicon glyphicon-search"></span>
+																			</button>
+																		</span>
+																		<select id="single-prepend-text" 
+																		class="form-control select2" name="selectedFacility">
 																		<option></option>
-																		<option value="P">Parking Place</option>
-																		<option value="C">Changing Room</option>
-																		<option value="S">Shower</option>
-																		<option value="W">Water Drinking</option>
-																	</select>
-																</div>
+																		<option  value="Parking Place">Parking Place</option>
+																		<option value="Changing Room">Changing Room</option>
+																		<option value="Shower">Shower</option>
+																		<option value="Water Drinking">Water Drinking</option>
+																	</select> 
+																	</div>
+																</s:form>
 															</div>
 														</div>
 													</div>
@@ -290,9 +294,17 @@
 		}
 		// Data for the markers consisting of a name, a LatLng and a zIndex for the
 		// order in which these markers should display on top of each other.
-		var beaches = [];
+		var facilities = [];
+		<s:iterator value="facilitiesList" status="userStatus">
+					var latitude = '<s:property value="latitude"/>';
+					var latitude1 = parseFloat(latitude);
+					var longitude = '<s:property value="longitude"/>';
+					var longitude1 = parseFloat(longitude);
+		     	facilities.push(['<s:property value="name"/>',latitude1,longitude1]);
+		    </s:iterator>
 	
-	   
+		/* window.alert(facilities.length); */
+	
 		function setMarkers(map) {
 			// Adds markers to the map.
 	
@@ -317,17 +329,17 @@
 				coords : [ 1, 1, 1, 20, 18, 20, 18, 1 ],
 				type : 'poly'
 			};
-			for (var i = 0; i < beaches.length; i++) {
-				var beach = beaches[i];
+			for (var i = 0; i < facilities.length; i++) {
+				var facility = facilities[i];
 				var marker = new google.maps.Marker({
 					position : {
-						lat : beach[1],
-						lng : beach[2]
+						lat : facility[1],
+						lng : facility[2]
 					},
 					map : map,
 					shape : shape,
-					title : beach[0],
-					zIndex : beach[3]
+					title : facility[0],
+					zIndex : facility[3]
 				});
 			}
 		}

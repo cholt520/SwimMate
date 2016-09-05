@@ -12,5 +12,4 @@ public interface WeatherService {
 	public Weather modifyWeather(Weather weather);
 	public void deleteWeatherById(int id);
 	public Weather changeTempToC(Weather weather);
-	//klgdjlgflgjfldj
 }
