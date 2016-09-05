@@ -11,6 +11,8 @@ public class Facility {
 	private String drinkingwater;
 	private double latitude;
 	private double longitude;
+	private String patrolled;
+	
 	public int getId() {
 		return id;
 	}
@@ -71,5 +73,12 @@ public class Facility {
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
 	}
+	public String getPatrolled() {
+		return patrolled;
+	}
+	public void setPatrolled(String patrolled) {
+		this.patrolled = patrolled;
+	}
+	
 	
 }
