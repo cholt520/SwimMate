@@ -1,11 +1,10 @@
 package entity;
 
-import java.util.Date;
 
 public class Tide {
 	private double dt;
 	private double height;
-	private Date date;
+	private String date;
 	private String type;
 	
 	public double getDt() {
@@ -14,18 +13,19 @@ public class Tide {
 	public void setDt(double dt) {
 		this.dt = dt;
 	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
 	public double getHeight() {
 		return height;
 	}
 	public void setHeight(double height) {
 		this.height = height;
 	}
-	public Date getDate() {
-		return date;
-	}
-	public void setDate(Date date) {
-		this.date = date;
-	}
+
 	public String getType() {
 		return type;
 	}

@@ -8,10 +8,12 @@ import com.opensymphony.xwork2.ModelDriven;
 import entity.Beach;
 import entity.Facility;
 import entity.Recommandation;
+import entity.Tide;
 import entity.Weather;
 import entity.Wind;
 import service.BeachService;
 import service.FacilityService;
+import service.TideService;
 import service.WeatherService;
 
 public class BeachInfoAction implements ModelDriven{
@@ -30,6 +32,8 @@ public class BeachInfoAction implements ModelDriven{
 	private Recommandation recommandation;
 	private FacilityService facilityService;
 	private Facility facility;
+	private TideService tideService;
+	private Tide tide;
 	
 	public Facility getFacility() {
 		return facility;
@@ -80,6 +84,7 @@ public class BeachInfoAction implements ModelDriven{
 			wind = weather.getWind();
 			recommandation = beachService.getRecommandationByWaterTemp(weather.getTemp());
 			facility = facilityService.findFacilityByBeachID(id);
+			tide = tideService.getTideByBeach(currentBeach);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -117,5 +122,25 @@ public class BeachInfoAction implements ModelDriven{
 	public void setRecommandation(Recommandation recommandation) {
 		this.recommandation = recommandation;
 	}
+
+	public TideService getTideService() {
+		return tideService;
+	}
+
+	public void setTideService(TideService tideService) {
+		this.tideService = tideService;
+	}
+
+	public Tide getTide() {
+		return tide;
+	}
+
+	public void setTide(Tide tide) {
+		this.tide = tide;
+	}
+	
+	
+	
+	
 	
 }

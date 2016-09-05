@@ -5,6 +5,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Properties;
 
 import com.google.gson.Gson;
@@ -41,14 +43,16 @@ public class TideServiceImpl implements TideService{
 			HttpURLConnection request = (HttpURLConnection) url.openConnection();
 			request.connect();
 			JsonParser jp = new JsonParser();
-			JsonElement jelement = jp.parse(new InputStreamReader((InputStream) request.getContent()));
-			JsonArray tidearray = jelement.getAsJsonArray();
-			JsonObject tideJson   = tidearray.get(0).getAsJsonObject();
-			
+
+			JsonObject rootObejct = jp.parse(new InputStreamReader((InputStream) request.getContent())).getAsJsonObject();
+			JsonElement je = rootObejct.get("heights");
 			
 			Gson tideGson = new Gson();
-			tide = tideGson.fromJson(tideJson, Tide.class);
-
+			List<Tide> tideList = Arrays.asList(tideGson.fromJson(je,
+					Tide[].class));
+			
+			tide = tideList.get(0);
+			
 
 			
 		} catch (IOException e) {
@@ -64,6 +68,8 @@ public class TideServiceImpl implements TideService{
 		beach.setLongitude("115.9502062");
 		Tide tide = t.getTideByBeach(beach);
 		System.out.println(tide.getHeight());
+		System.out.println(tide.getDt());
+		System.out.println(tide.getDate());
 		
 	}
 
