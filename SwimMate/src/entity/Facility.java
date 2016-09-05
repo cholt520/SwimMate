@@ -3,16 +3,23 @@ package entity;
 public class Facility {
 	private int id;
 	private String name;
-	private String address;
+//	private String address;
 	private String state;
 	private String parking;
 	private String babychange;
 	private String showers;
 	private String drinkingwater;
+	private String toilet;
+	private String patrolled;
 	private double latitude;
 	private double longitude;
-	private String patrolled;
 	
+	public String getToilet() {
+		return toilet;
+	}
+	public void setToilet(String toilet) {
+		this.toilet = toilet;
+	}
 	public int getId() {
 		return id;
 	}
@@ -25,12 +32,12 @@ public class Facility {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
+//	public String getAddress() {
+//		return address;
+//	}
+//	public void setAddress(String address) {
+//		this.address = address;
+//	}
 	public String getState() {
 		return state;
 	}
@@ -79,6 +86,4 @@ public class Facility {
 	public void setPatrolled(String patrolled) {
 		this.patrolled = patrolled;
 	}
-	
-	
 }

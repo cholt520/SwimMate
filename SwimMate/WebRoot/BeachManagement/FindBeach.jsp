@@ -100,7 +100,8 @@
 
 									<li class=""><a href="getFacility.action "> Find
 											Facility </a></li>
-
+											
+									<li class=""><a href="Tips.jsp "> Swim Tips </a></li>
 								</ul>
 							</div>
 							<!-- END MEGA MENU -->
@@ -418,14 +419,14 @@
 		// order in which these markers should display on top of each other.
 		var beaches = [];
 		<s:iterator value="beachList" status="userStatus">
-				var latitude = '<s:property value="latitude"/>';
-				var latitude1 = parseFloat(latitude);
-				var longitude = '<s:property value="longitude"/>';
-				var longitude1 = parseFloat(longitude);
-	     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
-	    </s:iterator>
+					var latitude = '<s:property value="latitude"/>';
+					var latitude1 = parseFloat(latitude);
+					var longitude = '<s:property value="longitude"/>';
+					var longitude1 = parseFloat(longitude);
+		     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
+		    </s:iterator>
 	
-	   
+	
 		function setMarkers(map) {
 			// Adds markers to the map.
 	

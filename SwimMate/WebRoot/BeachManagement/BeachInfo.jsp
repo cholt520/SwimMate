@@ -68,9 +68,8 @@
 						<div class="container">
 							<!-- BEGIN LOGO -->
 							<div class="page-logo">
-								<a href="index.action"> <img
-									src="../image/logo_green.jpg" alt="logo"
-									class="logo-default"
+								<a href="index.action"> <img src="../image/logo_green.jpg"
+									alt="logo" class="logo-default"
 									style="width:230px; height:45px; margin-top:18px;">
 								</a>
 							</div>
@@ -95,8 +94,10 @@
 									<li class="active"><a href="beach.action"> Find Beach
 									</a></li>
 
-									<li class=""><a href="getFacility.action "> Find Facility </a></li>
-
+									<li class=""><a href="getFacility.action "> Find
+											Facility </a></li>
+											
+									<li class=""><a href="Tips.jsp "> Swim Tips </a></li>
 								</ul>
 							</div>
 							<!-- END MEGA MENU -->
@@ -210,8 +211,7 @@
 																				<s:property value="tide.dt" />
 																				<br /> Height:
 																				<s:property value="tide.height" />
-																				m
-																				<br /> Update Date:
+																				m <br /> Update Date:
 																				<s:property value="tide.date" />
 																				<br /> Type:
 																				<s:property value="tide.type" />
@@ -232,18 +232,19 @@
 																				Facilities
 																			</h4>
 																			<p>
-																			Parking place:
-																			<s:property value="facility.parking" />
-																			<br/>
-																			Changing Room:
-																			<s:property value="facility.babychange" />
-																			<br/>
-																			Shower:
-																			<s:property value="facility.showers" />
-																			<br/>
-																			Water Drinking:
-																			<s:property value="facility.drinkingwater" />
-																			<br/>
+																				Parking place:
+																				<s:property value="facility.parking" />
+																				<br /> Changing Room:
+																				<s:property value="facility.babychange" />
+																				<br /> Shower:
+																				<s:property value="facility.showers" />
+																				<br /> Water Drinking:
+																				<s:property value="facility.drinkingwater" />
+																				<br /> Toilet:
+																				<s:property value="facility.toilet" />
+																				<br /> Patrol:
+																				<s:property value="facility.patrolled" />
+																				<br />
 																			</p>
 																		</div>
 																	</div>
@@ -261,11 +262,9 @@
 																	<h4 class="font-green-sharp">
 																		<i class="fa fa-tag font-green-sharp" /></i> Suggestion
 																	</h4>
-																	<p>
-																		For swimming this is considered cold and even the most
-																		hardy among us would find any more than a few minutes
-																		in the water uncomfortable.
-																	</p>
+																	<p>For swimming this is considered cold and even
+																		the most hardy among us would find any more than a few
+																		minutes in the water uncomfortable.</p>
 																</div>
 															</div>
 														</div>

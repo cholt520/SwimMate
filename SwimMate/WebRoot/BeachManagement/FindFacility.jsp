@@ -87,6 +87,8 @@
 
 									<li class="active"><a href="getFacility.action"> Find
 											Facility </a></li>
+
+									<li class=""><a href="Tips.jsp "> Swim Tips </a></li>
 								</ul>
 							</div>
 							<!-- END MEGA MENU -->
@@ -150,19 +152,21 @@
 																	namespace="/">
 																	<div class="input-group select2-bootstrap-prepend">
 																		<span class="input-group-btn">
-																			<button class="btn btn-default" 
-																				data-select2-open="single-prepend-text" type="submit">
+																			<button class="btn btn-default"
+																				data-select2-open="single-prepend-text"
+																				type="submit">
 																				<span class="glyphicon glyphicon-search"></span>
 																			</button>
-																		</span>
-																		<select id="single-prepend-text" 
-																		class="form-control select2" name="selectedFacility">
-																		<option></option>
-																		<option  value="parking">Parking Place</option>
-																		<option value="babychange">Changing Room</option>
-																		<option value="showers">Shower</option>
-																		<option value="drinkingwater">Water Drinking</option>
-																	</select> 
+																		</span> <select id="single-prepend-text"
+																			class="form-control select2" name="selectedFacility">
+																			<option></option>
+																			<option value="parking">Parking Place</option>
+																			<option value="babychange">Changing Room</option>
+																			<option value="showers">Shower</option>
+																			<option value="drinkingwater">Water Drinking</option>
+																			<option value="toilet">Toilet</option>
+																			<option value="patrolled">Patrol</option>
+																		</select>
 																	</div>
 																</s:form>
 															</div>
@@ -296,12 +300,12 @@
 		// order in which these markers should display on top of each other.
 		var facilities = [];
 		<s:iterator value="facilitiesList" status="userStatus">
-					var latitude = '<s:property value="latitude"/>';
-					var latitude1 = parseFloat(latitude);
-					var longitude = '<s:property value="longitude"/>';
-					var longitude1 = parseFloat(longitude);
-		     	facilities.push(['<s:property value="name"/>',latitude1,longitude1]);
-		    </s:iterator>
+						var latitude = '<s:property value="latitude"/>';
+						var latitude1 = parseFloat(latitude);
+						var longitude = '<s:property value="longitude"/>';
+						var longitude1 = parseFloat(longitude);
+			     	facilities.push(['<s:property value="name"/>',latitude1,longitude1]);
+			    </s:iterator>
 	
 		/* window.alert(facilities.length); */
 	

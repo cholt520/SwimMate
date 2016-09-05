@@ -58,9 +58,10 @@
 					<div class="page-header-top" style="margin-top:0px;">
 						<div class="container">
 							<!-- BEGIN LOGO -->
-							<div class="page-logo">
-								<a href="index.action"> <img src="../image/logo_green.jpg"
-									alt="logo" class="logo-default"
+							<div class="page-logo" >
+								<a href="index.action"> <img
+									src="../image/logo_green.jpg" alt="logo"
+									class="logo-default"
 									style="width:230px; height:45px; margin-top:18px;">
 								</a>
 							</div>
@@ -77,13 +78,25 @@
 							<!-- BEGIN MEGA MENU -->
 							<div class="hor-menu ">
 								<ul class="nav navbar-nav">
-									<li class="active"><a href="index.action"> Home </a></li>
-
-									<li class=""><a href="beach.action"> Find Beach </a></li>
-
-									<li class=""><a href="getFacility.action "> Find
-											Facility </a></li>
-									<li class=""><a href="Tips.jsp "> Swim Tips </a></li>
+									<li class="">
+										<a href="index.action" > Home 
+										</a>
+									</li>
+									
+									<li class="">
+										<a href="beach.action" > Find Beach 
+										</a>
+									</li>
+									
+									<li class="">
+										<a href="getFacility.action " > Find Facility 
+										</a>
+									</li>
+									
+									<li class="active">
+										<a href="Tips.jsp " > Swim Tips 
+										</a>
+									</li>
 								</ul>
 							</div>
 							<!-- END MEGA MENU -->
@@ -100,103 +113,11 @@
 				<div class="page-container">
 					<!-- BEGIN CONTENT -->
 					<div class="page-content-wrapper">
-						<div class="intro-header">
-							<div class="container">
-								<div class="row">
-									<div class="col-lg-12">
-										<div class="intro-message">
-											<h1>Welcome to SwimMate</h1>
-											<h3>Find your ideal beach to swim</h3>
-											<br />
-											<hr />
-											<p>
-												The SwimMate website is designed for people like to swim at
-												the beach in Australia. It benefits swimmers in<br />
-												Australia to find beast beaches nearby based on different
-												criteria like water quality, tide information,<br />
-												weather updates, marine dangers and patrol Information.
-											</p>
-											<br />
-											<h2>
-												<a href="beach.action" class="font-white"> <i
-													class="fa fa-search"></i> Get Started
-												</a>
-											</h2>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-
-						<div class="page-content">
-							<div class="content-section-a">
-								<div class="container">
-									<div class="row">
-										<div class="col-lg-5 col-sm-6">
-											<hr class="section-heading-spacer">
-											<div class="clearfix"></div>
-											<h2 class="section-heading">
-												<a href="beach.action" class="font-dark"> Finding an
-													ideal beach </a>
-											</h2>
-											<p class="lead">It is quite normal for people in
-												Australia to swim at the beach. SwimMate can provide a range
-												of beach information to promote swimmers to make swimming
-												decision.</p>
-										</div>
-										<div class="col-lg-5 col-lg-offset-2 col-sm-6">
-											<img class="img-responsive" src="../image/beach.jpg" alt="">
-										</div>
-									</div>
-								</div>
-							</div>
-
-
-							<div class="content-section-b">
-								<div class="container">
-									<div class="row">
-										<div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-											<hr class="section-heading-spacer">
-											<div class="clearfix"></div>
-											<h2 class="section-heading">Ensuring the safety of
-												swimmer</h2>
-											<p class="lead">Royal Life Saving Report (2015) indicated
-												that around 10 people are rescued from beaches every day in
-												Australia, and there were 55 drowning deaths at beaches in
-												Australia in the year of 2015. SwimMate informs everything
-												swimmers need to know to ensure that they can keep
-												themselves safe at he beaches.</p>
-										</div>
-										<div class="col-lg-5 col-sm-pull-6  col-sm-6">
-											<img class="img-responsive" src="../image/swim.jpg" alt="">
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="content-section-a">
-								<div class="container">
-									<div class="row">
-										<div class="col-lg-5 col-sm-6">
-											<hr class="section-heading-spacer">
-											<div class="clearfix"></div>
-											<h2 class="section-heading">User Interaction</h2>
-											<p class="lead">With Swimmers’ involvement, SwimMate can
-												provide a more customized notification and reminder for them
-												to manage their swimming plan.</p>
-										</div>
-										<div class="col-lg-5 col-lg-offset-2 col-sm-6">
-											<img class="img-responsive" src="../image/social.jpg" alt="">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+					
+					
+					
+					
 					</div>
-				</div>
-				<br /> <br />
-
 				<!-- END CONTENT -->
 			</div>
 			<!-- END CONTAINER -->

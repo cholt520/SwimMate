@@ -10,15 +10,17 @@
          <generator class="native"/>
       </id>
       <property name="name" column="name" type="string"/>
-      <property name="address" column="address" type="string"/>
+     <!--  <property name="address" column="address" type="string"/> -->
       <property name="state" column="state" type="string"/>
       <property name="parking" column="parking" type="string"/>
       <property name="babychange" column="babychange" type="string"/>
       <property name="showers" column="showers" type="string"/>
       <property name="drinkingwater" column="drinkingwater" type="string"/>
+      <property name="toilet" column="toilet" type="string"/>
+      <property name="patrolled" column="patrolled" type="string"/>
       <property name="latitude" column="latitude" type="double"/>
       <property name="longitude" column="longitude" type="double"/>
-      <property name="patrolled" column="patrolled" type="string"/>
+      
       
           
    </class>
