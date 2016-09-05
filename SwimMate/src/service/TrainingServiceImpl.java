@@ -38,6 +38,11 @@ public class TrainingServiceImpl implements TrainingService{
 	public void setTrainingDao(TrainingDao trainingDao) {
 		this.trainingDao = trainingDao;
 	}
+
+	@Override
+	public List<Training> getTrainingByState(String state) {
+		return trainingDao.getTrainingByState(state);
+	}
 	
 	
 
