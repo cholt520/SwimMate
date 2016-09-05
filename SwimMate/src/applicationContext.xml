@@ -46,6 +46,8 @@
 	<bean id="beachDao" class="dao.BeachDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+	<bean id="tideService" class="service.TideServiceImpl">
+	</bean>
 	<bean id="weatherService" class="service.WeatherServiceImpl">
 		<property name="weatherDao" ref="weatherDao" />
 	</bean>

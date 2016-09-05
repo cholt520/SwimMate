@@ -173,9 +173,9 @@
 										<div class="search-bar ">
 											<div class="row">
 												<div class="col-md-12">
-                                           			<s:form action="getBeachByName.action">
+                                           			<s:form action="getTrainingByState.action">
 														<div class="input-group">
-															<input name="beachName" type="text" class="form-control" placeholder="Search Training" >
+															<input name="state" type="text" class="form-control" placeholder="Search Training by state" >
 															<span class="input-group-btn">
 																 <button class="btn green-sharp uppercase bold" type="submit">Search</button>
 															</span>
@@ -206,96 +206,36 @@
                                                         </div>
                                                     </div>
                                                     <div class="portlet-body flip-scroll">
-                                                        <table class="table table-bordered table-striped table-condensed flip-content">
-                                                            <thead class="flip-content">
-                                                                <tr>
-                                                                    <th width="20%"> Name </th>
-                                                                    <th> Coarch </th>
-                                                                    <th class="numeric"> Beach Name </th>
-                                                                    <th class="numeric"> Location </th>
-                                                                    
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td> AAC </td>
-                                                                    <td> AUSTRALIAN AGRICULTURAL COMPANY LIMITED. </td>
-                                                                    <td class="numeric"> &nbsp; </td>
-                                                                    <td class="numeric"> -0.01 </td>
-                                                                    
-                                                                </tr>
-                                                                <tr>
-                                                                    <td> AAD </td>
-                                                                    <td> ARDENT LEISURE GROUP </td>
-                                                                    <td class="numeric"> $1.15 </td>
-                                                                    <td class="numeric"> +0.02 </td>
-                                                                    
-                                                                </tr>
-                                                                <tr>
-                                                                    <td> AAX </td>
-                                                                    <td> AUSENCO LIMITED </td>
-                                                                    <td class="numeric"> $4.00 </td>
-                                                                    <td class="numeric"> -0.04 </td>
-                                                                    
-                                                                </tr>
-                                                                <tr>
-                                                                    <td> ABC </td>
-                                                                    <td> ADELAIDE BRIGHTON LIMITED </td>
-                                                                    <td class="numeric"> $3.00 </td>
-                                                                    <td class="numeric"> +0.06 </td>
-                                                                    
-                                                                </tr>
-                                                                <tr>
-                                                                    <td> ABP </td>
-                                                                    <td> ABACUS PROPERTY GROUP </td>
-                                                                    <td class="numeric"> $1.91 </td>
-                                                                    <td class="numeric"> 0.00 </td>
-                                                                    
-                                                                </tr>
-                                                                <tr>
-                                                                    <td> ABY </td>
-                                                                    <td> ADITYA BIRLA MINERALS LIMITED </td>
-                                                                    <td class="numeric"> $0.77 </td>
-                                                                    <td class="numeric"> +0.02 </td>
-                                                                    
-                                                                </tr>
-                                                                <tr>
-                                                                    <td> ACR </td>
-                                                                    <td> ACRUX LIMITED </td>
-                                                                    <td class="numeric"> $3.71 </td>
-                                                                    <td class="numeric"> +0.01 </td>
-                                                                    
-                                                                </tr>
-                                                                <tr>
-                                                                    <td> ADU </td>
-                                                                    <td> ADAMUS RESOURCES LIMITED </td>
-                                                                    <td class="numeric"> $0.72 </td>
-                                                                    <td class="numeric"> 0.00 </td>
-                                                                    
-                                                                </tr>
-                                                                <tr>
-                                                                    <td> AGG </td>
-                                                                    <td> ANGLOGOLD ASHANTI LIMITED </td>
-                                                                    <td class="numeric"> $7.81 </td>
-                                                                    <td class="numeric"> -0.22 </td>
-                                                                    
-                                                                </tr>
-                                                                <tr>
-                                                                    <td> AGK </td>
-                                                                    <td> AGL ENERGY LIMITED </td>
-                                                                    <td class="numeric"> $13.82 </td>
-                                                                    <td class="numeric"> +0.02 </td>
-                                                                    
-                                                                </tr>
-                                                                <tr>
-                                                                    <td> AGO </td>
-                                                                    <td> ATLAS IRON LIMITED </td>
-                                                                    <td class="numeric"> $3.17 </td>
-                                                                    <td class="numeric"> -0.02 </td>
-                                                                    
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
+                                                        <table
+																class="table table-bordered table-striped table-condensed flip-content">
+																<thead class="flip-content">
+																	<tr>
+																		<th width="20%">Name</th>
+																		<th>Address</th>
+																		<th>Suburb</th>
+																		<th>Postcode</th>
+																		<th>State</th>
+																		<th>Business Category</th>
+																		<th>LGA</th>
+																		<th>Region</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<s:iterator value="traininglist"  id="training">
+																		<tr>
+																			<td><s:property value="#training.name" /></td>
+																			<td><s:property value="#training.address" /></td>
+																			<td><s:property value="#training.suburb" /></td>
+																			<td><s:property value="#training.postcode" /></td>
+																			<td><s:property value="#training.State" /></td>
+																			<td><s:property value="#training.businessCategory" /></td>
+																			<td><s:property value="#training.lga" /></td>
+																			<td><s:property value="#training.region" /></td>
+																			
+																		</tr>
+																	</s:iterator>
+																</tbody>
+															</table>
                                                     </div>
                                                 </div>
                                                 <!-- END SAMPLE TABLE PORTLET-->

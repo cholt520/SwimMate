@@ -10,4 +10,5 @@ public interface TrainingService {
 	public void deleteTraining(Training training);
 	public void addTraining(Training training);
 	public void modifyTraining(Training training);
+	public List<Training> getTrainingByState(String state);
 }
