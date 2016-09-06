@@ -1,11 +1,12 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib uri="http://displaytag.sf.net" prefix="display"%>
 
 <!DOCTYPE html>
 
 <html lang="en">
 <head>
-<title>Find Beach By Facility</title>
+<title>Find Training</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 <meta content="" name="description" />
@@ -27,10 +28,16 @@
 	rel="stylesheet" type="text/css" />
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<link href="../assets/global/plugins/select2/css/select2.min.css"
+<link
+	href="../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css"
 	rel="stylesheet" type="text/css" />
 <link
-	href="../assets/global/plugins/select2/css/select2-bootstrap.min.css"
+	href="../assets/global/plugins/fancybox/source/jquery.fancybox.css"
+	rel="stylesheet" type="text/css" />
+<link href="../assets/global/plugins/datatables/datatables.min.css"
+	rel="stylesheet" type="text/css" />
+<link
+	href="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css"
 	rel="stylesheet" type="text/css" />
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN THEME GLOBAL STYLES -->
@@ -39,6 +46,10 @@
 <link href="../assets/global/css/plugins.min.css" rel="stylesheet"
 	type="text/css" />
 <!-- END THEME GLOBAL STYLES -->
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link href="../assets/pages/css/search.min.css" rel="stylesheet"
+	type="text/css" />
+<!-- END PAGE LEVEL STYLES -->
 <!-- BEGIN THEME LAYOUT STYLES -->
 <link href="../assets/layouts/layout3/css/layout.min.css"
 	rel="stylesheet" type="text/css" />
@@ -51,7 +62,6 @@
 </head>
 <!-- END HEAD -->
 
-
 <body class="page-container-bg-solid">
 	<div class="page-wrapper">
 		<div class="page-wrapper-row">
@@ -59,7 +69,7 @@
 				<!-- BEGIN HEADER -->
 				<div class="page-header">
 					<!-- BEGIN HEADER TOP -->
-					<div class="page-header-top" style="margin-top:0px;">
+					<div class="page-header-top">
 						<div class="container">
 							<!-- BEGIN LOGO -->
 							<div class="page-logo">
@@ -78,35 +88,35 @@
 					<!-- BEGIN HEADER MENU -->
 					<div class="page-header-menu">
 						<div class="container">
+
 							<!-- BEGIN MEGA MENU -->
-							<div class="hor-menu ">
+							<div class="hor-menu  ">
 								<ul class="nav navbar-nav">
-									<li class=""><a href="index.action"> Home </a></li>
 
-									<li class=""><a href="beach.action"> Find Beach </a>
-										
-									
-									</li>
+									<li class=><a href="index.action"> Home </a></li>
 
-									<li class=""> <a href="getFacility.action">Find Facility </a>
-									</li>
-									
+									<li class="active"><a href="beach.action"> Find Beach
+									</a></li>
+
+									<li class=""><a href="getFacility.action "> Find
+											Facility </a></li>
+											
 									<li class=""> <a href="Training.action">Find Training </a>
 									</li>
 									
 									<li class=""> <a href="getFacility.action">Shark alarm </a>
 									</li>
-
+											
 									<li class=""><a href="Tips.jsp "> Tips for Swimmers </a></li>
 								</ul>
 							</div>
 							<!-- END MEGA MENU -->
 						</div>
 					</div>
+					<!-- END HEADER MENU -->
 				</div>
+				<!-- END HEADER -->
 			</div>
-			<!-- END HEADER MENU -->
-			<!-- END HEADER -->
 		</div>
 		<div class="page-wrapper-row full-height">
 			<div class="page-wrapper-middle">
@@ -114,16 +124,16 @@
 				<div class="page-container">
 					<!-- BEGIN CONTENT -->
 					<div class="page-content-wrapper">
-
 						<!-- BEGIN CONTENT BODY -->
 						<!-- BEGIN PAGE HEAD-->
 						<div class="page-head">
 							<div class="container">
 								<!-- BEGIN PAGE TITLE -->
 								<div class="page-title">
-									<h1>Find a Beach</h1>
+									<h1>Find Training</h1>
 								</div>
 								<!-- END PAGE TITLE -->
+
 							</div>
 						</div>
 						<!-- END PAGE HEAD-->
@@ -131,83 +141,104 @@
 						<div class="page-content">
 							<div class="container">
 								<!-- BEGIN PAGE BREADCRUMBS -->
-								<ul class="page-breadcrumb breadcrumb">
+								<ul class="page-breadcrumb breadcrumb ">
 									<li><a href="index.action" class="font-green-sharp">Home</a>
 										<i class="fa fa-circle"></i></li>
-									<li><span class="font-blue-oleo">Find Facility</span></li>
+									<li><span>Find a Beach</span></li>
 								</ul>
 								<!-- END PAGE BREADCRUMBS -->
 								<!-- BEGIN PAGE CONTENT INNER -->
 								<div class="page-content-inner">
+									<div class="search-page search-content-2">
 
-									<div class="row">
-										<div class="col-md-12">
-											<div class="portlet light">
-												<div class="portlet-title">
-													<div class="caption">
-														<i class="fa fa-search font-green"></i> <span
-															class="caption-subject font-green bold uppercase">Find
-															facilities for swimmer</span>
-													</div>
-												</div>
-												<div class="portlet-body">
-
-													<!-- Start Search Facility Bar -->
-													<div class="row">
-														<div class="col-md-12">
-															<div class="form-group">
-																<s:form action="findBeachByFacility.action"
-																	namespace="/">
-																	<div class="input-group select2-bootstrap-prepend">
-																		<span class="input-group-btn">
-																			<button class="btn btn-default"
-																				data-select2-open="single-prepend-text"
-																				type="submit">
-																				<span class="glyphicon glyphicon-search"></span>
-																			</button>
-																		</span> <select id="single-prepend-text"
-																			class="form-control select2" name="selectedFacility">
-																			<option></option>
-																			<option value="parking">Parking Place</option>
-																			<option value="babychange">Changing Room</option>
-																			<option value="showers">Shower</option>
-																			<option value="drinkingwater">Water Drinking</option>
-																			<option value="toilet">Toilet</option>
-																			<option value="patrolled">Patrol</option>
-																		</select>
-																	</div>
-																</s:form>
-															</div>
+										<!--Search Bar-->
+										<div class="search-bar ">
+											<div class="row">
+												<div class="col-md-12">
+													<s:form action="getBeachByName.action">
+														<div class="input-group">
+															<input name="state" type="text" class="form-control" placeholder="Search Training by state" >
+															<span class="input-group-btn">
+																 <button class="btn green-sharp uppercase bold" type="submit">Search</button>
+															</span>
 														</div>
-													</div>
-													<!-- End Search Facility Bar -->
-													<br />
-													<!-- Start Map -->
-													<div class="row">
-														<div class="col-md-12">
-															<div id="gmap_basic" class="gmaps">
-																<div id="map"
-																	style="height:100%;overflow:hidden;display:block;"></div>
-															</div>
-														</div>
-													</div>
-													<!-- End Map -->
-													<br /> <br />
+													</s:form>
 												</div>
 											</div>
 										</div>
+										<!--End Search Bar-->
+
+										
+										<!--Result Table-->
+										<div class="row" style="Margin:2px;">
+											<div class="search-container ">
+												<ul class="search-container">
+												
+														 <!-- BEGIN SAMPLE TABLE PORTLET-->
+                                                <div class="portlet box green">
+                                                    <div class="portlet-title">
+                                                        <div class="caption">
+                                                            <i class="fa fa-cogs"></i>Training Information </div>
+                                                        <div class="tools">
+                                                            <a href="javascript:;" class="collapse"> </a>
+                                                            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                                                            <a href="javascript:;" class="reload"> </a>
+                                                            <a href="javascript:;" class="remove"> </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="portlet-body flip-scroll">
+                                                        <table
+																class="table table-bordered table-striped table-condensed flip-content">
+																<thead class="flip-content">
+																	<tr>
+																		<th width="20%">Name</th>
+																		<th>Address</th>
+																		<th>Suburb</th>
+																		<th>Postcode</th>
+																		<th>State</th>
+																		<th>Business Category</th>
+																		<th>LGA</th>
+																		<th>Region</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<s:iterator value="traininglist"  id="training">
+																		<tr>
+																			<td><s:property value="#training.name" /></td>
+																			<td><s:property value="#training.address" /></td>
+																			<td><s:property value="#training.suburb" /></td>
+																			<td><s:property value="#training.postcode" /></td>
+																			<td><s:property value="#training.State" /></td>
+																			<td><s:property value="#training.businessCategory" /></td>
+																			<td><s:property value="#training.lga" /></td>
+																			<td><s:property value="#training.region" /></td>
+																			
+																		</tr>
+																	</s:iterator>
+																</tbody>
+															</table>
+                                                    </div>
+                                                </div>
+                                                <!-- END SAMPLE TABLE PORTLET-->
+														
+													 
+
+												</ul>
+												
+											</div>
+										</div>
+										<!--End Result Table-->
 									</div>
-									<!-- END PAGE CONTENT INNER -->
+									<br /> <br />
 								</div>
+								<!-- END PAGE CONTENT INNER -->
 							</div>
-							<!-- END PAGE CONTENT BODY -->
-							<!-- END CONTENT BODY -->
-
 						</div>
+						<!-- END PAGE CONTENT BODY -->
+						<!-- END CONTENT BODY -->
 					</div>
-					<br /> <br />
-
 					<!-- END CONTENT -->
+
 				</div>
 				<!-- END CONTAINER -->
 			</div>
@@ -270,10 +301,38 @@
 		src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"
 		type="text/javascript"></script>
 	<!-- END CORE PLUGINS -->
+	<!-- BEGIN PAGE LEVEL PLUGINS -->
+	<script src="../assets/global/plugins/jquery.pulsate.min.js"
+		type="text/javascript"></script>
+	<script
+		src="../assets/global/plugins/jquery-bootpag/jquery.bootpag.min.js"
+		type="text/javascript"></script>
+	<script src="../assets/global/plugins/holder.js" type="text/javascript"></script>
+
+	<script
+		src="../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"
+		type="text/javascript"></script>
+	<script
+		src="../assets/global/plugins/fancybox/source/jquery.fancybox.pack.js"
+		type="text/javascript"></script>
+	<!-- END PAGE LEVEL PLUGINS -->
 	<!-- BEGIN THEME GLOBAL SCRIPTS -->
 	<script src="../assets/global/scripts/app.min.js"
 		type="text/javascript"></script>
 	<!-- END THEME GLOBAL SCRIPTS -->
+	<!-- BEGIN PAGE LEVEL SCRIPTS -->
+	<script src="../assets/pages/scripts/ui-buttons.min.js"
+		type="text/javascript"></script>
+	<script src="../assets/pages/scripts/search.min.js"
+		type="text/javascript"></script>
+	<script src="../assets/global/plugins/datatables/datatables.min.js"
+		type="text/javascript"></script>
+	<script
+		src="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js"
+		type="text/javascript"></script>
+	<script src="../assets/pages/scripts/ui-general.min.js"
+		type="text/javascript"></script>
+	<!-- END PAGE LEVEL SCRIPTS -->
 	<!-- BEGIN THEME LAYOUT SCRIPTS -->
 	<script src="../assets/layouts/layout3/scripts/layout.min.js"
 		type="text/javascript"></script>
@@ -282,17 +341,14 @@
 	<script src="../assets/layouts/global/scripts/quick-sidebar.min.js"
 		type="text/javascript"></script>
 	<!-- END THEME LAYOUT SCRIPTS -->
-	<!-- BEGIN PAGE LEVEL PLUGINS -->
-	<script src="../assets/global/plugins/select2/js/select2.full.min.js"
-		type="text/javascript"></script>
-	<!-- END PAGE LEVEL PLUGINS -->
 	<!-- BEGIN PAGE LEVEL SCRIPTS -->
-	<script src="../assets/pages/scripts/components-select2.min.js"
+	<script src="../assets/pages/scripts/table-datatables-managed.min.js"
 		type="text/javascript"></script>
 	<!-- END PAGE LEVEL SCRIPTS -->
 
 	<!-- Start Map Scripts -->
 	<script>
+	
 		function initMap() {
 			var map = new google.maps.Map(document.getElementById('map'), {
 				zoom : 4,
@@ -306,16 +362,15 @@
 		}
 		// Data for the markers consisting of a name, a LatLng and a zIndex for the
 		// order in which these markers should display on top of each other.
-		var facilities = [];
-		<s:iterator value="facilitiesList" status="userStatus">
-						var latitude = '<s:property value="latitude"/>';
-						var latitude1 = parseFloat(latitude);
-						var longitude = '<s:property value="longitude"/>';
-						var longitude1 = parseFloat(longitude);
-			     	facilities.push(['<s:property value="name"/>',latitude1,longitude1]);
-			    </s:iterator>
+		var beaches = [];
+		<s:iterator value="beachList" status="userStatus">
+					var latitude = '<s:property value="latitude"/>';
+					var latitude1 = parseFloat(latitude);
+					var longitude = '<s:property value="longitude"/>';
+					var longitude1 = parseFloat(longitude);
+		     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
+		    </s:iterator>
 	
-		/* window.alert(facilities.length); */
 	
 		function setMarkers(map) {
 			// Adds markers to the map.
@@ -341,17 +396,17 @@
 				coords : [ 1, 1, 1, 20, 18, 20, 18, 1 ],
 				type : 'poly'
 			};
-			for (var i = 0; i < facilities.length; i++) {
-				var facility = facilities[i];
+			for (var i = 0; i < beaches.length; i++) {
+				var beach = beaches[i];
 				var marker = new google.maps.Marker({
 					position : {
-						lat : facility[1],
-						lng : facility[2]
+						lat : beach[1],
+						lng : beach[2]
 					},
 					map : map,
 					shape : shape,
-					title : facility[0],
-					zIndex : facility[3]
+					title : beach[0],
+					zIndex : beach[3]
 				});
 			}
 		}
