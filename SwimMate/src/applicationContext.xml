@@ -47,6 +47,14 @@
 	<bean id="beachDao" class="dao.BeachDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+	
+	<bean id="sharkAlarmService" class="service.SharkAlarmServiceImpl">
+		<property name="sharkAlarmDao" ref="sharkAlarmDao" />
+	</bean>
+	<bean id="sharkAlarmDao" class="dao.SharkAlarmDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
 	<bean id="tideService" class="service.TideServiceImpl">
 	</bean>
 	<bean id="weatherService" class="service.WeatherServiceImpl">

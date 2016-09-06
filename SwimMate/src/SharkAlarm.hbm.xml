@@ -14,6 +14,6 @@
 		<property name="area" column="area" type="string" />
 		<property name="location" column="location" type="string" />
 		<property name="latitude" column="latitude" type="string" />
-		<property name="longitude" column="longitude" type="string" />
+		<property name="longtitude" column="longtitude" type="string" />
 	</class>
 </hibernate-mapping>

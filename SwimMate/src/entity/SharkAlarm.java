@@ -7,7 +7,7 @@ public class SharkAlarm {
 	private String area;
 	private String location;
 	private String latitude;
-	private String longitude;
+	private String longtitude;
 	public int getId() {
 		return id;
 	}
@@ -44,11 +44,11 @@ public class SharkAlarm {
 	public void setLatitude(String latitude) {
 		this.latitude = latitude;
 	}
-	public String getLongitude() {
-		return longitude;
+	public String getLongtitude() {
+		return longtitude;
 	}
-	public void setLongitude(String longitude) {
-		this.longitude = longitude;
+	public void setLongtitude(String longtitude) {
+		this.longtitude = longtitude;
 	}
 	
 	

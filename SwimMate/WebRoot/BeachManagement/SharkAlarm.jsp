@@ -134,7 +134,7 @@
 								<ul class="page-breadcrumb breadcrumb">
 									<li><a href="index.action" class="font-green-sharp">Home</a>
 										<i class="fa fa-circle"></i></li>
-									<li><span class="font-blue-oleo">Find Facility</span></li>
+									<li><span class="font-blue-oleo">Shark Alarm</span></li>
 								</ul>
 								<!-- END PAGE BREADCRUMBS -->
 								<!-- BEGIN PAGE CONTENT INNER -->
@@ -147,7 +147,7 @@
 													<div class="caption">
 														<i class="fa fa-search font-green"></i> <span
 															class="caption-subject font-green bold uppercase">Find
-															facilities for swimmer</span>
+															SharkAlarm for swimmer</span>
 													</div>
 												</div>
 												<div class="portlet-body">
@@ -284,7 +284,7 @@
 		<s:iterator value="sharkAlarmlist" status="userStatus">
 						var latitude = '<s:property value="latitude"/>';
 						var latitude1 = parseFloat(latitude);
-						var longitude = '<s:property value="longitude"/>';
+						var longitude = '<s:property value="longtitude"/>';
 						var longitude1 = parseFloat(longitude);
 			     	facilities.push(['<s:property value="name"/>',latitude1,longitude1]);
 			    </s:iterator>
