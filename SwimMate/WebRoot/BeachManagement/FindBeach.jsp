@@ -101,7 +101,7 @@
 									<li class=""><a href="getFacility.action "> Find
 											Facility </a></li>
 											
-									<li class=""><a href="Tips.jsp "> Swim Tips </a></li>
+									<li class=""><a href="Tips.jsp "> Tips for Swimmers </a></li>
 								</ul>
 							</div>
 							<!-- END MEGA MENU -->
@@ -260,8 +260,6 @@
 																</h2>
 																<p class="search-desc">
 																	<s:property value="beach_name" />
-																	,
-																	<s:property value="address" />
 																	,
 																	<s:property value="state" />
 																</p>

@@ -96,8 +96,8 @@
 
 									<li class=""><a href="getFacility.action "> Find
 											Facility </a></li>
-											
-									<li class=""><a href="Tips.jsp "> Swim Tips </a></li>
+
+									<li class=""><a href="Tips.jsp "> Tips for Swimmers </a></li>
 								</ul>
 							</div>
 							<!-- END MEGA MENU -->
@@ -220,11 +220,29 @@
 																	</div>
 																	<div class="row">
 																		<div class="col-md-6">
-																			<h4 class="font-green-sharp">
-																				<i class="fa fa-info-circle font-green-sharp" /></i>
-																				Water Quality
-																			</h4>
-																			<p>N/A</p>
+
+																			<div class="row">
+																			<div class="col-md-12">
+																				<h4 class="font-green-sharp">
+																					<i class="fa fa-info-circle font-green-sharp" /></i>
+																					Water Quality
+																				</h4>
+																				<p>N/A</p>
+																				</div>
+																			</div>
+
+																			<div class="row">
+																			<div class="col-md-12">
+																				<h4 class="font-green-sharp">
+																					<i class="fa fa-ambulance font-green-sharp" /></i>
+																					Patrolled
+																				</h4>
+																				<p>
+																					<s:property value="facility.patrolled" />
+																				</p>
+																			</div>
+																			</div>
+
 																		</div>
 																		<div class="col-md-6">
 																			<h4 class="font-green-sharp">
@@ -242,8 +260,6 @@
 																				<s:property value="facility.drinkingwater" />
 																				<br /> Toilet:
 																				<s:property value="facility.toilet" />
-																				<br /> Patrol:
-																				<s:property value="facility.patrolled" />
 																				<br />
 																			</p>
 																		</div>

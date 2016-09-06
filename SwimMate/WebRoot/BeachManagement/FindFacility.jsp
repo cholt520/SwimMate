@@ -88,7 +88,7 @@
 									<li class="active"><a href="getFacility.action"> Find
 											Facility </a></li>
 
-									<li class=""><a href="Tips.jsp "> Swim Tips </a></li>
+									<li class=""><a href="Tips.jsp "> Tips for Swimmers </a></li>
 								</ul>
 							</div>
 							<!-- END MEGA MENU -->
@@ -115,7 +115,6 @@
 									<h1>Find a Beach</h1>
 								</div>
 								<!-- END PAGE TITLE -->
-
 							</div>
 						</div>
 						<!-- END PAGE HEAD-->

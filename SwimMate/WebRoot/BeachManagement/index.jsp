@@ -42,7 +42,6 @@
 <!-- END THEME LAYOUT STYLES -->
 <link rel="shortcut icon" href="favicon.ico" />
 
-
 <!-- Custom CSS -->
 <link href="../css/landing-page.css" rel="stylesheet">
 </head>
@@ -83,7 +82,7 @@
 
 									<li class=""><a href="getFacility.action "> Find
 											Facility </a></li>
-									<li class=""><a href="Tips.jsp "> Swim Tips </a></li>
+									<li class=""><a href="Tips.jsp "> Tips for Swimmers </a></li>
 								</ul>
 							</div>
 							<!-- END MEGA MENU -->
@@ -100,7 +99,7 @@
 				<div class="page-container">
 					<!-- BEGIN CONTENT -->
 					<div class="page-content-wrapper">
-						<div class="intro-header">
+						<div class="intro-header" >
 							<div class="container">
 								<div class="row">
 									<div class="col-lg-12">
@@ -159,8 +158,9 @@
 										<div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
 											<hr class="section-heading-spacer">
 											<div class="clearfix"></div>
-											<h2 class="section-heading">Ensuring the safety of
-												swimmer</h2>
+											<h2 class="section-heading">
+											<a href="Tips.jsp" class="font-dark">Ensuring the safety of
+												swimmer</a></h2>
 											<p class="lead">Royal Life Saving Report (2015) indicated
 												that around 10 people are rescued from beaches every day in
 												Australia, and there were 55 drowning deaths at beaches in
