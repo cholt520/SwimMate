@@ -83,6 +83,11 @@
 
 									<li class=""><a href="getFacility.action "> Find
 											Facility </a></li>
+											<li class=""> <a href="Training.action">Find Training </a>
+									</li>
+									
+									<li class=""> <a href="getFacility.action">Shark alarm </a>
+									</li>
 									<li class=""><a href="Tips.jsp "> Tips for Swimmers </a></li>
 								</ul>
 							</div>

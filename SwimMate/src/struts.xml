@@ -12,6 +12,10 @@
 			<result>/BeachManagement/FindTraining.jsp</result>
 		</action>
 		
+		<action name="SharkAlarm" class="action.SharkAlarmAction" method="execute">
+			<result>/BeachManagement/SharkAlarm.jsp</result>
+		</action>
+		
 		<action name="getTrainingByState" class="action.TrainingAction" method="getTrainingByState">
 			<result>/BeachManagement/FindTraining.jsp</result>
 		</action>

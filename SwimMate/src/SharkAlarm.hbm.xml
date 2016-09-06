@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="entity.SharkAlarm" table="sharkalarm">
+
+		<id name="id" type="int" column="id">
+			<generator class="native" />
+		</id>
+		<property name="speciesname" column="speciesname" type="string" />
+		<property name="date" column="date" type="string" />
+		<property name="area" column="area" type="string" />
+		<property name="location" column="location" type="string" />
+		<property name="latitude" column="latitude" type="string" />
+		<property name="longitude" column="longitude" type="string" />
+	</class>
+</hibernate-mapping>
