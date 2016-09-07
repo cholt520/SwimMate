@@ -86,7 +86,7 @@
 									<li class=""><a href="beach.action"> Find Beach </a></li>
 									
 									<li class=""><a href="Training.action">Find Swimming
-											Centers </a></li>
+											Centres </a></li>
 
 									<li class="active"><a href="SharkAlarm.action">Shark alarm </a>
 									</li>

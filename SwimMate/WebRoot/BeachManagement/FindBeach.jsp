@@ -93,11 +93,11 @@
 									<li class="active"><a href="beach.action"> Find Beach
 									</a></li>
 											
-											<li class=""> <a href="Training.action">Find Swimming Centers </a>
+											<li class=""> <a href="Training.action">Find Swimming Centres </a>
 									</li>
 									
-									<li class=""> <a href="SharkAlarm.action">Shark alarm </a>
-									</li>
+									<!-- <li class=""> <a href="SharkAlarm.action">Shark alarm </a>
+									</li> -->
 											
 
 									<li class=""><a href="Tips.jsp "> Tips for Swimmers </a></li>

@@ -93,10 +93,10 @@
 									<li class=""><a href="beach.action"> Find Beach </a></li>
 
 									<li class="active"><a href="Training.action">Find
-											Swimming Centers </a></li>
+											Swimming Centres </a></li>
 
-									<li class=""><a href="SharkAlarm.action">Shark alarm </a>
-									</li>
+									<!-- <li class=""><a href="SharkAlarm.action">Shark alarm </a>
+									</li> -->
 
 									<li class=""><a href="Tips.jsp "> Tips for Swimmers </a></li>
 								</ul>
@@ -121,7 +121,7 @@
 							<div class="container">
 								<!-- BEGIN PAGE TITLE -->
 								<div class="page-title">
-									<h1>Find Training</h1>
+									<h1>Find Swimming Centres</h1>
 								</div>
 								<!-- END PAGE TITLE -->
 
@@ -135,7 +135,7 @@
 								<ul class="page-breadcrumb breadcrumb ">
 									<li><a href="index.action" class="font-green-sharp">Home</a>
 										<i class="fa fa-circle"></i></li>
-									<li><span>Find Swimming Centers</span></li>
+									<li><span>Search Swimming Centres</span></li>
 								</ul>
 								<!-- END PAGE BREADCRUMBS -->
 								<!-- BEGIN PAGE CONTENT INNER -->
@@ -149,7 +149,7 @@
 													<s:form action="getTrainingByPostcode.action">
 														<div class="input-group">
 															<input name="postcode" type="text" class="form-control"
-																placeholder="Search Training by postcode"> <span
+																placeholder="Search by postcode"> <span
 																class="input-group-btn">
 																<button class="btn green-sharp uppercase bold"
 																	type="submit">Search</button>
@@ -170,7 +170,7 @@
 													<div class="portlet box green">
 														<div class="portlet-title">
 															<div class="caption">
-																<i class="fa fa-cogs"></i>Find Swimming Centers
+																<i class="fa fa-cogs"></i>Search Swimming Centres
 															</div>
 															<div class="tools">
 																<a href="javascript:;" class="collapse"> </a> <a

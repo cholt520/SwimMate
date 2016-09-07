@@ -57,6 +57,8 @@ public class BeachServiceImpl implements BeachService{
 			watertemp = 22;
 		}else if (water_temp>=22&&water_temp<26){
 			watertemp = 26;
+		}else if (water_temp>=26){
+			watertemp = 26;
 		}
 		
 		return beachDao.getRecommandationByWaterTemp(watertemp);

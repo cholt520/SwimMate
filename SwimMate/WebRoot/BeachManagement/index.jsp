@@ -81,12 +81,12 @@
 
 									<li class=""><a href="beach.action"> Find Beach </a></li>
 
-									
-									<li class=""><a href="Training.action">Find Swimming Centers </a>
-									</li>
 
-									<li class=""><a href="SharkAlarm.action">Shark alarm </a>
-									</li>
+									<li class=""><a href="Training.action">Find Swimming
+											Centres </a></li>
+
+									<!-- <li class=""><a href="SharkAlarm.action">Shark alarm </a>
+									</li> -->
 									<li class=""><a href="Tips.jsp "> Tips for Swimmers </a></li>
 								</ul>
 							</div>
@@ -113,13 +113,15 @@
 											<h3>Find your ideal beach to swim</h3>
 											<br />
 											<hr />
-											<p>
-												SwimMate is handy website designed to provide casual as well
-												as expert swimmers information to plan their <br /> swimming days.
-												It will offer a range of features like searching nearby
-												beaches, directions to go to these <br /> beaches, wave and
-												water quality indication, real-time weather updates.
-											</p>
+											<p>SwimMate is handy website designed to provide casual
+												as well as expert swimmers information to plan their
+												<br />
+												swimming days. It will offer a range of features like
+												searching nearby beaches, real-time weather updates,
+												<br />
+												information about marine stingers, rip and much more!
+												<br /> <br />
+												Explore SwimMate to find your ideal beach to swim!</p>
 											<br />
 											<h2>
 												<a href="beach.action" class="font-white"> <i
@@ -226,8 +228,7 @@
 						<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
 							<h2>Contacts</h2>
 							<address class="margin-bottom-40">
-								 Email: <a
-									href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
+								Email: <a href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
 							</address>
 						</div>
 					</div>

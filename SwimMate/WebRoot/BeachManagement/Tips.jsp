@@ -81,13 +81,14 @@
 
 									<li class=""><a href="beach.action"> Find Beach </a></li>
 
-									
-											<li class=""> <a href="Training.action">Find Swimming Centers </a>
-									</li>
-									
-									<li class=""> <a href="SharkAlarm.action">Shark alarm </a>
-									</li>
-									<li class="active"><a href="Tips.jsp "> Tips for Swimmers </a></li>
+
+									<li class=""><a href="Training.action">Find Swimming
+											Centres </a></li>
+
+									<!-- <li class=""> <a href="SharkAlarm.action">Shark alarm </a>
+									</li> -->
+									<li class="active"><a href="Tips.jsp "> Tips for
+											Swimmers </a></li>
 								</ul>
 							</div>
 							<!-- END MEGA MENU -->
@@ -156,11 +157,9 @@
 																			yellow flags. The flags are placed at the safest
 																			places to swim and are for swimmers only. If you are
 																			surfing it is not good form to do it between the
-																			flags (lifeguards may confiscate your board). <br />
-																			<a
-																				href="http://www.redcross.org/prepare/disaster/water-safety/beach-safety"
-																				target="_blank" class="font-blue-soft">Link to
-																				Beach Safety Website to see more details.</a>
+																			flags (lifeguards may confiscate your board). <br /><br />
+																			For additional safety instructions, visit <a href="http://www.healthdirect.gov.au/beach-safety"
+																				target="_blank" class="font-blue-soft">healthdirect.com.au</a>
 																		</p>
 
 																	</div>
@@ -306,8 +305,7 @@
 						<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
 							<h2>Contacts</h2>
 							<address class="margin-bottom-40">
-								 <br /> Email: <a
-									href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
+								<br /> Email: <a href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
 							</address>
 						</div>
 					</div>

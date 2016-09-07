@@ -25,7 +25,7 @@ public class TrainingDaoImpl extends HibernateDaoSupport implements TrainingDao{
         return (List<Training>) template.execute(new HibernateCallback() {
             public Object doInHibernate(Session session) throws HibernateException {
                 Query query = session.createQuery("from Training");
-                query.setMaxResults(10);
+                query.setMaxResults(500);
                 query.setFirstResult(0);
                 return query.list();
             }
