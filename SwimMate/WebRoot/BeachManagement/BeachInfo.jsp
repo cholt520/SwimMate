@@ -196,7 +196,7 @@
 																	<div class="row">
 																		<div class="col-md-6">
 																			<h4 class="font-green-sharp">
-																				<i class="fa fa-sun-o font-green-sharp" /></i> Weather
+																				<i class="fa fa-sun-o font-green-sharp" /></i> Weather (Live)
 																			</h4>
 																			<p>
 																				Tempreture:
@@ -217,8 +217,8 @@
 																				<s:property value="tide.height" />
 																				m <br /> Update Date:
 																				<s:property value="tide.date" />
-																				<br /> Type:
-																				<s:property value="tide.type" />
+																				<%-- <br /> Type:
+																				<s:property value="tide.type" /> --%>
 																			</p>
 																		</div>
 																	</div>

@@ -83,10 +83,10 @@
 
 									<li class=""><a href="getFacility.action "> Find
 											Facility </a></li>
-											<li class=""> <a href="Training.action">Find Training </a>
+									<li class=""><a href="Training.action">Find Training </a>
 									</li>
-									
-									<li class=""> <a href="SharkAlarm.action">Shark alarm </a>
+
+									<li class=""><a href="SharkAlarm.action">Shark alarm </a>
 									</li>
 									<li class=""><a href="Tips.jsp "> Tips for Swimmers </a></li>
 								</ul>
@@ -105,7 +105,7 @@
 				<div class="page-container">
 					<!-- BEGIN CONTENT -->
 					<div class="page-content-wrapper">
-						<div class="intro-header" >
+						<div class="intro-header">
 							<div class="container">
 								<div class="row">
 									<div class="col-lg-12">
@@ -115,11 +115,11 @@
 											<br />
 											<hr />
 											<p>
-												The SwimMate website is designed for people like to swim at
-												the beach in Australia. It benefits swimmers in<br />
-												Australia to find beast beaches nearby based on different
-												criteria like water quality, tide information,<br />
-												weather updates, marine dangers and patrol Information.
+												SwimMate is handy website designed to provide casual as well
+												as expert swimmers information to plan their <br /> swimming days.
+												It will offer a range of features like searching nearby
+												beaches, directions to go to these <br /> beaches, wave and
+												water quality indication, real-time weather updates.
 											</p>
 											<br />
 											<h2>
@@ -142,7 +142,7 @@
 											<hr class="section-heading-spacer">
 											<div class="clearfix"></div>
 											<h2 class="section-heading">
-												<a href="beach.action" class="font-dark"> Finding an
+												<a href="beach.action" class="font-dark"> Finding your
 													ideal beach </a>
 											</h2>
 											<p class="lead">It is quite normal for people in
@@ -165,8 +165,9 @@
 											<hr class="section-heading-spacer">
 											<div class="clearfix"></div>
 											<h2 class="section-heading">
-											<a href="Tips.jsp" class="font-dark">Ensuring the safety of
-												swimmer</a></h2>
+												<a href="Tips.jsp" class="font-dark">Ensuring the safety
+													of swimmer</a>
+											</h2>
 											<p class="lead">Royal Life Saving Report (2015) indicated
 												that around 10 people are rescued from beaches every day in
 												Australia, and there were 55 drowning deaths at beaches in
