@@ -27,24 +27,12 @@
 	href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css"
 	rel="stylesheet" type="text/css" />
 <!-- END GLOBAL MANDATORY STYLES -->
-<!-- BEGIN PAGE LEVEL PLUGINS -->
-<link
-	href="../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css"
-	rel="stylesheet" type="text/css" />
-<link
-	href="../assets/global/plugins/fancybox/source/jquery.fancybox.css"
-	rel="stylesheet" type="text/css" />
-<!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN THEME GLOBAL STYLES -->
 <link href="../assets/global/css/components-rounded.min.css"
 	rel="stylesheet" id="style_components" type="text/css" />
 <link href="../assets/global/css/plugins.min.css" rel="stylesheet"
 	type="text/css" />
 <!-- END THEME GLOBAL STYLES -->
-<!-- BEGIN PAGE LEVEL STYLES -->
-<link href="../assets/pages/css/search.min.css" rel="stylesheet"
-	type="text/css" />
-<!-- END PAGE LEVEL STYLES -->
 <!-- BEGIN THEME LAYOUT STYLES -->
 <link href="../assets/layouts/layout3/css/layout.min.css"
 	rel="stylesheet" type="text/css" />
@@ -94,11 +82,11 @@
 									<li class="active"><a href="beach.action"> Find Beach
 									</a></li>
 
-									
-											
-											<li class=""> <a href="Training.action">Find Swimming Centres </a>
-									</li>
-									
+
+
+									<li class=""><a href="Training.action">Find Swimming
+											Centres </a></li>
+
 									<!-- <li class=""> <a href="SharkAlarm.action">Shark alarm </a>
 									</li> -->
 
@@ -195,7 +183,8 @@
 																	<div class="row">
 																		<div class="col-md-6">
 																			<h4 class="font-green-sharp">
-																				<i class="fa fa-sun-o font-green-sharp" /></i> Weather (Live)
+																				<i class="fa fa-sun-o font-green-sharp" /></i> Weather
+																				(Live)
 																			</h4>
 																			<p>
 																				Tempreture:
@@ -225,25 +214,25 @@
 																		<div class="col-md-6">
 
 																			<div class="row">
-																			<div class="col-md-12">
-																				<h4 class="font-green-sharp">
-																					<i class="fa fa-info-circle font-green-sharp" /></i>
-																					Water Quality
-																				</h4>
-																				<p>N/A</p>
+																				<div class="col-md-12">
+																					<h4 class="font-green-sharp">
+																						<i class="fa fa-info-circle font-green-sharp" /></i>
+																						Water Quality
+																					</h4>
+																					<p>N/A</p>
 																				</div>
 																			</div>
 
 																			<div class="row">
-																			<div class="col-md-12">
-																				<h4 class="font-green-sharp">
-																					<i class="fa fa-ambulance font-green-sharp" /></i>
-																					Patrolled
-																				</h4>
-																				<p>
-																					<s:property value="facility.patrolled" />
-																				</p>
-																			</div>
+																				<div class="col-md-12">
+																					<h4 class="font-green-sharp">
+																						<i class="fa fa-ambulance font-green-sharp" /></i>
+																						Patrolled
+																					</h4>
+																					<p>
+																						<s:property value="facility.patrolled" />
+																					</p>
+																				</div>
 																			</div>
 
 																		</div>
@@ -281,7 +270,8 @@
 																	<h4 class="font-green-sharp">
 																		<i class="fa fa-tag font-green-sharp" /></i> Suggestion
 																	</h4>
-																	<p><s:property value="recommandation.recommandation" />
+																	<p>
+																		<s:property value="recommandation.recommandation" />
 																	</p>
 																</div>
 															</div>
@@ -324,8 +314,7 @@
 							<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
 								<h2>Contacts</h2>
 								<address class="margin-bottom-40">
-									 <br /> Email: <a
-										href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
+									<br /> Email: <a href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
 								</address>
 							</div>
 						</div>
@@ -364,28 +353,10 @@
 		src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"
 		type="text/javascript"></script>
 	<!-- END CORE PLUGINS -->
-	<!-- BEGIN PAGE LEVEL PLUGINS -->
-	<script
-		src="../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"
-		type="text/javascript"></script>
-	<script
-		src="../assets/global/plugins/fancybox/source/jquery.fancybox.pack.js"
-		type="text/javascript"></script>
-	<script src="http://maps.google.com/maps/api/js?sensor=false"
-		type="text/javascript"></script>
-	<!-- END PAGE LEVEL PLUGINS -->
 	<!-- BEGIN THEME GLOBAL SCRIPTS -->
 	<script src="../assets/global/scripts/app.min.js"
 		type="text/javascript"></script>
 	<!-- END THEME GLOBAL SCRIPTS -->
-	<!-- BEGIN PAGE LEVEL SCRIPTS -->
-	<script src="../assets/pages/scripts/ui-buttons.min.js"
-		type="text/javascript"></script>
-	<script src="../assets/pages/scripts/search.min.js"
-		type="text/javascript"></script>
-	<script src="../assets/pages/scripts/maps-google.min.js"
-		type="text/javascript"></script>
-	<!-- END PAGE LEVEL SCRIPTS -->
 	<!-- BEGIN THEME LAYOUT SCRIPTS -->
 	<script src="../assets/layouts/layout3/scripts/layout.min.js"
 		type="text/javascript"></script>
