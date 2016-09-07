@@ -147,7 +147,7 @@
 											</h2>
 											<p class="lead">It is quite normal for people in
 												Australia to swim at the beach. SwimMate can provide a range
-												of beach information to promote swimmers to make swimming
+												of beach information to help swimmers to make swimming
 												decision.</p>
 										</div>
 										<div class="col-lg-5 col-lg-offset-2 col-sm-6">
