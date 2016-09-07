@@ -30,6 +30,10 @@
 			<result>/BeachManagement/FindTraining.jsp</result>
 		</action>
 		
+		<action name="getTrainingByPostcode" class="action.TrainingAction" method="getTrainingByPostcode">
+			<result>/BeachManagement/FindTraining.jsp</result>
+		</action>
+		
 		<action name="findBeachByFacility" class="action.FacilityAction" method="findBeachByFacility" >
 			<result>/BeachManagement/FindFacility.jsp</result>
 		</action>

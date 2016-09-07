@@ -10,6 +10,7 @@ public class TrainingAction {
 	private TrainingService trainingService;
 	private List<Training> traininglist;
 	private String state;
+	private String postcode;
 	
 	
 	public String execute(){
@@ -25,6 +26,12 @@ public class TrainingAction {
 		
 		traininglist = trainingService.getTrainingByState(state);
 		
+		return "success";
+	}
+	
+	public String getTrainingByPostcode(){
+		System.out.println(postcode);
+		traininglist = trainingService.getTrainingByPostcode(postcode);
 		return "success";
 	}
 	
@@ -52,4 +59,12 @@ public class TrainingAction {
 		this.state = state;
 	}
 
+	public String getPostcode() {
+		return postcode;
+	}
+
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
+	}
+	
 }

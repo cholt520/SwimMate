@@ -153,10 +153,10 @@
 										<div class="search-bar ">
 											<div class="row">
 												<div class="col-md-12">
-													<s:form action="getTraingByState.action">
+													<s:form action="getTrainingByPostcode.action">
 														<div class="input-group">
-															<input name="state" type="text" class="form-control"
-																placeholder="Search Training by state"> <span
+															<input name="postcode" type="text" class="form-control"
+																placeholder="Search Training by postcode"> <span
 																class="input-group-btn">
 																<button class="btn green-sharp uppercase bold"
 																	type="submit">Search</button>

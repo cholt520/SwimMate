@@ -43,6 +43,11 @@ public class TrainingServiceImpl implements TrainingService{
 	public List<Training> getTrainingByState(String state) {
 		return trainingDao.getTrainingByState(state);
 	}
+
+	@Override
+	public List<Training> getTrainingByPostcode(String postcode) {
+		return trainingDao.getTrainingByPostcode(postcode);
+	}
 	
 	
 

@@ -11,6 +11,6 @@ public interface TrainingDao {
 	public void addTraining(Training training);
 	public void modifyTraining(Training training);
 	public List<Training> getTrainingByState(String state);
-	
+	public List<Training> getTrainingByPostcode(String postcode);
 
 }

@@ -11,4 +11,5 @@ public interface TrainingService {
 	public void addTraining(Training training);
 	public void modifyTraining(Training training);
 	public List<Training> getTrainingByState(String state);
+	List<Training> getTrainingByPostcode(String postcode) ;
 }

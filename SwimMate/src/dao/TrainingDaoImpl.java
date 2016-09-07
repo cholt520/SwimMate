@@ -51,4 +51,9 @@ public class TrainingDaoImpl extends HibernateDaoSupport implements TrainingDao{
 		
 	}
 
+	@Override
+	public List<Training> getTrainingByPostcode(String postcode) {
+		return (List<Training>)getHibernateTemplate().find("from Training as training where training.postcode like '%" + postcode + "%'");
+	}
+
 }
