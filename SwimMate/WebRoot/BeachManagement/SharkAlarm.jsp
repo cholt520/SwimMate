@@ -5,7 +5,7 @@
 
 <html lang="en">
 <head>
-<title>Find Beach By Facility</title>
+<title>Shark Alarm</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 <meta content="" name="description" />
@@ -48,12 +48,6 @@
 	rel="stylesheet" type="text/css" />
 <!-- END THEME LAYOUT STYLES -->
 <link rel="shortcut icon" href="favicon.ico" />
-
-<%-- <style >
-body {
-    background-image: url("../image/background.jpg");
-}
-</style> --%>
 </head>
 <!-- END HEAD -->
 
@@ -127,7 +121,7 @@ body {
 							<div class="container">
 								<!-- BEGIN PAGE TITLE -->
 								<div class="page-title">
-									<h1>Find a Beach</h1>
+									<h1>Shark Alarm</h1>
 								</div>
 								<!-- END PAGE TITLE -->
 							</div>
@@ -140,7 +134,7 @@ body {
 								<ul class="page-breadcrumb breadcrumb">
 									<li><a href="index.action" class="font-green-sharp">Home</a>
 										<i class="fa fa-circle"></i></li>
-									<li><span class="font-blue-oleo">Find Facility</span></li>
+									<li><span class="font-blue-oleo">Shark Alarm</span></li>
 								</ul>
 								<!-- END PAGE BREADCRUMBS -->
 								<!-- BEGIN PAGE CONTENT INNER -->
@@ -153,39 +147,13 @@ body {
 													<div class="caption">
 														<i class="fa fa-search font-green"></i> <span
 															class="caption-subject font-green bold uppercase">Find
-															facilities for swimmer</span>
+															SharkAlarm for swimmer</span>
 													</div>
 												</div>
 												<div class="portlet-body">
 
 													<!-- Start Search Facility Bar -->
-													<div class="row">
-														<div class="col-md-12">
-															<div class="form-group">
-																<s:form action="findBeachByFacility.action"
-																	namespace="/">
-																	<div class="input-group select2-bootstrap-prepend">
-																		<span class="input-group-btn">
-																			<button class="btn btn-default"
-																				data-select2-open="single-prepend-text"
-																				type="submit">
-																				<span class="glyphicon glyphicon-search"></span>
-																			</button>
-																		</span> <select id="single-prepend-text"
-																			class="form-control select2" name="selectedFacility">
-																			<option></option>
-																			<option value="parking">Parking Place</option>
-																			<option value="babychange">Changing Room</option>
-																			<option value="showers">Shower</option>
-																			<option value="drinkingwater">Water Drinking</option>
-																			<option value="toilet">Toilet</option>
-																			<option value="patrolled">Patrol</option>
-																		</select>
-																	</div>
-																</s:form>
-															</div>
-														</div>
-													</div>
+													
 													<!-- End Search Facility Bar -->
 													<br />
 													<!-- Start Map -->
@@ -313,10 +281,10 @@ body {
 		// Data for the markers consisting of a name, a LatLng and a zIndex for the
 		// order in which these markers should display on top of each other.
 		var facilities = [];
-		<s:iterator value="facilitiesList" status="userStatus">
+		<s:iterator value="sharkAlarmlist" status="userStatus">
 						var latitude = '<s:property value="latitude"/>';
 						var latitude1 = parseFloat(latitude);
-						var longitude = '<s:property value="longitude"/>';
+						var longitude = '<s:property value="longtitude"/>';
 						var longitude1 = parseFloat(longitude);
 			     	facilities.push(['<s:property value="name"/>',latitude1,longitude1]);
 			    </s:iterator>

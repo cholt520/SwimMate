@@ -1,12 +1,12 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib uri="http://displaytag.sf.net" prefix="display"%>
 
 <!DOCTYPE html>
 
 <html lang="en">
 <head>
-<!-- <meta charset="utf-8" /> -->
-<title>Beach Information</title>
+<title>Find Training</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 <meta content="" name="description" />
@@ -33,6 +33,11 @@
 	rel="stylesheet" type="text/css" />
 <link
 	href="../assets/global/plugins/fancybox/source/jquery.fancybox.css"
+	rel="stylesheet" type="text/css" />
+<link href="../assets/global/plugins/datatables/datatables.min.css"
+	rel="stylesheet" type="text/css" />
+<link
+	href="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css"
 	rel="stylesheet" type="text/css" />
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN THEME GLOBAL STYLES -->
@@ -64,7 +69,7 @@
 				<!-- BEGIN HEADER -->
 				<div class="page-header">
 					<!-- BEGIN HEADER TOP -->
-					<div class="page-header-top" style="margin-top:0px;">
+					<div class="page-header-top">
 						<div class="container">
 							<!-- BEGIN LOGO -->
 							<div class="page-logo">
@@ -84,11 +89,10 @@
 					<div class="page-header-menu">
 						<div class="container">
 
-							<!-- END HEADER SEARCH BOX -->
 							<!-- BEGIN MEGA MENU -->
-
 							<div class="hor-menu  ">
 								<ul class="nav navbar-nav">
+
 									<li class=><a href="index.action"> Home </a></li>
 
 									<li class="active"><a href="beach.action"> Find Beach
@@ -97,12 +101,12 @@
 									<li class=""><a href="getFacility.action "> Find
 											Facility </a></li>
 											
-											<li class=""> <a href="Training.action">Find Training </a>
+									<li class=""> <a href="Training.action">Find Training </a>
 									</li>
 									
 									<li class=""> <a href="SharkAlarm.action">Shark alarm </a>
 									</li>
-
+											
 									<li class=""><a href="Tips.jsp "> Tips for Swimmers </a></li>
 								</ul>
 							</div>
@@ -126,7 +130,7 @@
 							<div class="container">
 								<!-- BEGIN PAGE TITLE -->
 								<div class="page-title">
-									<h1>Find a Beach</h1>
+									<h1>Find Training</h1>
 								</div>
 								<!-- END PAGE TITLE -->
 
@@ -137,162 +141,93 @@
 						<div class="page-content">
 							<div class="container">
 								<!-- BEGIN PAGE BREADCRUMBS -->
-								<ul class="page-breadcrumb breadcrumb">
+								<ul class="page-breadcrumb breadcrumb ">
 									<li><a href="index.action" class="font-green-sharp">Home</a>
 										<i class="fa fa-circle"></i></li>
-									<li><a href="beach.action" class="font-blue-oleo">Find
-											Beach</a> <i class="fa fa-circle"></i></li>
-									<li><span class="font-blue-oleo">Beach Details</span></li>
+									<li><span>Find a Beach</span></li>
 								</ul>
 								<!-- END PAGE BREADCRUMBS -->
 								<!-- BEGIN PAGE CONTENT INNER -->
 								<div class="page-content-inner">
 									<div class="search-page search-content-2">
-										<div class="page-content-inner">
-											<!-- <div class="row">
-												<div class="col-md-12">
-													<img src="../image/Melbourne_St_Kilda_Banner.jpg"
-														alt="St_Kilda_Beach" style="width: 100%; height: auto;" />
-												</div>
-											</div>
-											<br /> <br /> -->
 
+										<!--Search Bar-->
+										<div class="search-bar ">
 											<div class="row">
 												<div class="col-md-12">
-													<div class="portlet light ">
-
-														<div class="portlet-title">
-															<div class="caption">
-
-																<span
-																	class="caption-subject font-green-sharp bold uppercase">
-																	<i class="fa fa-map-pin"></i> <s:property
-																		value="currentBeach.beach_name" />
-																</span>
-															</div>
+													<s:form action="getTraingByState.action">
+														<div class="input-group">
+															<input name="state" type="text" class="form-control" placeholder="Search Training by state" >
+															<span class="input-group-btn">
+																 <button class="btn green-sharp uppercase bold" type="submit">Search</button>
+															</span>
 														</div>
-														<div class="portlet-body">
-															<div class="row">
-																<div class="col-md-6">
-
-																	<h4 class="font-green-sharp">
-																		<i class="fa fa-map-marker font-green-sharp"></i>
-																		Location
-																	</h4>
-																	<p>
-																		<a
-																			href="http://maps.google.com/?q=<s:property value="currentBeach.latitude" />,<s:property value="currentBeach.longitude"/> "
-																			target="_blank"> <s:property
-																				value="currentBeach.beach_name" />, <s:property
-																				value="currentBeach.address" />, <s:property
-																				value="currentBeach.state" /> <s:hidden
-																				id="latitude" value="%{currentBeach.latitude}"
-																				name="latitude" /> <s:hidden id="longitude"
-																				value="%{currentBeach.longitude}" name="longitude" />
-																			<s:hidden id="beachName"
-																				value="%{currentBeach.beach_name}" name="beachName" />
-																		</a>
-																	</p>
-																	<div class="row">
-																		<div class="col-md-6">
-																			<h4 class="font-green-sharp">
-																				<i class="fa fa-sun-o font-green-sharp" /></i> Weather
-																			</h4>
-																			<p>
-																				Tempreture:
-																				<s:property value="weather.temp" />
-																				°C <br /> Pressure:
-																				<s:property value="weather.pressure" />
-																				mb <br /> Humidity:
-																				<s:property value="weather.humidity" />
-																				% <br />
-																			</p>
-																		</div>
-																		<div class="col-md-6">
-																			<h4 class="font-green-sharp">
-																				<i class="fa fa-flag font-green-sharp" /></i> Tide
-																			</h4>
-																			<p>
-																				Height:
-																				<s:property value="tide.height" />
-																				m <br /> Update Date:
-																				<s:property value="tide.date" />
-																				<br /> Type:
-																				<s:property value="tide.type" />
-																			</p>
-																		</div>
-																	</div>
-																	<div class="row">
-																		<div class="col-md-6">
-
-																			<div class="row">
-																			<div class="col-md-12">
-																				<h4 class="font-green-sharp">
-																					<i class="fa fa-info-circle font-green-sharp" /></i>
-																					Water Quality
-																				</h4>
-																				<p>N/A</p>
-																				</div>
-																			</div>
-
-																			<div class="row">
-																			<div class="col-md-12">
-																				<h4 class="font-green-sharp">
-																					<i class="fa fa-ambulance font-green-sharp" /></i>
-																					Patrolled
-																				</h4>
-																				<p>
-																					<s:property value="facility.patrolled" />
-																				</p>
-																			</div>
-																			</div>
-
-																		</div>
-																		<div class="col-md-6">
-																			<h4 class="font-green-sharp">
-																				<i class="fa fa-info-circle font-green-sharp" /></i>
-																				Facilities
-																			</h4>
-																			<p>
-																				Parking place:
-																				<s:property value="facility.parking" />
-																				<br /> Changing Room:
-																				<s:property value="facility.babychange" />
-																				<br /> Shower:
-																				<s:property value="facility.showers" />
-																				<br /> Water Drinking:
-																				<s:property value="facility.drinkingwater" />
-																				<br /> Toilet:
-																				<s:property value="facility.toilet" />
-																				<br />
-																			</p>
-																		</div>
-																	</div>
-																</div>
-																<div class="col-md-6">
-																	<div id="gmap_basic" class="gmaps">
-																		<div id="map"
-																			style="height:100%;overflow:hidden;display:block;"></div>
-																	</div>
-																</div>
-															</div>
-															<br />
-															<div class="row">
-																<div class="col-md-6">
-																	<h4 class="font-green-sharp">
-																		<i class="fa fa-tag font-green-sharp" /></i> Suggestion
-																	</h4>
-																	<p>For swimming this is considered cold and even
-																		the most hardy among us would find any more than a few
-																		minutes in the water uncomfortable.</p>
-																</div>
-															</div>
-														</div>
-													</div>
+													</s:form>
 												</div>
 											</div>
-											<br /> <br />
 										</div>
+										<!--End Search Bar-->
+
+										
+										<!--Result Table-->
+										<div class="row" style="Margin:2px;">
+											<div class="search-container ">
+												<ul class="search-container">
+												
+														 <!-- BEGIN SAMPLE TABLE PORTLET-->
+                                                <div class="portlet box green">
+                                                    <div class="portlet-title">
+                                                        <div class="caption">
+                                                            <i class="fa fa-cogs"></i>Training Information </div>
+                                                        <div class="tools">
+                                                            <a href="javascript:;" class="collapse"> </a>
+                                                            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                                                            <a href="javascript:;" class="reload"> </a>
+                                                            <a href="javascript:;" class="remove"> </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="portlet-body flip-scroll">
+                                                        <table
+																class="table table-bordered table-striped table-condensed flip-content">
+																<thead class="flip-content">
+																	<tr>
+																		<th width="20%">Name</th>
+																		<th>Address</th>
+																		<th>Suburb</th>
+																		<th>Postcode</th>
+																		<th>State</th>
+																		<th>Business Category</th>
+																		<th>LGA</th>
+																		<th>Region</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<s:iterator value="traininglist"  id="training">
+																		<tr>
+																			<td><s:property value="#training.name" /></td>
+																			<td><s:property value="#training.address" /></td>
+																			<td><s:property value="#training.suburb" /></td>
+																			<td><s:property value="#training.postcode" /></td>
+																			<td><s:property value="#training.State" /></td>
+																			<td><s:property value="#training.businessCategory" /></td>
+																			<td><s:property value="#training.lga" /></td>
+																			<td><s:property value="#training.region" /></td>
+																			
+																		</tr>
+																	</s:iterator>
+																</tbody>
+															</table>
+                                                    </div>
+                                                </div>
+                                                <!-- END SAMPLE TABLE PORTLET-->
+														
+													 
+
+												</ul>
+												
+											</div>
+										</div>
+										<!--End Result Table-->
 									</div>
 									<br /> <br />
 								</div>
@@ -367,13 +302,18 @@
 		type="text/javascript"></script>
 	<!-- END CORE PLUGINS -->
 	<!-- BEGIN PAGE LEVEL PLUGINS -->
+	<script src="../assets/global/plugins/jquery.pulsate.min.js"
+		type="text/javascript"></script>
+	<script
+		src="../assets/global/plugins/jquery-bootpag/jquery.bootpag.min.js"
+		type="text/javascript"></script>
+	<script src="../assets/global/plugins/holder.js" type="text/javascript"></script>
+
 	<script
 		src="../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"
 		type="text/javascript"></script>
 	<script
 		src="../assets/global/plugins/fancybox/source/jquery.fancybox.pack.js"
-		type="text/javascript"></script>
-	<script src="http://maps.google.com/maps/api/js?sensor=false"
 		type="text/javascript"></script>
 	<!-- END PAGE LEVEL PLUGINS -->
 	<!-- BEGIN THEME GLOBAL SCRIPTS -->
@@ -385,7 +325,12 @@
 		type="text/javascript"></script>
 	<script src="../assets/pages/scripts/search.min.js"
 		type="text/javascript"></script>
-	<script src="../assets/pages/scripts/maps-google.min.js"
+	<script src="../assets/global/plugins/datatables/datatables.min.js"
+		type="text/javascript"></script>
+	<script
+		src="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js"
+		type="text/javascript"></script>
+	<script src="../assets/pages/scripts/ui-general.min.js"
 		type="text/javascript"></script>
 	<!-- END PAGE LEVEL SCRIPTS -->
 	<!-- BEGIN THEME LAYOUT SCRIPTS -->
@@ -396,34 +341,79 @@
 	<script src="../assets/layouts/global/scripts/quick-sidebar.min.js"
 		type="text/javascript"></script>
 	<!-- END THEME LAYOUT SCRIPTS -->
+	<!-- BEGIN PAGE LEVEL SCRIPTS -->
+	<script src="../assets/pages/scripts/table-datatables-managed.min.js"
+		type="text/javascript"></script>
+	<!-- END PAGE LEVEL SCRIPTS -->
+
+	<!-- Start Map Scripts -->
 	<script>
+	
 		function initMap() {
-			var longitude = document.getElementById('longitude').value;
-			var latitude = document.getElementById('latitude').value;
-			var beachName = document.getElementById('beachName').value;
-	
-			var latitude1 = parseFloat(latitude);
-			var longitude1 = parseFloat(longitude);
-	
-			var myLatLng = {
-				lat : latitude1,
-				lng : longitude1
-			};
-	
 			var map = new google.maps.Map(document.getElementById('map'), {
-				zoom : 12,
-				center : myLatLng
+				zoom : 4,
+				center : {
+					lat : -29,
+					lng : 140.2
+				}
 			});
-			var marker = new google.maps.Marker({
-				position : myLatLng,
-				map : map,
-				title : beachName
-			});
+	
+			setMarkers(map);
+		}
+		// Data for the markers consisting of a name, a LatLng and a zIndex for the
+		// order in which these markers should display on top of each other.
+		var beaches = [];
+		<s:iterator value="beachList" status="userStatus">
+					var latitude = '<s:property value="latitude"/>';
+					var latitude1 = parseFloat(latitude);
+					var longitude = '<s:property value="longitude"/>';
+					var longitude1 = parseFloat(longitude);
+		     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
+		    </s:iterator>
+	
+	
+		function setMarkers(map) {
+			// Adds markers to the map.
+	
+			// Marker sizes are expressed as a Size of X,Y where the origin of the image
+			// (0,0) is located in the top left of the image.
+	
+			// Origins, anchor positions and coordinates of the marker increase in the X
+			// direction to the right and in the Y direction down.
+			var image = {
+				url : 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+				// This marker is 20 pixels wide by 32 pixels high.
+				size : new google.maps.Size(20, 32),
+				// The origin for this image is (0, 0).
+				origin : new google.maps.Point(0, 0),
+				// The anchor for this image is the base of the flagpole at (0, 32).
+				anchor : new google.maps.Point(0, 32)
+			};
+			// Shapes define the clickable region of the icon. The type defines an HTML
+			// <area> element 'poly' which traces out a polygon as a series of X,Y points.
+			// The final coordinate closes the poly by connecting to the first coordinate.
+			var shape = {
+				coords : [ 1, 1, 1, 20, 18, 20, 18, 1 ],
+				type : 'poly'
+			};
+			for (var i = 0; i < beaches.length; i++) {
+				var beach = beaches[i];
+				var marker = new google.maps.Marker({
+					position : {
+						lat : beach[1],
+						lng : beach[2]
+					},
+					map : map,
+					shape : shape,
+					title : beach[0],
+					zIndex : beach[3]
+				});
+			}
 		}
 	</script>
 	<script async defer
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUuudit4OFSnhG3ZVXncE3ThuiP6xo25s&callback=initMap">
 </script>
+	<!-- End Map Scripts -->
 </body>
 </html>
-
