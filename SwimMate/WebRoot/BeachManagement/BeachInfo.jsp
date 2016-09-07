@@ -94,8 +94,7 @@
 									<li class="active"><a href="beach.action"> Find Beach
 									</a></li>
 
-									<li class=""><a href="getFacility.action "> Find
-											Facility </a></li>
+									
 											
 											<li class=""> <a href="Training.action">Find Swimming Centers </a>
 									</li>
@@ -282,9 +281,8 @@
 																	<h4 class="font-green-sharp">
 																		<i class="fa fa-tag font-green-sharp" /></i> Suggestion
 																	</h4>
-																	<p>For swimming this is considered cold and even
-																		the most hardy among us would find any more than a few
-																		minutes in the water uncomfortable.</p>
+																	<p><s:property value="recommandation.recommandation" />
+																	</p>
 																</div>
 															</div>
 														</div>
