@@ -27,29 +27,12 @@
 	href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css"
 	rel="stylesheet" type="text/css" />
 <!-- END GLOBAL MANDATORY STYLES -->
-<!-- BEGIN PAGE LEVEL PLUGINS -->
-<link
-	href="../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css"
-	rel="stylesheet" type="text/css" />
-<link
-	href="../assets/global/plugins/fancybox/source/jquery.fancybox.css"
-	rel="stylesheet" type="text/css" />
-<link href="../assets/global/plugins/datatables/datatables.min.css"
-	rel="stylesheet" type="text/css" />
-<link
-	href="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css"
-	rel="stylesheet" type="text/css" />
-<!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN THEME GLOBAL STYLES -->
 <link href="../assets/global/css/components-rounded.min.css"
 	rel="stylesheet" id="style_components" type="text/css" />
 <link href="../assets/global/css/plugins.min.css" rel="stylesheet"
 	type="text/css" />
 <!-- END THEME GLOBAL STYLES -->
-<!-- BEGIN PAGE LEVEL STYLES -->
-<link href="../assets/pages/css/search.min.css" rel="stylesheet"
-	type="text/css" />
-<!-- END PAGE LEVEL STYLES -->
 <!-- BEGIN THEME LAYOUT STYLES -->
 <link href="../assets/layouts/layout3/css/layout.min.css"
 	rel="stylesheet" type="text/css" />
@@ -58,6 +41,18 @@
 <link href="../assets/layouts/layout3/css/custom.min.css"
 	rel="stylesheet" type="text/css" />
 <!-- END THEME LAYOUT STYLES -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<link
+	href="../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css"
+	rel="stylesheet" type="text/css" />
+<link
+	href="../assets/global/plugins/fancybox/source/jquery.fancybox.css"
+	rel="stylesheet" type="text/css" />
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link href="../assets/pages/css/search.min.css" rel="stylesheet"
+	type="text/css" />
+<!-- END PAGE LEVEL STYLES -->
 <link rel="shortcut icon" href="favicon.ico" />
 </head>
 <!-- END HEAD -->
@@ -95,11 +90,10 @@
 
 									<li class=""><a href="index.action"> Home </a></li>
 
-									<li class=""><a href="beach.action"> Find Beach
-									</a></li>
-									
-									<li class="active"><a href="Training.action">Find Swimming
-											Centers </a></li>
+									<li class=""><a href="beach.action"> Find Beach </a></li>
+
+									<li class="active"><a href="Training.action">Find
+											Swimming Centers </a></li>
 
 									<li class=""><a href="SharkAlarm.action">Shark alarm </a>
 									</li>
@@ -225,7 +219,7 @@
 											</div>
 										</div>
 										<!--End Result Table-->
-										
+
 									</div>
 									<br /> <br />
 								</div>
@@ -298,38 +292,10 @@
 		src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"
 		type="text/javascript"></script>
 	<!-- END CORE PLUGINS -->
-	<!-- BEGIN PAGE LEVEL PLUGINS -->
-	<script src="../assets/global/plugins/jquery.pulsate.min.js"
-		type="text/javascript"></script>
-	<script
-		src="../assets/global/plugins/jquery-bootpag/jquery.bootpag.min.js"
-		type="text/javascript"></script>
-	<script src="../assets/global/plugins/holder.js" type="text/javascript"></script>
-
-	<script
-		src="../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"
-		type="text/javascript"></script>
-	<script
-		src="../assets/global/plugins/fancybox/source/jquery.fancybox.pack.js"
-		type="text/javascript"></script>
-	<!-- END PAGE LEVEL PLUGINS -->
 	<!-- BEGIN THEME GLOBAL SCRIPTS -->
 	<script src="../assets/global/scripts/app.min.js"
 		type="text/javascript"></script>
 	<!-- END THEME GLOBAL SCRIPTS -->
-	<!-- BEGIN PAGE LEVEL SCRIPTS -->
-	<script src="../assets/pages/scripts/ui-buttons.min.js"
-		type="text/javascript"></script>
-	<script src="../assets/pages/scripts/search.min.js"
-		type="text/javascript"></script>
-	<script src="../assets/global/plugins/datatables/datatables.min.js"
-		type="text/javascript"></script>
-	<script
-		src="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js"
-		type="text/javascript"></script>
-	<script src="../assets/pages/scripts/ui-general.min.js"
-		type="text/javascript"></script>
-	<!-- END PAGE LEVEL SCRIPTS -->
 	<!-- BEGIN THEME LAYOUT SCRIPTS -->
 	<script src="../assets/layouts/layout3/scripts/layout.min.js"
 		type="text/javascript"></script>
@@ -338,11 +304,18 @@
 	<script src="../assets/layouts/global/scripts/quick-sidebar.min.js"
 		type="text/javascript"></script>
 	<!-- END THEME LAYOUT SCRIPTS -->
+	<!-- BEGIN PAGE LEVEL PLUGINS -->
+	<script
+		src="../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"
+		type="text/javascript"></script>
+	<script
+		src="../assets/global/plugins/fancybox/source/jquery.fancybox.pack.js"
+		type="text/javascript"></script>
+	<!-- END PAGE LEVEL PLUGINS -->
 	<!-- BEGIN PAGE LEVEL SCRIPTS -->
-	<script src="../assets/pages/scripts/table-datatables-managed.min.js"
+	<script src="../assets/pages/scripts/search.min.js"
 		type="text/javascript"></script>
 	<!-- END PAGE LEVEL SCRIPTS -->
-
 	<!-- Start Map Scripts -->
 	<script>
 	
@@ -361,12 +334,12 @@
 		// order in which these markers should display on top of each other.
 		var beaches = [];
 		<s:iterator value="beachList" status="userStatus">
-							var latitude = '<s:property value="latitude"/>';
-							var latitude1 = parseFloat(latitude);
-							var longitude = '<s:property value="longitude"/>';
-							var longitude1 = parseFloat(longitude);
-				     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
-				    </s:iterator>
+												var latitude = '<s:property value="latitude"/>';
+												var latitude1 = parseFloat(latitude);
+												var longitude = '<s:property value="longitude"/>';
+												var longitude1 = parseFloat(longitude);
+									     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
+									    </s:iterator>
 	
 	
 		function setMarkers(map) {
