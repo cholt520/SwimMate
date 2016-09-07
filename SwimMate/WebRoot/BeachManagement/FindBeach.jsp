@@ -34,11 +34,6 @@
 <link
 	href="../assets/global/plugins/fancybox/source/jquery.fancybox.css"
 	rel="stylesheet" type="text/css" />
-<link href="../assets/global/plugins/datatables/datatables.min.css"
-	rel="stylesheet" type="text/css" />
-<link
-	href="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css"
-	rel="stylesheet" type="text/css" />
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN THEME GLOBAL STYLES -->
 <link href="../assets/global/css/components-rounded.min.css"
@@ -100,7 +95,7 @@
 
 									<li class=""><a href="getFacility.action "> Find
 											Facility </a></li>
-											
+
 									<li class=""><a href="Tips.jsp "> Tips for Swimmers </a></li>
 								</ul>
 							</div>
@@ -355,13 +350,6 @@
 		type="text/javascript"></script>
 	<!-- END CORE PLUGINS -->
 	<!-- BEGIN PAGE LEVEL PLUGINS -->
-	<script src="../assets/global/plugins/jquery.pulsate.min.js"
-		type="text/javascript"></script>
-	<script
-		src="../assets/global/plugins/jquery-bootpag/jquery.bootpag.min.js"
-		type="text/javascript"></script>
-	<script src="../assets/global/plugins/holder.js" type="text/javascript"></script>
-
 	<script
 		src="../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"
 		type="text/javascript"></script>
@@ -374,16 +362,7 @@
 		type="text/javascript"></script>
 	<!-- END THEME GLOBAL SCRIPTS -->
 	<!-- BEGIN PAGE LEVEL SCRIPTS -->
-	<script src="../assets/pages/scripts/ui-buttons.min.js"
-		type="text/javascript"></script>
 	<script src="../assets/pages/scripts/search.min.js"
-		type="text/javascript"></script>
-	<script src="../assets/global/plugins/datatables/datatables.min.js"
-		type="text/javascript"></script>
-	<script
-		src="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js"
-		type="text/javascript"></script>
-	<script src="../assets/pages/scripts/ui-general.min.js"
 		type="text/javascript"></script>
 	<!-- END PAGE LEVEL SCRIPTS -->
 	<!-- BEGIN THEME LAYOUT SCRIPTS -->
@@ -394,10 +373,6 @@
 	<script src="../assets/layouts/global/scripts/quick-sidebar.min.js"
 		type="text/javascript"></script>
 	<!-- END THEME LAYOUT SCRIPTS -->
-	<!-- BEGIN PAGE LEVEL SCRIPTS -->
-	<script src="../assets/pages/scripts/table-datatables-managed.min.js"
-		type="text/javascript"></script>
-	<!-- END PAGE LEVEL SCRIPTS -->
 
 	<!-- Start Map Scripts -->
 	<script>
@@ -417,12 +392,12 @@
 		// order in which these markers should display on top of each other.
 		var beaches = [];
 		<s:iterator value="beachList" status="userStatus">
-					var latitude = '<s:property value="latitude"/>';
-					var latitude1 = parseFloat(latitude);
-					var longitude = '<s:property value="longitude"/>';
-					var longitude1 = parseFloat(longitude);
-		     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
-		    </s:iterator>
+							var latitude = '<s:property value="latitude"/>';
+							var latitude1 = parseFloat(latitude);
+							var longitude = '<s:property value="longitude"/>';
+							var longitude1 = parseFloat(longitude);
+				     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
+				    </s:iterator>
 	
 	
 		function setMarkers(map) {
