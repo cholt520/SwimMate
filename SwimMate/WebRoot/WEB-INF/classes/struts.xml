@@ -8,6 +8,16 @@
 			<result>/BeachManagement/index.jsp</result>
 		</action>
 		
+		<action name="login">
+			<result>/BeachManagement/Login.jsp</result>
+		</action>
+		
+		<action name="validation" class="action.LoginAction" method="execute">
+			<result>/BeachManagement/index.jsp</result>
+		</action>
+		
+		
+		
 		<action name="Training" class="action.TrainingAction" method="execute">
 			<result>/BeachManagement/FindTraining.jsp</result>
 		</action>
@@ -17,6 +27,10 @@
 		</action>
 		
 		<action name="getTrainingByState" class="action.TrainingAction" method="getTrainingByState">
+			<result>/BeachManagement/FindTraining.jsp</result>
+		</action>
+		
+		<action name="getTrainingByPostcode" class="action.TrainingAction" method="getTrainingByPostcode">
 			<result>/BeachManagement/FindTraining.jsp</result>
 		</action>
 		

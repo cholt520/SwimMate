@@ -77,7 +77,7 @@
 							<!-- BEGIN MEGA MENU -->
 							<div class="hor-menu ">
 								<ul class="nav navbar-nav">
-									<li class="active"><a href="index.action"> Home </a></li>
+									<li class=""><a href="index.action"> Home </a></li>
 
 									<li class=""><a href="beach.action"> Find Beach </a></li>
 
@@ -87,7 +87,7 @@
 									
 									<li class=""> <a href="SharkAlarm.action">Shark alarm </a>
 									</li>
-									<li class=""><a href="Tips.jsp "> Tips for Swimmers </a></li>
+									<li class="active"><a href="Tips.jsp "> Tips for Swimmers </a></li>
 								</ul>
 							</div>
 							<!-- END MEGA MENU -->

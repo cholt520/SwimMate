@@ -93,13 +93,12 @@
 							<div class="hor-menu  ">
 								<ul class="nav navbar-nav">
 
-									<li class=><a href="index.action"> Home </a></li>
+									<li class=""><a href="index.action"> Home </a></li>
 
-									<li class="active"><a href="beach.action"> Find Beach
+									<li class=""><a href="beach.action"> Find Beach
 									</a></li>
-
 									
-									<li class=""><a href="Training.action">Find Swimming
+									<li class="active"><a href="Training.action">Find Swimming
 											Centers </a></li>
 
 									<li class=""><a href="SharkAlarm.action">Shark alarm </a>

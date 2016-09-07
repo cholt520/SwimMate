@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC 
  "-//Hibernate/Hibernate Mapping DTD//EN"
- "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-   <class name="entity.Training" table="Training">
-      <id name="id" type="int" column="id">
-         <generator class="native"/>
-      </id>
-      <property name="name" column="name" type="string"/>
-      <property name="coarch" column="coarch" type="string"/>
-      <property name="beachid" column="beachid" type="int"/>
-      <property name="location" column="location" type="string"/>
-   </class>
+	<class name="entity.Training" table="Training">
+		<id name="id" type="int" column="id">
+			<generator class="native" />
+		</id>
+		<property name="name" column="name" type="string" />
+		<property name="address" column="address" type="string" />
+		<property name="suburb" column="suburb" type="string" />
+		<property name="postcode" column="postcode" type="string" />
+		<property name="state" column="state" type="string" />
+		<property name="businessCategory" column="businessCategory"
+			type="string" />
+		<property name="lga" column="lga" type="string" />
+		<property name="region" column="region" type="string" />
+	</class>
 </hibernate-mapping>

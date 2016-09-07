@@ -83,17 +83,12 @@
 								<ul class="nav navbar-nav">
 									<li class=""><a href="index.action"> Home </a></li>
 
-									<li class=""><a href="beach.action"> Find Beach </a>
-										
+									<li class=""><a href="beach.action"> Find Beach </a></li>
 									
-									</li>
+									<li class=""><a href="Training.action">Find Swimming
+											Centers </a></li>
 
-									
-									
-									<li class=""> <a href="Training.action">Find Swimming Centers </a>
-									</li>
-									
-									<li class=""> <a href="SharkAlarm.action">Shark alarm </a>
+									<li class="active"><a href="SharkAlarm.action">Shark alarm </a>
 									</li>
 
 									<li class=""><a href="Tips.jsp "> Tips for Swimmers </a></li>
@@ -152,7 +147,7 @@
 												<div class="portlet-body">
 
 													<!-- Start Search Facility Bar -->
-													
+
 													<!-- End Search Facility Bar -->
 													<br />
 													<!-- Start Map -->
@@ -203,8 +198,7 @@
 							<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
 								<h2>Contacts</h2>
 								<address class="margin-bottom-40">
-									 <br /> Email: <a
-										href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
+									<br /> Email: <a href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
 								</address>
 							</div>
 						</div>
@@ -281,12 +275,12 @@
 		// order in which these markers should display on top of each other.
 		var facilities = [];
 		<s:iterator value="sharkAlarmlist" status="userStatus">
-						var latitude = '<s:property value="latitude"/>';
-						var latitude1 = parseFloat(latitude);
-						var longitude = '<s:property value="longtitude"/>';
-						var longitude1 = parseFloat(longitude);
-			     	facilities.push(['<s:property value="name"/>',latitude1,longitude1]);
-			    </s:iterator>
+							var latitude = '<s:property value="latitude"/>';
+							var latitude1 = parseFloat(latitude);
+							var longitude = '<s:property value="longtitude"/>';
+							var longitude1 = parseFloat(longitude);
+				     	facilities.push(['<s:property value="name"/>',latitude1,longitude1]);
+				    </s:iterator>
 	
 		/* window.alert(facilities.length); */
 	
