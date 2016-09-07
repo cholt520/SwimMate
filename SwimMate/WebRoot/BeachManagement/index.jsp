@@ -142,7 +142,7 @@
 											<hr class="section-heading-spacer">
 											<div class="clearfix"></div>
 											<h2 class="section-heading">
-												<a href="beach.action" class="font-dark"> Finding an
+												<a href="beach.action" class="font-dark"> Finding your
 													ideal beach </a>
 											</h2>
 											<p class="lead">It is quite normal for people in
@@ -226,7 +226,7 @@
 						<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
 							<h2>Contacts</h2>
 							<address class="margin-bottom-40">
-								Phone: 0400000000 <br /> Email: <a
+								 Email: <a
 									href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
 							</address>
 						</div>
