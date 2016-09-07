@@ -83,7 +83,7 @@
 
 									<li class=""><a href="getFacility.action "> Find
 											Facility </a></li>
-											<li class=""> <a href="Training.action">Find Training </a>
+											<li class=""> <a href="Training.action">Find Swimming Centers </a>
 									</li>
 									
 									<li class=""> <a href="SharkAlarm.action">Shark alarm </a>
@@ -186,7 +186,7 @@
 																	<div class="col-md-6">
 																		<hr class="section-heading-spacer">
 																		<div class="clearfix"></div>
-																		<h2 class="section-heading">How can I spot a rip?</h2>
+																		<h2 class="section-heading">How can I Spot a Rip?</h2>
 																		<p class="lead">
 																			Many of Australia's beaches have rips, these are
 																			powerful currents of water that can drag you along
@@ -252,7 +252,7 @@
 																	<div class="col-md-6">
 																		<hr class="section-heading-spacer">
 																		<div class="clearfix"></div>
-																		<h2 class="section-heading">Beach and sun safety</h2>
+																		<h2 class="section-heading">Beach and Sun Safety</h2>
 																		<p class="lead">
 																			Sun protection is a very serious matter in Australia,
 																			as the Ultra Violet (UV) is very high at all times of

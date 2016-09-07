@@ -97,7 +97,7 @@
 									<li class=""><a href="getFacility.action "> Find
 											Facility </a></li>
 											
-											<li class=""> <a href="Training.action">Find Training </a>
+											<li class=""> <a href="Training.action">Find Swimming Centers </a>
 									</li>
 									
 									<li class=""> <a href="SharkAlarm.action">Shark alarm </a>
@@ -260,7 +260,7 @@
 																				<s:property value="facility.babychange" />
 																				<br /> Shower:
 																				<s:property value="facility.showers" />
-																				<br /> Water Drinking:
+																				<br /> Drinking Water:
 																				<s:property value="facility.drinkingwater" />
 																				<br /> Toilet:
 																				<s:property value="facility.toilet" />
