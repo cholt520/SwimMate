@@ -92,12 +92,6 @@
 
 									<li class="active"><a href="beach.action"> Find Beach
 									</a></li>
-<<<<<<< HEAD
-
-=======
-								
->>>>>>> bbae35362f99d8b04de5c8bab6fd0096c2027113
-
 											
 											<li class=""> <a href="Training.action">Find Swimming Centers </a>
 									</li>
