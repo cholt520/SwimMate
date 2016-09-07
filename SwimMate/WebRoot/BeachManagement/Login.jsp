@@ -52,17 +52,14 @@
 
     <body class=" login">
         <!-- BEGIN LOGO -->
-        <div class="logo">
-            <a href="index.html">
-                <img src="../assets/pages/img/logo-big-white.png" style="height: 17px;" alt="" /> </a>
-        </div>
+        
         <!-- END LOGO -->
         <!-- BEGIN LOGIN -->
         <div class="content">
             <!-- BEGIN LOGIN FORM -->
-            <form class="login-form" action="index.html" method="post">
+            <form class="login-form" action="validation.action" method="post">
                 <div class="form-title">
-                    <span class="form-title">Welcome.</span>
+                    <span class="form-title">Welcome to SwimMate</span>
                     <span class="form-subtitle">Please login.</span>
                 </div>
                 <div class="alert alert-danger display-hide">
@@ -75,7 +72,6 @@
       <s:actionerror/>
    </div>
 </s:if>
-	<s:form action="validation.action">
                 <div class="form-group">
                     <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
                     <label class="control-label visible-ie8 visible-ie9">Username</label>
@@ -86,55 +82,15 @@
                 <div class="form-actions">
                     <button type="submit" class="btn red btn-block uppercase">Login</button>
                 </div>
-     </s:form>
                 <div class="form-actions">
-                    <div class="pull-left">
-                        <label class="rememberme mt-checkbox mt-checkbox-outline">
-                            <input type="checkbox" name="remember" value="1" /> Remember me
-                            <span></span>
-                        </label>
-                    </div>
-                    <div class="pull-right forget-password-block">
-                        <a href="javascript:;" id="forget-password" class="forget-password">Forgot Password?</a>
-                    </div>
+                    
                 </div>
-                <div class="login-options">
-                    <h4 class="pull-left">Or login with</h4>
-                    <ul class="social-icons pull-right">
-                        <li>
-                            <a class="social-icon-color facebook" data-original-title="facebook" href="javascript:;"></a>
-                        </li>
-                        <li>
-                            <a class="social-icon-color twitter" data-original-title="Twitter" href="javascript:;"></a>
-                        </li>
-                        <li>
-                            <a class="social-icon-color googleplus" data-original-title="Goole Plus" href="javascript:;"></a>
-                        </li>
-                        <li>
-                            <a class="social-icon-color linkedin" data-original-title="Linkedin" href="javascript:;"></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="create-account">
-                    <p>
-                        <a href="javascript:;" class="btn-primary btn" id="register-btn">Create an account</a>
-                    </p>
-                </div>
+                
+                
             </form>
             <!-- END LOGIN FORM -->
             <!-- BEGIN FORGOT PASSWORD FORM -->
-            <form class="forget-form" action="index.html" method="post">
-                <div class="form-title">
-                    <span class="form-title">Forget Password ?</span>
-                    <span class="form-subtitle">Enter your e-mail to reset it.</span>
-                </div>
-                <div class="form-group">
-                    <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email" /> </div>
-                <div class="form-actions">
-                    <button type="button" id="back-btn" class="btn btn-default">Back</button>
-                    <button type="submit" class="btn btn-primary uppercase pull-right">Submit</button>
-                </div>
-            </form>
+           
             <!-- END FORGOT PASSWORD FORM -->
             <!-- BEGIN REGISTRATION FORM -->
             <form class="register-form" action="index.html" method="post">
@@ -421,7 +377,7 @@
             </form>
             <!-- END REGISTRATION FORM -->
         </div>
-        <div class="copyright hide"> 2014 © Metronic. Admin Dashboard Template. </div>
+        <div class="copyright hide"> </div>
         <!-- END LOGIN -->
         <!--[if lt IE 9]>
 <script src="../assets/global/plugins/respond.min.js"></script>

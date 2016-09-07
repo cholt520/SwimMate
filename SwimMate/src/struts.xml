@@ -12,9 +12,9 @@
 			<result>/BeachManagement/Login.jsp</result>
 		</action>
 		
-		<!--  <action name="validation" class="action.LoginAction" method="execute">
+		<action name="validation" class="action.LoginAction" method="execute">
 			<result>/BeachManagement/index.jsp</result>
-		</action>-->
+		</action>
 		
 		
 		
