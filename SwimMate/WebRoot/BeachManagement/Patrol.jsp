@@ -392,7 +392,6 @@
 							<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
 								<h2>Contacts</h2>
 								<address class="margin-bottom-40">
-									Phone: 0431003341 
 									<br/> 
 									Email: <a href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
 								</address>
