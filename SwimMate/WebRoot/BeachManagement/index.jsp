@@ -83,7 +83,7 @@
 
 									<li class=""><a href="getFacility.action "> Find
 											Facility </a></li>
-									<li class=""><a href="Training.action">Find Training </a>
+									<li class=""><a href="Training.action">Find Swimming Centers </a>
 									</li>
 
 									<li class=""><a href="SharkAlarm.action">Shark alarm </a>

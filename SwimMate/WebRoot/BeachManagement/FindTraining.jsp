@@ -12,7 +12,8 @@
 <meta content="" name="description" />
 <meta content="" name="author" />
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all"
+<link
+	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all"
 	rel="stylesheet" type="text/css" />
 <link
 	href="../assets/global/plugins/font-awesome/css/font-awesome.min.css"
@@ -99,13 +100,13 @@
 
 									<li class=""><a href="getFacility.action "> Find
 											Facility </a></li>
-											
-									<li class=""> <a href="Training.action">Find Training </a>
+
+									<li class=""><a href="Training.action">Find Swimming
+											Centers </a></li>
+
+									<li class=""><a href="SharkAlarm.action">Shark alarm </a>
 									</li>
-									
-									<li class=""> <a href="SharkAlarm.action">Shark alarm </a>
-									</li>
-											
+
 									<li class=""><a href="Tips.jsp "> Tips for Swimmers </a></li>
 								</ul>
 							</div>
@@ -143,7 +144,7 @@
 								<ul class="page-breadcrumb breadcrumb ">
 									<li><a href="index.action" class="font-green-sharp">Home</a>
 										<i class="fa fa-circle"></i></li>
-									<li><span>Find a Beach</span></li>
+									<li><span>Find Swimming Centers</span></li>
 								</ul>
 								<!-- END PAGE BREADCRUMBS -->
 								<!-- BEGIN PAGE CONTENT INNER -->
@@ -156,9 +157,11 @@
 												<div class="col-md-12">
 													<s:form action="getTraingByState.action">
 														<div class="input-group">
-															<input name="state" type="text" class="form-control" placeholder="Search Training by state" >
-															<span class="input-group-btn">
-																 <button class="btn green-sharp uppercase bold" type="submit">Search</button>
+															<input name="state" type="text" class="form-control"
+																placeholder="Search Training by state"> <span
+																class="input-group-btn">
+																<button class="btn green-sharp uppercase bold"
+																	type="submit">Search</button>
 															</span>
 														</div>
 													</s:form>
@@ -167,26 +170,27 @@
 										</div>
 										<!--End Search Bar-->
 
-										
+
 										<!--Result Table-->
 										<div class="row" style="Margin:2px;">
 											<div class="search-container ">
 												<ul class="search-container">
-												
-														 <!-- BEGIN SAMPLE TABLE PORTLET-->
-                                                <div class="portlet box green">
-                                                    <div class="portlet-title">
-                                                        <div class="caption">
-                                                            <i class="fa fa-cogs"></i>Training Information </div>
-                                                        <div class="tools">
-                                                            <a href="javascript:;" class="collapse"> </a>
-                                                            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
-                                                            <a href="javascript:;" class="reload"> </a>
-                                                            <a href="javascript:;" class="remove"> </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="portlet-body flip-scroll">
-                                                        <table
+													<!-- BEGIN SAMPLE TABLE PORTLET-->
+													<div class="portlet box green">
+														<div class="portlet-title">
+															<div class="caption">
+																<i class="fa fa-cogs"></i>Find Swimming Centers
+															</div>
+															<div class="tools">
+																<a href="javascript:;" class="collapse"> </a> <a
+																	href="#portlet-config" data-toggle="modal"
+																	class="config"> </a> <a href="javascript:;"
+																	class="reload"> </a> <a href="javascript:;"
+																	class="remove"> </a>
+															</div>
+														</div>
+														<div class="portlet-body flip-scroll">
+															<table
 																class="table table-bordered table-striped table-condensed flip-content">
 																<thead class="flip-content">
 																	<tr>
@@ -201,32 +205,30 @@
 																	</tr>
 																</thead>
 																<tbody>
-																	<s:iterator value="traininglist"  id="training">
+																	<s:iterator value="traininglist" id="training">
 																		<tr>
 																			<td><s:property value="#training.name" /></td>
 																			<td><s:property value="#training.address" /></td>
 																			<td><s:property value="#training.suburb" /></td>
 																			<td><s:property value="#training.postcode" /></td>
 																			<td><s:property value="#training.State" /></td>
-																			<td><s:property value="#training.businessCategory" /></td>
+																			<td><s:property
+																					value="#training.businessCategory" /></td>
 																			<td><s:property value="#training.lga" /></td>
 																			<td><s:property value="#training.region" /></td>
-																			
+
 																		</tr>
 																	</s:iterator>
 																</tbody>
 															</table>
-                                                    </div>
-                                                </div>
-                                                <!-- END SAMPLE TABLE PORTLET-->
-														
-													 
-
+														</div>
+													</div>
+													<!-- END SAMPLE TABLE PORTLET-->
 												</ul>
-												
 											</div>
 										</div>
 										<!--End Result Table-->
+										
 									</div>
 									<br /> <br />
 								</div>
@@ -260,8 +262,7 @@
 							<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
 								<h2>Contacts</h2>
 								<address class="margin-bottom-40">
-									 <br /> Email: <a
-										href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
+									<br /> Email: <a href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
 								</address>
 							</div>
 						</div>
@@ -363,12 +364,12 @@
 		// order in which these markers should display on top of each other.
 		var beaches = [];
 		<s:iterator value="beachList" status="userStatus">
-					var latitude = '<s:property value="latitude"/>';
-					var latitude1 = parseFloat(latitude);
-					var longitude = '<s:property value="longitude"/>';
-					var longitude1 = parseFloat(longitude);
-		     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
-		    </s:iterator>
+							var latitude = '<s:property value="latitude"/>';
+							var latitude1 = parseFloat(latitude);
+							var longitude = '<s:property value="longitude"/>';
+							var longitude1 = parseFloat(longitude);
+				     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
+				    </s:iterator>
 	
 	
 		function setMarkers(map) {
