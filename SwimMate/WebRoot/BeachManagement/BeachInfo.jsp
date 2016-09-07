@@ -143,13 +143,13 @@
 								<div class="page-content-inner">
 									<div class="search-page search-content-2">
 										<div class="page-content-inner">
-											<div class="row">
+											<!-- <div class="row">
 												<div class="col-md-12">
 													<img src="../image/Melbourne_St_Kilda_Banner.jpg"
 														alt="St_Kilda_Beach" style="width: 100%; height: auto;" />
 												</div>
 											</div>
-											<br /> <br />
+											<br /> <br /> -->
 
 											<div class="row">
 												<div class="col-md-12">
@@ -207,9 +207,7 @@
 																				<i class="fa fa-flag font-green-sharp" /></i> Tide
 																			</h4>
 																			<p>
-																				Daylight Times:
-																				<s:property value="tide.dt" />
-																				<br /> Height:
+																				Height:
 																				<s:property value="tide.height" />
 																				m <br /> Update Date:
 																				<s:property value="tide.date" />

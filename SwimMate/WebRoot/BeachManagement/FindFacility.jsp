@@ -48,6 +48,12 @@
 	rel="stylesheet" type="text/css" />
 <!-- END THEME LAYOUT STYLES -->
 <link rel="shortcut icon" href="favicon.ico" />
+
+<%-- <style >
+body {
+    background-image: url("../image/background.jpg");
+}
+</style> --%>
 </head>
 <!-- END HEAD -->
 
