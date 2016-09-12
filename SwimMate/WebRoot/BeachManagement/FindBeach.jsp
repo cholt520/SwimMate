@@ -92,13 +92,13 @@
 
 									<li class="active"><a href="beach.action"> Find Beach
 									</a></li>
-											
-											<li class=""> <a href="Training.action">Find Swimming Centres </a>
-									</li>
-									
+
+									<li class=""><a href="Training.action">Find Swimming
+											Centres </a></li>
+
 									<!-- <li class=""> <a href="SharkAlarm.action">Shark alarm </a>
 									</li> -->
-											
+
 
 									<li class=""><a href="Tips.jsp "> Tips for Swimmers </a></li>
 								</ul>
@@ -251,17 +251,26 @@
 													<s:iterator value="beachList" status="userStatus">
 														<li class="search-item clearfix">
 															<div class="search-content text-left">
-																<h2 class="search-title">
-																	<a
-																		href="beachInfo.action?id=<s:property value="beach_id" />">
+
+																<div class="col-md-2">
+																	<img
+																		src="https://maps.googleapis.com/maps/api/streetview?size=150x100&location=<s:property value="latitude" />,<s:property value="longitude" />&heading=151.78&pitch=-0.76&key=AIzaSyCKH-MtuoWl-NkYS_m5YxBIY2sQbkvPGfM" />
+																</div>
+
+																<div class="col-md-10">
+																	<h2 class="search-title">
+																		<a
+																			href="beachInfo.action?id=<s:property value="beach_id" />">
+																			<s:property value="beach_name" />
+																		</a>
+																	</h2>
+																	<p class="search-desc">
 																		<s:property value="beach_name" />
-																	</a>
-																</h2>
-																<p class="search-desc">
-																	<s:property value="beach_name" />
-																	,
-																	<s:property value="state" />
-																</p>
+																		,
+																		<s:property value="state" />
+																	</p>
+																</div>
+
 															</div>
 														</li>
 													</s:iterator>
@@ -313,8 +322,7 @@
 							<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
 								<h2>Contacts</h2>
 								<address class="margin-bottom-40">
-									<br /> Email: <a
-										href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
+									<br /> Email: <a href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
 								</address>
 							</div>
 						</div>
@@ -396,12 +404,12 @@
 		// order in which these markers should display on top of each other.
 		var beaches = [];
 		<s:iterator value="beachList" status="userStatus">
-							var latitude = '<s:property value="latitude"/>';
-							var latitude1 = parseFloat(latitude);
-							var longitude = '<s:property value="longitude"/>';
-							var longitude1 = parseFloat(longitude);
-				     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
-				    </s:iterator>
+								var latitude = '<s:property value="latitude"/>';
+								var latitude1 = parseFloat(latitude);
+								var longitude = '<s:property value="longitude"/>';
+								var longitude1 = parseFloat(longitude);
+					     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
+					    </s:iterator>
 	
 	
 		function setMarkers(map) {

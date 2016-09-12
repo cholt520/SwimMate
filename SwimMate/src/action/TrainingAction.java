@@ -66,5 +66,4 @@ public class TrainingAction {
 	public void setPostcode(String postcode) {
 		this.postcode = postcode;
 	}
-	
 }

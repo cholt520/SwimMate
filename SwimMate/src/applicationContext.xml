@@ -36,6 +36,7 @@
 				<value>Training.hbm.xml</value>
 				<value>Facility.hbm.xml</value>
 				<value>SharkAlarm.hbm.xml</value>
+				<value>User.hbm.xml</value>
 			</list>
 		</property>
 
@@ -82,6 +83,13 @@
 		<property name="trainingDao" ref="trainingDao" />
 	</bean>
 	<bean id="trainingDao" class="dao.TrainingDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="userService" class="service.UserServiceImpl">
+		<property name="userDao" ref="userDao" />
+	</bean>
+	<bean id="userDao" class="dao.UserDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 

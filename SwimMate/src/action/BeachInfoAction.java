@@ -139,9 +139,4 @@ public class BeachInfoAction implements ModelDriven{
 	public void setTide(Tide tide) {
 		this.tide = tide;
 	}
-	
-	
-	
-	
-	
 }

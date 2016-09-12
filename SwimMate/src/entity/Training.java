@@ -65,9 +65,4 @@ public class Training {
 	public void setRegion(String region) {
 		this.region = region;
 	}
-	
-	
-	
-	
-
 }
