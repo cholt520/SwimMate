@@ -88,6 +88,7 @@
 									<!-- <li class=""><a href="SharkAlarm.action">Shark alarm </a>
 									</li> -->
 									<li class=""><a href="Tips.jsp "> Tips for Swimmers </a></li>
+									<li class=""><a href="Report.jsp"> Reporting System </a></li>
 								</ul>
 							</div>
 							<!-- END MEGA MENU -->
