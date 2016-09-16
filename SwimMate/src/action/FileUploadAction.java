@@ -4,11 +4,19 @@ import java.io.File;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import entity.Report;
+import service.ReportService;
+
 public class FileUploadAction extends ActionSupport{
-	/**
-	 * 
-	 */
+	
+	private ReportService reportService;
+
 	private static final long serialVersionUID = 1L;
+	
+	private String beachName;
+	private String submittedName;
+	private String reason;
+	private String description;
 	private File fileUpload;
 	private String fileUploadContentType;
 	private String fileUploadFileName;
@@ -32,16 +40,65 @@ public class FileUploadAction extends ActionSupport{
 	}
 	
 	public String execute() throws Exception{
-		System.out.println(fileUploadContentType);
-		System.out.println(fileUploadFileName);
-
+		
+		Report report = new Report();
+		report.setBeachName(beachName);
+		report.setSubmittedName(submittedName);
+		report.setDescription(description);
+		report.setFileUpload(fileUpload.toPath().toString());
+		report.setFileUploadContentType(fileUploadContentType);
+		report.setFileUploadFileName(fileUploadFileName);
+		report.setReason(reason);
+		
+		reportService.addReport(report);
+		
 		return SUCCESS;
-
 	}
 
 	public String display() {
 		return NONE;
 	}
+	
+	public String getBeachName() {
+		return beachName;
+	}
+	
+	public void setBeachName(String beachName) {
+		this.beachName = beachName;
+	}
+	
+	public String getSubmittedName() {
+		return submittedName;
+	}
+	
+	public void setSubmittedName(String submittedName) {
+		this.submittedName = submittedName;
+	}
+	
+	public String getReason() {
+		return reason;
+	}
+	
+	public void setReason(String reason) {
+		this.reason = reason;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+	
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	public ReportService getReportService() {
+		return reportService;
+	}
+	
+	public void setReportService(ReportService reportService) {
+		this.reportService = reportService;
+	}
+	
 	
 	
 }
