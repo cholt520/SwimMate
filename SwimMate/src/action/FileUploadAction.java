@@ -35,7 +35,6 @@ public class FileUploadAction extends ActionSupport{
 		System.out.println(fileUploadContentType);
 		System.out.println(fileUploadFileName);
 
-
 		return SUCCESS;
 
 	}
