@@ -6,7 +6,7 @@
 <hibernate-mapping>
    <class name="entity.Report" table="report">
    
-      <id name="user_id" type="int" column="user_id">
+      <id name="id" type="int" column="id">
          <generator class="native"/>
       </id>
       <property name="beachName" column="beachName" type="string"/>

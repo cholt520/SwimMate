@@ -169,7 +169,7 @@ body {
 											</tr>
 											</br>
 											<tr>
-												<td><select>
+												<td><select name="reason">
 														<option value="1">Recent and forecast rain,
 															stormwater pollution likely</option>
 														<option value="2">Recent rain, stormwater
