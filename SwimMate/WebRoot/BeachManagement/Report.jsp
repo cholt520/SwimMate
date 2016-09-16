@@ -143,163 +143,119 @@ body {
 								<!-- BEGIN PAGE CONTENT INNER -->
 								<div class="page-content-inner">
 
-									<div class="row">
-										<div class="col-md-12">
-											<!-- BEGIN PORTLET-->
-											<div class="portlet light form-fit ">
-												<div class="portlet-title">
-													<div class="caption">
-														<i class="icon-settings font-green"></i> <span
-															class="caption-subject font-green sbold uppercase">Beach
-															safety reporting system</span>
-													</div>
 
-												</div>
-												<div class="portlet-body form">
-													<!-- BEGIN FORM-->
-													<s:form action="uploadphoto.action" method="post" class="form-horizontal form-bordered">
-														<div class="form-body">
-															<div class="form-group">
-																<label class="control-label col-md-3">Beach
-																	Name:</label>
-																<div class="col-md-9">
-																	<div class="fileinput fileinput-new"
-																		data-provides="fileinput">
-																		<input type="text" name="beachName">
-																	</div>
-																</div>
-															</div>
-															<div class="form-group">
-																<label class="control-label col-md-3">Submitted
-																	Name:</label>
-																<div class="col-md-9">
-																	<div class="fileinput fileinput-new"
-																		data-provides="fileinput">
-																		<input type="text" name="SubmittedName">
-																	</div>
-																</div>
-															</div>
-															<div class="form-group">
-																<label class="control-label col-md-3">Reason:</label>
-																<div class="col-md-9">
-																	<div class="fileinput fileinput-new"
-																		data-provides="fileinput">
-																		<select>
-																			<option value="1">Recent and forecast rain, stormwater pollution likely</option>
-																			<option value="2">Recent rain, stormwater pollution likely</option>
-																			<option value="3">Recent and forecast rain, stormwater pollution possible</option>
-																			<option value="4">No rain, stormwater pollution unlikely</option>
-																		</select>
-																	</div>
-																</div>
-															</div>
-															<div class="form-group ">
-																<label class="control-label col-md-3">Description:</label>
-																<div class="col-md-9">
-																	<div class="fileinput fileinput-new"
-																		data-provides="fileinput">
-																		<textarea name="Description"></textarea>
-																	</div>
-																</div>
-															</div>
-															<div class="form-group last">
-																<label class="control-label col-md-3">Image
-																	Upload</label>
-																<div class="col-md-9">
-																	<div class="fileinput fileinput-new"
-																		data-provides="fileinput">
-																		<div class="fileinput-new thumbnail"
-																			style="width: 200px; height: 150px;">
-																			<img
-																				src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image"
-																				alt="" />
-																		</div>
-																		<div
-																			class="fileinput-preview fileinput-exists thumbnail"
-																			style="max-width: 200px; max-height: 150px;"></div>
-																		<div>
-																			<span class="btn default btn-file"> <span
-																				class="fileinput-new"> Select image </span> <span
-																				class="fileinput-exists"> Change </span> <s:file name="myFile" label="Upload File"></s:file>
-																				
-																			</span> 
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div class="form-actions">
-																<div class="row">
-																	<div class="col-md-offset-3 col-md-9">
-																		<a href="javascript:;" class="btn green"> <i
-																			class="fa fa-check"></i>Submit  <s:submit label="Submit" />
-																		</a> <a href="javascript:;"
-																			class="btn btn-outline grey-salsa">Cancel</a>
-																	</div>
-																</div>
-															</div>
-													</s:form>
-													<!-- END FORM-->
-												</div>
-											</div>
-											<!-- END PORTLET-->
-										</div>
-									</div>
+									<!-- BEGIN FORM-->
+									<s:form action="resultAction" method="post"
+										enctype="multipart/form-data">
+										<table>
+											<tr>
+												<td>Beach Name:</td>
+											</tr>
+											</br>
+											<tr>
+												<td><input type="text" name="beachName" /></td>
+											</tr>
+											</br>
+											<tr>
+												<td>Submitted Name:</td>
+											</tr>
+											</br>
+											<tr>
+												<td><input type="text" name="SubmittedName"></td>
+											</tr>
+											</br>
+											<tr>
+												<td>Reason:</td>
+											</tr>
+											</br>
+											<tr>
+												<td><select>
+														<option value="1">Recent and forecast rain,
+															stormwater pollution likely</option>
+														<option value="2">Recent rain, stormwater
+															pollution likely</option>
+														<option value="3">Recent and forecast rain,
+															stormwater pollution possible</option>
+														<option value="4">No rain, stormwater pollution
+															unlikely</option>
+												</select></td>
+											</tr>
+											</br>
+											<tr>
+												<td>Description:</td>
+											</tr>
+											</br>
+											<tr>
+												<td><textarea name="description"></textarea></td>
+											</tr>
+											</br>
+											<tr>
+												<td>Image:</td>
+											</tr>
+											</br>
+											<tr>
+												<td><s:file name="fileUpload"
+														label="Select a File to upload" size="40" /> <s:submit
+														value="submit" name="submit" /></td>
+											</tr>
+											</br>
+										</table>
+									</s:form>
+									<!-- END PAGE CONTENT INNER -->
 								</div>
-								<!-- END PAGE CONTENT INNER -->
+							</div>
+							<!-- END PAGE CONTENT BODY -->
+
+							<!-- END CONTENT BODY -->
+
+						</div>
+					</div>
+					<br /> <br />
+
+					<!-- END CONTENT -->
+				</div>
+				<!-- END CONTAINER -->
+			</div>
+		</div>
+		<div class="page-wrapper-row">
+			<div class="page-wrapper-bottom">
+				<!-- BEGIN FOOTER -->
+				<!-- BEGIN PRE-FOOTER -->
+				<div class="page-prefooter">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
+								<h2>About Us</h2>
+								<p>
+									C.A.R.T. Solutions <br /> -- Creativity, Aesthetics,
+									Robustness and good Technology.
+								</p>
+							</div>
+
+							<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
+								<h2>Contacts</h2>
+								<address class="margin-bottom-40">
+									<br /> Email: <a href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
+								</address>
 							</div>
 						</div>
-						<!-- END PAGE CONTENT BODY -->
-
-						<!-- END CONTENT BODY -->
-
 					</div>
 				</div>
-				<br /> <br />
-
-				<!-- END CONTENT -->
-			</div>
-			<!-- END CONTAINER -->
-		</div>
-	</div>
-	<div class="page-wrapper-row">
-		<div class="page-wrapper-bottom">
-			<!-- BEGIN FOOTER -->
-			<!-- BEGIN PRE-FOOTER -->
-			<div class="page-prefooter">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
-							<h2>About Us</h2>
-							<p>
-								C.A.R.T. Solutions <br /> -- Creativity, Aesthetics, Robustness
-								and good Technology.
-							</p>
-						</div>
-
-						<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
-							<h2>Contacts</h2>
-							<address class="margin-bottom-40">
-								<br /> Email: <a href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
-							</address>
-						</div>
+				<!-- END PRE-FOOTER -->
+				<!-- BEGIN INNER FOOTER -->
+				<div class="page-footer">
+					<div class="container">
+						2016 &copy; Swim Mate By <a target="_blank" href="index.action">C.A.R.T.
+							Solutions</a>
 					</div>
 				</div>
-			</div>
-			<!-- END PRE-FOOTER -->
-			<!-- BEGIN INNER FOOTER -->
-			<div class="page-footer">
-				<div class="container">
-					2016 &copy; Swim Mate By <a target="_blank" href="index.action">C.A.R.T.
-						Solutions</a>
+				<div class="scroll-to-top">
+					<i class="icon-arrow-up"></i>
 				</div>
+				<!-- END INNER FOOTER -->
+				<!-- END FOOTER -->
 			</div>
-			<div class="scroll-to-top">
-				<i class="icon-arrow-up"></i>
-			</div>
-			<!-- END INNER FOOTER -->
-			<!-- END FOOTER -->
 		</div>
-	</div>
 	</div>
 
 	<!-- BEGIN CORE PLUGINS -->
