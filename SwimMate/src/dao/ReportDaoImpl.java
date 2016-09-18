@@ -49,7 +49,7 @@ public class ReportDaoImpl extends HibernateDaoSupport implements ReportDao{
 	@Override
 	public List<Report> findReportsByBeachName(String beachName) {
 		List<Report> list = new ArrayList<Report>();
-		list = (List<Report>) getHibernateTemplate().find("from Report as report where report.beach_name like '%" + beachName + "%'" );	
+		list = (List<Report>) getHibernateTemplate().find("from Report as report where report.beachName like '%" + beachName + "%'" );	
 		return list;
 	}
 
