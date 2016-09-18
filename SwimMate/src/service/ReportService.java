@@ -10,5 +10,7 @@ public interface ReportService {
 	public void addReport(Report report);
 	public void deleteReport(Report report);
 	public void modifyReport(Report report);
+	public List<Report> findReportsByBeachName(String beachName);
+
 
 }

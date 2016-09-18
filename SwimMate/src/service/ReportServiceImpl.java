@@ -35,5 +35,10 @@ public class ReportServiceImpl implements ReportService{
 	public void setReportDao(ReportDao reportDao) {
 		this.reportDao = reportDao;
 	}
+
+	@Override
+	public List<Report> findReportsByBeachName(String beachName) {
+		return reportDao.findReportsByBeachName(beachName);
+	}
 	
 }
