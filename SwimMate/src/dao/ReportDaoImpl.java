@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.HibernateException;
@@ -9,6 +10,7 @@ import org.springframework.orm.hibernate4.HibernateCallback;
 import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
+import entity.Beach;
 import entity.Report;
 
 public class ReportDaoImpl extends HibernateDaoSupport implements ReportDao{
@@ -42,6 +44,13 @@ public class ReportDaoImpl extends HibernateDaoSupport implements ReportDao{
 
 	public void modifyReport(Report report) {
 		
+	}
+
+	@Override
+	public List<Report> findReportsByBeachName(String beachName) {
+		List<Report> list = new ArrayList<Report>();
+		list = (List<Report>) getHibernateTemplate().find("from Report as report where report.beach_name like '%" + beachName + "%'" );	
+		return list;
 	}
 
 }
