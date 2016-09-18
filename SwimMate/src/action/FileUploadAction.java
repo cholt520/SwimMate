@@ -17,6 +17,7 @@ public class FileUploadAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
 
+	private String searchBeachName;
 	private String beachName;
 	private String submittedName;
 	private String reason;
@@ -75,9 +76,7 @@ public class FileUploadAction extends ActionSupport {
 	}
 
 	public String getReportByBeach() throws Exception {
-
-		reportList = reportService.findReportsByBeachName(beachName);
-
+		reportList = reportService.findReportsByBeachName(searchBeachName);
 		return "getReportByBeach";
 	}
 
@@ -129,4 +128,12 @@ public class FileUploadAction extends ActionSupport {
 		this.reportList = reportList;
 	}
 
+	public String getSearchBeachName() {
+		return searchBeachName;
+	}
+
+	public void setSearchBeachName(String searchBeachName) {
+		this.searchBeachName = searchBeachName;
+	}
+	
 }
