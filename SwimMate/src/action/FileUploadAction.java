@@ -76,7 +76,7 @@ public class FileUploadAction extends ActionSupport {
 
 	public String getReportByBeach() throws Exception {
 
-		reportList = reportService.getAllReport();
+		reportList = reportService.findReportsByBeachName(beachName);
 
 		return "getReportByBeach";
 	}
