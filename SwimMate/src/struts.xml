@@ -37,11 +37,11 @@
 	</action>
 	
 	<action name="showAllReport" class="action.FileUploadAction" method="showAllReport">
-	    <result name="showAllReport">/BeachManagement/result.jsp</result>
+	    <result name="showAllReport">/BeachManagement/ReportResult.jsp</result>
 	</action>
 	
 	<action name="getReportByBeach" class="action.FileUploadAction" method="getReportByBeach">
-	    <result name="getReportByBeach">/BeachManagement/result.jsp</result>
+	    <result name="getReportByBeach">/BeachManagement/ReportResult.jsp</result>
 	</action>
 
 		<action name="Training" class="action.TrainingAction" method="execute">
