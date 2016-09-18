@@ -170,14 +170,10 @@ body {
 											</br>
 											<tr>
 												<td><select name="reason">
-														<option value="Recent and forecast rain,
-															stormwater pollution likely">Recent and forecast rain,stormwater pollution likely</option>
-														<option value="Recent rain, stormwater
-															pollution likely">Recent rain, stormwater pollution likely</option>
-														<option value="Recent and forecast rain,
-															stormwater pollution possible">Recent and forecast rain, stormwater pollution possible</option>
-														<option value="No rain, stormwater pollution
-															unlikely">No rain, stormwater pollution unlikely</option>
+														<option value="Recent and forecast rain,stormwater pollution likely">Recent and forecast rain,stormwater pollution likely</option>
+														<option value="Recent rain, stormwater pollution likely">Recent rain, stormwater pollution likely</option>
+														<option value="Recent and forecast rain,stormwater pollution possible">Recent and forecast rain, stormwater pollution possible</option>
+														<option value="No rain, stormwater pollution unlikely">No rain, stormwater pollution unlikely</option>
 												</select></td>
 											</tr>
 											</br>
