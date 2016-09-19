@@ -45,7 +45,6 @@
 			method="getReportByBeach">
 			<result name="getReportByBeach">/BeachManagement/ReportResult.jsp</result>
 		</action>
-		>>>>>>> 782957d1fddd3aabf6c82dc830c71c42d478b65b
 
 		<action name="Training" class="action.TrainingAction" method="execute">
 			<result>/BeachManagement/FindTraining.jsp</result>

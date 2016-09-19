@@ -111,7 +111,7 @@
 									</s:else>
 									<!-- <li class=""><a href="SharkAlarm.action">Shark alarm </a>
 									</li> -->
-<<<<<<< HEAD
+
 									<s:if test="%{loginUserID==-1}">
 										<li class=""><a href="tips.action?loginUserID=-1 "> Tips for
 												Swimmers </a></li>
@@ -121,10 +121,10 @@
 												Swimmers </a></li>
 									</s:else>
 
-=======
+
 									<li class=""><a href="Tips.jsp "> Tips for Swimmers </a></li>
 									<li class=""><a href="Report.jsp"> Reporting System </a></li>
->>>>>>> 782957d1fddd3aabf6c82dc830c71c42d478b65b
+
 								</ul>
 							</div>
 							<!-- END MEGA MENU -->
