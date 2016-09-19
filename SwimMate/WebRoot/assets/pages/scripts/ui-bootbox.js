@@ -3,7 +3,7 @@ var UIBootbox = function () {
     var handleDemo = function() {
 
         $('#demo_1').click(function(){
-                bootbox.alert("Hello world!");    
+                bootbox.alert("Signup Successfully!");    
             });
             //end #demo_1
 

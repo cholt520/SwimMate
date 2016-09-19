@@ -1,6 +1,7 @@
 package action;
 
 import java.util.ArrayList;
+import com.opensymphony.xwork2.Action;
 import java.util.List;
 
 import com.opensymphony.xwork2.ModelDriven;
@@ -9,14 +10,16 @@ import entity.Beach;
 import entity.Facility;
 import entity.Recommandation;
 import entity.Tide;
+import entity.User;
 import entity.Weather;
 import entity.Wind;
 import service.BeachService;
 import service.FacilityService;
 import service.TideService;
+import service.UserService;
 import service.WeatherService;
 
-public class BeachInfoAction implements ModelDriven{
+public class BeachInfoAction implements ModelDriven, Action{
 	private static final long serialVersionUID = 1L;
 	@Override
 	public Object getModel() {
@@ -34,7 +37,34 @@ public class BeachInfoAction implements ModelDriven{
 	private Facility facility;
 	private TideService tideService;
 	private Tide tide;
+	private int loginUserID = -1;
+	private User currentLoginUser;
+	private UserService userService;
 	
+	public int getLoginUserID() {
+		return loginUserID;
+	}
+
+	public void setLoginUserID(int loginUserID) {
+		this.loginUserID = loginUserID;
+	}
+
+	public User getCurrentLoginUser() {
+		return currentLoginUser;
+	}
+
+	public void setCurrentLoginUser(User currentLoginUser) {
+		this.currentLoginUser = currentLoginUser;
+	}
+
+	public UserService getUserService() {
+		return userService;
+	}
+
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
+
 	public Facility getFacility() {
 		return facility;
 	}
@@ -77,8 +107,10 @@ public class BeachInfoAction implements ModelDriven{
 
 	public String execute(){
 		try {
+			if (loginUserID != -1) {
+				currentLoginUser = userService.getUserById(loginUserID);
+			}
 			currentBeach = beachService.getBeachById(id);
-			//System.out.println(id);
 			Weather weatherInF = weatherService.getWeatherByBeach(currentBeach);
 			weather = weatherService.changeTempToC(weatherInF);
 			wind = weather.getWind();

@@ -158,7 +158,10 @@ var Login = function () {
 	            ignore: "",
 	            rules: {
 	                
-	                fullname: {
+	                firstname: {
+	                    required: true
+	                },
+	                lastname: {
 	                    required: true
 	                },
 	                email: {
@@ -174,7 +177,9 @@ var Login = function () {
 	                country: {
 	                    required: true
 	                },
-
+	                phone: {
+	                    required: true
+	                },
 	                username: {
 	                    required: true
 	                },

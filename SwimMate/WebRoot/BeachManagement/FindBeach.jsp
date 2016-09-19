@@ -77,6 +77,11 @@
 							<!-- BEGIN RESPONSIVE MENU TOGGLER -->
 							<a href="javascript:;" class="menu-toggler"></a>
 							<!-- END RESPONSIVE MENU TOGGLER -->
+
+							<!-- Begin Login and Sign up -->
+							<jsp:include page="LoginorSignup.jsp" /> 
+							<!-- End Login and Sign up -->
+							
 						</div>
 					</div>
 					<!-- END HEADER TOP -->
@@ -87,20 +92,43 @@
 							<!-- BEGIN MEGA MENU -->
 							<div class="hor-menu  ">
 								<ul class="nav navbar-nav">
-
-									<li class=><a href="index.action"> Home </a></li>
-
-									<li class="active"><a href="beach.action"> Find Beach
-									</a></li>
-
-									<li class=""><a href="Training.action">Find Swimming
-											Centres </a></li>
-
-									<!-- <li class=""> <a href="SharkAlarm.action">Shark alarm </a>
+									<s:if test="%{loginUserID==-1}">
+										<li class=""><a href="index.action?loginUserID=-1">
+												Home </a></li>
+									</s:if>
+									<s:else>
+										<li class=""><a
+											href="index.action?loginUserID=<s:property value="loginUserID"/>">
+												Home </a></li>
+									</s:else>
+									<s:if test="%{loginUserID==-1}">
+										<li class="active"><a href="beach.action?loginUserID=-1">
+												Find Beach </a></li>
+									</s:if>
+									<s:else>
+										<li class="active"><a
+											href="beach.action?loginUserID=<s:property value="loginUserID"/>">
+												Find Beach </a></li>
+									</s:else>
+									<s:if test="%{loginUserID==-1}">
+										<li class=""><a href="Training.action?loginUserID=-1">Find
+												Swimming Centres </a></li>
+									</s:if>
+									<s:else>
+										<li class=""><a
+											href="Training.action?loginUserID=<s:property value="loginUserID"/>">Find
+												Swimming Centres </a></li>
+									</s:else>
+									<!-- <li class=""><a href="SharkAlarm.action">Shark alarm </a>
 									</li> -->
-
-
-									<li class=""><a href="Tips.jsp "> Tips for Swimmers </a></li>
+									<s:if test="%{loginUserID==-1}">
+										<li class=""><a href="tips.action?loginUserID=-1 "> Tips for
+												Swimmers </a></li>
+									</s:if>
+									<s:else>
+										<li class=""><a href="tips.action?loginUserID=<s:property value="loginUserID"/>"> Tips for
+												Swimmers </a></li>
+									</s:else>
 								</ul>
 							</div>
 							<!-- END MEGA MENU -->
@@ -388,7 +416,6 @@
 
 	<!-- Start Map Scripts -->
 	<script>
-	
 		function initMap() {
 			var map = new google.maps.Map(document.getElementById('map'), {
 				zoom : 4,
@@ -404,12 +431,12 @@
 		// order in which these markers should display on top of each other.
 		var beaches = [];
 		<s:iterator value="beachList" status="userStatus">
-								var latitude = '<s:property value="latitude"/>';
-								var latitude1 = parseFloat(latitude);
-								var longitude = '<s:property value="longitude"/>';
-								var longitude1 = parseFloat(longitude);
-					     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
-					    </s:iterator>
+														var latitude = '<s:property value="latitude"/>';
+														var latitude1 = parseFloat(latitude);
+														var longitude = '<s:property value="longitude"/>';
+														var longitude1 = parseFloat(longitude);
+											     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
+											    </s:iterator>
 	
 	
 		function setMarkers(map) {
@@ -455,5 +482,6 @@
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUuudit4OFSnhG3ZVXncE3ThuiP6xo25s&callback=initMap">
 </script>
 	<!-- End Map Scripts -->
+
 </body>
 </html>

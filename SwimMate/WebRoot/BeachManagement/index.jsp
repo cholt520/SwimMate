@@ -3,7 +3,6 @@
 
 
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <title>SwimMate Home Page</title>
@@ -68,6 +67,12 @@
 							<!-- BEGIN RESPONSIVE MENU TOGGLER -->
 							<a href="javascript:;" class="menu-toggler"></a>
 							<!-- END RESPONSIVE MENU TOGGLER -->
+
+							<!-- Begin Login and Sign up -->
+							<jsp:include page="LoginorSignup.jsp" />
+							<!-- End Login and Sign up -->
+
+
 						</div>
 					</div>
 					<!-- END HEADER TOP -->
@@ -77,17 +82,44 @@
 							<!-- BEGIN MEGA MENU -->
 							<div class="hor-menu ">
 								<ul class="nav navbar-nav">
-									<li class="active"><a href="index.action"> Home </a></li>
-
-									<li class=""><a href="beach.action"> Find Beach </a></li>
-
-
-									<li class=""><a href="Training.action">Find Swimming
-											Centres </a></li>
-
+									<s:if test="%{loginUserID==-1}">
+										<li class="active"><a href="index.action?loginUserID=-1">
+												Home </a></li>
+									</s:if>
+									<s:else>
+										<li class="active"><a
+											href="index.action?loginUserID=<s:property value="loginUserID"/>">
+												Home </a></li>
+									</s:else>
+									<s:if test="%{loginUserID==-1}">
+										<li class=""><a href="beach.action?loginUserID=-1">
+												Find Beach </a></li>
+									</s:if>
+									<s:else>
+										<li class=""><a
+											href="beach.action?loginUserID=<s:property value="loginUserID"/>">
+												Find Beach </a></li>
+									</s:else>
+									<s:if test="%{loginUserID==-1}">
+										<li class=""><a href="Training.action?loginUserID=-1">Find
+												Swimming Centres </a></li>
+									</s:if>
+									<s:else>
+										<li class=""><a
+											href="Training.action?loginUserID=<s:property value="loginUserID"/>">Find
+												Swimming Centres </a></li>
+									</s:else>
 									<!-- <li class=""><a href="SharkAlarm.action">Shark alarm </a>
 									</li> -->
-									<li class=""><a href="Tips.jsp "> Tips for Swimmers </a></li>
+									<s:if test="%{loginUserID==-1}">
+										<li class=""><a href="tips.action?loginUserID=-1 "> Tips for
+												Swimmers </a></li>
+									</s:if>
+									<s:else>
+										<li class=""><a href="tips.action?loginUserID=<s:property value="loginUserID"/>"> Tips for
+												Swimmers </a></li>
+									</s:else>
+
 								</ul>
 							</div>
 							<!-- END MEGA MENU -->
@@ -113,15 +145,14 @@
 											<h3>Find your ideal beach to swim</h3>
 											<br />
 											<hr />
-											<p>SwimMate is handy website designed to provide casual
-												as well as expert swimmers information to plan their
-												<br />
+											<p>
+												SwimMate is handy website designed to provide casual as well
+												as expert swimmers information to plan their <br />
 												swimming days. It will offer a range of features like
-												searching nearby beaches, real-time weather updates,
-												<br />
-												information about marine stingers, rip and much more!
-												<br /> <br />
-												Explore SwimMate to find your ideal beach to swim!</p>
+												searching nearby beaches, real-time weather updates, <br />
+												information about marine stingers, rip and much more! <br />
+												<br /> Explore SwimMate to find your ideal beach to swim!
+											</p>
 											<br />
 											<h2>
 												<a href="beach.action" class="font-white"> <i

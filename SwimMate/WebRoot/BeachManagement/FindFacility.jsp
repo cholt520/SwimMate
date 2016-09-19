@@ -78,6 +78,27 @@ body {
 							<!-- BEGIN RESPONSIVE MENU TOGGLER -->
 							<a href="javascript:;" class="menu-toggler"></a>
 							<!-- END RESPONSIVE MENU TOGGLER -->
+							
+							<!-- Begin Login and Sign up button -->
+							<div class="top-menu">
+								 <ul class="nav navbar-nav pull-right">
+								 	<li class="droddown dropdown-separator"><s:form
+											action="jumpToLoginPage.action">
+											<button type="submit"
+												class="btn green-sharp btn-outline sbold uppercase">Log
+												in or Sign up</button>
+										</s:form></li>
+								 	<li class="droddown dropdown-separator">&emsp;</li>
+								 	<%-- <li class="droddown dropdown-separator"><s:form
+											action="userSignup.action">
+											<button type="submit" class="btn green-sharp">Sign
+												up</button>
+										</s:form></li> --%>
+								 	<li class="droddown dropdown-separator">&emsp;
+								 	</li>
+								 </ul>
+							</div>
+							<!-- End Login and Sign up button -->
 						</div>
 					</div>
 					<!-- END HEADER TOP -->
@@ -90,19 +111,15 @@ body {
 									<li class=""><a href="index.action"> Home </a></li>
 
 									<li class=""><a href="beach.action"> Find Beach </a>
-										
-									
 									</li>
 
-									
-									
 									<li class=""> <a href="Training.action">Find Swimming Centres </a>
 									</li>
 									
 									<!-- <li class=""> <a href="SharkAlarm.action">Shark alarm </a>
 									</li> -->
 
-									<li class=""><a href="Tips.jsp "> Tips for Swimmers </a></li>
+									<li class=""><a href="tips.action "> Tips for Swimmers </a></li>
 								</ul>
 							</div>
 							<!-- END MEGA MENU -->

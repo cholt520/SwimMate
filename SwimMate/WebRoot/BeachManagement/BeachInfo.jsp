@@ -65,6 +65,11 @@
 							<!-- BEGIN RESPONSIVE MENU TOGGLER -->
 							<a href="javascript:;" class="menu-toggler"></a>
 							<!-- END RESPONSIVE MENU TOGGLER -->
+
+							<!-- Begin Login and Sign up -->
+							<jsp:include page="LoginorSignup.jsp" /> 
+							<!-- End Login and Sign up -->
+							
 						</div>
 					</div>
 					<!-- END HEADER TOP -->
@@ -73,27 +78,52 @@
 						<div class="container">
 
 							<!-- END HEADER SEARCH BOX -->
+
 							<!-- BEGIN MEGA MENU -->
-
-							<div class="hor-menu  ">
+							<div class="hor-menu">
 								<ul class="nav navbar-nav">
-									<li class=><a href="index.action"> Home </a></li>
-
-									<li class="active"><a href="beach.action"> Find Beach
-									</a></li>
-
-
-
-									<li class=""><a href="Training.action">Find Swimming
-											Centres </a></li>
-
-									<!-- <li class=""> <a href="SharkAlarm.action">Shark alarm </a>
+									<s:if test="%{loginUserID==-1}">
+										<li class=""><a href="index.action?loginUserID=-1">
+												Home </a></li>
+									</s:if>
+									<s:else>
+										<li class=""><a
+											href="index.action?loginUserID=<s:property value="loginUserID"/>">
+												Home </a></li>
+									</s:else>
+									<s:if test="%{loginUserID==-1}">
+										<li class="active"><a href="beach.action?loginUserID=-1">
+												Find Beach </a></li>
+									</s:if>
+									<s:else>
+										<li class="active"><a
+											href="beach.action?loginUserID=<s:property value="loginUserID"/>">
+												Find Beach </a></li>
+									</s:else>
+									<s:if test="%{loginUserID==-1}">
+										<li class=""><a href="Training.action?loginUserID=-1">Find
+												Swimming Centres </a></li>
+									</s:if>
+									<s:else>
+										<li class=""><a
+											href="Training.action?loginUserID=<s:property value="loginUserID"/>">Find
+												Swimming Centres </a></li>
+									</s:else>
+									<!-- <li class=""><a href="SharkAlarm.action">Shark alarm </a>
 									</li> -->
-
-									<li class=""><a href="Tips.jsp "> Tips for Swimmers </a></li>
+									<s:if test="%{loginUserID==-1}">
+										<li class=""><a href="tips.action?loginUserID=-1 "> Tips for
+												Swimmers </a></li>
+									</s:if>
+									<s:else>
+										<li class=""><a href="tips.action?loginUserID=<s:property value="loginUserID"/>"> Tips for
+												Swimmers </a></li>
+									</s:else>
 								</ul>
 							</div>
+
 							<!-- END MEGA MENU -->
+
 						</div>
 					</div>
 					<!-- END HEADER MENU -->
@@ -136,7 +166,7 @@
 								<div class="page-content-inner">
 									<div class="search-page search-content-2">
 										<div class="page-content-inner">
-											 <!-- <div class="row">
+											<!-- <div class="row">
 												<div class="col-md-12">
 													<img src="../image/Melbourne_St_Kilda_Banner.jpg"
 														alt="St_Kilda_Beach" style="width: 100%; height: auto;" />
