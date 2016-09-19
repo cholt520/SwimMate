@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="entity.Report" table="report">
+   
+      <id name="id" type="int" column="id">
+         <generator class="native"/>
+      </id>
+      <property name="beachName" column="beachName" type="string"/>
+      <property name="submittedName" column="submittedName" type="string"/>
+      <property name="reason" column="reason" type="string"/>
+      <property name="description" column="description" type="string"/>
+      <property name="fileUploadContentType" column="fileUploadContentType" type="string"/>
+      <property name="fileUploadFileName" column="fileUploadFileName" type="string"/>
+      <property name="fileUpload" column="fileUpload" type="string"/>
+       
+   </class>
+</hibernate-mapping>

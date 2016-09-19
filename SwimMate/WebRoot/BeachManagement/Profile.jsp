@@ -151,8 +151,6 @@
 			<!-- END HEADER -->
 		</div>
 
-
-
 		<div class="page-wrapper-row full-height">
 			<div class="page-wrapper-middle">
 				<!-- BEGIN CONTAINER -->
@@ -207,7 +205,6 @@
 												<!-- END PORTLET MAIN -->
 											</div>
 											<!-- END BEGIN PROFILE SIDEBAR -->
-
 
 
 											<!-- BEGIN PROFILE CONTENT -->

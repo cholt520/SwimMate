@@ -12,7 +12,7 @@
 		<property name="maxIdle" value="30" />
 		<property name="maxWait" value="16000" />
 		<property name="minIdle" value="0" />
-		
+
 	</bean>
 
 	<bean id="sessionFactory"
@@ -42,14 +42,14 @@
 		</property>
 
 	</bean>
-	
-	<bean id="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-    <property name="sessionFactory" ref="sessionFactory"/>
-</bean>
-=======
-	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-    	<property name="dataSource" ref="dataSource"/>
+
+	<bean id="txManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+
+	<!-- <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"> 
+		<property name="dataSource" ref="dataSource" /> </bean> -->
 
 	<bean id="beachService" class="service.BeachServiceImpl">
 		<property name="beachDao" ref="beachDao" />
@@ -57,14 +57,14 @@
 	<bean id="beachDao" class="dao.BeachDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	
+
 	<bean id="sharkAlarmService" class="service.SharkAlarmServiceImpl">
 		<property name="sharkAlarmDao" ref="sharkAlarmDao" />
 	</bean>
 	<bean id="sharkAlarmDao" class="dao.SharkAlarmDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	
+
 	<bean id="tideService" class="service.TideServiceImpl">
 	</bean>
 	<bean id="weatherService" class="service.WeatherServiceImpl">
@@ -73,39 +73,39 @@
 	<bean id="weatherDao" class="dao.WeatherDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	
+
 	<bean id="facilityService" class="service.FacilityServiceImpl">
 		<property name="facilityDao" ref="facilityDao" />
 	</bean>
 	<bean id="facilityDao" class="dao.FacilityDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	
+
 	<bean id="patrolService" class="service.PatrolServiceImpl">
 		<property name="patrolDao" ref="patrolDao" />
 	</bean>
 	<bean id="patrolDao" class="dao.PatrolDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	
+
 	<bean id="trainingService" class="service.TrainingServiceImpl">
 		<property name="trainingDao" ref="trainingDao" />
 	</bean>
 	<bean id="trainingDao" class="dao.TrainingDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	
+
 	<bean id="userService" class="service.UserServiceImpl">
 		<property name="userDao" ref="userDao" />
 	</bean>
 	<bean id="userDao" class="dao.UserDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	
+
 	<bean id="reportService" class="service.ReportServiceImpl">
 		<property name="reportDao" ref="reportDao" />
 	</bean>
-	
+
 	<bean id="reportDao" class="dao.ReportDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
