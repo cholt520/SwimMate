@@ -2,8 +2,8 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<constant name="structs.action.extension" value="," />
-	<package name="helloworld" namespace="/BeachManagement"
-		extends="struts-default">
+
+	<package name="helloworld" namespace="/BeachManagement" extends="struts-default">
 
 		<action name="index" class="action.HomePageAction" method="execute">
 			<result>/BeachManagement/index.jsp</result>
@@ -13,9 +13,39 @@
 			<result>/BeachManagement/Login.jsp</result>
 		</action>
 
-		<!-- <action name="validation" class="action.LoginAction" method="execute">
+		<action name="report">
+			<result>/BeachManagement/Report.jsp</result>
+		</action>
+
+		<action name="validation" class="action.LoginAction" method="execute">
 			<result>/BeachManagement/index.jsp</result>
-		</action> -->
+		</action>
+
+		<action name="uploadphoto" class="action.UploadPhotoAction"
+			method="execute">
+			<result>/BeachManagement/index.jsp</result>
+		</action>
+
+		<action name="fileUploadAction" class="action.FileUploadAction"
+			method="display">
+			<result name="none">/BeachManagement/fileupload.jsp</result>
+		</action>
+
+		<action name="resultAction" class="action.FileUploadAction"
+			method="execute">
+			<result name="success" type="chain">showAllReport</result>
+		</action>
+
+		<action name="showAllReport" class="action.FileUploadAction"
+			method="showAllReport">
+			<result name="showAllReport">/BeachManagement/ReportResult.jsp</result>
+		</action>
+
+		<action name="getReportByBeach" class="action.FileUploadAction"
+			method="getReportByBeach">
+			<result name="getReportByBeach">/BeachManagement/ReportResult.jsp</result>
+		</action>
+		>>>>>>> 782957d1fddd3aabf6c82dc830c71c42d478b65b
 
 		<action name="Training" class="action.TrainingAction" method="execute">
 			<result>/BeachManagement/FindTraining.jsp</result>
@@ -73,7 +103,7 @@
 			<result>/BeachManagement/UserLogin.jsp</result>
 		</action>
 
-		
+
 		<action name="tips" class="action.TipAction" method="execute">
 			<result>/BeachManagement/Tips.jsp</result>
 		</action>
@@ -89,6 +119,10 @@
 			</result>
 			<result name="error">/BeachManagement/UserLogin.jsp
 			</result>
+		</action>
+
+		<action name="user" class="action.UserAction" method="execute">
+			<result name="success">/BeachManagement/Users.jsp</result>
 		</action>
 
 	</package>

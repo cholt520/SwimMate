@@ -37,6 +37,7 @@
 				<value>Facility.hbm.xml</value>
 				<value>SharkAlarm.hbm.xml</value>
 				<value>User.hbm.xml</value>
+				<value>Report.hbm.xml</value>
 			</list>
 		</property>
 
@@ -45,6 +46,10 @@
 	<bean id="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
     <property name="sessionFactory" ref="sessionFactory"/>
 </bean>
+=======
+	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    	<property name="dataSource" ref="dataSource"/>
+	</bean>
 
 	<bean id="beachService" class="service.BeachServiceImpl">
 		<property name="beachDao" ref="beachDao" />
@@ -94,6 +99,14 @@
 		<property name="userDao" ref="userDao" />
 	</bean>
 	<bean id="userDao" class="dao.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="reportService" class="service.ReportServiceImpl">
+		<property name="reportDao" ref="reportDao" />
+	</bean>
+	
+	<bean id="reportDao" class="dao.ReportDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
