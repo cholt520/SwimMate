@@ -58,8 +58,9 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao{
 	@Transactional
 	public void modifyUser(User user) {
 		Session s = getHibernateTemplate().getSessionFactory().openSession();
-		s.setFlushMode(FlushMode.AUTO);
-		s.update(user);
+		s.beginTransaction();
+		s.saveOrUpdate(user);
+		s.getTransaction().commit();
 	}
 
 	@Override

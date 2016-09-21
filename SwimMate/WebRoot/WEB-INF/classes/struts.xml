@@ -3,7 +3,8 @@
 <struts>
 	<constant name="structs.action.extension" value="," />
 
-	<package name="helloworld" namespace="/BeachManagement" extends="struts-default">
+	<package name="helloworld" namespace="/BeachManagement"
+		extends="struts-default">
 
 		<action name="index" class="action.HomePageAction" method="execute">
 			<result>/BeachManagement/index.jsp</result>
@@ -123,13 +124,23 @@
 		<action name="user" class="action.UserAction" method="execute">
 			<result name="success">/BeachManagement/Users.jsp</result>
 		</action>
-		
+
 		<action name="modifyProfile" class="action.UserAction" method="modifyProfile">
 			<result name="success">/BeachManagement/Profile.jsp</result>
+			<result name="error">/BeachManagement/Profile.jsp
+			</result>
 		</action>
-		
-		<action name="jumpToProfilePage" class="action.UserAction" method="jumpToProfilePage">
+
+		<action name="jumpToProfilePage" class="action.UserAction"
+			method="jumpToProfilePage">
 			<result name="success">/BeachManagement/Profile.jsp</result>
+		</action>
+
+		<action name="changePasswd" class="action.UserAction" method="changePasswd">
+			<result name="success">/BeachManagement/Profile.jsp
+			</result>
+			<result name="error">/BeachManagement/Profile.jsp
+			</result>
 		</action>
 
 	</package>

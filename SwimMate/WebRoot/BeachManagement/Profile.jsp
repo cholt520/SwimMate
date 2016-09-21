@@ -64,10 +64,20 @@
 						<div class="container">
 							<!-- BEGIN LOGO -->
 							<div class="page-logo">
-								<a href="index.action"> <img src="../image/logo_green.jpg"
-									alt="logo" class="logo-default"
-									style="width:230px; height:45px; margin-top:18px;">
-								</a>
+								<s:if test="%{loginUserID==-1}">
+									<a href="index.action?loginUserID=-1"> <img
+										src="../image/logo_green.jpg" alt="logo" class="logo-default"
+										style="width:230px; height:45px; margin-top:18px;">
+									</a>
+								</s:if>
+								<s:else>
+									<a
+										href="index.action?loginUserID=<s:property value="loginUserID"/>">
+										<img src="../image/logo_green.jpg" alt="logo"
+										class="logo-default"
+										style="width:230px; height:45px; margin-top:18px;">
+									</a>
+								</s:else>
 							</div>
 							<!-- END LOGO -->
 							<!-- BEGIN RESPONSIVE MENU TOGGLER -->
@@ -189,6 +199,19 @@
 													<!-- END SIDEBAR USER TITLE -->
 												</div>
 												<!-- END PORTLET MAIN -->
+
+
+												<s:if test="hasActionErrors()">
+													<div class="alert alert-danger">
+														<s:actionerror />
+													</div>
+												</s:if>
+												<s:elseif test="hasActionMessages()">
+													<div class="alert alert-success">
+														<s:actionmessage />
+													</div>
+												</s:elseif>
+
 											</div>
 											<!-- END BEGIN PROFILE SIDEBAR -->
 
@@ -248,9 +271,8 @@
 																				<button type="submit" class="btn green"
 																					formaction="modifyProfile.action?loginUserID=<s:property value="loginUserID"/>"
 																					formmethod="post">Save Changes</button>
-																					<a
-																					href="javascript:;" class="btn default"> Cancel
-																				</a>
+																				<a href="javascript:;" class="btn default">
+																					Cancel </a>
 																			</div>
 																		</form>
 																	</div>
@@ -299,22 +321,25 @@
 																		<form action="#">
 																			<div class="form-group">
 																				<label class="control-label">Current
-																					Password</label> <input type="password" 
-																					class="form-control" />
+																					Password</label> <input type="password"
+																					name="currentPasswd" class="form-control" />
 																			</div>
 																			<div class="form-group">
 																				<label class="control-label">New Password</label> <input
-																					type="password" class="form-control" />
+																					name="password" type="password"
+																					class="form-control" />
 																			</div>
 																			<div class="form-group">
 																				<label class="control-label">Re-type New
-																					Password</label> <input type="password"
+																					Password</label> <input type="password" name="rePasswd"
 																					class="form-control" />
 																			</div>
 																			<div class="margin-top-10">
-																				<a href="javascript:;" class="btn green"> Change
-																					Password </a> <a href="javascript:;"
-																					class="btn default"> Cancel </a>
+																				<button type="submit" class="btn green"
+																					formaction="changePasswd.action?loginUserID=<s:property value="loginUserID"/>"
+																					formmethod="post">Change Password</button>
+																				<a href="javascript:;" class="btn default">
+																					Cancel </a>
 																			</div>
 																		</form>
 																	</div>

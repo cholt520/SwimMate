@@ -24,6 +24,15 @@ public class UserAction extends ActionSupport {
 	private int loginUserID = -1;
 	private User currentLoginUser;
 	private String currentPasswd;
+	private String rePasswd;
+
+	public String getRePasswd() {
+		return rePasswd;
+	}
+
+	public void setRePasswd(String rePasswd) {
+		this.rePasswd = rePasswd;
+	}
 
 	public String getCurrentPasswd() {
 		return currentPasswd;
@@ -215,11 +224,47 @@ public class UserAction extends ActionSupport {
 				currentLoginUser.setPhone(phone);
 			}
 			userService.modifyUser(currentLoginUser);
-			
+			addActionMessage("Modify successfully!");
+			return "success";
 		} catch (Exception e) {
 			e.printStackTrace();
+			addActionError("Error " + e);
+			return "error";
 		}
-		return "success";
+	}
+	
+	public String changePasswd() {
+		try {
+			if (loginUserID != -1) {
+				currentLoginUser = userService.getUserById(loginUserID);
+			}
+			
+			if (!password.equals("") && !currentPasswd.equals("") && !rePasswd.equals("")) {
+				if (currentPasswd.equals(currentLoginUser.getPasswd())) {
+					if (password.equals(rePasswd)) {
+						currentLoginUser.setPasswd(password);
+						userService.modifyUser(currentLoginUser);
+						addActionMessage("Change password successfully!");
+						return "success";
+					} else {
+						System.out.println("passwd and repasswd not match!");
+						addActionError("passwd and repasswd not match!");
+						return "error";
+					}
+				} else {
+					System.out.println("current passwd not correct");
+					addActionError("current passwd not correct");
+					return "error";
+				}
+			} else {
+				System.out.println("input cannot be empty!");
+				addActionError("input cannot be empty!");
+				return "error";
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "error";
+		}
 	}
 
 }
