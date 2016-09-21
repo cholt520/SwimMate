@@ -68,10 +68,20 @@
 						<div class="container">
 							<!-- BEGIN LOGO -->
 							<div class="page-logo">
-								<a href="index.action"> <img src="../image/logo_green.jpg"
-									alt="logo" class="logo-default"
-									style="width:230px; height:45px; margin-top:18px;">
-								</a>
+								<s:if test="%{loginUserID==-1}">
+									<a href="index.action?loginUserID=-1"> <img
+										src="../image/logo_green.jpg" alt="logo" class="logo-default"
+										style="width:230px; height:45px; margin-top:18px;">
+									</a>
+								</s:if>
+								<s:else>
+									<a
+										href="index.action?loginUserID=<s:property value="loginUserID"/>">
+										<img src="../image/logo_green.jpg" alt="logo"
+										class="logo-default"
+										style="width:230px; height:45px; margin-top:18px;">
+									</a>
+								</s:else>
 							</div>
 							<!-- END LOGO -->
 							<!-- BEGIN RESPONSIVE MENU TOGGLER -->
@@ -79,9 +89,9 @@
 							<!-- END RESPONSIVE MENU TOGGLER -->
 
 							<!-- Begin Login and Sign up -->
-							<jsp:include page="LoginorSignup.jsp" /> 
+							<jsp:include page="LoginorSignup.jsp" />
 							<!-- End Login and Sign up -->
-							
+
 						</div>
 					</div>
 					<!-- END HEADER TOP -->
@@ -122,12 +132,13 @@
 									<!-- <li class=""><a href="SharkAlarm.action">Shark alarm </a>
 									</li> -->
 									<s:if test="%{loginUserID==-1}">
-										<li class=""><a href="tips.action?loginUserID=-1 "> Tips for
-												Swimmers </a></li>
+										<li class=""><a href="tips.action?loginUserID=-1 ">
+												Tips for Swimmers </a></li>
 									</s:if>
 									<s:else>
-										<li class=""><a href="tips.action?loginUserID=<s:property value="loginUserID"/>"> Tips for
-												Swimmers </a></li>
+										<li class=""><a
+											href="tips.action?loginUserID=<s:property value="loginUserID"/>">
+												Tips for Swimmers </a></li>
 									</s:else>
 								</ul>
 							</div>
@@ -287,10 +298,18 @@
 
 																<div class="col-md-10">
 																	<h2 class="search-title">
-																		<a
-																			href="beachInfo.action?id=<s:property value="beach_id" />">
-																			<s:property value="beach_name" />
-																		</a>
+																		<s:if test="%{loginUserID==-1}">
+																			<a
+																				href="beachInfo.action?id=<s:property value="beach_id"/>&loginUserID=-1">
+																				<s:property value="beach_name" />
+																			</a>
+																		</s:if>
+																		<s:else>
+																			<a
+																				href="beachInfo.action?id=<s:property value="beach_id"/>&loginUserID=<s:property value="loginUserID"/>">
+																				<s:property value="beach_name" />
+																			</a>
+																		</s:else>
 																	</h2>
 																	<p class="search-desc">
 																		<s:property value="beach_name" />
@@ -431,12 +450,12 @@
 		// order in which these markers should display on top of each other.
 		var beaches = [];
 		<s:iterator value="beachList" status="userStatus">
-														var latitude = '<s:property value="latitude"/>';
-														var latitude1 = parseFloat(latitude);
-														var longitude = '<s:property value="longitude"/>';
-														var longitude1 = parseFloat(longitude);
-											     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
-											    </s:iterator>
+																	var latitude = '<s:property value="latitude"/>';
+																	var latitude1 = parseFloat(latitude);
+																	var longitude = '<s:property value="longitude"/>';
+																	var longitude1 = parseFloat(longitude);
+														     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
+														    </s:iterator>
 	
 	
 		function setMarkers(map) {

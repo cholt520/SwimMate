@@ -56,10 +56,18 @@
 						<div class="container">
 							<!-- BEGIN LOGO -->
 							<div class="page-logo">
-								<a href="index.action"> <img src="../image/logo_green.jpg"
+								<s:if test="%{loginUserID==-1}">
+								<a href="index.action?loginUserID=-1"> <img src="../image/logo_green.jpg"
 									alt="logo" class="logo-default"
 									style="width:230px; height:45px; margin-top:18px;">
 								</a>
+								</s:if>
+								<s:else>
+								<a href="index.action?loginUserID=<s:property value="loginUserID"/>"> <img src="../image/logo_green.jpg"
+									alt="logo" class="logo-default"
+									style="width:230px; height:45px; margin-top:18px;">
+								</a>
+								</s:else>
 							</div>
 							<!-- END LOGO -->
 							<!-- BEGIN RESPONSIVE MENU TOGGLER -->
@@ -67,9 +75,9 @@
 							<!-- END RESPONSIVE MENU TOGGLER -->
 
 							<!-- Begin Login and Sign up -->
-							<jsp:include page="LoginorSignup.jsp" /> 
+							<jsp:include page="LoginorSignup.jsp" />
 							<!-- End Login and Sign up -->
-							
+
 						</div>
 					</div>
 					<!-- END HEADER TOP -->
@@ -112,16 +120,16 @@
 									<!-- <li class=""><a href="SharkAlarm.action">Shark alarm </a>
 									</li> -->
 									<s:if test="%{loginUserID==-1}">
-										<li class=""><a href="tips.action?loginUserID=-1 "> Tips for
-												Swimmers </a></li>
+										<li class=""><a href="tips.action?loginUserID=-1 ">
+												Tips for Swimmers </a></li>
 									</s:if>
 									<s:else>
-										<li class=""><a href="tips.action?loginUserID=<s:property value="loginUserID"/>"> Tips for
-												Swimmers </a></li>
+										<li class=""><a
+											href="tips.action?loginUserID=<s:property value="loginUserID"/>">
+												Tips for Swimmers </a></li>
 									</s:else>
 								</ul>
 							</div>
-
 							<!-- END MEGA MENU -->
 
 						</div>
@@ -180,7 +188,6 @@
 
 														<div class="portlet-title">
 															<div class="caption">
-
 																<span
 																	class="caption-subject font-green-sharp bold uppercase">
 																	<i class="fa fa-map-pin"></i> <s:property

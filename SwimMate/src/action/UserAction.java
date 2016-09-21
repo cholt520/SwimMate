@@ -7,7 +7,7 @@ import java.util.List;
 
 import entity.User;
 
-public class UserAction extends ActionSupport{
+public class UserAction extends ActionSupport {
 
 	/**
 	 * 
@@ -23,6 +23,15 @@ public class UserAction extends ActionSupport{
 	private String password = "";
 	private int loginUserID = -1;
 	private User currentLoginUser;
+	private String currentPasswd;
+
+	public String getCurrentPasswd() {
+		return currentPasswd;
+	}
+
+	public void setCurrentPasswd(String currentPasswd) {
+		this.currentPasswd = currentPasswd;
+	}
 
 	public User getCurrentLoginUser() {
 		return currentLoginUser;
@@ -106,7 +115,7 @@ public class UserAction extends ActionSupport{
 
 	public String execute() {
 		try {
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -118,8 +127,8 @@ public class UserAction extends ActionSupport{
 			System.out.println(username);
 			System.out.println(password);
 			User user = userService.getUserByUserName(username);
-			
-			if(user != null) {
+
+			if (user != null) {
 				if (user.getPasswd().equals(password)) {
 					addActionMessage("Login succeed");
 					System.out.println("Login succeed");
@@ -172,9 +181,45 @@ public class UserAction extends ActionSupport{
 		} catch (Exception e) {
 			e.printStackTrace();
 			return "error";
-		}	
+		}
 	}
-	
-	
+
+	public String jumpToProfilePage() {
+		try {
+			if (loginUserID != -1) {
+				currentLoginUser = userService.getUserById(loginUserID);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "success";
+	}
+
+	public String modifyProfile() {
+		try {
+			if (loginUserID != -1) {
+				currentLoginUser = userService.getUserById(loginUserID);
+			}
+			//Modify user information
+			if (!firstname.equals("")) {
+				currentLoginUser.setFirstName(firstname);
+			}
+			if (!lastname.equals("")) {
+				currentLoginUser.setLastName(lastname);
+			}
+			if (!email.equals("")) {
+				currentLoginUser.setEmail(email);
+			}
+			if (!phone.equals("")) {
+				currentLoginUser.setPhone(phone);
+			}
+			userService.modifyUser(currentLoginUser);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "success";
+	}
 
 }

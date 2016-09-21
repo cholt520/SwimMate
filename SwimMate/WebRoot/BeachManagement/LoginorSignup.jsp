@@ -31,11 +31,20 @@
 				</span>
 			</a>
 				<ul class="dropdown-menu dropdown-menu-default">
-					<li><a href="page_user_profile_1.html"> <i
-							class="icon-user"></i> My Profile
-					</a></li>
-					<li><a href="index.action?loginUserID=-1"> <i class="icon-key"></i>
-							Log Out
+
+					<s:if test="%{loginUserID==-1}">
+						<li><a href="modifyProfile.action?loginUserID=-1"> <i
+								class="icon-user"></i> My Profile
+						</a></li>
+					</s:if>
+					<s:else>
+						<li><a
+							href="jumpToProfilePage.action?loginUserID=<s:property value="loginUserID"/>">
+								<i class="icon-user"></i> My Profile
+						</a></li>
+					</s:else>
+					<li><a href="index.action?loginUserID=-1"> <i
+							class="icon-key"></i> Log Out
 					</a></li>
 				</ul></li>
 			<li class="droddown dropdown-separator">&emsp;</li>

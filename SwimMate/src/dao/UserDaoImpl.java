@@ -64,7 +64,7 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao{
 
 	@Override
 	public User getUserByUserName(String username) {
-		List<User> matchedList = (List<User>) getHibernateTemplate().find("from User where userName=" + username);
+		List<User> matchedList = (List<User>) getHibernateTemplate().find("from User where userName='" + username + "'");
 		if (matchedList.size() != 0) {
 			return (User) matchedList.get(0);
 		} else {

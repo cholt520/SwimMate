@@ -73,27 +73,10 @@
 							<!-- BEGIN RESPONSIVE MENU TOGGLER -->
 							<a href="javascript:;" class="menu-toggler"></a>
 							<!-- END RESPONSIVE MENU TOGGLER -->
-							<!-- Begin Login and Sign up button -->
-							<div class="top-menu">
-								<ul class="nav navbar-nav pull-right">
-									<li class="droddown dropdown-separator">
-										<%-- <s:form
-											action="jumpToLoginPage.action">
-											<button type="submit"
-												class="btn green-sharp btn-outline sbold uppercase">Log
-												in or Sign up</button>
-										</s:form> --%>
-									</li>
-									<li class="droddown dropdown-separator">&emsp;</li>
-									<%-- <li class="droddown dropdown-separator"><s:form
-											action="userSignup.action">
-											<button type="submit" class="btn green-sharp">Sign
-												up</button>
-										</s:form></li> --%>
-									<li class="droddown dropdown-separator">&emsp;</li>
-								</ul>
-							</div>
-							<!-- End Login and Sign up button -->
+
+							<!-- Begin Login and Sign up -->
+							<jsp:include page="LoginorSignup.jsp" />
+							<!-- End Login and Sign up -->
 						</div>
 					</div>
 					<!-- END HEADER TOP -->
@@ -113,11 +96,11 @@
 												Home </a></li>
 									</s:else>
 									<s:if test="%{loginUserID==-1}">
-										<li class="active"><a href="beach.action?loginUserID=-1">
+										<li class=""><a href="beach.action?loginUserID=-1">
 												Find Beach </a></li>
 									</s:if>
 									<s:else>
-										<li class="active"><a
+										<li class=""><a
 											href="beach.action?loginUserID=<s:property value="loginUserID"/>">
 												Find Beach </a></li>
 									</s:else>
@@ -133,12 +116,13 @@
 									<!-- <li class=""><a href="SharkAlarm.action">Shark alarm </a>
 									</li> -->
 									<s:if test="%{loginUserID==-1}">
-										<li class=""><a href="tips.action?loginUserID=-1 "> Tips for
-												Swimmers </a></li>
+										<li class=""><a href="tips.action?loginUserID=-1 ">
+												Tips for Swimmers </a></li>
 									</s:if>
 									<s:else>
-										<li class=""><a href="tips.action?loginUserID=<s:property value="loginUserID"/>"> Tips for
-												Swimmers </a></li>
+										<li class=""><a
+											href="tips.action?loginUserID=<s:property value="loginUserID"/>">
+												Tips for Swimmers </a></li>
 									</s:else>
 								</ul>
 							</div>
@@ -197,7 +181,9 @@
 													<!-- END SIDEBAR USERPIC -->
 													<!-- SIDEBAR USER TITLE -->
 													<div class="profile-usertitle">
-														<div class="profile-usertitle-name">Marcus Doe</div>
+														<div class="profile-usertitle-name">
+															<s:property value="currentLoginUser.userName" />
+														</div>
 													</div>
 													<br /> <br />
 													<!-- END SIDEBAR USER TITLE -->
@@ -221,9 +207,8 @@
 																<ul class="nav nav-tabs">
 																	<li class="active"><a href="#tab_1_1"
 																		data-toggle="tab">Personal Info</a></li>
-																	  <li>
-                                                                            <a href="#tab_1_2" data-toggle="tab">Change Avatar</a>
-                                                                        </li> 
+																	<li><a href="#tab_1_2" data-toggle="tab">Change
+																			Avatar</a></li>
 																	<li><a href="#tab_1_3" data-toggle="tab">Change
 																			Password</a></li>
 
@@ -234,29 +219,38 @@
 																<div class="tab-content">
 																	<!-- PERSONAL INFO TAB -->
 																	<div class="tab-pane active" id="tab_1_1">
-																		<form role="form" action="#">
+																		<form role="form" method="post">
 																			<div class="form-group">
 																				<label class="control-label">First Name</label> <input
-																					type="text" placeholder="John" class="form-control" />
+																					name="firstname" type="text"
+																					placeholder="<s:property value="currentLoginUser.firstName"/>"
+																					class="form-control" />
 																			</div>
 																			<div class="form-group">
 																				<label class="control-label">Last Name</label> <input
-																					type="text" placeholder="Doe" class="form-control" />
+																					name="lastname" type="text"
+																					placeholder="<s:property value="currentLoginUser.lastName"/>"
+																					class="form-control" />
 																			</div>
 																			<div class="form-group">
 																				<label class="control-label">Mobile Number</label> <input
-																					type="text" placeholder="0400000000"
+																					name="phone" type="text"
+																					placeholder="<s:property value="currentLoginUser.phone"/>"
 																					class="form-control" />
 																			</div>
 																			<div class="form-group">
 																				<label class="control-label">Email</label> <input
-																					type="text" placeholder="Stephanie@gmail.com"
+																					name="email" type="text"
+																					placeholder="<s:property value="currentLoginUser.email"/>"
 																					class="form-control" />
 																			</div>
 																			<div class="margiv-top-10">
-																				<a href="javascript:;" class="btn green"> Save
-																					Changes </a> <a href="javascript:;" class="btn default">
-																					Cancel </a>
+																				<button type="submit" class="btn green"
+																					formaction="modifyProfile.action?loginUserID=<s:property value="loginUserID"/>"
+																					formmethod="post">Save Changes</button>
+																					<a
+																					href="javascript:;" class="btn default"> Cancel
+																				</a>
 																			</div>
 																		</form>
 																	</div>
@@ -265,7 +259,7 @@
 
 																	<!-- CHANGE AVATAR TAB -->
 																	<div class="tab-pane" id="tab_1_2">
-																		
+
 																		<form action="#" role="form">
 																			<div class="form-group">
 																				<div class="fileinput fileinput-new"
@@ -305,7 +299,7 @@
 																		<form action="#">
 																			<div class="form-group">
 																				<label class="control-label">Current
-																					Password</label> <input type="password"
+																					Password</label> <input type="password" 
 																					class="form-control" />
 																			</div>
 																			<div class="form-group">

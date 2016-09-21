@@ -58,10 +58,18 @@
 						<div class="container">
 							<!-- BEGIN LOGO -->
 							<div class="page-logo">
-								<a href="index.action"> <img src="../image/logo_green.jpg"
+								<s:if test="%{loginUserID==-1}">
+								<a href="index.action?loginUserID=-1"> <img src="../image/logo_green.jpg"
 									alt="logo" class="logo-default"
 									style="width:230px; height:45px; margin-top:18px;">
 								</a>
+								</s:if>
+								<s:else>
+								<a href="index.action?loginUserID=<s:property value="loginUserID"/>"> <img src="../image/logo_green.jpg"
+									alt="logo" class="logo-default"
+									style="width:230px; height:45px; margin-top:18px;">
+								</a>
+								</s:else>
 							</div>
 							<!-- END LOGO -->
 							<!-- BEGIN RESPONSIVE MENU TOGGLER -->
