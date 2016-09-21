@@ -312,6 +312,18 @@
 																	</p>
 																</div>
 															</div>
+															<br />
+															<div class="row">
+																<div class="col-md-6">
+																	<h4 class="font-green-sharp">
+																		<i class="fa fa-tag font-green-sharp" /></i> Comments:
+																	</h4>
+																	<p>
+																		<textarea name="comments" ></textarea> <br/>
+																		<input type="submit" />
+																	</p>
+																</div>
+															</div>
 														</div>
 													</div>
 												</div>
