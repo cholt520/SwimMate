@@ -12,12 +12,15 @@
 <meta content="" name="description" />
 <meta content="" name="author" />
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<link rel="stylesheet" href="dist/themes/fontawesome-stars.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="jquery.barrating.js"></script>
+<script src="examples/js/examples.js"></script>
 <link
 	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all"
 	rel="stylesheet" type="text/css" />
-<link
-	href="../assets/global/plugins/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css" />
+
 <link
 	href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css"
 	rel="stylesheet" type="text/css" />
@@ -42,6 +45,7 @@
 	rel="stylesheet" type="text/css" />
 <!-- END THEME LAYOUT STYLES -->
 <link rel="shortcut icon" href="favicon.ico" />
+
 </head>
 <!-- END HEAD -->
 
@@ -77,7 +81,6 @@
 							<!-- END RESPONSIVE MENU TOGGLER -->
 
 							<!-- Begin Login and Sign up -->
-							<jsp:include page="LoginorSignup.jsp" />
 							<!-- End Login and Sign up -->
 
 						</div>
@@ -208,6 +211,7 @@
 															<div class="row">
 																<div class="col-md-6">
 
+<<<<<<< HEAD
 																	<div class="row">
 																		<div class="col-md-6">
 																			<h4 class="font-green-sharp">
@@ -238,6 +242,28 @@
 																		</div>
 																	</div>
 
+=======
+																	<h4 class="font-green-sharp">
+																		<i class="fa fa-map-marker font-green-sharp"></i>
+																		Location
+																	</h4>
+																	<p>
+																		<a
+																			href="http://maps.google.com/?q=<s:property value="currentBeach.latitude" />,<s:property value="currentBeach.longitude"/> "
+																			target="_blank"> <s:property
+																				value="currentBeach.beach_name" />, <s:property
+																				value="currentBeach.address" />, <s:property
+																				value="currentBeach.state" /> <s:hidden
+																				id="latitude" value="%{currentBeach.latitude}"
+																				name="latitude" /> <s:hidden id="longitude"
+																				value="%{currentBeach.longitude}" name="longitude" />
+																			<s:hidden id="beachName"
+																				value="%{currentBeach.beach_name}" name="beachName" />
+																				<s:hidden id="beachId"
+																				value="%{currentBeach.beach_id}" name="beachId" />
+																		</a>
+																	</p>
+>>>>>>> 94dd40b305ea68d6608a757bedd66ed94d804b59
 																	<div class="row">
 																		<div class="col-md-6">
 																			<h4 class="font-green-sharp">
@@ -333,6 +359,37 @@
 																	</p>
 																</div>
 															</div>
+															<br />
+															<div class="row">
+																<div class="col-md-6">
+																	<h4 class="font-green-sharp">
+																		<i class="fa fa-tag font-green-sharp" /></i> Comments:
+																	</h4>
+																	<p>
+																		<textarea id="comments" name="comments"></textarea>
+																	<div class="examples">
+																		<div class="row">
+																			<div class="col col-fullwidth">
+																				<div
+																					class="star-ratings start-ratings-main clearfix">
+																					<div class="stars stars-example-fontawesome">
+																						<select id="example-fontawesome" name="rating"
+																							autocomplete="off">
+																							<option value="1">1</option>
+																							<option value="2">2</option>
+																							<option value="3">3</option>
+																							<option value="4">4</option>
+																							<option value="5">5</option>
+																						</select> 
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<br/> <input type="submit" onclick="submitAndRefresh()" />
+																	</p>
+																</div>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -394,19 +451,17 @@
 			</div>
 		</div>
 	</div>
+	
+	
 
 	<!-- BEGIN CORE PLUGINS -->
-	<script src="../assets/global/plugins/jquery.min.js"
-		type="text/javascript"></script>
+
 	<script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js"
 		type="text/javascript"></script>
 	<script src="../assets/global/plugins/js.cookie.min.js"
 		type="text/javascript"></script>
-	<script
-		src="../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js"
-		type="text/javascript"></script>
-	<script src="../assets/global/plugins/jquery.blockui.min.js"
-		type="text/javascript"></script>
+
+
 	<script
 		src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"
 		type="text/javascript"></script>
@@ -428,15 +483,15 @@
 			var longitude = document.getElementById('longitude').value;
 			var latitude = document.getElementById('latitude').value;
 			var beachName = document.getElementById('beachName').value;
-	
+
 			var latitude1 = parseFloat(latitude);
 			var longitude1 = parseFloat(longitude);
-	
+
 			var myLatLng = {
 				lat : latitude1,
 				lng : longitude1
 			};
-	
+
 			var map = new google.maps.Map(document.getElementById('map'), {
 				zoom : 12,
 				center : myLatLng
@@ -450,7 +505,26 @@
 	</script>
 	<script async defer
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUuudit4OFSnhG3ZVXncE3ThuiP6xo25s&callback=initMap">
-</script>
+		
+	</script>
+	
+	<script language="javascript">
+	  function submitAndRefresh(){
+	     var comments = document.getElementById("comments").value;
+	     var ratingnumber = $( "#example-fontawesome option:selected" ).text();
+		 var beachName = document.getElementById("beachName").value;
+		 var beachId = document.getElementById("beachId").value;	     
+		 	     
+	     $.ajax({
+          type: 'POST',
+          url:'rating.action?ratingnumber='+ ratingnumber  +'&comments='+comments+'&beachName='+beachName+'&beachId='+beachId,
+          dataType: 'jo',
+          success: function(data){
+          alert(data);
+          console.log(stringify(data));
+          }});
+	  }
+	</script>
 </body>
 </html>
 
