@@ -220,6 +220,8 @@
 																				value="%{currentBeach.longitude}" name="longitude" />
 																			<s:hidden id="beachName"
 																				value="%{currentBeach.beach_name}" name="beachName" />
+																				<s:hidden id="beachId"
+																				value="%{currentBeach.beach_id}" name="beachId" />
 																		</a>
 																	</p>
 																	<div class="row">
@@ -324,7 +326,7 @@
 																		<i class="fa fa-tag font-green-sharp" /></i> Comments:
 																	</h4>
 																	<p>
-																		<textarea name="comments"></textarea>
+																		<textarea id="comments" name="comments"></textarea>
 																	<div class="examples">
 																		<div class="row">
 																			<div class="col col-fullwidth">
@@ -344,7 +346,7 @@
 																			</div>
 																		</div>
 																	</div>
-																	<br/> <input type="submit" />
+																	<br/> <input type="submit" onclick="submitAndRefresh()" />
 																	</p>
 																</div>
 															</div>
@@ -464,6 +466,24 @@
 	<script async defer
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUuudit4OFSnhG3ZVXncE3ThuiP6xo25s&callback=initMap">
 		
+	</script>
+	
+	<script language="javascript">
+	  function submitAndRefresh(){
+	     var comments = document.getElementById("comments").value;
+	     var ratingnumber = $( "#example-fontawesome option:selected" ).text();
+		 var beachName = document.getElementById("beachName").value;
+		 var beachId = document.getElementById("beachId").value;	     
+		 	     
+	     $.ajax({
+          type: 'POST',
+          url:'rating.action?ratingnumber='+ ratingnumber  +'&comments='+comments+'&beachName='+beachName+'&beachId='+beachId,
+          dataType: 'jo',
+          success: function(data){
+          alert(data);
+          console.log(stringify(data));
+          }});
+	  }
 	</script>
 </body>
 </html>
