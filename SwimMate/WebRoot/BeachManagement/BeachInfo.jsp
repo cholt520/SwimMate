@@ -12,9 +12,11 @@
 <meta content="" name="description" />
 <meta content="" name="author" />
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 <link rel="stylesheet" href="dist/themes/fontawesome-stars.css">
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script
+	src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="jquery.barrating.js"></script>
 <script src="examples/js/examples.js"></script>
 <link
@@ -81,6 +83,7 @@
 							<!-- END RESPONSIVE MENU TOGGLER -->
 
 							<!-- Begin Login and Sign up -->
+							<jsp:include page="LoginorSignup.jsp" />
 							<!-- End Login and Sign up -->
 
 						</div>
@@ -133,12 +136,21 @@
 											href="tips.action?loginUserID=<s:property value="loginUserID"/>">
 												Tips for Swimmers </a></li>
 									</s:else>
-									
+
 									<s:if test="%{loginUserID==-1}">
-										
 									</s:if>
 									<s:else>
-										<li class=""><a href="reminder.action?loginUserID=<s:property value="loginUserID"/>"> Plan Your Journey </a></li>
+										<li class=""><a
+											href="reminder.action?loginUserID=<s:property value="loginUserID"/>">
+												Plan Your Journey </a></li>
+									</s:else>
+
+									<s:if test="%{loginUserID==-1}">
+									</s:if>
+									<s:else>
+										<li class=""><a
+											href="report.action?loginUserID=<s:property value="loginUserID"/>">
+												Report issues </a></li>
 									</s:else>
 								</ul>
 							</div>
@@ -175,10 +187,26 @@
 							<div class="container">
 								<!-- BEGIN PAGE BREADCRUMBS -->
 								<ul class="page-breadcrumb breadcrumb">
-									<li><a href="index.action" class="font-green-sharp">Home</a>
-										<i class="fa fa-circle"></i></li>
-									<li><a href="beach.action" class="font-blue-oleo">Find
-											Beach</a> <i class="fa fa-circle"></i></li>
+									<s:if test="%{loginUserID==-1}">
+										<li><a href="index.action?loginUserID=-1"
+											class="font-green-sharp">Home</a> <i class="fa fa-circle"></i></li>
+									</s:if>
+									<s:else>
+										<li><a
+											href="index.action?loginUserID=<s:property value="loginUserID"/>"
+											class="font-green-sharp">Home</a> <i class="fa fa-circle"></i></li>
+									</s:else>
+
+									<s:if test="%{loginUserID==-1}">
+										<li><a href="beach.action?loginUserID=-1"
+											class="font-blue-oleo">Find Beach</a> <i class="fa fa-circle"></i></li>
+									</s:if>
+									<s:else>
+										<li><a
+											href="beach.action?loginUserID=<s:property value="loginUserID"/>"
+											class="font-blue-oleo">Find Beach</a> <i class="fa fa-circle"></i></li>
+									</s:else>
+
 									<li><span class="font-blue-oleo">Beach Details</span></li>
 								</ul>
 								<!-- END PAGE BREADCRUMBS -->
@@ -211,7 +239,6 @@
 															<div class="row">
 																<div class="col-md-6">
 
-<<<<<<< HEAD
 																	<div class="row">
 																		<div class="col-md-6">
 																			<h4 class="font-green-sharp">
@@ -234,36 +261,19 @@
 																			</p>
 																		</div>
 																		<div class="col-md-6">
-																			<form method="post">
-																				<button type="submit" class="btn green pull-left"
-																					formaction="reminder.action" formmethod="post">
-																					Plan a Journey</button>
-																			</form>
+																			<s:if test="%{loginUserID==-1}">
+																			</s:if>
+																			<s:else>
+																				<form method="post">
+																					<button type="submit" class="btn green pull-left"
+																						formaction="reminder.action?loginUserID=<s:property value="loginUserID"/>"
+																						formmethod="post">Plan a Journey</button>
+																				</form>
+																			</s:else>
 																		</div>
 																	</div>
 
-=======
-																	<h4 class="font-green-sharp">
-																		<i class="fa fa-map-marker font-green-sharp"></i>
-																		Location
-																	</h4>
-																	<p>
-																		<a
-																			href="http://maps.google.com/?q=<s:property value="currentBeach.latitude" />,<s:property value="currentBeach.longitude"/> "
-																			target="_blank"> <s:property
-																				value="currentBeach.beach_name" />, <s:property
-																				value="currentBeach.address" />, <s:property
-																				value="currentBeach.state" /> <s:hidden
-																				id="latitude" value="%{currentBeach.latitude}"
-																				name="latitude" /> <s:hidden id="longitude"
-																				value="%{currentBeach.longitude}" name="longitude" />
-																			<s:hidden id="beachName"
-																				value="%{currentBeach.beach_name}" name="beachName" />
-																				<s:hidden id="beachId"
-																				value="%{currentBeach.beach_id}" name="beachId" />
-																		</a>
-																	</p>
->>>>>>> 94dd40b305ea68d6608a757bedd66ed94d804b59
+																	
 																	<div class="row">
 																		<div class="col-md-6">
 																			<h4 class="font-green-sharp">
@@ -294,6 +304,7 @@
 																			</p>
 																		</div>
 																	</div>
+																	
 																	<div class="row">
 																		<div class="col-md-6">
 
@@ -360,13 +371,21 @@
 																</div>
 															</div>
 															<br />
+
 															<div class="row">
-																<div class="col-md-6">
+																<div class="col-md-2">
 																	<h4 class="font-green-sharp">
 																		<i class="fa fa-tag font-green-sharp" /></i> Comments:
 																	</h4>
-																	<p>
-																		<textarea id="comments" name="comments"></textarea>
+																</div>
+																<div class="col-md-4">
+																	<textarea id="comments" name="comments"
+																		class="form-control" rows="5"></textarea>
+																</div>
+															</div>
+															<br />
+															<div class="row">
+																<div class="col-md-2">
 																	<div class="examples">
 																		<div class="row">
 																			<div class="col col-fullwidth">
@@ -380,87 +399,55 @@
 																							<option value="3">3</option>
 																							<option value="4">4</option>
 																							<option value="5">5</option>
-																						</select> 
+																						</select>
 																					</div>
 																				</div>
 																			</div>
 																		</div>
 																	</div>
-																	<br/> <input type="submit" onclick="submitAndRefresh()" />
-																	</p>
 																</div>
+																<div class="col-md-6">
+																	<input type="submit" class="btn green-sharp"
+																		onclick="submitAndRefresh()" />
+																</div>
+															</div>
+															<br /> 
+															<div class="row">
+																<div id="ratingList"></div>
 															</div>
 														</div>
 													</div>
 												</div>
 											</div>
-											<br /> <br />
 										</div>
+										<br /> 
 									</div>
-									<br /> <br />
 								</div>
-								<!-- END PAGE CONTENT INNER -->
 							</div>
-						</div>
-						<!-- END PAGE CONTENT BODY -->
-						<!-- END CONTENT BODY -->
-					</div>
-					<!-- END CONTENT -->
-
-				</div>
-				<!-- END CONTAINER -->
-			</div>
-		</div>
-		<div class="page-wrapper-row">
-			<div class="page-wrapper-bottom">
-				<!-- BEGIN FOOTER -->
-				<!-- BEGIN PRE-FOOTER -->
-				<div class="page-prefooter">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
-								<h2>About Us</h2>
-								<p>
-									C.A.R.T. Solutions <br /> -- Creativity, Aesthetics,
-									Robustness and good Technology.
-								</p>
-							</div>
-
-							<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
-								<h2>Contacts</h2>
-								<address class="margin-bottom-40">
-									<br /> Email: <a href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
-								</address>
-							</div>
+							<!-- END PAGE CONTENT INNER -->
 						</div>
 					</div>
+					<!-- END PAGE CONTENT BODY -->
+					<!-- END CONTENT BODY -->
 				</div>
-				<!-- END PRE-FOOTER -->
-				<!-- BEGIN INNER FOOTER -->
-				<div class="page-footer">
-					<div class="container">
-						2016 &copy; Swim Mate By <a target="_blank" href="index.action">C.A.R.T.
-							Solutions</a>
-					</div>
-				</div>
-				<div class="scroll-to-top">
-					<i class="icon-arrow-up"></i>
-				</div>
-				<!-- END INNER FOOTER -->
-				<!-- END FOOTER -->
+				<!-- END CONTENT -->
 			</div>
+			<!-- END CONTAINER -->
 		</div>
 	</div>
-	
-	
+	<div class="page-wrapper-row">
+		<div class="page-wrapper-bottom">
+			<!-- BEGIN FOOTER -->
+			<jsp:include page="Footer.jsp" />
+			<!-- END FOOTER -->
+		</div>
+	</div>
 
 	<!-- BEGIN CORE PLUGINS -->
-
 	<script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js"
 		type="text/javascript"></script>
 	<script src="../assets/global/plugins/js.cookie.min.js"
 		type="text/javascript"></script>
-
 
 	<script
 		src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"
@@ -483,15 +470,15 @@
 			var longitude = document.getElementById('longitude').value;
 			var latitude = document.getElementById('latitude').value;
 			var beachName = document.getElementById('beachName').value;
-
+	
 			var latitude1 = parseFloat(latitude);
 			var longitude1 = parseFloat(longitude);
-
+	
 			var myLatLng = {
 				lat : latitude1,
 				lng : longitude1
 			};
-
+	
 			var map = new google.maps.Map(document.getElementById('map'), {
 				zoom : 12,
 				center : myLatLng
@@ -507,23 +494,26 @@
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUuudit4OFSnhG3ZVXncE3ThuiP6xo25s&callback=initMap">
 		
 	</script>
-	
+
 	<script language="javascript">
-	  function submitAndRefresh(){
-	     var comments = document.getElementById("comments").value;
-	     var ratingnumber = $( "#example-fontawesome option:selected" ).text();
-		 var beachName = document.getElementById("beachName").value;
-		 var beachId = document.getElementById("beachId").value;	     
-		 	     
-	     $.ajax({
-          type: 'POST',
-          url:'rating.action?ratingnumber='+ ratingnumber  +'&comments='+comments+'&beachName='+beachName+'&beachId='+beachId,
-          dataType: 'jo',
-          success: function(data){
-          alert(data);
-          console.log(stringify(data));
-          }});
-	  }
+		function submitAndRefresh() {
+			var comments = document.getElementById("comments").value;
+			var ratingnumber = $("#example-fontawesome option:selected").text();
+			var beachName = document.getElementById("beachName").value;
+			var beachId = document.getElementById("beachId").value;
+	
+			$.ajax({
+				type : 'POST',
+				url : 'rating.action?ratingnumber=' + ratingnumber + '&comments=' + comments + '&beachName=' + beachName + '&beachId=' + beachId,
+				dataType : 'text',
+				success : function(data) {
+					$("#ratingList").hide().html(data).fadeIn('fast');
+				},
+				error : function(jqXhr, textStatus, errorThrown) {
+					alert(textStatus);
+				}
+			});
+		}
 	</script>
 </body>
 </html>

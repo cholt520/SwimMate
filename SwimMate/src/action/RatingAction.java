@@ -2,6 +2,9 @@ package action;
 
 import service.RatingService;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +22,8 @@ public class RatingAction {
 	public List<Rating> ratingList = new ArrayList<Rating>();
 	private Rating rating;
 	private String result;
+	private InputStream inputStream;
+
 	
 	public String execute(){
 		ratingList = ratingService.getAllRating();
@@ -26,7 +31,6 @@ public class RatingAction {
 	}
 	
 	public String addRating(){
-		
 		rating = new Rating();
 		rating.setComments(comments);
 		rating.setRating(ratingnumber);
@@ -35,7 +39,8 @@ public class RatingAction {
 		ratingService.addRating(rating);
 		
 		ratingList = ratingService.getAllRating();
-		String result = new Gson().toJson(ratingList);		
+		String result = new Gson().toJson(ratingList);	
+		inputStream = new ByteArrayInputStream(result.getBytes(StandardCharsets.UTF_8));
 		System.out.println(result);
 		return "success";
 	}
@@ -103,8 +108,13 @@ public class RatingAction {
 	public void setResult(String result) {
 		this.result = result;
 	}
-	
-	
-	
+
+	public InputStream getInputStream() {
+		return inputStream;
+	}
+
+	public void setInputStream(InputStream inputStream) {
+		this.inputStream = inputStream;
+	}
 	
 }

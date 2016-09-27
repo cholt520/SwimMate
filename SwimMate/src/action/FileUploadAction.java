@@ -7,7 +7,9 @@ import java.util.List;
 import com.opensymphony.xwork2.ActionSupport;
 
 import entity.Report;
+import entity.User;
 import service.ReportService;
+import service.UserService;
 
 public class FileUploadAction extends ActionSupport {
 
@@ -25,6 +27,33 @@ public class FileUploadAction extends ActionSupport {
 	private File fileUpload;
 	private String fileUploadContentType;
 	private String fileUploadFileName;
+	private int loginUserID = -1;
+	private User currentLoginUser;
+	private UserService userService;
+
+	public int getLoginUserID() {
+		return loginUserID;
+	}
+
+	public void setLoginUserID(int loginUserID) {
+		this.loginUserID = loginUserID;
+	}
+
+	public User getCurrentLoginUser() {
+		return currentLoginUser;
+	}
+
+	public void setCurrentLoginUser(User currentLoginUser) {
+		this.currentLoginUser = currentLoginUser;
+	}
+
+	public UserService getUserService() {
+		return userService;
+	}
+
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
 
 	public File getFileUpload() {
 		return fileUpload;
@@ -51,25 +80,50 @@ public class FileUploadAction extends ActionSupport {
 	}
 
 	public String execute() throws Exception {
+		try {
+			if (loginUserID != -1) {
+				currentLoginUser = userService.getUserById(loginUserID);
+			}
+			Report report = new Report();
+			report.setBeachName(beachName);
+			report.setSubmittedName(submittedName);
+			report.setDescription(description);
+			report.setFileUpload(fileUpload.toPath().toString());
+			report.setFileUploadContentType(fileUploadContentType);
+			report.setFileUploadFileName(fileUploadFileName);
+			report.setReason(reason);
 
-		Report report = new Report();
-		report.setBeachName(beachName);
-		report.setSubmittedName(submittedName);
-		report.setDescription(description);
-		report.setFileUpload(fileUpload.toPath().toString());
-		report.setFileUploadContentType(fileUploadContentType);
-		report.setFileUploadFileName(fileUploadFileName);
-		report.setReason(reason);
-
-		reportService.addReport(report);
-
+			reportService.addReport(report);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return SUCCESS;
+		
 	}
 
 	public String display() {
-		return NONE;
+		try {
+			if (loginUserID != -1) {
+				currentLoginUser = userService.getUserById(loginUserID);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "success";
 	}
 
+	public String jumpToReportPage() {
+		try {
+			if (loginUserID != -1) {
+				currentLoginUser = userService.getUserById(loginUserID);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "success";
+	}
+	
+	
 	public String showAllReport() throws Exception {
 		reportList = reportService.getAllReport();
 		return "showAllReport";

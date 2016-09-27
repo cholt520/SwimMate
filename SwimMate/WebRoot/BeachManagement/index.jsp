@@ -59,16 +59,18 @@
 							<!-- BEGIN LOGO -->
 							<div class="page-logo">
 								<s:if test="%{loginUserID==-1}">
-								<a href="index.action?loginUserID=-1"> <img src="../image/logo_green.jpg"
-									alt="logo" class="logo-default"
-									style="width:230px; height:45px; margin-top:18px;">
-								</a>
+									<a href="index.action?loginUserID=-1"> <img
+										src="../image/logo_green.jpg" alt="logo" class="logo-default"
+										style="width:230px; height:45px; margin-top:18px;">
+									</a>
 								</s:if>
 								<s:else>
-								<a href="index.action?loginUserID=<s:property value="loginUserID"/>"> <img src="../image/logo_green.jpg"
-									alt="logo" class="logo-default"
-									style="width:230px; height:45px; margin-top:18px;">
-								</a>
+									<a
+										href="index.action?loginUserID=<s:property value="loginUserID"/>">
+										<img src="../image/logo_green.jpg" alt="logo"
+										class="logo-default"
+										style="width:230px; height:45px; margin-top:18px;">
+									</a>
 								</s:else>
 							</div>
 							<!-- END LOGO -->
@@ -121,23 +123,32 @@
 									</li> -->
 
 									<s:if test="%{loginUserID==-1}">
-										<li class=""><a href="tips.action?loginUserID=-1 "> Tips for
-												Swimmers </a></li>
+										<li class=""><a href="tips.action?loginUserID=-1 ">
+												Tips for Swimmers </a></li>
 									</s:if>
 									<s:else>
-										<li class=""><a href="tips.action?loginUserID=<s:property value="loginUserID"/>"> Tips for
-												Swimmers </a></li>
+										<li class=""><a
+											href="tips.action?loginUserID=<s:property value="loginUserID"/>">
+												Tips for Swimmers </a></li>
 									</s:else>
-									
+
 									<s:if test="%{loginUserID==-1}">
-										
+
 									</s:if>
 									<s:else>
-										<li class=""><a href="reminder.action?loginUserID=<s:property value="loginUserID"/>"> Plan Your Journey </a></li>
+										<li class=""><a
+											href="reminder.action?loginUserID=<s:property value="loginUserID"/>">
+												Plan Your Journey </a></li>
 									</s:else>
 
+									<s:if test="%{loginUserID==-1}">
+									</s:if>
+									<s:else>
+										<li class=""><a
+											href="report.action?loginUserID=<s:property value="loginUserID"/>">
+												Report issues </a></li>
+									</s:else>
 
-									<!-- <li class=""><a href="Report.jsp"> Reporting System </a></li> -->
 
 								</ul>
 							</div>
@@ -174,9 +185,18 @@
 											</p>
 											<br />
 											<h2>
-												<a href="beach.action" class="font-white"> <i
-													class="fa fa-search"></i> Get Started
-												</a>
+												<s:if test="%{loginUserID==-1}">
+													<a href="beach.action?loginUserID=-1" class="font-white">
+														<i class="fa fa-search"></i> Get Started
+													</a>
+												</s:if>
+												<s:else>
+													<a
+														href="beach.action?loginUserID=<s:property value="loginUserID"/>"
+														class="font-white"> <i class="fa fa-search"></i> Get
+														Started
+													</a>
+												</s:else>
 											</h2>
 										</div>
 									</div>
@@ -193,8 +213,15 @@
 											<hr class="section-heading-spacer">
 											<div class="clearfix"></div>
 											<h2 class="section-heading">
-												<a href="beach.action" class="font-dark"> Finding your
-													ideal beach </a>
+												<s:if test="%{loginUserID==-1}">
+													<a href="beach.action?loginUserID=-1" class="font-dark">
+														Finding your ideal beach </a>
+												</s:if>
+												<s:else>
+													<a
+														href="beach.action?loginUserID=<s:property value="loginUserID"/>"
+														class="font-dark"> Finding your ideal beach </a>
+												</s:else>
 											</h2>
 											<p class="lead">It is quite normal for people in
 												Australia to swim at the beach. SwimMate can provide a range
@@ -216,8 +243,15 @@
 											<hr class="section-heading-spacer">
 											<div class="clearfix"></div>
 											<h2 class="section-heading">
-												<a href="Tips.jsp" class="font-dark">Ensuring the safety
-													of swimmer</a>
+												<s:if test="%{loginUserID==-1}">
+													<a href="tips.action?loginUserID=-1" class="font-dark">Ensuring
+														the safety of swimmer</a>
+												</s:if>
+												<s:else>
+													<a
+														href="tips.action?loginUserID=<s:property value="loginUserID"/>"
+														class="font-dark">Ensuring the safety of swimmer</a>
+												</s:else>
 											</h2>
 											<p class="lead">Royal Life Saving Report (2015) indicated
 												that around 10 people are rescued from beaches every day in
@@ -263,39 +297,7 @@
 	<div class="page-wrapper-row">
 		<div class="page-wrapper-bottom">
 			<!-- BEGIN FOOTER -->
-			<!-- BEGIN PRE-FOOTER -->
-			<div class="page-prefooter">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
-							<h2>About Us</h2>
-							<p>
-								C.A.R.T. Solutions <br /> -- Creativity, Aesthetics, Robustness
-								and good Technology.
-							</p>
-						</div>
-
-						<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
-							<h2>Contacts</h2>
-							<address class="margin-bottom-40">
-								Email: <a href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
-							</address>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- END PRE-FOOTER -->
-			<!-- BEGIN INNER FOOTER -->
-			<div class="page-footer">
-				<div class="container">
-					2016 &copy; Swim Mate By <a target="_blank" href="index.action">C.A.R.T.
-						Solutions</a>
-				</div>
-			</div>
-			<div class="scroll-to-top">
-				<i class="icon-arrow-up"></i>
-			</div>
-			<!-- END INNER FOOTER -->
+			<jsp:include page="Footer.jsp" />
 			<!-- END FOOTER -->
 		</div>
 	</div>

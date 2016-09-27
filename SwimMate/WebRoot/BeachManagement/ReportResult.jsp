@@ -68,15 +68,29 @@
 						<div class="container">
 							<!-- BEGIN LOGO -->
 							<div class="page-logo">
-								<a href="index.action"> <img src="../image/logo_green.jpg"
-									alt="logo" class="logo-default"
-									style="width:230px; height:45px; margin-top:18px;">
-								</a>
+								<s:if test="%{loginUserID==-1}">
+									<a href="index.action?loginUserID=-1"> <img
+										src="../image/logo_green.jpg" alt="logo" class="logo-default"
+										style="width:230px; height:45px; margin-top:18px;">
+									</a>
+								</s:if>
+								<s:else>
+									<a
+										href="index.action?loginUserID=<s:property value="loginUserID"/>">
+										<img src="../image/logo_green.jpg" alt="logo"
+										class="logo-default"
+										style="width:230px; height:45px; margin-top:18px;">
+									</a>
+								</s:else>
 							</div>
 							<!-- END LOGO -->
 							<!-- BEGIN RESPONSIVE MENU TOGGLER -->
 							<a href="javascript:;" class="menu-toggler"></a>
 							<!-- END RESPONSIVE MENU TOGGLER -->
+							
+							<!-- Begin Login and Sign up -->
+							<jsp:include page="LoginorSignup.jsp" />
+							<!-- End Login and Sign up -->
 						</div>
 					</div>
 					<!-- END HEADER TOP -->
@@ -87,18 +101,60 @@
 							<!-- BEGIN MEGA MENU -->
 							<div class="hor-menu  ">
 								<ul class="nav navbar-nav">
-
-									<li class=""><a href="index.action"> Home </a></li>
-
-									<li class=""><a href="beach.action"> Find Beach </a></li>
-
-									<li class="active"><a href="Training.action">Find
-											Swimming Centres </a></li>
-
+									<s:if test="%{loginUserID==-1}">
+									<li class=""><a href="index.action?loginUserID=-1">
+												Home </a></li>
+									</s:if>
+									<s:else>
+										<li class=""><a
+											href="index.action?loginUserID=<s:property value="loginUserID"/>">
+												Home </a></li>
+									</s:else>
+									<s:if test="%{loginUserID==-1}">
+										<li class=""><a href="beach.action?loginUserID=-1">
+												Find Beach </a></li>
+									</s:if>
+									<s:else>
+										<li class=""><a
+											href="beach.action?loginUserID=<s:property value="loginUserID"/>">
+												Find Beach </a></li>
+									</s:else>
+									<s:if test="%{loginUserID==-1}">
+										<li class=""><a href="Training.action?loginUserID=-1">Find
+												Swimming Centres </a></li>
+									</s:if>
+									<s:else>
+										<li class=""><a
+											href="Training.action?loginUserID=<s:property value="loginUserID"/>">Find
+												Swimming Centres </a></li>
+									</s:else>
 									<!-- <li class=""><a href="SharkAlarm.action">Shark alarm </a>
 									</li> -->
+									<s:if test="%{loginUserID==-1}">
+										<li class=""><a href="tips.action?loginUserID=-1 ">
+												Tips for Swimmers </a></li>
+									</s:if>
+									<s:else>
+										<li class=""><a
+											href="tips.action?loginUserID=<s:property value="loginUserID"/>">
+												Tips for Swimmers </a></li>
+									</s:else>
 
-									<li class=""><a href="Tips.jsp "> Tips for Swimmers </a></li>
+									<s:if test="%{loginUserID==-1}">
+									</s:if>
+									<s:else>
+										<li class=""><a
+											href="reminder.action?loginUserID=<s:property value="loginUserID"/>">
+												Plan Your Journey </a></li>
+									</s:else>
+									
+									<s:if test="%{loginUserID==-1}">
+									</s:if>
+									<s:else>
+										<li class="active"><a
+											href="report.action?loginUserID=<s:property value="loginUserID"/>">
+												Reporting System </a></li>
+									</s:else>
 								</ul>
 							</div>
 							<!-- END MEGA MENU -->
@@ -133,8 +189,15 @@
 							<div class="container">
 								<!-- BEGIN PAGE BREADCRUMBS -->
 								<ul class="page-breadcrumb breadcrumb ">
-									<li><a href="index.action" class="font-green-sharp">Home</a>
-										<i class="fa fa-circle"></i></li>
+									<s:if test="%{loginUserID==-1}">
+										<li><a href="index.action?loginUserID=-1"
+											class="font-green-sharp">Home</a> <i class="fa fa-circle"></i></li>
+									</s:if>
+									<s:else>
+										<li><a
+											href="index.action?loginUserID=<s:property value="loginUserID"/>"
+											class="font-green-sharp">Home</a> <i class="fa fa-circle"></i></li>
+									</s:else>
 									<li><span>Search Reports</span></li>
 								</ul>
 								<!-- END PAGE BREADCRUMBS -->
@@ -148,9 +211,9 @@
 												<div class="col-md-12">
 													<s:form action="getReportByBeach.action">
 														<div class="input-group">
-															<input name="searchBeachName" type="text" class="form-control"
-																placeholder="Search by Beach Name"> <span
-																class="input-group-btn">
+															<input name="searchBeachName" type="text"
+																class="form-control" placeholder="Search by Beach Name">
+															<span class="input-group-btn">
 																<button class="btn green-sharp uppercase bold"
 																	type="submit">Search</button>
 															</span>
@@ -191,7 +254,7 @@
 																		<th>Description</th>
 																		<th>Type</th>
 																		<th>FileName</th>
-																		
+
 																	</tr>
 																</thead>
 																<tbody>
@@ -201,10 +264,11 @@
 																			<td><s:property value="#report.submittedName" /></td>
 																			<td><s:property value="#report.reason" /></td>
 																			<td><s:property value="#report.description" /></td>
-																			<td><s:property value="#report.fileUploadContentType" /></td>
+																			<td><s:property
+																					value="#report.fileUploadContentType" /></td>
 																			<td><s:property
 																					value="#report.fileUploadFileName" /></td>
-																			
+
 																		</tr>
 																	</s:iterator>
 																</tbody>
@@ -235,39 +299,7 @@
 		<div class="page-wrapper-row">
 			<div class="page-wrapper-bottom">
 				<!-- BEGIN FOOTER -->
-				<!-- BEGIN PRE-FOOTER -->
-				<div class="page-prefooter">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
-								<h2>About Us</h2>
-								<p>
-									C.A.R.T. Solutions <br /> -- Creativity, Aesthetics,
-									Robustness and good Technology.
-								</p>
-							</div>
-
-							<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
-								<h2>Contacts</h2>
-								<address class="margin-bottom-40">
-									<br /> Email: <a href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
-								</address>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- END PRE-FOOTER -->
-				<!-- BEGIN INNER FOOTER -->
-				<div class="page-footer">
-					<div class="container">
-						2016 &copy; Swim Mate By <a target="_blank" href="index.action">C.A.R.T.
-							Solutions</a>
-					</div>
-				</div>
-				<div class="scroll-to-top">
-					<i class="icon-arrow-up"></i>
-				</div>
-				<!-- END INNER FOOTER -->
+				<jsp:include page="Footer.jsp" />
 				<!-- END FOOTER -->
 			</div>
 		</div>
@@ -314,7 +346,7 @@
 		type="text/javascript"></script>
 	<!-- END PAGE LEVEL SCRIPTS -->
 	<!-- Start Map Scripts -->
-	
+
 	<!-- End Map Scripts -->
 </body>
 </html>

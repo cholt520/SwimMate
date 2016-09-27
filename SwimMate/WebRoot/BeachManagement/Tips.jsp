@@ -60,27 +60,29 @@
 							<!-- BEGIN LOGO -->
 							<div class="page-logo">
 								<s:if test="%{loginUserID==-1}">
-								<a href="index.action?loginUserID=-1"> <img src="../image/logo_green.jpg"
-									alt="logo" class="logo-default"
-									style="width:230px; height:45px; margin-top:18px;">
-								</a>
+									<a href="index.action?loginUserID=-1"> <img
+										src="../image/logo_green.jpg" alt="logo" class="logo-default"
+										style="width:230px; height:45px; margin-top:18px;">
+									</a>
 								</s:if>
 								<s:else>
-								<a href="index.action?loginUserID=<s:property value="loginUserID"/>"> <img src="../image/logo_green.jpg"
-									alt="logo" class="logo-default"
-									style="width:230px; height:45px; margin-top:18px;">
-								</a>
+									<a
+										href="index.action?loginUserID=<s:property value="loginUserID"/>">
+										<img src="../image/logo_green.jpg" alt="logo"
+										class="logo-default"
+										style="width:230px; height:45px; margin-top:18px;">
+									</a>
 								</s:else>
 							</div>
 							<!-- END LOGO -->
 							<!-- BEGIN RESPONSIVE MENU TOGGLER -->
 							<a href="javascript:;" class="menu-toggler"></a>
 							<!-- END RESPONSIVE MENU TOGGLER -->
-							
+
 							<!-- Begin Login and Sign up -->
-							<jsp:include page="LoginorSignup.jsp" /> 
+							<jsp:include page="LoginorSignup.jsp" />
 							<!-- End Login and Sign up -->
-							
+
 						</div>
 					</div>
 					<!-- END HEADER TOP -->
@@ -120,19 +122,30 @@
 									<!-- <li class=""><a href="SharkAlarm.action">Shark alarm </a>
 									</li> -->
 									<s:if test="%{loginUserID==-1}">
-										<li class="active"><a href="tips.action?loginUserID=-1 "> Tips for
-												Swimmers </a></li>
+										<li class="active"><a href="tips.action?loginUserID=-1 ">
+												Tips for Swimmers </a></li>
 									</s:if>
 									<s:else>
-										<li class="active"><a href="tips.action?loginUserID=<s:property value="loginUserID"/>"> Tips for
-												Swimmers </a></li>
+										<li class="active"><a
+											href="tips.action?loginUserID=<s:property value="loginUserID"/>">
+												Tips for Swimmers </a></li>
 									</s:else>
-									
+
 									<s:if test="%{loginUserID==-1}">
-										
+
 									</s:if>
 									<s:else>
-										<li class=""><a href="reminder.action?loginUserID=<s:property value="loginUserID"/>"> Plan Your Journey </a></li>
+										<li class=""><a
+											href="reminder.action?loginUserID=<s:property value="loginUserID"/>">
+												Plan Your Journey </a></li>
+									</s:else>
+
+									<s:if test="%{loginUserID==-1}">
+									</s:if>
+									<s:else>
+										<li class=""><a
+											href="report.action?loginUserID=<s:property value="loginUserID"/>">
+												Report issues </a></li>
 									</s:else>
 								</ul>
 							</div>
@@ -171,8 +184,15 @@
 							<div class="container">
 								<!-- BEGIN PAGE BREADCRUMBS -->
 								<ul class="page-breadcrumb breadcrumb">
-									<li><a href="index.action" class="font-green-sharp">Home</a>
-										<i class="fa fa-circle"></i></li>
+									<s:if test="%{loginUserID==-1}">
+										<li><a href="index.action?loginUserID=-1"
+											class="font-green-sharp">Home</a> <i class="fa fa-circle"></i></li>
+									</s:if>
+									<s:else>
+										<li><a
+											href="index.action?loginUserID=<s:property value="loginUserID"/>"
+											class="font-green-sharp">Home</a> <i class="fa fa-circle"></i></li>
+									</s:else>
 									<li><span class="font-blue-oleo">Tips for Swimmers</span></li>
 								</ul>
 								<!-- END PAGE BREADCRUMBS -->
@@ -202,11 +222,11 @@
 																			yellow flags. The flags are placed at the safest
 																			places to swim and are for swimmers only. If you are
 																			surfing it is not good form to do it between the
-																			flags (lifeguards may confiscate your board). <br /><br />
-																			For additional safety instructions, visit <a href="http://www.healthdirect.gov.au/beach-safety"
+																			flags (lifeguards may confiscate your board). <br />
+																			<br /> For additional safety instructions, visit <a
+																				href="http://www.healthdirect.gov.au/beach-safety"
 																				target="_blank" class="font-blue-soft">healthdirect.com.au</a>
 																		</p>
-
 																	</div>
 																	<div class="col-md-6">
 																		<img class="img-responsive"
@@ -223,7 +243,10 @@
 															<div class="content-section-b">
 																<div class="row">
 																	<div class="col-md-6">
-																		<img class="img-responsive" src="../image/Rip.jpg"
+																		<!-- <iframe width="500" height="360"
+																			src="https://www.youtube.com/watch?v=KkObAXrjpzs&feature=youtu.be">
+																		</iframe> -->
+																		 <img class="img-responsive" src="../image/Rip.jpg"
 																			alt="">
 																	</div>
 																	<div class="col-md-6">
@@ -314,8 +337,6 @@
 															</div>
 														</div>
 													</div>
-
-
 												</div>
 											</div>
 										</div>
@@ -335,39 +356,7 @@
 	<div class="page-wrapper-row">
 		<div class="page-wrapper-bottom">
 			<!-- BEGIN FOOTER -->
-			<!-- BEGIN PRE-FOOTER -->
-			<div class="page-prefooter">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
-							<h2>About Us</h2>
-							<p>
-								C.A.R.T. Solutions <br /> -- Creativity, Aesthetics, Robustness
-								and good Technology.
-							</p>
-						</div>
-
-						<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
-							<h2>Contacts</h2>
-							<address class="margin-bottom-40">
-								<br /> Email: <a href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
-							</address>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- END PRE-FOOTER -->
-			<!-- BEGIN INNER FOOTER -->
-			<div class="page-footer">
-				<div class="container">
-					2016 &copy; Swim Mate By <a target="_blank" href="index.action">C.A.R.T.
-						Solutions</a>
-				</div>
-			</div>
-			<div class="scroll-to-top">
-				<i class="icon-arrow-up"></i>
-			</div>
-			<!-- END INNER FOOTER -->
+			<jsp:include page="Footer.jsp" />
 			<!-- END FOOTER -->
 		</div>
 	</div>

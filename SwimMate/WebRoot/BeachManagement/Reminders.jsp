@@ -160,6 +160,14 @@
 											href="reminder.action?loginUserID=<s:property value="loginUserID"/>">
 												Plan Your Journey </a></li>
 									</s:else>
+									
+									<s:if test="%{loginUserID==-1}">
+									</s:if>
+									<s:else>
+										<li class=""><a
+											href="report.action?loginUserID=<s:property value="loginUserID"/>">
+												Report issues </a></li>
+									</s:else>
 								</ul>
 							</div>
 							<!-- END MEGA MENU -->
@@ -194,8 +202,15 @@
 							<div class="container">
 								<!-- BEGIN PAGE BREADCRUMBS -->
 								<ul class="page-breadcrumb breadcrumb">
-									<li><a href="index.html">Home</a> <i class="fa fa-circle"></i>
-									</li>
+									<s:if test="%{loginUserID==-1}">
+										<li><a href="index.action?loginUserID=-1"
+											class="font-green-sharp">Home</a> <i class="fa fa-circle"></i></li>
+									</s:if>
+									<s:else>
+										<li><a
+											href="index.action?loginUserID=<s:property value="loginUserID"/>"
+											class="font-green-sharp">Home</a> <i class="fa fa-circle"></i></li>
+									</s:else>
 									<li><span>Reminder</span></li>
 								</ul>
 								<!-- END PAGE BREADCRUMBS -->
@@ -242,8 +257,7 @@
 																	<thead>
 																		<tr class="uppercase">
 																			<th colspan="2">Date</th>
-																			<th>ReminderID</th>
-																			<th>Edit</th>
+																			<!-- <th>Edit</th> -->
 																			<th>Delete</th>
 																		</tr>
 																	</thead>
@@ -252,13 +266,12 @@
 																			<tr>
 																				<td colspan="2"><s:property
 																						value="#reminder.date" /></td>
-																				<td><s:property value="#reminder.ID" /></td>
-																				<td><a
-																					href="modifyReminder.action?loginUserID=<s:property value="loginUserID"/>&editReminderID=<s:property
+																				<%-- <td><a
+																					href="jumpToModifyReminder.action?loginUserID=<s:property value="loginUserID"/>&editReminderID=<s:property
 																						value="#reminder.ID" />"
 																					class="btn btn-transparent blue-hoki btn-outline btn-circle btn-xs">
 																						<i class="fa fa-edit"></i>
-																				</a></td>
+																				</a></td> --%>
 																				<td><a
 																					href="deleteReminder.action?loginUserID=<s:property value="loginUserID"/>&deleteReminderID=<s:property
 																						value="#reminder.ID" />"
@@ -499,39 +512,7 @@
 	<div class="page-wrapper-row">
 		<div class="page-wrapper-bottom">
 			<!-- BEGIN FOOTER -->
-			<!-- BEGIN PRE-FOOTER -->
-			<div class="page-prefooter">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
-							<h2>About Us</h2>
-							<p>
-								C.A.R.T. Solutions <br /> -- Creativity, Aesthetics, Robustness
-								and good Technology.
-							</p>
-						</div>
-
-						<div class="col-md-6 col-sm-6 col-xs-12 footer-block">
-							<h2>Contacts</h2>
-							<address class="margin-bottom-40">
-								Email: <a href="mailto:lzuo5@student.monash.edu">lzuo5@student.monash.edu</a>
-							</address>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- END PRE-FOOTER -->
-			<!-- BEGIN INNER FOOTER -->
-			<div class="page-footer">
-				<div class="container">
-					2016 &copy; Swim Mate By <a target="_blank" href="index.action">C.A.R.T.
-						Solutions</a>
-				</div>
-			</div>
-			<div class="scroll-to-top">
-				<i class="icon-arrow-up"></i>
-			</div>
-			<!-- END INNER FOOTER -->
+			<jsp:include page="Footer.jsp" />
 			<!-- END FOOTER -->
 		</div>
 	</div>

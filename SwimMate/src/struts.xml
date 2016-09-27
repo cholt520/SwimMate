@@ -14,7 +14,8 @@
 			<result>/BeachManagement/Login.jsp</result>
 		</action>
 
-		<action name="report">
+		<action name="report" class="action.FileUploadAction"
+			method="jumpToReportPage">
 			<result>/BeachManagement/Report.jsp</result>
 		</action>
 
@@ -155,6 +156,13 @@
 			</result>
 		</action>
 		
+		<action name="submitState" class="action.ReminderAction" method="submitState">
+			<result name="success">/BeachManagement/EditReminder.jsp
+			</result>
+			<result name="error">/BeachManagement/EditReminder.jsp
+			</result>
+			<result name="input">/BeachManagement/EditReminder.jsp</result>
+		</action>
 		
 		<action name="submitReminder" class="action.ReminderAction" method="submitReminder">
 			<result name="success">/BeachManagement/Reminders.jsp
@@ -175,7 +183,16 @@
 			</result>
 			<result name="error">/BeachManagement/EditReminder.jsp
 			</result>
+			<result name="input">/BeachManagement/EditReminder.jsp</result>
 		</action>
+		
+		<action name="jumpToModifyReminder" class="action.ReminderAction" method="jumpToModifyReminder">
+			<result name="success">/BeachManagement/EditReminder.jsp
+			</result>
+			<result name="error">/BeachManagement/EditReminder.jsp
+			</result>
+		</action>
+		
 
 	</package>
 
