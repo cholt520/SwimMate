@@ -13,6 +13,8 @@ public class RatingServiceImpl implements RatingService{
 	}
 
 	public void addRating(Rating rating) {
+		System.out.println(rating.getComments());
+		System.out.println(rating.getRating());
 		ratingDao.addRating(rating);
 	}
 
