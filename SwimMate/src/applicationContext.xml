@@ -38,6 +38,7 @@
 				<value>SharkAlarm.hbm.xml</value>
 				<value>User.hbm.xml</value>
 				<value>Report.hbm.xml</value>
+				<value>Rating.hbm.xml</value>
 			</list>
 		</property>
 
@@ -62,6 +63,14 @@
 		<property name="sharkAlarmDao" ref="sharkAlarmDao" />
 	</bean>
 	<bean id="sharkAlarmDao" class="dao.SharkAlarmDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="ratingService" class="service.RatingServiceImpl">
+		<property name="ratingDao" ref="ratingDao" />
+	</bean>
+	
+	<bean id="ratingDao" class="dao.RatingDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
