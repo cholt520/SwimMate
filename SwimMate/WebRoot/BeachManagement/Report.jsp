@@ -32,6 +32,12 @@
 <link
 	href="../assets/global/plugins/select2/css/select2-bootstrap.min.css"
 	rel="stylesheet" type="text/css" />
+<link
+	href="../assets/global/plugins/bootstrap-select/css/bootstrap-select.min.css"
+	rel="stylesheet" type="text/css" />
+<link
+	href="../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css"
+	rel="stylesheet" type="text/css" />
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN THEME GLOBAL STYLES -->
 <link href="../assets/global/css/components-rounded.min.css"
@@ -142,61 +148,103 @@ body {
 								<!-- END PAGE BREADCRUMBS -->
 								<!-- BEGIN PAGE CONTENT INNER -->
 								<div class="page-content-inner">
+									<div class="portlet light">
+										<div class="portlet-title">
+											<div class="caption">
+												<span
+													class="caption-subject font-green-sharp bold uppercase">
+													Report issues </span>
+											</div>
+										</div>
+										<div class="portlet-body">
+											<s:form action="resultAction" method="post"
+												enctype="multipart/form-data">
+												<div class="row">
+													<div class="col-md-2">
+														<span class="help-block"> Beach Name: </span>
+													</div>
+													<div class="col-md-4">
+														<input type="text" name="beachName" class="form-control" />
+													</div>
+												</div>
+												<br />
+												<div class="row">
+													<div class="col-md-2">
+														<span class="help-block"> User Name: </span>
+													</div>
+													<div class="col-md-4">
+														<input type="text" name="SubmittedName"
+															class="form-control" />
+													</div>
+												</div>
+												<br />
+												<div class="row">
+													<div class="col-md-2">
+														<span class="help-block"> Reason: </span>
+													</div>
+													<div class="col-md-4">
+														<select name="reason" class="bs-select form-control">
+															<option
+																value="Recent and forecast rain,stormwater pollution likely">Recent
+																and forecast rain,stormwater pollution likely</option>
+															<option value="Recent rain, stormwater pollution likely">Recent
+																rain, stormwater pollution likely</option>
+															<option
+																value="Recent and forecast rain,stormwater pollution possible">Recent
+																and forecast rain, stormwater pollution possible</option>
+															<option value="No rain, stormwater pollution unlikely">No
+																rain, stormwater pollution unlikely</option>
+														</select>
+													</div>
+												</div>
+												<br />
+												<div class="row">
+													<div class="col-md-2">
+														<span class="help-block"> Description: </span>
+													</div>
+													<div class="col-md-4">
+														<textarea name="description" class="form-control"></textarea>
+													</div>
+												</div>
+												<br />
+												<div class="row">
+													<div class="col-md-2">
+														<span class="help-block"> Image: </span>
+													</div>
+													<div class="col-md-4">
+														<div class="fileinput fileinput-new"
+															data-provides="fileinput">
+															<div class="input-group input-large">
+																<div
+																	class="form-control uneditable-input input-fixed input-medium"
+																	data-trigger="fileinput">
+																	<i class="fa fa-file fileinput-exists"></i>&nbsp; <span
+																		class="fileinput-filename"> </span>
+																</div>
+																<span class="input-group-addon btn default btn-file">
+																	<span class="fileinput-new"> Select file </span> <span
+																	class="fileinput-exists"> Change </span> <input
+																	type="file" name="fileUpload" accept="image/*">
+																</span> <a href="javascript:;"
+																	class="input-group-addon btn red fileinput-exists"
+																	data-dismiss="fileinput"> Remove </a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<br />
+												<br />
+												<div class="row">
+													<div class="col-md-6">
+														<button type="submit"
+															class="btn green-sharp uppercase bold">Submit</button>
+													</div>
+												</div>
+											</s:form>
+										</div>
+									</div>
 
 
-									<!-- BEGIN FORM-->
-									<s:form action="resultAction" method="post"
-										enctype="multipart/form-data">
-										<table>
-											<tr>
-												<td>Beach Name:</td>
-											</tr>
-											</br>
-											<tr>
-												<td><input type="text" name="beachName" /></td>
-											</tr>
-											</br>
-											<tr>
-												<td>Submitted Name:</td>
-											</tr>
-											</br>
-											<tr>
-												<td><input type="text" name="SubmittedName"></td>
-											</tr>
-											</br>
-											<tr>
-												<td>Reason:</td>
-											</tr>
-											</br>
-											<tr>
-												<td><select name="reason">
-														<option value="Recent and forecast rain,stormwater pollution likely">Recent and forecast rain,stormwater pollution likely</option>
-														<option value="Recent rain, stormwater pollution likely">Recent rain, stormwater pollution likely</option>
-														<option value="Recent and forecast rain,stormwater pollution possible">Recent and forecast rain, stormwater pollution possible</option>
-														<option value="No rain, stormwater pollution unlikely">No rain, stormwater pollution unlikely</option>
-												</select></td>
-											</tr>
-											</br>
-											<tr>
-												<td>Description:</td>
-											</tr>
-											</br>
-											<tr>
-												<td><textarea name="description"></textarea></td>
-											</tr>
-											</br>
-											<tr>
-												<td>Image:</td>
-											</tr>
-											</br>
-											<tr>
-												<td><s:file name="fileUpload"
-														label="Select a File to upload" size="40" /> <s:submit
-														value="submit" name="submit" /></td>
-											</tr>
-											</br>
-										</table>
-									</s:form>
 									<!-- END PAGE CONTENT INNER -->
 								</div>
 							</div>
@@ -285,13 +333,21 @@ body {
 	<!-- BEGIN PAGE LEVEL PLUGINS -->
 	<script src="../assets/global/plugins/select2/js/select2.full.min.js"
 		type="text/javascript"></script>
+	<script
+		src="../assets/global/plugins/bootstrap-select/js/bootstrap-select.min.js"
+		type="text/javascript"></script>
+	<script
+		src="../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js"
+		type="text/javascript"></script>
 	<!-- END PAGE LEVEL PLUGINS -->
 	<!-- BEGIN PAGE LEVEL SCRIPTS -->
 	<script src="../assets/pages/scripts/components-select2.min.js"
 		type="text/javascript"></script>
+	<script
+		src="../assets/pages/scripts/components-bootstrap-select.min.js"
+		type="text/javascript"></script>
 	<!-- END PAGE LEVEL SCRIPTS -->
 
-	<!-- Start Map Scripts -->
 
 </body>
 </html>

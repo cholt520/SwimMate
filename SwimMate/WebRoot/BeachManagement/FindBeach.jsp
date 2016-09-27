@@ -140,6 +140,13 @@
 											href="tips.action?loginUserID=<s:property value="loginUserID"/>">
 												Tips for Swimmers </a></li>
 									</s:else>
+									
+									<s:if test="%{loginUserID==-1}">
+										
+									</s:if>
+									<s:else>
+										<li class=""><a href="reminder.action?loginUserID=<s:property value="loginUserID"/>"> Plan Your Journey </a></li>
+									</s:else>
 								</ul>
 							</div>
 							<!-- END MEGA MENU -->

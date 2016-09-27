@@ -38,6 +38,7 @@
 				<value>SharkAlarm.hbm.xml</value>
 				<value>User.hbm.xml</value>
 				<value>Report.hbm.xml</value>
+				<value>Reminder.hbm.xml</value>
 			</list>
 		</property>
 
@@ -107,6 +108,14 @@
 	</bean>
 
 	<bean id="reportDao" class="dao.ReportDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="reminderService" class="service.ReminderServiceImpl">
+		<property name="reminderDao" ref="reminderDao" />
+	</bean>
+
+	<bean id="reminderDao" class="dao.ReminderDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 

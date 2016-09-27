@@ -815,7 +815,8 @@ body {
     width: 100%;
     display: table-cell; }
   .page-wrapper .page-wrapper-middle {
-    background: #eff3f8;
+  /* background:red; */
+     background: #eff3f8; 
     width: 100%;
     display: table-cell;
     height: 100%; }
@@ -867,6 +868,9 @@ body {
   color: #9eacb4; }
 
 .page-content {
+	
+	
+	
   padding: 15px 0 15px; }
 
 @media (min-width: 992px) {

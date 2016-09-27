@@ -114,6 +114,7 @@ public class BeachAction implements ModelDriven, Action {
 			beachList = beachService.getBeachByState(selectedState);
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("Error: " + e);
 		}
 		return "success";
 	}

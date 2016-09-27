@@ -57,16 +57,18 @@
 							<!-- BEGIN LOGO -->
 							<div class="page-logo">
 								<s:if test="%{loginUserID==-1}">
-								<a href="index.action?loginUserID=-1"> <img src="../image/logo_green.jpg"
-									alt="logo" class="logo-default"
-									style="width:230px; height:45px; margin-top:18px;">
-								</a>
+									<a href="index.action?loginUserID=-1"> <img
+										src="../image/logo_green.jpg" alt="logo" class="logo-default"
+										style="width:230px; height:45px; margin-top:18px;">
+									</a>
 								</s:if>
 								<s:else>
-								<a href="index.action?loginUserID=<s:property value="loginUserID"/>"> <img src="../image/logo_green.jpg"
-									alt="logo" class="logo-default"
-									style="width:230px; height:45px; margin-top:18px;">
-								</a>
+									<a
+										href="index.action?loginUserID=<s:property value="loginUserID"/>">
+										<img src="../image/logo_green.jpg" alt="logo"
+										class="logo-default"
+										style="width:230px; height:45px; margin-top:18px;">
+									</a>
 								</s:else>
 							</div>
 							<!-- END LOGO -->
@@ -127,6 +129,13 @@
 										<li class=""><a
 											href="tips.action?loginUserID=<s:property value="loginUserID"/>">
 												Tips for Swimmers </a></li>
+									</s:else>
+									
+									<s:if test="%{loginUserID==-1}">
+										
+									</s:if>
+									<s:else>
+										<li class=""><a href="reminder.action?loginUserID=<s:property value="loginUserID"/>"> Plan Your Journey </a></li>
 									</s:else>
 								</ul>
 							</div>
@@ -199,24 +208,36 @@
 															<div class="row">
 																<div class="col-md-6">
 
-																	<h4 class="font-green-sharp">
-																		<i class="fa fa-map-marker font-green-sharp"></i>
-																		Location
-																	</h4>
-																	<p>
-																		<a
-																			href="http://maps.google.com/?q=<s:property value="currentBeach.latitude" />,<s:property value="currentBeach.longitude"/> "
-																			target="_blank"> <s:property
-																				value="currentBeach.beach_name" />, <s:property
-																				value="currentBeach.address" />, <s:property
-																				value="currentBeach.state" /> <s:hidden
-																				id="latitude" value="%{currentBeach.latitude}"
-																				name="latitude" /> <s:hidden id="longitude"
-																				value="%{currentBeach.longitude}" name="longitude" />
-																			<s:hidden id="beachName"
-																				value="%{currentBeach.beach_name}" name="beachName" />
-																		</a>
-																	</p>
+																	<div class="row">
+																		<div class="col-md-6">
+																			<h4 class="font-green-sharp">
+																				<i class="fa fa-map-marker font-green-sharp "></i>
+																				Location
+																			</h4>
+																			<p>
+																				<a
+																					href="http://maps.google.com/?q=<s:property value="currentBeach.latitude" />,<s:property value="currentBeach.longitude"/> "
+																					target="_blank"> <s:property
+																						value="currentBeach.beach_name" />, <s:property
+																						value="currentBeach.state" /> <s:hidden
+																						id="latitude" value="%{currentBeach.latitude}"
+																						name="latitude" /> <s:hidden id="longitude"
+																						value="%{currentBeach.longitude}" name="longitude" />
+																					<s:hidden id="beachName"
+																						value="%{currentBeach.beach_name}"
+																						name="beachName" />
+																				</a>
+																			</p>
+																		</div>
+																		<div class="col-md-6">
+																			<form method="post">
+																				<button type="submit" class="btn green pull-left"
+																					formaction="reminder.action" formmethod="post">
+																					Plan a Journey</button>
+																			</form>
+																		</div>
+																	</div>
+
 																	<div class="row">
 																		<div class="col-md-6">
 																			<h4 class="font-green-sharp">
