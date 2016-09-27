@@ -14,6 +14,7 @@ public class RatingDaoImpl extends HibernateDaoSupport implements RatingDao{
 
 	
 	public void addRating(Rating rating) {
+		System.out.println(rating);
 		getHibernateTemplate().getSessionFactory().openSession().save(rating);
 	}
 
