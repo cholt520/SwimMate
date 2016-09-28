@@ -9,25 +9,50 @@ public class TrainingServiceImpl implements TrainingService{
 	
 	private TrainingDao trainingDao;
 
-	@Override
+	/**
+	* Get Training By Id
+	*
+	* @param id 
+	* @throws java.Nullpoint.exception
+	*/
 	public Training getTrainingById(int id) {
 		return trainingDao.getTrainingById(id);
 	}
 
-	@Override
+	/**
+	* Get all Training
+	*
+	* @param none 
+	* @throws java.Nullpoint.exception
+	*/
 	public List<Training> getAllTraining() {
 		return trainingDao.getAllTraining();
 	}
 
-	@Override
+	/**
+	* Delete all Training
+	*
+	* @param none 
+	* @throws java.Nullpoint.exception
+	*/
 	public void deleteTraining(Training training) {
 	}
 
-	@Override
+	/**
+	* Add all Training
+	*
+	* @param training 
+	* @throws java.Nullpoint.exception
+	*/
 	public void addTraining(Training training) {
 	}
 
-	@Override
+	/**
+	* change Training
+	*
+	* @param training 
+	* @throws java.Nullpoint.exception
+	*/
 	public void modifyTraining(Training training) {		
 	}
 
@@ -39,12 +64,22 @@ public class TrainingServiceImpl implements TrainingService{
 		this.trainingDao = trainingDao;
 	}
 
-	@Override
+	/**
+	* Get Training by state
+	*
+	* @param state 
+	* @throws java.Nullpoint.exception
+	*/
 	public List<Training> getTrainingByState(String state) {
 		return trainingDao.getTrainingByState(state);
 	}
 
-	@Override
+	/**
+	* Get Training By Postcode
+	*
+	* @param postcode 
+	* @throws java.Nullpoint.exception
+	*/
 	public List<Training> getTrainingByPostcode(String postcode) {
 		return trainingDao.getTrainingByPostcode(postcode);
 	}
