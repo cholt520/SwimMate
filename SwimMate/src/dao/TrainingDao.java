@@ -39,7 +39,7 @@ public interface TrainingDao {
 	public void addTraining(Training training);
 	
 	/**
-	* Get all Training
+	* change Training
 	*
 	* @param training 
 	* @throws java.Nullpoint.exception

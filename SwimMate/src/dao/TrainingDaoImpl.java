@@ -45,7 +45,7 @@ public class TrainingDaoImpl extends HibernateDaoSupport implements TrainingDao{
 	/**
 	* Delete all Training
 	*
-	* @param none 
+	* @param training 
 	* @throws java.Nullpoint.exception
 	*/
 	public void deleteTraining(Training training) {
@@ -62,7 +62,7 @@ public class TrainingDaoImpl extends HibernateDaoSupport implements TrainingDao{
 	}
 
 	/**
-	* Get all Training
+	* Change Training
 	*
 	* @param training 
 	* @throws java.Nullpoint.exception
