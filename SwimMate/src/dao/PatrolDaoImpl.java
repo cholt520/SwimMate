@@ -7,6 +7,12 @@ import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 import entity.Patrol;
 import entity.Training;
 
+/**
+* This interface is not implementing now,the change will be on future
+*
+* @param none 
+* @throws java.Nullpoint.exception
+*/
 public class PatrolDaoImpl extends HibernateDaoSupport implements PatrolDao {
 
 	@Override
