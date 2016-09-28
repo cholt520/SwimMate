@@ -5,6 +5,7 @@ import java.util.List;
 import entity.Facility;
 
 public interface FacilityDao {
+	
 	/**
 	* getFacilityDaoById
 	*
@@ -20,6 +21,7 @@ public interface FacilityDao {
 	* @throws java.Nullpoint.exception
 	*/
 	public List<Facility> getAllFacility();
+	
 	/**
 	* deleteFacility
 	*

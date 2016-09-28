@@ -14,12 +14,22 @@ import entity.Facility;
 
 public class FacilityDaoImpl extends HibernateDaoSupport implements FacilityDao {
 
-	@Override
+	/**
+	* getFacilityDaoById
+	*
+	* @param id
+	* @throws java.Nullpoint.exception
+	*/
 	public Facility getFacilityDaoById(int id) {
 		return null;
 	}
 
-	@Override
+	/**
+	* getAllFacility
+	*
+	* @param none
+	* @throws java.Nullpoint.exception
+	*/
 	public List<Facility> getAllFacility() {
 		HibernateTemplate template = getHibernateTemplate();
         return (List<Facility>) template.execute(new HibernateCallback() {
@@ -32,32 +42,62 @@ public class FacilityDaoImpl extends HibernateDaoSupport implements FacilityDao 
         });
 	}
 
-	@Override
+	/**
+	* deleteFacility
+	*
+	* @param facility
+	* @throws java.Nullpoint.exception
+	*/
 	public void deleteFacility(Facility facility) {
 		
 	}
 
-	@Override
+	/**
+	* addFacility
+	*
+	* @param facility
+	* @throws java.Nullpoint.exception
+	*/
 	public void addFacility(Facility facility) {		
 	}
 
-	@Override
+	/**
+	* modifyFacility
+	*
+	* @param facility
+	* @throws java.Nullpoint.exception
+	*/
 	public void modifyFacility(Facility facility) {		
 	}
 
-	@Override
+	/**
+	* getFacilityByName
+	*
+	* @param name
+	* @throws java.Nullpoint.exception
+	*/
 	public List<Facility> getFacilityByName(String name) {
 		return (List<Facility>)getHibernateTemplate().find("from Facility as facility where facility.name like '%" + name + "%'");
 	}
 	
 	
 
-	@Override
+	/**
+	* findFacilityByBeachID
+	*
+	* @param id
+	* @throws java.Nullpoint.exception
+	*/
 	public Facility findFacilityByBeachID(int id) {
 		return (Facility) getHibernateTemplate().find("from Facility where id=" + id).get(0);
 	}
 
-	@Override
+	/**
+	* getBeachByFacility
+	*
+	* @param selectedFacility
+	* @throws java.Nullpoint.exception
+	*/
 	public List<Facility> getBeachByFacility(String selectedFacility) {
 		return (List<Facility>)getHibernateTemplate().find("from Facility as facility where facility." + selectedFacility + " like '%YES%'");
 	}
