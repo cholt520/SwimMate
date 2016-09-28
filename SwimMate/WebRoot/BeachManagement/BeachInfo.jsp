@@ -413,7 +413,9 @@
 															</div>
 															<br /> 
 															<div class="row">
-																<div id="ratingList"></div>
+																<div id="ratingList">
+																
+																</div>
 															</div>
 														</div>
 													</div>

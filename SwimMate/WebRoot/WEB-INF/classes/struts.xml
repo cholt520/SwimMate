@@ -14,8 +14,7 @@
 			<result>/BeachManagement/Login.jsp</result>
 		</action>
 
-		<action name="report" class="action.FileUploadAction"
-			method="jumpToReportPage">
+		<action name="report" class="action.FileUploadAction" method="jumpToReportPage">
 			<result>/BeachManagement/Report.jsp</result>
 		</action>
 
@@ -124,11 +123,11 @@
 		<action name="user" class="action.UserAction" method="execute">
 			<result name="success">/BeachManagement/Users.jsp</result>
 		</action>
-		
+
 		<action name="rating" class="action.RatingAction" method="addRating">
 			<result type="stream">
-        <param name="contentType">text/plain</param>
-    </result>
+				<param name="contentType">text/plain</param>
+			</result>
 		</action>
 
 		<action name="modifyProfile" class="action.UserAction" method="modifyProfile">
@@ -155,45 +154,48 @@
 			<result name="error">/BeachManagement/Reminders.jsp
 			</result>
 		</action>
-		
-		<action name="submitState" class="action.ReminderAction" method="submitState">
-			<result name="success">/BeachManagement/EditReminder.jsp
-			</result>
-			<result name="error">/BeachManagement/EditReminder.jsp
-			</result>
-			<result name="input">/BeachManagement/EditReminder.jsp</result>
-		</action>
-		
-		<action name="submitReminder" class="action.ReminderAction" method="submitReminder">
-			<result name="success">/BeachManagement/Reminders.jsp
-			</result>
-			<result name="error">/BeachManagement/Reminders.jsp
-			</result>
-		</action>
-		
-		<action name="deleteReminder" class="action.ReminderAction" method="deleteReminder">
-			<result name="success">/BeachManagement/Reminders.jsp
-			</result>
-			<result name="error">/BeachManagement/Reminders.jsp
-			</result>
-		</action>
-		
-		<action name="modifyReminder" class="action.ReminderAction" method="modifyReminder">
-			<result name="success">/BeachManagement/EditReminder.jsp
-			</result>
-			<result name="error">/BeachManagement/EditReminder.jsp
-			</result>
-			<result name="input">/BeachManagement/EditReminder.jsp</result>
-		</action>
-		
-		<action name="jumpToModifyReminder" class="action.ReminderAction" method="jumpToModifyReminder">
-			<result name="success">/BeachManagement/EditReminder.jsp
-			</result>
-			<result name="error">/BeachManagement/EditReminder.jsp
-			</result>
-		</action>
-		
 
+		<action name="submitState" class="action.ReminderAction"
+			method="submitState">
+			<result name="success">/BeachManagement/EditReminder.jsp
+			</result>
+			<result name="error">/BeachManagement/EditReminder.jsp
+			</result>
+			<result name="input">/BeachManagement/EditReminder.jsp</result>
+		</action>
+
+		<action name="submitReminder" class="action.ReminderAction"
+			method="submitReminder">
+			<result name="success">/BeachManagement/Reminders.jsp
+			</result>
+			<result name="error">/BeachManagement/Reminders.jsp
+			</result>
+		</action>
+
+		<action name="deleteReminder" class="action.ReminderAction"
+			method="deleteReminder">
+			<result name="success">/BeachManagement/Reminders.jsp
+			</result>
+			<result name="error">/BeachManagement/Reminders.jsp
+			</result>
+		</action>
+
+		<action name="modifyReminder" class="action.ReminderAction"
+			method="modifyReminder">
+			<result name="success">/BeachManagement/EditReminder.jsp
+			</result>
+			<result name="error">/BeachManagement/EditReminder.jsp
+			</result>
+			<result name="input">/BeachManagement/EditReminder.jsp</result>
+		</action>
+
+		<action name="jumpToModifyReminder" class="action.ReminderAction"
+			method="jumpToModifyReminder">
+			<result name="success">/BeachManagement/EditReminder.jsp
+			</result>
+			<result name="error">/BeachManagement/EditReminder.jsp
+			</result>
+		</action>
 	</package>
 
 </struts>    

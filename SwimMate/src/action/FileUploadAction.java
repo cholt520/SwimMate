@@ -171,8 +171,8 @@ public class FileUploadAction extends ActionSupport {
 			report.setFileUploadContentType(fileUploadContentType);
 			report.setFileUploadFileName(fileUploadFileName);
 			report.setReason(reason);
-
 			reportService.addReport(report);
+			addActionMessage("Submit report successfully!");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -191,6 +191,7 @@ public class FileUploadAction extends ActionSupport {
 			if (loginUserID != -1) {
 				currentLoginUser = userService.getUserById(loginUserID);
 			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -221,6 +222,7 @@ public class FileUploadAction extends ActionSupport {
 	* @throws java.Nullpoint.exception
 	*/
 	public String showAllReport() throws Exception {
+		addActionMessage("Submit report successfully!");
 		reportList = reportService.getAllReport();
 		return "showAllReport";
 	}

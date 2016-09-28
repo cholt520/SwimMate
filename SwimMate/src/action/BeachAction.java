@@ -7,15 +7,16 @@ import com.opensymphony.xwork2.ModelDriven;
 import com.opensymphony.xwork2.Action;
 
 import entity.Beach;
+import entity.Report;
 import entity.User;
 import service.BeachService;
+import service.ReportService;
 import service.UserService;
 
 public class BeachAction implements ModelDriven, Action {
 
 	private static final long serialVersionUID = 1L;
 
-	private Beach beach = new Beach();
 	private List<Beach> beachList = new ArrayList<Beach>();
 	private BeachService beachService;
 	private String selectedState = "";
@@ -23,7 +24,25 @@ public class BeachAction implements ModelDriven, Action {
 	private int loginUserID = -1;
 	private User currentLoginUser;
 	private UserService userService;
+	private ReportService reportService;
+	private List<Report> reportList = new ArrayList<Report>();
 
+
+	public ReportService getReportService() {
+		return reportService;
+	}
+
+	public void setReportService(ReportService reportService) {
+		this.reportService = reportService;
+	}
+
+	public List<Report> getReportList() {
+		return reportList;
+	}
+
+	public void setReportList(List<Report> reportList) {
+		this.reportList = reportList;
+	}
 
 	/**
 	 * getUserService 
@@ -207,6 +226,7 @@ public class BeachAction implements ModelDriven, Action {
 				currentLoginUser = userService.getUserById(loginUserID);
 			}
 			beachList = beachService.getAllBeach();
+			reportList = reportService.getAllReport();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -225,6 +245,7 @@ public class BeachAction implements ModelDriven, Action {
 				currentLoginUser = userService.getUserById(loginUserID);
 			}
 			beachList = beachService.getBeachByState(selectedState);
+			reportList = reportService.getAllReport();
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("Error: " + e);
@@ -247,6 +268,7 @@ public class BeachAction implements ModelDriven, Action {
 			Beach newBeach = beachService.getBeachByName(beachName);
 			beachList.clear();
 			beachList.add(newBeach);
+			reportList = reportService.getAllReport();
 
 		} catch (Exception e) {
 			e.printStackTrace();

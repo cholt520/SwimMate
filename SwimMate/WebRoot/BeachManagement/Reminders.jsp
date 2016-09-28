@@ -308,6 +308,7 @@
 															<div class="portlet-body">
 																<div class="tab-content">
 																	<!-- Start set reminder page -->
+																	
 																	<!-- Start Alert -->
 																	<s:if test="hasActionErrors()">
 																		<div class="alert alert-danger">

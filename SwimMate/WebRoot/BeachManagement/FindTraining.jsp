@@ -69,16 +69,18 @@
 							<!-- BEGIN LOGO -->
 							<div class="page-logo">
 								<s:if test="%{loginUserID==-1}">
-								<a href="index.action?loginUserID=-1"> <img src="../image/logo_green.jpg"
-									alt="logo" class="logo-default"
-									style="width:230px; height:45px; margin-top:18px;">
-								</a>
+									<a href="index.action?loginUserID=-1"> <img
+										src="../image/logo_green.jpg" alt="logo" class="logo-default"
+										style="width:230px; height:45px; margin-top:18px;">
+									</a>
 								</s:if>
 								<s:else>
-								<a href="index.action?loginUserID=<s:property value="loginUserID"/>"> <img src="../image/logo_green.jpg"
-									alt="logo" class="logo-default"
-									style="width:230px; height:45px; margin-top:18px;">
-								</a>
+									<a
+										href="index.action?loginUserID=<s:property value="loginUserID"/>">
+										<img src="../image/logo_green.jpg" alt="logo"
+										class="logo-default"
+										style="width:230px; height:45px; margin-top:18px;">
+									</a>
 								</s:else>
 							</div>
 							<!-- END LOGO -->
@@ -87,9 +89,9 @@
 							<!-- END RESPONSIVE MENU TOGGLER -->
 
 							<!-- Begin Login and Sign up -->
-							<jsp:include page="LoginorSignup.jsp" /> 
+							<jsp:include page="LoginorSignup.jsp" />
 							<!-- End Login and Sign up -->
-							
+
 						</div>
 					</div>
 					<!-- END HEADER TOP -->
@@ -120,8 +122,9 @@
 												Find Beach </a></li>
 									</s:else>
 									<s:if test="%{loginUserID==-1}">
-										<li class="active"><a href="Training.action?loginUserID=-1">Find
-												Swimming Centres </a></li>
+										<li class="active"><a
+											href="Training.action?loginUserID=-1">Find Swimming
+												Centres </a></li>
 									</s:if>
 									<s:else>
 										<li class="active"><a
@@ -131,21 +134,24 @@
 									<!-- <li class=""><a href="SharkAlarm.action">Shark alarm </a>
 									</li> -->
 									<s:if test="%{loginUserID==-1}">
-										<li class=""><a href="tips.action?loginUserID=-1 "> Tips for
-												Swimmers </a></li>
+										<li class=""><a href="tips.action?loginUserID=-1 ">
+												Tips for Swimmers </a></li>
 									</s:if>
 									<s:else>
-										<li class=""><a href="tips.action?loginUserID=<s:property value="loginUserID"/>"> Tips for
-												Swimmers </a></li>
+										<li class=""><a
+											href="tips.action?loginUserID=<s:property value="loginUserID"/>">
+												Tips for Swimmers </a></li>
 									</s:else>
-									
+
 									<s:if test="%{loginUserID==-1}">
-										
+
 									</s:if>
 									<s:else>
-										<li class=""><a href="reminder.action?loginUserID=<s:property value="loginUserID"/>"> Plan Your Journey </a></li>
+										<li class=""><a
+											href="reminder.action?loginUserID=<s:property value="loginUserID"/>">
+												Plan Your Journey </a></li>
 									</s:else>
-									
+
 									<s:if test="%{loginUserID==-1}">
 									</s:if>
 									<s:else>
@@ -203,25 +209,34 @@
 								<div class="page-content-inner">
 									<div class="search-page search-content-2">
 
+
 										<!--Search Bar-->
 										<div class="search-bar ">
 											<div class="row">
 												<div class="col-md-12">
-													<s:form action="getTrainingByPostcode.action">
+													<form>
 														<div class="input-group">
 															<input name="postcode" type="text" class="form-control"
 																placeholder="Search by postcode"> <span
-																class="input-group-btn">
-																<button class="btn green-sharp uppercase bold"
-																	type="submit">Search</button>
+																class="input-group-btn"> <s:if
+																	test="%{loginUserID==-1}">
+																	<button class="btn green-sharp uppercase bold"
+																		type="submit"
+																		formaction="getTrainingByPostcode.action?loginUserID=-1"
+																		formmethod="post">Search</button>
+																</s:if> <s:else>
+																	<button class="btn green-sharp uppercase bold"
+																		type="submit"
+																		formaction="getTrainingByPostcode.action?loginUserID=<s:property value="loginUserID"/>"
+																		formmethod="post">Search</button>
+																</s:else>
 															</span>
 														</div>
-													</s:form>
+													</form>
 												</div>
 											</div>
 										</div>
 										<!--End Search Bar-->
-
 
 										<!--Result Table-->
 										<div class="row" style="Margin:2px;">
@@ -363,12 +378,12 @@
 		// order in which these markers should display on top of each other.
 		var beaches = [];
 		<s:iterator value="beachList" status="userStatus">
-			var latitude = '<s:property value="latitude"/>';
-			var latitude1 = parseFloat(latitude);
-			var longitude = '<s:property value="longitude"/>';
-			var longitude1 = parseFloat(longitude);
-	     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
-	    </s:iterator>
+				var latitude = '<s:property value="latitude"/>';
+				var latitude1 = parseFloat(latitude);
+				var longitude = '<s:property value="longitude"/>';
+				var longitude1 = parseFloat(longitude);
+		     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
+		    </s:iterator>
 	
 	
 		function setMarkers(map) {

@@ -87,7 +87,7 @@
 							<!-- BEGIN RESPONSIVE MENU TOGGLER -->
 							<a href="javascript:;" class="menu-toggler"></a>
 							<!-- END RESPONSIVE MENU TOGGLER -->
-							
+
 							<!-- Begin Login and Sign up -->
 							<jsp:include page="LoginorSignup.jsp" />
 							<!-- End Login and Sign up -->
@@ -102,7 +102,7 @@
 							<div class="hor-menu  ">
 								<ul class="nav navbar-nav">
 									<s:if test="%{loginUserID==-1}">
-									<li class=""><a href="index.action?loginUserID=-1">
+										<li class=""><a href="index.action?loginUserID=-1">
 												Home </a></li>
 									</s:if>
 									<s:else>
@@ -147,7 +147,7 @@
 											href="reminder.action?loginUserID=<s:property value="loginUserID"/>">
 												Plan Your Journey </a></li>
 									</s:else>
-									
+
 									<s:if test="%{loginUserID==-1}">
 									</s:if>
 									<s:else>
@@ -187,7 +187,11 @@
 						<!-- BEGIN PAGE CONTENT BODY -->
 						<div class="page-content">
 							<div class="container">
-								<!-- BEGIN PAGE BREADCRUMBS -->
+
+								
+
+								<!-- BEGIN
+								PAGE BREADCRUMBS -->
 								<ul class="page-breadcrumb breadcrumb ">
 									<s:if test="%{loginUserID==-1}">
 										<li><a href="index.action?loginUserID=-1"
@@ -205,25 +209,46 @@
 								<div class="page-content-inner">
 									<div class="search-page search-content-2">
 
+										<!-- Start Alert -->
+										<s:if test="hasActionErrors()">
+											<div class="alert alert-danger">
+												<s:actionerror />
+											</div>
+										</s:if>
+										<s:elseif test="hasActionMessages()">
+											<div class="alert alert-success">
+												<s:actionmessage />
+											</div>
+										</s:elseif>
+										<!-- End Alert -->
+
 										<!--Search Bar-->
 										<div class="search-bar ">
 											<div class="row">
 												<div class="col-md-12">
-													<s:form action="getReportByBeach.action">
+													<form>
 														<div class="input-group">
 															<input name="searchBeachName" type="text"
-																class="form-control" placeholder="Search by Beach Name">
-															<span class="input-group-btn">
-																<button class="btn green-sharp uppercase bold"
-																	type="submit">Search</button>
+																class="form-control" placeholder="Search a Beach">
+															<span class="input-group-btn"> <s:if
+																	test="%{loginUserID==-1}">
+																	<button class="btn green-sharp uppercase bold"
+																		type="submit"
+																		formaction="getReportByBeach.action?loginUserID=-1"
+																		formmethod="post">Search</button>
+																</s:if> <s:else>
+																	<button class="btn green-sharp uppercase bold"
+																		type="submit"
+																		formaction="getReportByBeach.action?loginUserID=<s:property value="loginUserID"/>"
+																		formmethod="post">Search</button>
+																</s:else>
 															</span>
 														</div>
-													</s:form>
+													</form>
 												</div>
 											</div>
 										</div>
 										<!--End Search Bar-->
-
 
 										<!--Result Table-->
 										<div class="row" style="Margin:2px;">
@@ -268,7 +293,6 @@
 																					value="#report.fileUploadContentType" /></td>
 																			<td><s:property
 																					value="#report.fileUploadFileName" /></td>
-
 																		</tr>
 																	</s:iterator>
 																</tbody>

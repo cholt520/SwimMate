@@ -54,10 +54,8 @@
 	rel="stylesheet" type="text/css" />
 <!-- END THEME LAYOUT STYLES -->
 <link rel="shortcut icon" href="favicon.ico" />
-
 </head>
 <!-- END HEAD -->
-
 
 <body class="page-container-bg-solid">
 	<div class="page-wrapper">
@@ -214,6 +212,20 @@
 											</div>
 										</div>
 										<div class="portlet-body">
+
+											<!-- Start Alert -->
+											<s:if test="hasActionErrors()">
+												<div class="alert alert-danger">
+													<s:actionerror />
+												</div>
+											</s:if>
+											<s:elseif test="hasActionMessages()">
+												<div class="alert alert-success">
+													<s:actionmessage />
+												</div>
+											</s:elseif>
+											<!-- End Alert -->
+
 											<s:form action="resultAction" method="post"
 												enctype="multipart/form-data">
 												<div class="row">

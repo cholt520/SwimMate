@@ -230,16 +230,6 @@
 															</span>
 														</div>
 													</form>
-													<%-- <s:form action="getBeachByName.action">
-														<div class="input-group">
-															<input name="beachName" type="text" class="form-control"
-																placeholder="Search a Beach"> <span
-																class="input-group-btn">
-																<button class="btn green-sharp uppercase bold"
-																	type="submit">Search</button>
-															</span>
-														</div>
-													</s:form> --%>
 												</div>
 											</div>
 										</div>
@@ -261,48 +251,111 @@
 													<div class="portlet-body">
 														<div class="row" style="margin: 6px;">
 															<div class="col-md-6">
-																<a href="getBeachByState.action?selectedState=VIC"
-																	style="font-size:18px;" class="font-blue-oleo">
-																	Victoria </a>
+																<s:if test="%{loginUserID==-1}">
+																	<a
+																		href="getBeachByState.action?selectedState=VIC&loginUserID=-1"
+																		style="font-size:18px;" class="font-blue-oleo">
+																		Victoria </a>
+																</s:if>
+																<s:else>
+																	<a
+																		href="getBeachByState.action?selectedState=VIC&loginUserID=<s:property value="loginUserID"/>"
+																		style="font-size:18px;" class="font-blue-oleo">
+																		Victoria </a>
+																</s:else>
 															</div>
 															<div class="col-md-6">
-																<a href="getBeachByState.action?selectedState=NSW"
-																	style="font-size:18px;" class="font-blue-oleo"> New
-																	South Wales </a>
-															</div>
-														</div>
-														<br />
-														<div class="row" style="margin: 6px;">
-															<div class="col-md-6">
-																<a href="getBeachByState.action?selectedState=QS"
-																	style="font-size:18px;" class="font-blue-oleo">
-																	Queensland </a>
-															</div>
-															<div class="col-md-6">
-																<a href="getBeachByState.action?selectedState=NT"
-																	style="font-size:18px;" class="font-blue-oleo">
-																	Northern Territory </a>
-															</div>
-														</div>
-														<br />
-														<div class="row" style="margin: 6px;">
-															<div class="col-md-6">
-																<a href="getBeachByState.action?selectedState=WA"
-																	style="font-size:18px;" class="font-blue-oleo">
-																	Western Australia </a>
-															</div>
-															<div class="col-md-6">
-																<a href="getBeachByState.action?selectedState=SA"
-																	style="font-size:18px;" class="font-blue-oleo">
-																	South Australia </a>
+																<s:if test="%{loginUserID==-1}">
+																	<a
+																		href="getBeachByState.action?selectedState=NSW&loginUserID=-1"
+																		style="font-size:18px;" class="font-blue-oleo">
+																		New South Wales </a>
+																</s:if>
+																<s:else>
+																	<a
+																		href="getBeachByState.action?selectedState=NSW&loginUserID=<s:property value="loginUserID"/>"
+																		style="font-size:18px;" class="font-blue-oleo">
+																		New South Wales </a>
+																</s:else>
 															</div>
 														</div>
 														<br />
 														<div class="row" style="margin: 6px;">
 															<div class="col-md-6">
-																<a href="getBeachByState.action?selectedState=TA"
-																	style="font-size:18px;" class="font-blue-oleo">
-																	Tasmania </a>
+																<s:if test="%{loginUserID==-1}">
+																	<a
+																		href="getBeachByState.action?selectedState=QS&loginUserID=-1"
+																		style="font-size:18px;" class="font-blue-oleo">
+																		Queensland </a>
+																</s:if>
+																<s:else>
+																	<a
+																		href="getBeachByState.action?selectedState=QS&loginUserID=<s:property value="loginUserID"/>"
+																		style="font-size:18px;" class="font-blue-oleo">
+																		Queensland </a>
+																</s:else>
+															</div>
+															<div class="col-md-6">
+																<s:if test="%{loginUserID==-1}">
+																	<a
+																		href="getBeachByState.action?selectedState=NT&loginUserID=-1"
+																		style="font-size:18px;" class="font-blue-oleo">
+																		Northern Territory </a>
+																</s:if>
+																<s:else>
+																	<a
+																		href="getBeachByState.action?selectedState=NT&loginUserID=<s:property value="loginUserID"/>"
+																		style="font-size:18px;" class="font-blue-oleo">
+																		Northern Territory </a>
+																</s:else>
+															</div>
+														</div>
+														<br />
+														<div class="row" style="margin: 6px;">
+															<div class="col-md-6">
+																<s:if test="%{loginUserID==-1}">
+																	<a
+																		href="getBeachByState.action?selectedState=WA&loginUserID=-1"
+																		style="font-size:18px;" class="font-blue-oleo">
+																		Western Australia </a>
+																</s:if>
+																<s:else>
+																	<a
+																		href="getBeachByState.action?selectedState=WA&loginUserID=<s:property value="loginUserID"/>"
+																		style="font-size:18px;" class="font-blue-oleo">
+																		Western Australia </a>
+																</s:else>
+															</div>
+															<div class="col-md-6">
+																<s:if test="%{loginUserID==-1}">
+																	<a
+																		href="getBeachByState.action?selectedState=SA&loginUserID=-1"
+																		style="font-size:18px;" class="font-blue-oleo">
+																		South Australia </a>
+																</s:if>
+																<s:else>
+																	<a
+																		href="getBeachByState.action?selectedState=SA&loginUserID=<s:property value="loginUserID"/>"
+																		style="font-size:18px;" class="font-blue-oleo">
+																		South Australia </a>
+																</s:else>
+															</div>
+														</div>
+														<br />
+														<div class="row" style="margin: 6px;">
+															<div class="col-md-6">
+																<s:if test="%{loginUserID==-1}">
+																	<a
+																		href="getBeachByState.action?selectedState=TA&loginUserID=-1"
+																		style="font-size:18px;" class="font-blue-oleo">
+																		Tasmania </a>
+																</s:if>
+																<s:else>
+																	<a
+																		href="getBeachByState.action?selectedState=TA&loginUserID=<s:property value="loginUserID"/>"
+																		style="font-size:18px;" class="font-blue-oleo">
+																		Tasmania </a>
+																</s:else>
 															</div>
 														</div>
 														<br /> <br>
@@ -326,59 +379,114 @@
 										</div>
 
 										<br />
-										<!--Result Table-->
+
 										<div class="row" style="Margin:2px;">
-											<div class="search-container ">
-												<ul class="search-container">
-													<s:iterator value="beachList" status="userStatus">
-														<li class="search-item clearfix">
-															<div class="search-content text-left">
+											<!--Result Table-->
+											<div class="col-md-6">
+												<div class="portlet light ">
+													<div class="portlet-title">
+														<div class="caption">
+															<span
+																class="caption-subject font-green-sharp bold uppercase"
+																style="font-size:20px;"> <i class="fa fa-search"></i>
+																Result List
+															</span>
+														</div>
+													</div>
+													<div class="portlet-body">
+														<div class="scroller" style="height: 500px;"
+															data-always-visible="1" data-rail-visible1="0"
+															data-handle-color="#D7DCE2">
+															<div class="search-container ">
+																<ul class="search-container">
+																	<s:iterator value="beachList" status="userStatus">
+																		<li class="search-item clearfix">
+																			<div class="search-content text-left">
+																				<div class="col-md-5">
+																					<img
+																						src="https://maps.googleapis.com/maps/api/streetview?size=150x100&location=<s:property value="latitude" />,<s:property value="longitude" />&heading=151.78&pitch=-0.76&key=AIzaSyCKH-MtuoWl-NkYS_m5YxBIY2sQbkvPGfM" />
+																				</div>
 
-																<div class="col-md-2">
-																	<img
-																		src="https://maps.googleapis.com/maps/api/streetview?size=150x100&location=<s:property value="latitude" />,<s:property value="longitude" />&heading=151.78&pitch=-0.76&key=AIzaSyCKH-MtuoWl-NkYS_m5YxBIY2sQbkvPGfM" />
-																</div>
+																				<div class="col-md-7">
+																					<h2 class="search-title">
+																						<s:if test="%{loginUserID==-1}">
+																							<a
+																								href="beachInfo.action?id=<s:property value="beach_id"/>&loginUserID=-1">
+																								<s:property value="beach_name" />
+																							</a>
+																						</s:if>
+																						<s:else>
+																							<a
+																								href="beachInfo.action?id=<s:property value="beach_id"/>&loginUserID=<s:property value="loginUserID"/>">
+																								<s:property value="beach_name" />
+																							</a>
+																						</s:else>
+																					</h2>
+																					<p class="search-desc">
+																						<s:property value="beach_name" />
+																						,
+																						<s:property value="state" />
+																					</p>
+																				</div>
 
-																<div class="col-md-10">
-																	<h2 class="search-title">
-																		<s:if test="%{loginUserID==-1}">
-																			<a
-																				href="beachInfo.action?id=<s:property value="beach_id"/>&loginUserID=-1">
-																				<s:property value="beach_name" />
-																			</a>
-																		</s:if>
-																		<s:else>
-																			<a
-																				href="beachInfo.action?id=<s:property value="beach_id"/>&loginUserID=<s:property value="loginUserID"/>">
-																				<s:property value="beach_name" />
-																			</a>
-																		</s:else>
-																	</h2>
-																	<p class="search-desc">
-																		<s:property value="beach_name" />
-																		,
-																		<s:property value="state" />
-																	</p>
-																</div>
-
+																			</div>
+																		</li>
+																	</s:iterator>
+																</ul>
 															</div>
-														</li>
-													</s:iterator>
-												</ul>
-												<div class="search-pagination">
-
-													<ul class="pagination">
-														<li class="page-active"><a href="javascript:;"> 1
-														</a></li>
-														<li><a href="javascript:;"> 2 </a></li>
-														<li><a href="javascript:;"> 3 </a></li>
-														<li><a href="javascript:;"> 4 </a></li>
-													</ul>
+														</div>
+													</div>
 												</div>
-
 											</div>
+											<!--End Result Table-->
+											<!-- Start Report Issues -->
+											<div class="col-md-6">
+												<div class="portlet light ">
+													<div class="portlet-title">
+														<div class="caption">
+															<span
+																class="caption-subject font-green-sharp bold uppercase"
+																style="font-size:20px;"> <i class="fa fa-warning"></i>
+																Recent Reports
+															</span>
+														</div>
+													</div>
+													<div class="portlet-body">
+														<div class="scroller" style="height: 500px;"
+															data-always-visible="1" data-rail-visible1="0"
+															data-handle-color="#D7DCE2">
+															<div class="search-container ">
+																<ul class="search-container">
+																	<s:iterator value="reportList" status="userStatus">
+																		<li class="search-item clearfix">
+																			<div class="search-content text-left">
+																				<div class="col-md-12">
+																					<!-- <marquee direction="up"> -->
+																					<h2 class="search-title">
+																						<s:property value="beachName" />
+																					</h2>
+																					<p>
+																						<span class=" bold"> Reason: </span>
+
+																						<s:property value="reason" />
+																						<br /> <span class=" bold">Description:</span>
+																						<s:property value="description" />
+																					</p>
+																					<!-- </marquee> -->
+																				</div>
+
+																			</div>
+																		</li>
+																	</s:iterator>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- End Report Issues -->
 										</div>
-										<!--End Result Table-->
+
 									</div>
 									<br /> <br />
 								</div>
@@ -461,12 +569,12 @@
 		// order in which these markers should display on top of each other.
 		var beaches = [];
 		<s:iterator value="beachList" status="userStatus">
-																				var latitude = '<s:property value="latitude"/>';
-																				var latitude1 = parseFloat(latitude);
-																				var longitude = '<s:property value="longitude"/>';
-																				var longitude1 = parseFloat(longitude);
-																	     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
-																	    </s:iterator>
+																																			var latitude = '<s:property value="latitude"/>';
+																																			var latitude1 = parseFloat(latitude);
+																																			var longitude = '<s:property value="longitude"/>';
+																																			var longitude1 = parseFloat(longitude);
+																																     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
+																																    </s:iterator>
 	
 	
 		function setMarkers(map) {

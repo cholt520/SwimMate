@@ -34,9 +34,9 @@ public class SendEmailServiceImpl implements SendEmailService {
 			message.setFrom(new InternetAddress("help.swimmate@gmail.com"));
 			message.setRecipients(Message.RecipientType.TO,
 				InternetAddress.parse(reminder.getUserEmail()));
-			message.setSubject("Reminder of your swimming plan");
+			message.setSubject("Confirmation of your swimming plan");
 			message.setText("Dear Swimmer,"
-				+ "\n\nThis is a confirmation email you of your upcoming beach trip to " + reminder.getBeachName() + " on " + reminder.getDate() + " ."
+				+ "\n\nThis is a confirmation email of your upcoming beach trip to " + reminder.getBeachName() + " on " + reminder.getDate() + " ."
 				+ "\n\nYou left the following note for this trip:"
 				+ "\n\n " + reminder.getDescription()
 			    + "\n\n\nTo get the weather updates for your planned trip, please visit swimmate.xyz"
