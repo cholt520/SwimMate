@@ -5,10 +5,11 @@ import java.io.File;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+/**
+ * This action is for testing, not using now
+ */
 public class UploadPhotoAction extends ActionSupport{
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	private File fileUpload;
 	private String fileUploadContentType;
