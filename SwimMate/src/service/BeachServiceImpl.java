@@ -9,36 +9,71 @@ import entity.Recommandation;
 public class BeachServiceImpl implements BeachService{
 	private BeachDao beachDao;
 
-	@Override
+	/**
+	* get All Beach
+	*
+	* @param none
+	* @throws java.Nullpoint.exception
+	*/
 	public List<Beach> getAllBeach() {
 		return beachDao.getAllBeach();
 	}
 
-	@Override
+	/**
+	* get Beach by Id
+	*
+	* @param id
+	* @throws java.Nullpoint.exception
+	*/
 	public Beach getBeachById(int id) {
 		return beachDao.getBeachbyId(id);
 	}
 
-	@Override
+	/**
+	* Change Beach
+	*
+	* @param beach
+	* @throws java.Nullpoint.exception
+	*/
 	public Beach modifyBeach(Beach beach) {
 		return null;
 	}
 
-	@Override
+	/**
+	* delete Beach By Id
+	*
+	* @param id
+	* @throws java.Nullpoint.exception
+	*/
 	public void deleteBeachById(int id) {		
 	}
 
-	@Override
+	/**
+	* get Beach By State 
+	*
+	* @param state
+	* @throws java.Nullpoint.exception
+	*/
 	public List<Beach> getBeachByState(String state) {
 		return beachDao.getBeachByState(state);
 	}
 
-	@Override
+	/**
+	* get Beach By name
+	*
+	* @param beachName
+	* @throws java.Nullpoint.exception
+	*/
 	public Beach getBeachByName(String beachName) {
 		return beachDao.getBeachByName(beachName);
 	}
 
-	@Override
+	/**
+	* get Recommandation By WaterTemp
+	*
+	* @param water_temp
+	* @throws java.Nullpoint.exception
+	*/
 	public Recommandation getRecommandationByWaterTemp(double water_temp) {
 		
 		int watertemp = 0;
