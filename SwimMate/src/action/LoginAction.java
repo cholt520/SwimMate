@@ -11,11 +11,22 @@ public class LoginAction extends ActionSupport{
 	private String username;
 	private String password;
 	
+	/**
+	* not implements for future  
+	*
+	* @param none
+	* @throws java.Nullpoint.exception
+	*/
 	public String execute(){
 		
 		return "success";
 	}
-	
+	/**
+	* validate, check the username and password in front page.  
+	*
+	* @param none
+	* @throws java.Nullpoint.exception
+	*/
 	public void validate(){
 		Properties properties = new Properties();
 		try {
@@ -33,18 +44,42 @@ public class LoginAction extends ActionSupport{
 		}
 	}
 
+	/**
+	* getUsername 
+	*
+	* @param none
+	* @throws java.Nullpoint.exception
+	*/
 	public String getUsername() {
 		return username;
 	}
 
+	/**
+	* setUsername 
+	*
+	* @param username
+	* @throws java.Nullpoint.exception
+	*/
 	public void setUsername(String username) {
 		this.username = username;
 	}
 
+	/**
+	* getPassword 
+	*
+	* @param none
+	* @throws java.Nullpoint.exception
+	*/
 	public String getPassword() {
 		return password;
 	}
 
+	/**
+	* setPassword 
+	*
+	* @param password
+	* @throws java.Nullpoint.exception
+	*/
 	public void setPassword(String password) {
 		this.password = password;
 	}
