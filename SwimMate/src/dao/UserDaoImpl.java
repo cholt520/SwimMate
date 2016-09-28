@@ -17,12 +17,22 @@ import entity.User;
 @Transactional
 public class UserDaoImpl extends HibernateDaoSupport implements UserDao{
 	
-	@Override
+	/**
+	* Get User By Id
+	*
+	* @param id 
+	* @throws java.Nullpoint.exception
+	*/
 	public User getUserById(int id) {
 		return (User) getHibernateTemplate().find("from User where user_id=" + id).get(0);
 	}
 
-	@Override
+	/**
+	* Get all Users
+	*
+	* @param none 
+	* @throws java.Nullpoint.exception
+	*/
 	public List<User> getAllUser() {
 		HibernateTemplate template = getHibernateTemplate();
         return (List<User>) template.execute(new HibernateCallback() {
@@ -35,12 +45,21 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao{
         });
 	}
 	
-	@Override
-	public void deleteUser(User user) {
-		// TODO Auto-generated method stub
-		
+	/**
+	* Delete User
+	*
+	* @param user 
+	* @throws java.Nullpoint.exception
+	*/
+	public void deleteUser(User user) {		
 	}
 
+	/**
+	* Add User
+	*
+	* @param user 
+	* @throws java.Nullpoint.exception
+	*/
 	@Transactional
 	public void addUser(User user) {
 		Session s = getHibernateTemplate().getSessionFactory().openSession();
@@ -48,6 +67,12 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao{
 		s.save(user);
 	}
 
+	/**
+	* Change User
+	*
+	* @param none 
+	* @throws java.Nullpoint.exception
+	*/
 	@Transactional
 	public void modifyUser(User user) {
 		Session s = getHibernateTemplate().getSessionFactory().openSession();
@@ -56,7 +81,12 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao{
 		s.getTransaction().commit();
 	}
 
-	@Override
+	/**
+	* Get User By UserName
+	*
+	* @param username 
+	* @throws java.Nullpoint.exception
+	*/
 	public User getUserByUserName(String username) {
 		List<User> matchedList = (List<User>) getHibernateTemplate().find("from User where userName='" + username + "'");
 		if (matchedList.size() != 0) {
