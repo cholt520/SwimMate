@@ -24,7 +24,7 @@ public class WeatherServiceImpl implements WeatherService{
 	
 	WeatherDao weatherDao;
 
-	@Override
+	
 	/*
 	 * use openweatherAPI to get weather information such as temp, humility, or
 	 * pressure google Json will parse the data, directly to change Json to
@@ -77,28 +77,43 @@ public class WeatherServiceImpl implements WeatherService{
 		return weather;
 	}
 	
-	@Override
+	/**
+	* Get Weather By Id
+	*
+	* @param beach 
+	* @throws java.Nullpoint.exception
+	*/
 	public Weather getWeatherById() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	/**
+	* Add Weather
+	*
+	* @param weather 
+	* @throws java.Nullpoint.exception
+	*/
 	public void addWeather(Weather weather) {
-		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
+	/**
+	* Change Weather
+	*
+	* @param weather 
+	* @throws java.Nullpoint.exception
+	*/
 	public Weather modifyWeather(Weather weather) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-	public void deleteWeatherById(int id) {
-		// TODO Auto-generated method stub
-		
+	/**
+	* Delete Weather By Id
+	*
+	* @param id 
+	* @throws java.Nullpoint.exception
+	*/
+	public void deleteWeatherById(int id) {		
 	}
 
 	public WeatherDao getWeatherDao() {
@@ -109,7 +124,12 @@ public class WeatherServiceImpl implements WeatherService{
 		this.weatherDao = weatherDao;
 	}
 
-	@Override
+	/**
+	* Change Temp To Celsius
+	*
+	* @param id 
+	* @throws java.Nullpoint.exception
+	*/
 	public Weather changeTempToC(Weather weather) {
 		double tempC = (weather.getTemp()-273.15); 
 		BigDecimal   b   =   new   BigDecimal(tempC);  
