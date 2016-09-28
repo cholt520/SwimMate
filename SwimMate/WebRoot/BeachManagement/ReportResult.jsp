@@ -153,7 +153,7 @@
 									<s:else>
 										<li class="active"><a
 											href="report.action?loginUserID=<s:property value="loginUserID"/>">
-												Reporting System </a></li>
+												Report Issues </a></li>
 									</s:else>
 								</ul>
 							</div>

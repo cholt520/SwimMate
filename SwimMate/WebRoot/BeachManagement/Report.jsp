@@ -89,7 +89,7 @@
 							<!-- BEGIN RESPONSIVE MENU TOGGLER -->
 							<a href="javascript:;" class="menu-toggler"></a>
 							<!-- END RESPONSIVE MENU TOGGLER -->
-							
+
 							<!-- Begin Login and Sign up -->
 							<jsp:include page="LoginorSignup.jsp" />
 							<!-- End Login and Sign up -->
@@ -148,7 +148,7 @@
 											href="reminder.action?loginUserID=<s:property value="loginUserID"/>">
 												Plan Your Journey </a></li>
 									</s:else>
-									
+
 									<s:if test="%{loginUserID==-1}">
 									</s:if>
 									<s:else>
@@ -251,6 +251,7 @@
 																and forecast rain, stormwater pollution possible</option>
 															<option value="No rain, stormwater pollution unlikely">No
 																rain, stormwater pollution unlikely</option>
+															<option value="others">Others</option>
 														</select>
 													</div>
 												</div>
@@ -291,6 +292,10 @@
 												</div>
 												<br />
 												<br />
+
+												<s:hidden id="loginUserID" value="%{loginUserID}"
+													name="loginUserID" />
+
 												<div class="row">
 													<div class="col-md-3">
 														<button type="submit"
@@ -298,8 +303,7 @@
 													</div>
 												</div>
 											</s:form>
-											<br/>
-											<br/>
+											<br /> <br />
 										</div>
 									</div>
 

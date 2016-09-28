@@ -7,7 +7,21 @@ public class Reminder {
 	private int beach_id;
 	private String date;
 	private String description;
+	private String beachName;
+	private String userEmail;
 	
+	public String getUserEmail() {
+		return userEmail;
+	}
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
+	}
+	public String getBeachName() {
+		return beachName;
+	}
+	public void setBeachName(String beachName) {
+		this.beachName = beachName;
+	}
 	public int getUser_id() {
 		return user_id;
 	}

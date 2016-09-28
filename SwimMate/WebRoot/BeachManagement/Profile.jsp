@@ -147,7 +147,7 @@
 									<s:else>
 										<li class=""><a
 											href="report.action?loginUserID=<s:property value="loginUserID"/>">
-												Report issues </a></li>
+												Report Issues </a></li>
 									</s:else>
 								</ul>
 							</div>
@@ -252,8 +252,8 @@
 																<ul class="nav nav-tabs">
 																	<li class="active"><a href="#tab_1_1"
 																		data-toggle="tab">Personal Info</a></li>
-																	<li><a href="#tab_1_2" data-toggle="tab">Change
-																			Avatar</a></li>
+																	<!-- <li><a href="#tab_1_2" data-toggle="tab">Change
+																			Avatar</a></li> -->
 																	<li><a href="#tab_1_3" data-toggle="tab">Change
 																			Password</a></li>
 

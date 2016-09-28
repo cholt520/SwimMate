@@ -140,20 +140,22 @@
 											href="tips.action?loginUserID=<s:property value="loginUserID"/>">
 												Tips for Swimmers </a></li>
 									</s:else>
-									
+
 									<s:if test="%{loginUserID==-1}">
-										
+
 									</s:if>
 									<s:else>
-										<li class=""><a href="reminder.action?loginUserID=<s:property value="loginUserID"/>"> Plan Your Journey </a></li>
+										<li class=""><a
+											href="reminder.action?loginUserID=<s:property value="loginUserID"/>">
+												Plan Your Journey </a></li>
 									</s:else>
-									
+
 									<s:if test="%{loginUserID==-1}">
 									</s:if>
 									<s:else>
 										<li class=""><a
 											href="report.action?loginUserID=<s:property value="loginUserID"/>">
-												Report issues </a></li>
+												Report Issues </a></li>
 									</s:else>
 								</ul>
 							</div>
@@ -209,7 +211,26 @@
 										<div class="search-bar ">
 											<div class="row">
 												<div class="col-md-12">
-													<s:form action="getBeachByName.action">
+													<form>
+														<div class="input-group">
+															<input name="beachName" type="text" class="form-control"
+																placeholder="Search a Beach"> <span
+																class="input-group-btn"> <s:if
+																	test="%{loginUserID==-1}">
+																	<button class="btn green-sharp uppercase bold"
+																		type="submit"
+																		formaction="getBeachByName.action?loginUserID=-1"
+																		formmethod="post">Search</button>
+																</s:if> <s:else>
+																	<button class="btn green-sharp uppercase bold"
+																		type="submit"
+																		formaction="getBeachByName.action?loginUserID=<s:property value="loginUserID"/>"
+																		formmethod="post">Search</button>
+																</s:else>
+															</span>
+														</div>
+													</form>
+													<%-- <s:form action="getBeachByName.action">
 														<div class="input-group">
 															<input name="beachName" type="text" class="form-control"
 																placeholder="Search a Beach"> <span
@@ -218,7 +239,7 @@
 																	type="submit">Search</button>
 															</span>
 														</div>
-													</s:form>
+													</s:form> --%>
 												</div>
 											</div>
 										</div>
@@ -440,12 +461,12 @@
 		// order in which these markers should display on top of each other.
 		var beaches = [];
 		<s:iterator value="beachList" status="userStatus">
-																	var latitude = '<s:property value="latitude"/>';
-																	var latitude1 = parseFloat(latitude);
-																	var longitude = '<s:property value="longitude"/>';
-																	var longitude1 = parseFloat(longitude);
-														     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
-														    </s:iterator>
+																				var latitude = '<s:property value="latitude"/>';
+																				var latitude1 = parseFloat(latitude);
+																				var longitude = '<s:property value="longitude"/>';
+																				var longitude1 = parseFloat(longitude);
+																	     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
+																	    </s:iterator>
 	
 	
 		function setMarkers(map) {

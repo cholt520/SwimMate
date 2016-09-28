@@ -27,7 +27,7 @@
 				href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
 				data-hover="dropdown" data-close-others="true"> <!--   <img alt="" class="img-circle" src="../assets/layouts/layout3/img/avatar9.jpg"> -->
 					<span class="username username-hide-mobile"> <s:property
-							value="currentLoginUser.userName" />
+							value="currentLoginUser.userName" /> &#x25bc;
 				</span>
 			</a>
 				<ul class="dropdown-menu dropdown-menu-default">

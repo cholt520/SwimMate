@@ -145,7 +145,7 @@
 									<s:else>
 										<li class=""><a
 											href="report.action?loginUserID=<s:property value="loginUserID"/>">
-												Report issues </a></li>
+												Report Issues </a></li>
 									</s:else>
 								</ul>
 							</div>
@@ -243,11 +243,9 @@
 															<div class="content-section-b">
 																<div class="row">
 																	<div class="col-md-6">
-																		<!-- <iframe width="500" height="360"
-																			src="https://www.youtube.com/watch?v=KkObAXrjpzs&feature=youtu.be">
-																		</iframe> -->
-																		 <img class="img-responsive" src="../image/Rip.jpg"
-																			alt="">
+																		<iframe width="520" height="380" src="https://www.youtube.com/embed/KkObAXrjpzs" frameborder="0" allowfullscreen></iframe>
+																		 <!-- <img class="img-responsive" src="../image/Rip.jpg"
+																			alt=""> -->
 																	</div>
 																	<div class="col-md-6">
 																		<hr class="section-heading-spacer">

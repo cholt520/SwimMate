@@ -4,15 +4,17 @@ import java.util.Properties;
 import javax.mail.*;
 import javax.mail.internet.*;
 
+import entity.Beach;
 import entity.Reminder;
 
 public class SendEmailServiceImpl implements SendEmailService {
 
-	public void sendReminderByEmail(Reminder reminder) {
 	
+	
+	public void sendReminderByEmail(Reminder reminder) {
 
-		final String username = "wj4507657@gmail.com";
-		final String password = "cholt520!";
+		final String username = "help.swimmate@gmail.com";
+		final String password = "swimmate2016";
 
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", "true");
@@ -28,28 +30,22 @@ public class SendEmailServiceImpl implements SendEmailService {
 		  });
 
 		try {
-
 			Message message = new MimeMessage(session);
-			message.setFrom(new InternetAddress("wj4507657@gmail.com"));
+			message.setFrom(new InternetAddress("help.swimmate@gmail.com"));
 			message.setRecipients(Message.RecipientType.TO,
-				InternetAddress.parse("lzuo5@student.monash.edu"));
-			message.setSubject("Testing Email service by Travis again");
-			message.setText("Dear Mail Crawler,"
-				+ "\n\n No spam to my email, please!");
-
+				InternetAddress.parse(reminder.getUserEmail()));
+			message.setSubject("Reminder of your swimming plan");
+			message.setText("Dear Swimmer,"
+				+ "\n\nThis is a confirmation email you of your upcoming beach trip to " + reminder.getBeachName() + " on " + reminder.getDate() + " ."
+				+ "\n\nYou left the following note for this trip:"
+				+ "\n\n " + reminder.getDescription()
+			    + "\n\n\nTo get the weather updates for your planned trip, please visit swimmate.xyz"
+			    + "\n\nEnjoy your trip!"
+			    + "\n\nPowered by SwimMate");
 			Transport.send(message);
-
 			System.out.println("Done");
-
 		} catch (MessagingException e) {
 			throw new RuntimeException(e);
 		}
-
 	}
-	
-	public static void main(String[] args){
-		SendEmailServiceImpl sendEmailServiceImpl = new SendEmailServiceImpl();
-		sendEmailServiceImpl.sendReminderByEmail(null);
-	}
-
 }

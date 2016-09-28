@@ -166,7 +166,7 @@
 									<s:else>
 										<li class=""><a
 											href="report.action?loginUserID=<s:property value="loginUserID"/>">
-												Report issues </a></li>
+												Report Issues </a></li>
 									</s:else>
 								</ul>
 							</div>
@@ -245,7 +245,7 @@
 														<div class="caption caption-md">
 															<i class="icon-bar-chart theme-font hide"></i> <span
 																class="caption-subject font-blue-madison bold uppercase">Your
-																Reminders</span>
+																Trips</span>
 														</div>
 													</div>
 													<div class="portlet-body">

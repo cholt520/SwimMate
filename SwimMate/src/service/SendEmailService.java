@@ -1,5 +1,4 @@
 package service;
-
 import entity.Reminder;
 
 public interface SendEmailService {

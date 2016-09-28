@@ -5,6 +5,8 @@ import entity.Reminder;
 import entity.User;
 import service.BeachService;
 import service.ReminderService;
+import service.SendEmailService;
+import service.SendEmailServiceImpl;
 import service.UserService;
 
 import java.util.ArrayList;
@@ -34,6 +36,7 @@ public class ReminderAction extends ActionSupport {
 	private int editReminderID;
 	private Reminder currentSelectedReminder;
 	private String editBeachName = "";
+
 
 	public String getEditBeachName() {
 		return editBeachName;
@@ -186,7 +189,22 @@ public class ReminderAction extends ActionSupport {
 			newReminder.setUser_id(loginUserID);
 			newReminder.setDescription(description);
 			reminderService.addReminder(newReminder);
-			addActionMessage("Add reminder successfully!");
+			addActionMessage("Add reminder and send email successfully!");
+			
+			//sent email
+			newReminder.setID(-1);
+			Beach selectedBeach = beachService.getBeachById(selectBeachID);
+			newReminder.setBeachName(selectedBeach.getBeach_name());
+			newReminder.setUserEmail(currentLoginUser.getEmail());
+			System.out.println(newReminder.getID());
+			System.out.println(newReminder.getBeach_id());
+			System.out.println(newReminder.getDate());
+			System.out.println(newReminder.getDescription());
+			System.out.println(newReminder.getUser_id());
+			
+			SendEmailServiceImpl sendEmailService = new SendEmailServiceImpl();
+			
+			sendEmailService.sendReminderByEmail(newReminder);
 
 			reminderList = reminderService.getReminderByUserID(loginUserID);
 			beachList = beachService.getBeachByState(selectedState);
