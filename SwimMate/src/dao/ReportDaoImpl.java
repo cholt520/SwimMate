@@ -15,6 +15,12 @@ import entity.Report;
 
 public class ReportDaoImpl extends HibernateDaoSupport implements ReportDao{
 
+	/**
+	* Get All Reports
+	*
+	* @param none 
+	* @throws java.Nullpoint.exception
+	*/
 	public List<Report> getAllReport() {
 		HibernateTemplate template = getHibernateTemplate();
         return (List<Report>) template.execute(new HibernateCallback() {
@@ -27,26 +33,55 @@ public class ReportDaoImpl extends HibernateDaoSupport implements ReportDao{
         });
 	}
 
+	/**
+	* Get All Report By Id
+	*
+	* @param id 
+	* @throws java.Nullpoint.exception
+	*/
 	public Report getReportById() {
 		return null;
 	}
 
 	
+	/**
+	* Add Report
+	*
+	* @param report 
+	* @throws java.Nullpoint.exception
+	*/
 	public void addReport(Report report) {
 		
 		getHibernateTemplate().getSessionFactory().openSession().save(report);
 		
 	}
 
+	/**
+	* delete Report
+	*
+	* @param report 
+	* @throws java.Nullpoint.exception
+	*/
 	public void deleteReport(Report report) {
 		
 	}
 
+	/**
+	* change Report
+	*
+	* @param report 
+	* @throws java.Nullpoint.exception
+	*/
 	public void modifyReport(Report report) {
 		
 	}
 
-	@Override
+	/**
+	* find Report by id
+	*
+	* @param id 
+	* @throws java.Nullpoint.exception
+	*/
 	public List<Report> findReportsByBeachName(String beachName) {
 		List<Report> list = new ArrayList<Report>();
 		list = (List<Report>) getHibernateTemplate().find("from Report as report where report.beachName like '%" + beachName + "%'" );	
