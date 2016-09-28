@@ -8,30 +8,56 @@ import entity.Facility;
 public class FacilityServiceImpl implements FacilityService{
 	private FacilityDao facilityDao;
 
-	@Override
+	/**
+	* getFacilityDaoById
+	*
+	* @param id
+	* @throws java.Nullpoint.exception
+	*/
 	public Facility getFacilityDaoById(int id) {
 		return null;
 	}
 
-	@Override
+	/**
+	* getAllFacility
+	*
+	* @param none
+	* @throws java.Nullpoint.exception
+	*/
 	public List<Facility> getAllFacility() {
 		return facilityDao.getAllFacility();
 	}
 
-	@Override
+	/**
+	* deleteFacility
+	*
+	* @param facility
+	* @throws java.Nullpoint.exception
+	*/
 	public void deleteFacility(Facility facility) {
 		
 	}
 
-	@Override
+	/**
+	* addFacility
+	*
+	* @param facility
+	* @throws java.Nullpoint.exception
+	*/
 	public void addFacility(Facility facility) {
 		
 	}
 
-	@Override
+	/**
+	* modify Facility
+	*
+	* @param facility
+	* @throws java.Nullpoint.exception
+	*/
 	public void modifyFacility(Facility facility) {		
 	}
 
+	
 	public FacilityDao getFacilityDao() {
 		return facilityDao;
 	}
@@ -40,17 +66,32 @@ public class FacilityServiceImpl implements FacilityService{
 		this.facilityDao = facilityDao;
 	}
 
-	@Override
+	/**
+	* get Facility By Name
+	*
+	* @param name
+	* @throws java.Nullpoint.exception
+	*/
 	public List<Facility> getFacilityByName(String name) {
 		return facilityDao.getFacilityByName(name);
 	}
 
-	@Override
+	/**
+	* findFacilityByBeachID
+	*
+	* @param id
+	* @throws java.Nullpoint.exception
+	*/
 	public Facility findFacilityByBeachID(int id) {
 		return facilityDao.findFacilityByBeachID(id);
 	}
 
-	@Override
+	/**
+	* getBeachByFacility
+	*
+	* @param selectedFacility
+	* @throws java.Nullpoint.exception
+	*/
 	public List<Facility> getBeachByFacility(String selectedFacility) {
 		return facilityDao.getBeachByFacility(selectedFacility);
 	}
