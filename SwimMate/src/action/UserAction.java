@@ -9,9 +9,6 @@ import entity.User;
 
 public class UserAction extends ActionSupport {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private UserService userService;
 	private List<User> userList;
@@ -131,6 +128,12 @@ public class UserAction extends ActionSupport {
 		return "success";
 	}
 
+	/**
+	* User login with their username and password 
+	*
+	* @param none
+	* @throws java.Nullpoint.exception
+	*/
 	public String login() {
 		try {
 			System.out.println(username);
@@ -161,6 +164,12 @@ public class UserAction extends ActionSupport {
 		}
 	}
 
+	/**
+	* User sign up and check their information is correct or not 
+	*
+	* @param none
+	* @throws java.Nullpoint.exception
+	*/
 	public String signup() {
 		try {
 			System.out.println(firstname);
@@ -193,6 +202,12 @@ public class UserAction extends ActionSupport {
 		}
 	}
 
+	/**
+	*  link to profile page
+	*
+	* @param none
+	* @throws java.Nullpoint.exception
+	*/
 	public String jumpToProfilePage() {
 		try {
 			if (loginUserID != -1) {
@@ -205,6 +220,12 @@ public class UserAction extends ActionSupport {
 		return "success";
 	}
 
+	/**
+	* user can change their profile information 
+	*
+	* @param none
+	* @throws java.Nullpoint.exception
+	*/
 	public String modifyProfile() {
 		try {
 			if (loginUserID != -1) {
@@ -233,6 +254,12 @@ public class UserAction extends ActionSupport {
 		}
 	}
 	
+	/**
+	* change password 
+	*
+	* @param none
+	* @throws java.Nullpoint.exception
+	*/
 	public String changePasswd() {
 		try {
 			if (loginUserID != -1) {
