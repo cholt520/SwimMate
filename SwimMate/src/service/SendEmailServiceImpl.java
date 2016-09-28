@@ -10,7 +10,12 @@ import entity.Reminder;
 public class SendEmailServiceImpl implements SendEmailService {
 
 	
-	
+	/**
+	* Use google email server to notice swimmers
+	*
+	* @param reminder 
+	* @throws java.Nullpoint.exception
+	*/
 	public void sendReminderByEmail(Reminder reminder) {
 
 		final String username = "help.swimmate@gmail.com";
