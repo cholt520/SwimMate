@@ -8,6 +8,7 @@ import com.opensymphony.xwork2.ModelDriven;
 
 import entity.Beach;
 import entity.Facility;
+import entity.Rating;
 import entity.Recommandation;
 import entity.Tide;
 import entity.User;
@@ -15,6 +16,7 @@ import entity.Weather;
 import entity.Wind;
 import service.BeachService;
 import service.FacilityService;
+import service.RatingService;
 import service.TideService;
 import service.UserService;
 import service.WeatherService;
@@ -40,6 +42,8 @@ public class BeachInfoAction implements ModelDriven, Action{
 	private int loginUserID = -1;
 	private User currentLoginUser;
 	private UserService userService;
+	private RatingService ratingService;
+	private List<Rating> ratingList = new ArrayList<Rating>();
 	
 
 	/**
@@ -222,6 +226,9 @@ public class BeachInfoAction implements ModelDriven, Action{
 			facility = facilityService.findFacilityByBeachID(id);
 			Tide tide1 = tideService.getTideByBeach(currentBeach);
 			tide = tideService.changeTideData(tide1);
+			
+			ratingList = ratingService.getAllRating();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -347,4 +354,28 @@ public class BeachInfoAction implements ModelDriven, Action{
 	public void setTide(Tide tide) {
 		this.tide = tide;
 	}
+
+
+	public RatingService getRatingService() {
+		return ratingService;
+	}
+
+
+	public void setRatingService(RatingService ratingService) {
+		this.ratingService = ratingService;
+	}
+
+
+	public List<Rating> getRatingList() {
+		return ratingList;
+	}
+
+
+	public void setRatingList(List<Rating> ratingList) {
+		this.ratingList = ratingList;
+	}
+	
+	
+	
+	
 }

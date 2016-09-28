@@ -44,6 +44,11 @@ $(function() {
             theme: 'fontawesome-stars',
             showSelectedRating: false
         });
+        
+        $('#example-fontawesome1').barrating({
+            theme: 'fontawesome-stars',
+            showSelectedRating: false
+        });
 
         $('#example-css').barrating({
             theme: 'css-stars',

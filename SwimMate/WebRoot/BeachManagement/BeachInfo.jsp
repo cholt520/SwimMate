@@ -273,7 +273,7 @@
 																		</div>
 																	</div>
 
-																	
+
 																	<div class="row">
 																		<div class="col-md-6">
 																			<h4 class="font-green-sharp">
@@ -304,7 +304,7 @@
 																			</p>
 																		</div>
 																	</div>
-																	
+
 																	<div class="row">
 																		<div class="col-md-6">
 
@@ -373,19 +373,19 @@
 															<br />
 
 															<div class="row">
-																<div class="col-md-2">
+																<div class="col-md-6">
 																	<h4 class="font-green-sharp">
-																		<i class="fa fa-tag font-green-sharp" /></i> Comments:
+																		<i class="fa fa-tag font-green-sharp" /></i> Write Your Review
 																	</h4>
 																</div>
+															</div>
+															<div class="row">
 																<div class="col-md-4">
 																	<textarea id="comments" name="comments"
 																		class="form-control" rows="5"></textarea>
 																</div>
-															</div>
-															<br />
-															<div class="row">
-																<div class="col-md-2">
+																<div class="col-md-1"
+																	style="position:relative;left:10px;top:80px;">
 																	<div class="examples">
 																		<div class="row">
 																			<div class="col col-fullwidth">
@@ -406,15 +406,41 @@
 																		</div>
 																	</div>
 																</div>
-																<div class="col-md-6">
+																<div class="col-md-2">
 																	<input type="submit" class="btn green-sharp"
-																		onclick="submitAndRefresh()" />
+																		onclick="submitAndRefresh()"
+																		style="position:relative;left:20px;top:75px;" />
 																</div>
 															</div>
-															<br /> 
+															<br /> <br />
 															<div class="row">
-																<div id="ratingList">
-																
+																<div id="ratingList" class="col-md-12">
+																	<h4 class="font-green-sharp">
+																		<i class="fa fa-tag font-green-sharp" /></i> Reviews
+																	</h4>
+																	<div
+																		class="table-scrollable table-scrollable-borderless">
+																		<table class="table table-hover table-light">
+																			<thead class="flip-content">
+																				<tr class="uppercase">
+																					<th>Beach Name</th>
+																					<th>Ratings</th>
+																					<th>Reviews</th>
+
+																				</tr>
+																			</thead>
+																			<tbody>
+																				<s:iterator value="ratingList" id="rating">
+																					<tr>
+																						<td><s:property value="#rating.beachName" /></td>
+																						<td><s:property value="#rating.rating" /></td>
+																						<td><s:property value="#rating.comments" /></td>
+
+																					</tr>
+																				</s:iterator>
+																			</tbody>
+																		</table>
+																	</div>
 																</div>
 															</div>
 														</div>
@@ -422,7 +448,7 @@
 												</div>
 											</div>
 										</div>
-										<br /> 
+										<br />
 									</div>
 								</div>
 							</div>
@@ -436,6 +462,7 @@
 			</div>
 			<!-- END CONTAINER -->
 		</div>
+	</div>
 	</div>
 	<div class="page-wrapper-row">
 		<div class="page-wrapper-bottom">
@@ -500,9 +527,12 @@
 	<script language="javascript">
 		function submitAndRefresh() {
 			var comments = document.getElementById("comments").value;
-			var ratingnumber = $("#example-fontawesome option:selected").text();
+	
+			var r
+			atingnumber = $("#example-fontawesome option:selected").text();
 			var beachName = document.getElementById("beachName").value;
 			var beachId = document.getElementById("beachId").value;
+			alert(beachId);
 	
 			$.ajax({
 				type : 'POST',
