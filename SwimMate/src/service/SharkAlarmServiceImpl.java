@@ -8,7 +8,12 @@ import entity.SharkAlarm;
 public class SharkAlarmServiceImpl implements SharkAlarmService{
 	private SharkAlarmDao sharkAlarmDao;
 
-	@Override
+	/**
+	* Get All Shark Alarm 
+	*
+	* @param none 
+	* @throws java.Nullpoint.exception
+	*/
 	public List<SharkAlarm> getAllSharkAlarm() {
 		return sharkAlarmDao.getAllSharkAlarm();
 	}

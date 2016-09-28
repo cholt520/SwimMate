@@ -17,35 +17,65 @@ public class UserServiceImpl implements UserService{
 		this.userDao = userDao;
 	}
 
-	@Override
+	/**
+	* Get User By Id
+	*
+	* @param id 
+	* @throws java.Nullpoint.exception
+	*/
 	public User getUserById(int id) {
 		return userDao.getUserById(id);
 	}
 
-	@Override
+	/**
+	* Get all Users
+	*
+	* @param none 
+	* @throws java.Nullpoint.exception
+	*/
 	public List<User> getAllUser() {
 		return userDao.getAllUser();
 	}
 
-	@Override
+	/**
+	* Delete User
+	*
+	* @param user 
+	* @throws java.Nullpoint.exception
+	*/
 	public void deleteUser(User user) {
 		userDao.deleteUser(user);
 		
 	}
 
-	@Override
+	/**
+	* Add User
+	*
+	* @param user 
+	* @throws java.Nullpoint.exception
+	*/
 	public void addUser(User user) {
 		userDao.addUser(user);
 		
 	}
 
-	@Override
+	/**
+	* Change User
+	*
+	* @param none 
+	* @throws java.Nullpoint.exception
+	*/
 	public void modifyUser(User user) {
 		userDao.modifyUser(user);
 		
 	}
 
-	@Override
+	/**
+	* Get User By UserName
+	*
+	* @param username 
+	* @throws java.Nullpoint.exception
+	*/
 	public User getUserByUserName(String username) {
 		return userDao.getUserByUserName(username);
 	}

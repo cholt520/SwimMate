@@ -5,6 +5,12 @@ import java.util.List;
 import dao.PatrolDao;
 import entity.Patrol;
 
+/**
+* This interface is not implementing now,the change will be on future
+*
+* @param none 
+* @throws java.Nullpoint.exception
+*/
 public class PatrolServiceImpl implements PatrolService {
 	private PatrolDao patrolDao;
 

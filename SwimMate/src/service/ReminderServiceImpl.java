@@ -17,35 +17,66 @@ public class ReminderServiceImpl implements ReminderService{
 		this.reminderDao = reminderDao;
 	}
 
-	@Override
+
+	/**
+	* delete Reminders
+	*
+	* @param none 
+	* @throws java.Nullpoint.exception
+	*/
 	public void deleteReminder(Reminder reminder) {
 		reminderDao.deleteReminder(reminder);
 		
 	}
 
-	@Override
+	/**
+	* add Reminders
+	*
+	* @param reminder 
+	* @throws java.Nullpoint.exception
+	*/
 	public void addReminder(Reminder reminder) {
 		reminderDao.addReminder(reminder);
 		
 	}
 
-	@Override
+	/**
+	* change Reminders
+	*
+	* @param reminder 
+	* @throws java.Nullpoint.exception
+	*/
 	public void modifyReminder(Reminder reminder) {
 		reminderDao.modifyReminder(reminder);
 		
 	}
 
-	@Override
+	/**
+	* Get Reminder By User ID
+	*
+	* @param id 
+	* @throws java.Nullpoint.exception
+	*/
 	public List<Reminder> getReminderByUserID(int userID) {
 		return reminderDao.getReminderByUserID(userID);
 	}
 
-	@Override
+	/**
+	* Get Reminder By Id
+	*
+	* @param id 
+	* @throws java.Nullpoint.exception
+	*/
 	public Reminder getReminderById(int id) {
 		return reminderDao.getReminderById(id);
 	}
 
-	@Override
+	/**
+	* Get all Reminders
+	*
+	* @param none 
+	* @throws java.Nullpoint.exception
+	*/
 	public List<Reminder> getAllReminder() {
 		return reminderDao.getAllReminder();
 	}

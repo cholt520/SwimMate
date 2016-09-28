@@ -14,12 +14,22 @@ import entity.Training;
 
 public class TrainingDaoImpl extends HibernateDaoSupport implements TrainingDao{
 
-	@Override
+	/**
+	* Get Training By Id
+	*
+	* @param id 
+	* @throws java.Nullpoint.exception
+	*/
 	public Training getTrainingById(int id) {
 		return null;
 	}
 
-	@Override
+	/**
+	* Get all Training
+	*
+	* @param none 
+	* @throws java.Nullpoint.exception
+	*/
 	public List<Training> getAllTraining() {
 		HibernateTemplate template = getHibernateTemplate();
         return (List<Training>) template.execute(new HibernateCallback() {
@@ -32,26 +42,51 @@ public class TrainingDaoImpl extends HibernateDaoSupport implements TrainingDao{
         });
 	}
 
-	@Override
+	/**
+	* Delete all Training
+	*
+	* @param training 
+	* @throws java.Nullpoint.exception
+	*/
 	public void deleteTraining(Training training) {
 		
 	}
 
-	@Override
+	/**
+	* Add all Training
+	*
+	* @param training 
+	* @throws java.Nullpoint.exception
+	*/
 	public void addTraining(Training training) {		
 	}
 
-	@Override
+	/**
+	* Change Training
+	*
+	* @param training 
+	* @throws java.Nullpoint.exception
+	*/
 	public void modifyTraining(Training training) {		
 	}
 
-	@Override
+	/**
+	* Get Training by state
+	*
+	* @param state 
+	* @throws java.Nullpoint.exception
+	*/
 	public List<Training> getTrainingByState(String state) {
 		return (List<Training>)getHibernateTemplate().find("from Training as training where training.state like '%" + state + "%'");
 		
 	}
 
-	@Override
+	/**
+	* Get Training By Postcode
+	*
+	* @param postcode 
+	* @throws java.Nullpoint.exception
+	*/
 	public List<Training> getTrainingByPostcode(String postcode) {
 		return (List<Training>)getHibernateTemplate().find("from Training as training where training.postcode like '%" + postcode + "%'");
 	}
