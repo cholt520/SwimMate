@@ -6,6 +6,13 @@ import java.util.List;
 
 import entity.SharkAlarm;
 
+
+/**
+* this class is not using now, for future 
+*
+* @param none
+* @throws java.Nullpoint.exception
+*/
 public class SharkAlarmAction {
 	
 	private SharkAlarmService sharkAlarmService;
