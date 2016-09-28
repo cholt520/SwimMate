@@ -24,7 +24,12 @@ import entity.Tide;
 
 public class TideServiceImpl implements TideService{
 
-	@Override
+	/**
+	* Get Tide By Beach, it uses tide API, and the attribute comes from tide.properties file.
+	*
+	* @param beach 
+	* @throws java.Nullpoint.exception
+	*/
 	public Tide getTideByBeach(Beach beach) {
 		String latitude = beach.getLatitude();
 		String longitud = beach.getLongitude();
@@ -63,7 +68,12 @@ public class TideServiceImpl implements TideService{
 		return tide;
 	}
 
-	@Override
+	/**
+	* Change Tide Data
+	*
+	* @param tide 
+	* @throws java.Nullpoint.exception
+	*/
 	public Tide changeTideData(Tide tide) {
 		double height = tide.getHeight();
 		BigDecimal   b   =   new   BigDecimal(height);  
