@@ -16,12 +16,22 @@ import entity.Reminder;
 @Transactional
 public class ReminderDaoImpl extends HibernateDaoSupport implements ReminderDao{
 
-	@Override
+	/**
+	* Get Reminder By Id
+	*
+	* @param id 
+	* @throws java.Nullpoint.exception
+	*/
 	public Reminder getReminderById(int id) {
 		return (Reminder) getHibernateTemplate().find("from Reminder where ID=" + id).get(0);
 	}
 
-	@Override
+	/**
+	* Get all Reminders
+	*
+	* @param none 
+	* @throws java.Nullpoint.exception
+	*/
 	public List<Reminder> getAllReminder() {
 		HibernateTemplate template = getHibernateTemplate();
         return (List<Reminder>) template.execute(new HibernateCallback() {
@@ -34,7 +44,12 @@ public class ReminderDaoImpl extends HibernateDaoSupport implements ReminderDao{
         });
 	}
 	
-	@Override
+	/**
+	* delete Reminders
+	*
+	* @param none 
+	* @throws java.Nullpoint.exception
+	*/
 	public List<Reminder> getReminderByUserID(int userID) {
 		List<Reminder> matchedList = (List<Reminder>) getHibernateTemplate().find("from Reminder where user_id=" + userID);
 		if (matchedList.size() != 0) {
@@ -44,7 +59,12 @@ public class ReminderDaoImpl extends HibernateDaoSupport implements ReminderDao{
 		}
 	}
 	
-	
+	/**
+	* add Reminders
+	*
+	* @param reminder 
+	* @throws java.Nullpoint.exception
+	*/
 	@Transactional
 	public void deleteReminder(Reminder reminder) {
 		Session s = getHibernateTemplate().getSessionFactory().openSession();
@@ -53,6 +73,12 @@ public class ReminderDaoImpl extends HibernateDaoSupport implements ReminderDao{
 		s.getTransaction().commit();
 	}
 
+	/**
+	* change Reminders
+	*
+	* @param reminder 
+	* @throws java.Nullpoint.exception
+	*/
 	@Transactional
 	public void addReminder(Reminder reminder) {
 		Session s = getHibernateTemplate().getSessionFactory().openSession();
@@ -60,6 +86,12 @@ public class ReminderDaoImpl extends HibernateDaoSupport implements ReminderDao{
 		s.save(reminder);
 	}
 
+	/**
+	* get Reminders by user id
+	*
+	* @param userID 
+	* @throws java.Nullpoint.exception
+	*/
 	@Transactional
 	public void modifyReminder(Reminder reminder) {
 		Session s = getHibernateTemplate().getSessionFactory().openSession();
