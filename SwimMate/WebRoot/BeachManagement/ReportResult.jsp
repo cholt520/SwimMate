@@ -281,8 +281,7 @@
 																		<th>Submitted Name</th>
 																		<th>Reason</th>
 																		<th>Description</th>
-																		<th>Type</th>
-																		<th>FileName</th>
+																		
 
 																	</tr>
 																</thead>
@@ -293,10 +292,7 @@
 																			<td><s:property value="#report.submittedName" /></td>
 																			<td><s:property value="#report.reason" /></td>
 																			<td><s:property value="#report.description" /></td>
-																			<td><s:property
-																					value="#report.fileUploadContentType" /></td>
-																			<td><s:property
-																					value="#report.fileUploadFileName" /></td>
+																			
 																		</tr>
 																	</s:iterator>
 																</tbody>

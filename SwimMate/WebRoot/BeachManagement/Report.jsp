@@ -301,6 +301,7 @@
 																</span> <a href="javascript:;"
 																	class="input-group-addon btn red fileinput-exists"
 																	data-dismiss="fileinput"> Remove </a>
+																	<span class="help-block">* Required upload jpg,png </span>
 															</div>
 														</div>
 													</div>
