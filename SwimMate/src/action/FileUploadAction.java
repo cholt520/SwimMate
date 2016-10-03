@@ -32,132 +32,133 @@ public class FileUploadAction extends ActionSupport {
 	private UserService userService;
 
 	/**
-	* getLoginUserID 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getLoginUserID
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public int getLoginUserID() {
 		return loginUserID;
 	}
 
 	/**
-	* setLoginUserID 
-	*
-	* @param loginUserID
-	* @throws java.Nullpoint.exception
-	*/
+	 * setLoginUserID
+	 *
+	 * @param loginUserID
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setLoginUserID(int loginUserID) {
 		this.loginUserID = loginUserID;
 	}
 
 	/**
-	* getCurrentLoginUser 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getCurrentLoginUser
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public User getCurrentLoginUser() {
 		return currentLoginUser;
 	}
 
 	/**
-	* setCurrentLoginUser 
-	*
-	* @param currentLoginUser
-	* @throws java.Nullpoint.exception
-	*/
+	 * setCurrentLoginUser
+	 *
+	 * @param currentLoginUser
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setCurrentLoginUser(User currentLoginUser) {
 		this.currentLoginUser = currentLoginUser;
 	}
 
 	/**
-	* getUserService 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getUserService
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public UserService getUserService() {
 		return userService;
 	}
 
 	/**
-	* set User Service 
-	*
-	* @param userService
-	* @throws java.Nullpoint.exception
-	*/
+	 * set User Service
+	 *
+	 * @param userService
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}
 
 	/**
-	* getFileUpload 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getFileUpload
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public File getFileUpload() {
 		return fileUpload;
 	}
 
 	/**
-	* setFileUpload 
-	*
-	* @param fileUpload
-	* @throws java.Nullpoint.exception
-	*/
+	 * setFileUpload
+	 *
+	 * @param fileUpload
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setFileUpload(File fileUpload) {
 		this.fileUpload = fileUpload;
 	}
 
 	/**
-	* getFileUploadContentType 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getFileUploadContentType
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public String getFileUploadContentType() {
 		return fileUploadContentType;
 	}
 
 	/**
-	* setFileUploadContentType 
-	*
-	* @param fileUploadContentType
-	* @throws java.Nullpoint.exception
-	*/
+	 * setFileUploadContentType
+	 *
+	 * @param fileUploadContentType
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setFileUploadContentType(String fileUploadContentType) {
 		this.fileUploadContentType = fileUploadContentType;
 	}
 
 	/**
-	* getFileUploadFileName 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getFileUploadFileName
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public String getFileUploadFileName() {
 		return fileUploadFileName;
 	}
 
 	/**
-	* setFileUploadFileName 
-	*
-	* @param fileUploadFileName
-	* @throws java.Nullpoint.exception
-	*/
+	 * setFileUploadFileName
+	 *
+	 * @param fileUploadFileName
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setFileUploadFileName(String fileUploadFileName) {
 		this.fileUploadFileName = fileUploadFileName;
 	}
 
 	/**
-	* get the report information from report page. the value of attributes will be store in report table, 
-	* the file will be store on file system 
-	*
-	* @param report, file
-	* @throws java.Nullpoint.exception
-	*/
+	 * get the report information from report page. the value of attributes will
+	 * be store in report table, the file will be store on file system
+	 *
+	 * @param report,
+	 *            file
+	 * @throws java.Nullpoint.exception
+	 */
 	public String execute() throws Exception {
 		try {
 			if (loginUserID != -1) {
@@ -177,21 +178,33 @@ public class FileUploadAction extends ActionSupport {
 			e.printStackTrace();
 		}
 		return SUCCESS;
-		
+
+	}
+
+	public String reportDescription() {
+		try {
+			if (loginUserID != -1) {
+				currentLoginUser = userService.getUserById(loginUserID);
+			}
+			return "success";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "error";
+		}
 	}
 
 	/**
-	* getUserById 
-	*
-	* @param loginUserID
-	* @throws java.Nullpoint.exception
-	*/
+	 * getUserById
+	 *
+	 * @param loginUserID
+	 * @throws java.Nullpoint.exception
+	 */
 	public String display() {
 		try {
 			if (loginUserID != -1) {
 				currentLoginUser = userService.getUserById(loginUserID);
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -199,11 +212,11 @@ public class FileUploadAction extends ActionSupport {
 	}
 
 	/**
-	* getUserById 
-	*
-	* @param loginUserID
-	* @throws java.Nullpoint.exception
-	*/
+	 * getUserById
+	 *
+	 * @param loginUserID
+	 * @throws java.Nullpoint.exception
+	 */
 	public String jumpToReportPage() {
 		try {
 			if (loginUserID != -1) {
@@ -214,13 +227,13 @@ public class FileUploadAction extends ActionSupport {
 		}
 		return "success";
 	}
-	
+
 	/**
-	* return all report and show them into report.jsp page 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * return all report and show them into report.jsp page
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public String showAllReport() throws Exception {
 		addActionMessage("Submit report successfully!");
 		reportList = reportService.getAllReport();
@@ -228,154 +241,154 @@ public class FileUploadAction extends ActionSupport {
 	}
 
 	/**
-	* get Report By Beach 
-	*
-	* @param searchBeachName
-	* @throws java.Nullpoint.exception
-	*/
+	 * get Report By Beach
+	 *
+	 * @param searchBeachName
+	 * @throws java.Nullpoint.exception
+	 */
 	public String getReportByBeach() throws Exception {
 		reportList = reportService.findReportsByBeachName(searchBeachName);
 		return "getReportByBeach";
 	}
 
 	/**
-	* getBeachName 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getBeachName
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public String getBeachName() {
 		return beachName;
 	}
 
 	/**
-	* setBeachName 
-	*
-	* @param beachName
-	* @throws java.Nullpoint.exception
-	*/
+	 * setBeachName
+	 *
+	 * @param beachName
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setBeachName(String beachName) {
 		this.beachName = beachName;
 	}
 
 	/**
-	* getSubmittedName 
-	* 
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getSubmittedName
+	 * 
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public String getSubmittedName() {
 		return submittedName;
 	}
 
 	/**
-	* setSubmittedName 
-	*
-	* @param submittedName
-	* @throws java.Nullpoint.exception
-	*/
+	 * setSubmittedName
+	 *
+	 * @param submittedName
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setSubmittedName(String submittedName) {
 		this.submittedName = submittedName;
 	}
 
 	/**
-	* getReason 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getReason
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public String getReason() {
 		return reason;
 	}
 
 	/**
-	* setReason 
-	*
-	* @param reason
-	* @throws java.Nullpoint.exception
-	*/
+	 * setReason
+	 *
+	 * @param reason
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setReason(String reason) {
 		this.reason = reason;
 	}
 
 	/**
-	* getDescription 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getDescription
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public String getDescription() {
 		return description;
 	}
 
 	/**
-	* setDescription 
-	*
-	* @param description
-	* @throws java.Nullpoint.exception
-	*/
+	 * setDescription
+	 *
+	 * @param description
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
 	/**
-	* getReportService 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getReportService
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public ReportService getReportService() {
 		return reportService;
 	}
 
 	/**
-	* setReportService 
-	*
-	* @param reportService
-	* @throws java.Nullpoint.exception
-	*/
+	 * setReportService
+	 *
+	 * @param reportService
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setReportService(ReportService reportService) {
 		this.reportService = reportService;
 	}
 
 	/**
-	* get all Report and then display them on report.jsp page
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * get all Report and then display them on report.jsp page
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public List<Report> getReportList() {
 		return reportList;
 	}
 
 	/**
-	* setReportList 
-	*
-	* @param reportList
-	* @throws java.Nullpoint.exception
-	*/
+	 * setReportList
+	 *
+	 * @param reportList
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setReportList(List<Report> reportList) {
 		this.reportList = reportList;
 	}
 
 	/**
-	* getSearchBeachName 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getSearchBeachName
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public String getSearchBeachName() {
 		return searchBeachName;
 	}
 
 	/**
-	* setSearchBeachName 
-	*
-	* @param searchBeachName
-	* @throws java.Nullpoint.exception
-	*/
+	 * setSearchBeachName
+	 *
+	 * @param searchBeachName
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setSearchBeachName(String searchBeachName) {
 		this.searchBeachName = searchBeachName;
 	}
-	
+
 }

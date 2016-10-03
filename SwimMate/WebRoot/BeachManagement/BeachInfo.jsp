@@ -138,6 +138,7 @@
 									</s:else>
 
 									<s:if test="%{loginUserID==-1}">
+										<li class=""><a href="reminderDescription.action"> Plan Your Journey </a></li>
 									</s:if>
 									<s:else>
 										<li class=""><a
@@ -146,6 +147,8 @@
 									</s:else>
 
 									<s:if test="%{loginUserID==-1}">
+										<li class=""><a href="reportDescription.action"> Report
+												Issues </a></li>
 									</s:if>
 									<s:else>
 										<li class=""><a
@@ -375,7 +378,8 @@
 															<div class="row">
 																<div class="col-md-6">
 																	<h4 class="font-green-sharp">
-																		<i class="fa fa-tag font-green-sharp" /></i> Write Your Review
+																		<i class="fa fa-tag font-green-sharp" /></i> Write Your
+																		Review
 																	</h4>
 																</div>
 															</div>

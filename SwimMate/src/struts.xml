@@ -142,7 +142,7 @@
 		</action>
 
 		<action name="changePasswd" class="action.UserAction" method="changePasswd">
-			<result name="success">/BeachManagement/Profile.jsp
+			<result name="success">/BeachManagement/UserLogin.jsp
 			</result>
 			<result name="error">/BeachManagement/Profile.jsp
 			</result>
@@ -196,6 +196,24 @@
 			<result name="error">/BeachManagement/EditReminder.jsp
 			</result>
 		</action>
+		
+		<action name="reminderDescription" class="action.ReminderAction"
+			method="reminderDescription">
+			<result name="success">/BeachManagement/PlanYourJourneyDescription.jsp
+			</result>
+			<result name="error">/BeachManagement/PlanYourJourneyDescription.jsp
+			</result>
+		</action>
+		
+		<action name="reportDescription" class="action.FileUploadAction"
+			method="reportDescription">
+			<result name="success">/BeachManagement/reportDescription.jsp
+			</result>
+			<result name="error">/BeachManagement/reportDescription.jsp
+			</result>
+		</action>
+		
+		
 	</package>
 
 </struts>    

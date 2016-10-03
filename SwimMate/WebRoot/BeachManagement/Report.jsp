@@ -140,6 +140,8 @@
 									</s:else>
 
 									<s:if test="%{loginUserID==-1}">
+										<li class=""><a href="reminderDescription.action">
+												Plan Your Journey </a></li>
 									</s:if>
 									<s:else>
 										<li class=""><a
@@ -148,13 +150,14 @@
 									</s:else>
 
 									<s:if test="%{loginUserID==-1}">
+										<li class=""><a href="reportDescription.action">
+												Report Issues </a></li>
 									</s:if>
 									<s:else>
-										<li class="active"><a
+										<li class=""><a
 											href="report.action?loginUserID=<s:property value="loginUserID"/>">
 												Report Issues </a></li>
 									</s:else>
-
 								</ul>
 							</div>
 							<!-- END MEGA MENU -->

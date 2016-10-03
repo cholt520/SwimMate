@@ -134,15 +134,19 @@
 											href="tips.action?loginUserID=<s:property value="loginUserID"/>">
 												Tips for Swimmers </a></li>
 									</s:else>
-									
+
 									<s:if test="%{loginUserID==-1}">
-										
+										<li class=""><a href="reminderDescription.action"> Plan Your Journey </a></li>
 									</s:if>
 									<s:else>
-										<li class=""><a href="reminder.action?loginUserID=<s:property value="loginUserID"/>"> Plan Your Journey </a></li>
+										<li class=""><a
+											href="reminder.action?loginUserID=<s:property value="loginUserID"/>">
+												Plan Your Journey </a></li>
 									</s:else>
-									
+
 									<s:if test="%{loginUserID==-1}">
+										<li class=""><a href="reportDescription.action"> Report
+												Issues </a></li>
 									</s:if>
 									<s:else>
 										<li class=""><a

@@ -271,7 +271,7 @@ public class UserAction extends ActionSupport {
 					if (password.equals(rePasswd)) {
 						currentLoginUser.setPasswd(password);
 						userService.modifyUser(currentLoginUser);
-						addActionMessage("Change password successfully!");
+						addActionMessage("Change password successfully! Please login again!");
 						return "success";
 					} else {
 						System.out.println("passwd and repasswd not match!");

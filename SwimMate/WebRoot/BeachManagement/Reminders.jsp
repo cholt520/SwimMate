@@ -153,15 +153,17 @@
 									</s:else>
 
 									<s:if test="%{loginUserID==-1}">
-
+										<li class=""><a href="reminderDescription.action"> Plan Your Journey </a></li>
 									</s:if>
 									<s:else>
-										<li class="active"><a
+										<li class=""><a
 											href="reminder.action?loginUserID=<s:property value="loginUserID"/>">
 												Plan Your Journey </a></li>
 									</s:else>
-									
+
 									<s:if test="%{loginUserID==-1}">
+										<li class=""><a href="reportDescription.action"> Report
+												Issues </a></li>
 									</s:if>
 									<s:else>
 										<li class=""><a
@@ -308,7 +310,7 @@
 															<div class="portlet-body">
 																<div class="tab-content">
 																	<!-- Start set reminder page -->
-																	
+
 																	<!-- Start Alert -->
 																	<s:if test="hasActionErrors()">
 																		<div class="alert alert-danger">

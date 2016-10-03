@@ -142,7 +142,7 @@
 									</s:else>
 
 									<s:if test="%{loginUserID==-1}">
-
+										<li class=""><a href="reminderDescription.action"> Plan Your Journey </a></li>
 									</s:if>
 									<s:else>
 										<li class=""><a
@@ -151,6 +151,8 @@
 									</s:else>
 
 									<s:if test="%{loginUserID==-1}">
+										<li class=""><a href="reportDescription.action"> Report
+												Issues </a></li>
 									</s:if>
 									<s:else>
 										<li class=""><a
@@ -569,12 +571,12 @@
 		// order in which these markers should display on top of each other.
 		var beaches = [];
 		<s:iterator value="beachList" status="userStatus">
-																																			var latitude = '<s:property value="latitude"/>';
-																																			var latitude1 = parseFloat(latitude);
-																																			var longitude = '<s:property value="longitude"/>';
-																																			var longitude1 = parseFloat(longitude);
-																																     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
-																																    </s:iterator>
+				    var latitude = '<s:property value="latitude"/>';
+					var latitude1 = parseFloat(latitude);
+					var longitude = '<s:property value="longitude"/>';
+					var longitude1 = parseFloat(longitude);
+		     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
+		    </s:iterator>
 	
 	
 		function setMarkers(map) {

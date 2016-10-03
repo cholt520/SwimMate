@@ -20,7 +20,7 @@ public class ReminderAction extends ActionSupport {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	private int loginUserID = -1;
 	private User currentLoginUser;
 	private UserService userService;
@@ -37,313 +37,313 @@ public class ReminderAction extends ActionSupport {
 	private Reminder currentSelectedReminder;
 	private String editBeachName = "";
 
-
 	/**
-	* get Edit Beach Name 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * get Edit Beach Name
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public String getEditBeachName() {
 		return editBeachName;
 	}
 
 	/**
-	* setEditBeachName 
-	*
-	* @param editBeachName
-	* @throws java.Nullpoint.exception
-	*/
+	 * setEditBeachName
+	 *
+	 * @param editBeachName
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setEditBeachName(String editBeachName) {
 		this.editBeachName = editBeachName;
 	}
 
 	/**
-	* getCurrentSelectedReminder 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getCurrentSelectedReminder
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public Reminder getCurrentSelectedReminder() {
 		return currentSelectedReminder;
 	}
 
 	/**
-	* setCurrentSelectedReminder 
-	*
-	* @param currentSelectedReminder
-	* @throws java.Nullpoint.exception
-	*/
+	 * setCurrentSelectedReminder
+	 *
+	 * @param currentSelectedReminder
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setCurrentSelectedReminder(Reminder currentSelectedReminder) {
 		this.currentSelectedReminder = currentSelectedReminder;
 	}
 
 	/**
-	* getEditReminderID 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getEditReminderID
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public int getEditReminderID() {
 		return editReminderID;
 	}
 
 	/**
-	* setEditReminderID 
-	*
-	* @param editReminderID
-	* @throws java.Nullpoint.exception
-	*/
+	 * setEditReminderID
+	 *
+	 * @param editReminderID
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setEditReminderID(int editReminderID) {
 		this.editReminderID = editReminderID;
 	}
 
 	/**
-	* getDeleteReminderID 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getDeleteReminderID
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public int getDeleteReminderID() {
 		return deleteReminderID;
 	}
 
 	/**
-	* setDeleteReminderID 
-	*
-	* @param deleteReminderID
-	* @throws java.Nullpoint.exception
-	*/
+	 * setDeleteReminderID
+	 *
+	 * @param deleteReminderID
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setDeleteReminderID(int deleteReminderID) {
 		this.deleteReminderID = deleteReminderID;
 	}
 
 	/**
-	* getReminderList 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getReminderList
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public List<Reminder> getReminderList() {
 		return reminderList;
 	}
 
 	/**
-	* setReminderList 
-	*
-	* @param reminderList
-	* @throws java.Nullpoint.exception
-	*/
+	 * setReminderList
+	 *
+	 * @param reminderList
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setReminderList(List<Reminder> reminderList) {
 		this.reminderList = reminderList;
 	}
 
 	/**
-	* getDescription 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getDescription
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public String getDescription() {
 		return description;
 	}
 
 	/**
-	* setDescription 
-	*
-	* @param description
-	* @throws java.Nullpoint.exception
-	*/
+	 * setDescription
+	 *
+	 * @param description
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
 	/**
-	* getReminderService 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getReminderService
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public ReminderService getReminderService() {
 		return reminderService;
 	}
 
 	/**
-	* setReminderService 
-	*
-	* @param reminderService
-	* @throws java.Nullpoint.exception
-	*/
+	 * setReminderService
+	 *
+	 * @param reminderService
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setReminderService(ReminderService reminderService) {
 		this.reminderService = reminderService;
 	}
 
 	/**
-	* getSelectBeachID 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getSelectBeachID
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public int getSelectBeachID() {
 		return selectBeachID;
 	}
 
 	/**
-	* setSelectBeachID 
-	*
-	* @param selectBeachID
-	* @throws java.Nullpoint.exception
-	*/
+	 * setSelectBeachID
+	 *
+	 * @param selectBeachID
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setSelectBeachID(int selectBeachID) {
 		this.selectBeachID = selectBeachID;
 	}
 
 	/**
-	* getSelectedDate 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getSelectedDate
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public String getSelectedDate() {
 		return selectedDate;
 	}
 
 	/**
-	* setSelectedDate 
-	*
-	* @param selectedDate
-	* @throws java.Nullpoint.exception
-	*/
+	 * setSelectedDate
+	 *
+	 * @param selectedDate
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setSelectedDate(String selectedDate) {
 		this.selectedDate = selectedDate;
 	}
 
 	/**
-	* getBeachList 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getBeachList
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public List<Beach> getBeachList() {
 		return beachList;
 	}
 
 	/**
-	* setBeachList 
-	*
-	* @param beachList
-	* @throws java.Nullpoint.exception
-	*/
+	 * setBeachList
+	 *
+	 * @param beachList
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setBeachList(List<Beach> beachList) {
 		this.beachList = beachList;
 	}
 
 	/**
-	* getBeachService 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getBeachService
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public BeachService getBeachService() {
 		return beachService;
 	}
 
 	/**
-	* setBeachService 
-	*
-	* @param beachService
-	* @throws java.Nullpoint.exception
-	*/
+	 * setBeachService
+	 *
+	 * @param beachService
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setBeachService(BeachService beachService) {
 		this.beachService = beachService;
 	}
 
 	/**
-	* getSelectedState 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getSelectedState
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public String getSelectedState() {
 		return selectedState;
 	}
 
 	/**
-	* setSelectedState 
-	*
-	* @param selectedState
-	* @throws java.Nullpoint.exception
-	*/
+	 * setSelectedState
+	 *
+	 * @param selectedState
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setSelectedState(String selectedState) {
 		this.selectedState = selectedState;
 	}
 
 	/**
-	* getLoginUserID 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getLoginUserID
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public int getLoginUserID() {
 		return loginUserID;
 	}
 
 	/**
-	* setLoginUserID 
-	*
-	* @param loginUserID
-	* @throws java.Nullpoint.exception
-	*/
+	 * setLoginUserID
+	 *
+	 * @param loginUserID
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setLoginUserID(int loginUserID) {
 		this.loginUserID = loginUserID;
 	}
 
 	/**
-	* getCurrentLoginUser 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getCurrentLoginUser
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public User getCurrentLoginUser() {
 		return currentLoginUser;
 	}
 
 	/**
-	* setCurrentLoginUser 
-	*
-	* @param currentLoginUser
-	* @throws java.Nullpoint.exception
-	*/
+	 * setCurrentLoginUser
+	 *
+	 * @param currentLoginUser
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setCurrentLoginUser(User currentLoginUser) {
 		this.currentLoginUser = currentLoginUser;
 	}
 
 	/**
-	* getUserService 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * getUserService
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public UserService getUserService() {
 		return userService;
 	}
 
 	/**
-	* setUserService 
-	*
-	* @param userService
-	* @throws java.Nullpoint.exception
-	*/
+	 * setUserService
+	 *
+	 * @param userService
+	 * @throws java.Nullpoint.exception
+	 */
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}
 
 	/**
-	* When swimmers select by beach by state, the reminds will get from database for relating the the relevent beach 
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * When swimmers select by beach by state, the reminds will get from
+	 * database for relating the the relevent beach
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public String execute() {
 		try {
 			if (loginUserID != -1) {
@@ -359,11 +359,11 @@ public class ReminderAction extends ActionSupport {
 	}
 
 	/**
-	* add reminder to database 
-	*
-	* @param selectBeachID,loginUserID,description,newReminder
-	* @throws java.Nullpoint.exception
-	*/
+	 * add reminder to database
+	 *
+	 * @param selectBeachID,loginUserID,description,newReminder
+	 * @throws java.Nullpoint.exception
+	 */
 	public String submitReminder() {
 		try {
 			if (loginUserID != -1) {
@@ -381,8 +381,8 @@ public class ReminderAction extends ActionSupport {
 			newReminder.setDescription(description);
 			reminderService.addReminder(newReminder);
 			addActionMessage("Add reminder and send email successfully!");
-			
-			//sent email
+
+			// sent email
 			newReminder.setID(-1);
 			Beach selectedBeach = beachService.getBeachById(selectBeachID);
 			newReminder.setBeachName(selectedBeach.getBeach_name());
@@ -392,9 +392,9 @@ public class ReminderAction extends ActionSupport {
 			System.out.println(newReminder.getDate());
 			System.out.println(newReminder.getDescription());
 			System.out.println(newReminder.getUser_id());
-			
+
 			SendEmailServiceImpl sendEmailService = new SendEmailServiceImpl();
-			
+
 			sendEmailService.sendReminderByEmail(newReminder);
 
 			reminderList = reminderService.getReminderByUserID(loginUserID);
@@ -408,11 +408,11 @@ public class ReminderAction extends ActionSupport {
 	}
 
 	/**
-	* When swimmers do not want remind, they can delete it.  
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * When swimmers do not want remind, they can delete it.
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public String deleteReminder() {
 		try {
 			if (loginUserID != -1) {
@@ -435,11 +435,11 @@ public class ReminderAction extends ActionSupport {
 	}
 
 	/**
-	* jumpToModifyReminder 
-	*
-	* @param loginUserID,editReminderID,currentSelectedReminder
-	* @throws java.Nullpoint.exception
-	*/
+	 * jumpToModifyReminder
+	 *
+	 * @param loginUserID,editReminderID,currentSelectedReminder
+	 * @throws java.Nullpoint.exception
+	 */
 	public String jumpToModifyReminder() {
 		try {
 			if (loginUserID != -1) {
@@ -464,11 +464,11 @@ public class ReminderAction extends ActionSupport {
 	}
 
 	/**
-	* submit State for get beach reminder information
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * submit State for get beach reminder information
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public String submitState() {
 		try {
 			if (loginUserID != -1) {
@@ -482,13 +482,13 @@ public class ReminderAction extends ActionSupport {
 			return "error";
 		}
 	}
-	
+
 	/**
-	* modifyReminder, change the content on remind, or date.  
-	*
-	* @param none
-	* @throws java.Nullpoint.exception
-	*/
+	 * modifyReminder, change the content on remind, or date.
+	 *
+	 * @param none
+	 * @throws java.Nullpoint.exception
+	 */
 	public String modifyReminder() {
 		try {
 			if (loginUserID != -1) {
@@ -529,6 +529,18 @@ public class ReminderAction extends ActionSupport {
 		} catch (Exception e) {
 			e.printStackTrace();
 			addActionError("Error: " + e);
+			return "error";
+		}
+	}
+
+	public String reminderDescription() {
+		try {
+			if (loginUserID != -1) {
+				currentLoginUser = userService.getUserById(loginUserID);
+			}
+			return "success";
+		} catch (Exception e) {
+			e.printStackTrace();
 			return "error";
 		}
 	}

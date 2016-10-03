@@ -132,7 +132,8 @@
 									</s:else>
 
 									<s:if test="%{loginUserID==-1}">
-
+										<li class=""><a href="reminderDescription.action">
+												Plan Your Journey </a></li>
 									</s:if>
 									<s:else>
 										<li class=""><a
@@ -141,6 +142,8 @@
 									</s:else>
 
 									<s:if test="%{loginUserID==-1}">
+										<li class=""><a href="reportDescription.action">
+												Report Issues </a></li>
 									</s:if>
 									<s:else>
 										<li class=""><a
@@ -243,8 +246,10 @@
 															<div class="content-section-b">
 																<div class="row">
 																	<div class="col-md-6">
-																		<iframe width="520" height="380" src="https://www.youtube.com/embed/KkObAXrjpzs" frameborder="0" allowfullscreen></iframe>
-																		 <!-- <img class="img-responsive" src="../image/Rip.jpg"
+																		<iframe width="520" height="380"
+																			src="https://www.youtube.com/embed/KkObAXrjpzs"
+																			frameborder="0" allowfullscreen></iframe>
+																		<!-- <img class="img-responsive" src="../image/Rip.jpg"
 																			alt=""> -->
 																	</div>
 																	<div class="col-md-6">
