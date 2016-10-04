@@ -483,56 +483,6 @@ public class ReminderAction extends ActionSupport {
 		}
 	}
 
-	/**
-	 * modifyReminder, change the content on remind, or date.
-	 *
-	 * @param none
-	 * @throws java.Nullpoint.exception
-	 */
-	public String modifyReminder() {
-		try {
-			if (loginUserID != -1) {
-				currentLoginUser = userService.getUserById(loginUserID);
-			}
-			System.out.println(editReminderID + "editReminderID");
-			// Get current selected reminder
-			currentSelectedReminder = reminderService.getReminderById(editReminderID);
-			selectBeachID = currentSelectedReminder.getBeach_id();
-			selectedDate = currentSelectedReminder.getDate();
-			description = currentSelectedReminder.getDescription();
-
-			Beach selectedBeach = beachService.getBeachById(currentSelectedReminder.getBeach_id());
-
-			selectedState = selectedBeach.getState();
-			editBeachName = selectedBeach.getBeach_name();
-
-			System.out.println(selectBeachID + "selectBeachID");
-			System.out.println(selectedDate + "selectedDate");
-			System.out.println(description + "description");
-
-			currentSelectedReminder.setBeach_id(selectBeachID);
-
-			System.out.println(selectedDate);
-			if (!selectedDate.equals("")) {
-				currentSelectedReminder.setDate(selectedDate);
-			} else {
-				addActionError("Please choose a date");
-				return "error";
-			}
-			currentSelectedReminder.setDescription(description);
-			reminderService.modifyReminder(currentSelectedReminder);
-
-			reminderList = reminderService.getReminderByUserID(loginUserID);
-			beachList = beachService.getBeachByState(selectedState);
-			addActionMessage("Modify reminder successfully!");
-			return "success";
-		} catch (Exception e) {
-			e.printStackTrace();
-			addActionError("Error: " + e);
-			return "error";
-		}
-	}
-
 	public String reminderDescription() {
 		try {
 			if (loginUserID != -1) {

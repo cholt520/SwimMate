@@ -152,12 +152,23 @@
 									</s:else>
 
 									<s:if test="%{loginUserID==-1}">
-
+										<li class="active"><a href="reminderDescription.action">
+												Plan Your Journey </a></li>
 									</s:if>
 									<s:else>
 										<li class="active"><a
 											href="reminder.action?loginUserID=<s:property value="loginUserID"/>">
 												Plan Your Journey </a></li>
+									</s:else>
+
+									<s:if test="%{loginUserID==-1}">
+										<li class=""><a href="reportDescription.action">
+												Report Issues </a></li>
+									</s:if>
+									<s:else>
+										<li class=""><a
+											href="report.action?loginUserID=<s:property value="loginUserID"/>">
+												Report Issues </a></li>
 									</s:else>
 								</ul>
 							</div>
@@ -241,7 +252,7 @@
 																	<thead>
 																		<tr class="uppercase">
 																			<th colspan="2">Date</th>
-																			<th>Edit</th>
+																			<th>View</th>
 																			<th>Delete</th>
 																		</tr>
 																	</thead>
@@ -252,9 +263,10 @@
 																						value="#reminder.date" /></td>
 																				<td><a href=""
 																					class="btn btn-transparent blue-hoki btn-outline btn-circle btn-xs">
-																						<i class="fa fa-edit"></i>
+																						<i class="fa fa-search"></i>
 																				</a></td>
-																				<td><a href="deleteReminder.action?loginUserID=<s:property value="loginUserID"/>&deleteReminderID=<s:property
+																				<td><a
+																					href="deleteReminder.action?loginUserID=<s:property value="loginUserID"/>&deleteReminderID=<s:property
 																						value="#reminder.ID" />"
 																					class="btn btn-transparent red-mint btn-outline btn-circle btn-xs">
 																						<i class="fa fa-times"></i>
@@ -282,7 +294,7 @@
 																<div class="caption caption-md">
 																	<i class="icon-globe theme-font hide"></i> <span
 																		class="caption-subject font-green-sharp bold uppercase">
-																		Reminder </span>
+																		Your Plan </span>
 																</div>
 															</div>
 
@@ -302,207 +314,71 @@
 																	</s:elseif>
 																	<!-- End Alert -->
 
-																	<!-- Start Select a State -->
-																	<form method="post">
-																		<div class="row">
-																			<div class="col-md-12">
-																				<span
-																					class="caption-subject font-green-sharp bold uppercase">
-																					Step 1: Change state</span>
-																			</div>
+																	<div class="row">
+																		<div class="col-md-12">
+																			<p style="font-size:130%;" class="font-blue-hoki">
+																				Dear <span
+																					class="bold"> <s:property
+																						value="currentLoginUser.userName" />
+																				</span>,<br /> <br /> This is the details of
+																				your upcoming beach trip to <span
+																					class="font-green-sharp bold"> <s:property
+																						value="editBeachName" />
+																				</span><br /> on <span class="font-green-sharp bold">
+																					<s:property value="currentSelectedReminder.date" />
+																				</span>.<br /> <br />You left the following note for this
+																				trip:<br /> <span class="font-green-sharp bold">
+																					<s:property
+																						value="currentSelectedReminder.description" />
+																				</span> <br /> <br />Enjoy your trip!<br />
+																			</p>
 																		</div>
-																		<br />
-																		<div class="row">
-																			<div class="col-md-1"></div>
-																			<div class="col-md-2">
-																				<span class="help-block"> Select State </span>
-																			</div>
-																			<div class="col-md-4">
-																				<select class="bs-select form-control"
-																					name="selectedState">
-																					<s:if test="%{selectedState=='VIC'}">
-																						<option value="VIC" selected>Victoria</option>
-																					</s:if>
-																					<s:else>
-																						<option value="VIC">Victoria</option>
-																					</s:else>
-
-																					<s:if test="%{selectedState=='NSW'}">
-																						<option value="NSW" selected>New South
-																							Wales</option>
-																					</s:if>
-																					<s:else>
-																						<option value="NSW">New South Wales</option>
-																					</s:else>
-
-																					<s:if test="%{selectedState=='QS'}">
-																						<option value="QS" selected>Queensland</option>
-																					</s:if>
-																					<s:else>
-																						<option value="QS">Queensland</option>
-																					</s:else>
-
-																					<s:if test="%{selectedState=='NT'}">
-																						<option value="NT" selected>Northern
-																							Territory</option>
-																					</s:if>
-																					<s:else>
-																						<option value="NT">Northern Territory</option>
-																					</s:else>
-
-																					<s:if test="%{selectedState=='WA'}">
-																						<option value="WA" selected>Western
-																							Australia</option>
-																					</s:if>
-																					<s:else>
-																						<option value="WA">Western Australia</option>
-																					</s:else>
-
-																					<s:if test="%{selectedState=='SA'}">
-																						<option value="SA" selected>South
-																							Australia</option>
-																					</s:if>
-																					<s:else>
-																						<option value="SA">South Australia</option>
-																					</s:else>
-
-																					<s:if test="%{selectedState=='TA'}">
-																						<option value="TA" selected>Tasmania</option>
-																					</s:if>
-																					<s:else>
-																						<option value="TA">Tasmania</option>
-																					</s:else>
-																				</select>
-																			</div>
-																			<div class="col-md-2">
-																				<button type="submit" class="btn green-sharp"
-																					formaction="submitState.action?loginUserID=<s:property value="loginUserID"/>" formmethod="post">
-																					Submit</button>
-																			</div>
-																		</div>
-																		<!-- End Select a State -->
-																		<br /> <br />
-																		<!-- Start BeachName Label -->
-																		<div class="row">
-																			<div class="col-md-12">
-																				<span
-																					class="caption-subject font-green-sharp bold uppercase">
-																					Step 2: Change beach, date and description.</span>
-																			</div>
-																		</div>
-																		<br />
-																		<div class="row">
-																			<div class="col-md-1"></div>
-																			<div class="col-md-2">
-																				<span class="help-block"> Select Beach </span>
-																			</div>
-																			<div class="col-md-4">
-																				<select class="bs-select form-control"
-																					data-live-search="true" data-size="5"
-																					name="selectBeachID">
-																					<s:if test="%{editBeachName==''}">
-																						<s:iterator value="beachList">
-																							<option value="<s:property value="beach_id"/>">
-																								<s:property value="beach_name" /></option>
-																						</s:iterator>
-																					</s:if>
-																					<s:else>
-																						<option selected>
-																							<s:property value="editBeachName" /></option>
-																							<s:iterator value="beachList">
-																							<option value="<s:property value="beach_id"/>">
-																								<s:property value="beach_name" /></option>
-																						</s:iterator>
-																					</s:else>
-																				</select>
-																			</div>
-																		</div>
-																		<!-- End BeachName Label -->
-
-																		<br />
-
-																		<!-- Start Select Date -->
-																		<div class="row">
-																			<div class="col-md-1"></div>
-																			<div class="col-md-2">
-																				<span class="help-block"> Select date </span>
-																			</div>
-																			<div class="col-md-6">
-																				<div
-																					class="input-group input-medium date date-picker"
-																					data-date-format="dd-mm-yyyy"
-																					data-date-start-date="+0d">
-																					<input type="text" class="form-control" readonly=""
-																						name="selectedDate" placeholder="<s:property value="currentSelectedReminder.date"/>"> <span
-																						class="input-group-btn">
-																						<button class="btn default" type="button">
-																							<i class="fa fa-calendar"></i>
-																						</button>
-																					</span>
-																				</div>
-
-																			</div>
-																		</div>
-																		<!-- End select Date -->
-																		<br />
-
-																		<!-- Start Reminder description -->
-																		<div class="row">
-																			<div class="col-md-1"></div>
-																			<div class="col-md-2">
-																				<span class="help-block"> Reminder </span>
-																			</div>
-																			<div class="col-md-6">
-																				<textarea class="form-control" id="message" rows="5"
-																					name="description"
-																					placeholder="Enter something you want to remind yourself on that day..."><s:property value="currentSelectedReminder.description"/></textarea>
-																			</div>
-																		</div>
-																		<!-- End Reminder Description -->
-
-																		<br /> <br />
-																		<!-- Start Submit button -->
-																		<div class="row">
-																			<div class="col-md-6">
-																				<button type="submit" id="register-submit-btn"
-																					class="btn green-sharp uppercase bold"
-																					formaction="modifyReminder.action?loginUserID=<s:property value="loginUserID"/>&editReminderID=<s:property
-																						value="editReminderID" />" formmethod="post">Submit Your Change</button>
-																			</div>
-																		</div>
-																	</form>
-																	<!-- End Submit button -->
+																	</div>
 																	<br />
-																	<!-- End set reminder page -->
+																	<div class="row">
+																		<div class="col-md-3">
+																			<a
+																				href="deleteReminder.action?loginUserID=<s:property value="loginUserID"/>&deleteReminderID=<s:property
+																						value="#reminder.ID" />"
+																				class="btn red-mint ">DELETE</a>
+																		</div>
+																		<div class="col-md-3">
+																			<a
+																				href="reminder.action?loginUserID=<s:property value="loginUserID"/>"
+																				class="btn green-sharp">BACK</a>
+																		</div>
+																	</div>
 																</div>
 															</div>
+
 														</div>
 													</div>
+													<!-- END PROFILE CONTENT -->
 												</div>
 											</div>
-											<!-- END PROFILE CONTENT -->
 										</div>
+										<!-- END PAGE CONTENT INNER -->
 									</div>
 								</div>
-								<!-- END PAGE CONTENT INNER -->
+								<!-- END PAGE CONTENT BODY -->
+								<!-- END CONTENT BODY -->
 							</div>
+							<!-- END CONTENT -->
 						</div>
-						<!-- END PAGE CONTENT BODY -->
-						<!-- END CONTENT BODY -->
+						<!-- END CONTAINER -->
 					</div>
-					<!-- END CONTENT -->
 				</div>
-				<!-- END CONTAINER -->
 			</div>
 		</div>
-	</div>
 
-	<div class="page-wrapper-row">
-		<div class="page-wrapper-bottom">
-			<!-- BEGIN FOOTER -->
-			<jsp:include page="Footer.jsp" />
-			<!-- END FOOTER -->
+		<div class="page-wrapper-row">
+			<div class="page-wrapper-bottom">
+				<!-- BEGIN FOOTER -->
+				<jsp:include page="Footer.jsp" />
+				<!-- END FOOTER -->
+			</div>
 		</div>
+
 	</div>
 
 	<!-- BEGIN CORE PLUGINS -->

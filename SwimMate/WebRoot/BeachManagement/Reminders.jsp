@@ -153,17 +153,18 @@
 									</s:else>
 
 									<s:if test="%{loginUserID==-1}">
-										<li class=""><a href="reminderDescription.action"> Plan Your Journey </a></li>
+										<li class="active"><a href="reminderDescription.action">
+												Plan Your Journey </a></li>
 									</s:if>
 									<s:else>
-										<li class=""><a
+										<li class="active"><a
 											href="reminder.action?loginUserID=<s:property value="loginUserID"/>">
 												Plan Your Journey </a></li>
 									</s:else>
 
 									<s:if test="%{loginUserID==-1}">
-										<li class=""><a href="reportDescription.action"> Report
-												Issues </a></li>
+										<li class=""><a href="reportDescription.action">
+												Report Issues </a></li>
 									</s:if>
 									<s:else>
 										<li class=""><a
@@ -259,7 +260,7 @@
 																	<thead>
 																		<tr class="uppercase">
 																			<th colspan="2">Date</th>
-																			<!-- <th>Edit</th> -->
+																			<th>View</th>
 																			<th>Delete</th>
 																		</tr>
 																	</thead>
@@ -268,12 +269,12 @@
 																			<tr>
 																				<td colspan="2"><s:property
 																						value="#reminder.date" /></td>
-																				<%-- <td><a
+																				<td><a
 																					href="jumpToModifyReminder.action?loginUserID=<s:property value="loginUserID"/>&editReminderID=<s:property
 																						value="#reminder.ID" />"
 																					class="btn btn-transparent blue-hoki btn-outline btn-circle btn-xs">
-																						<i class="fa fa-edit"></i>
-																				</a></td> --%>
+																						<i class="fa fa-search"></i>
+																				</a></td>
 																				<td><a
 																					href="deleteReminder.action?loginUserID=<s:property value="loginUserID"/>&deleteReminderID=<s:property
 																						value="#reminder.ID" />"

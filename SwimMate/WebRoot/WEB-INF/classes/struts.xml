@@ -180,14 +180,6 @@
 			</result>
 		</action>
 
-		<action name="modifyReminder" class="action.ReminderAction"
-			method="modifyReminder">
-			<result name="success">/BeachManagement/EditReminder.jsp
-			</result>
-			<result name="error">/BeachManagement/EditReminder.jsp
-			</result>
-			<result name="input">/BeachManagement/EditReminder.jsp</result>
-		</action>
 
 		<action name="jumpToModifyReminder" class="action.ReminderAction"
 			method="jumpToModifyReminder">
