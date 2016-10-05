@@ -29,7 +29,6 @@ public class LoginAction extends ActionSupport{
 	*/
 	public String execute(){
 		try {
-			System.out.println(loginUserID);
 			return "success";
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -46,7 +45,6 @@ public class LoginAction extends ActionSupport{
 	public void validate(){
 		Properties properties = new Properties();
 		try {
-			System.out.println(loginUserID);
 			properties.load(WeatherServiceImpl.class.getResourceAsStream("/login.properties"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
