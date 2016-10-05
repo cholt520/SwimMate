@@ -5,11 +5,21 @@ import java.util.Properties;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import entity.User;
+import service.UserService;
 import service.WeatherServiceImpl;
 
 public class LoginAction extends ActionSupport{
 	private String username;
 	private String password;
+	private int loginUserID = -1;
+	
+	public int getLoginUserID() {
+		return loginUserID;
+	}
+	public void setLoginUserID(int loginUserID) {
+		this.loginUserID = loginUserID;
+	}
 	
 	/**
 	* not implements for future  
@@ -18,8 +28,14 @@ public class LoginAction extends ActionSupport{
 	* @throws java.Nullpoint.exception
 	*/
 	public String execute(){
+		try {
+			System.out.println(loginUserID);
+			return "success";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "error";
+		}
 		
-		return "success";
 	}
 	/**
 	* validate, check the username and password in front page.  
@@ -30,6 +46,7 @@ public class LoginAction extends ActionSupport{
 	public void validate(){
 		Properties properties = new Properties();
 		try {
+			System.out.println(loginUserID);
 			properties.load(WeatherServiceImpl.class.getResourceAsStream("/login.properties"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -40,7 +57,7 @@ public class LoginAction extends ActionSupport{
 		if(username.equals(usernamefromProperties)&&password.equals(passwordfromProperties)){
 			addActionMessage("You are valid user!");
 		}else{
-			addActionError("I don't know you, dont try to hack me!");
+			addActionError("Wrong Username or Password!");
 		}
 	}
 

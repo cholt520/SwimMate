@@ -19,7 +19,9 @@
 		</action>
 
 		<action name="validation" class="action.LoginAction" method="execute">
-			<result>/BeachManagement/index.jsp</result>
+			<result name="success">/BeachManagement/index.jsp</result>
+			<result name="error">/BeachManagement/Login.jsp</result>
+			<result name="input">/BeachManagement/Login.jsp</result>
 		</action>
 
 		<action name="uploadphoto" class="action.UploadPhotoAction"
