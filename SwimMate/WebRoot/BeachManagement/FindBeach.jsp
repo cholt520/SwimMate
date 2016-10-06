@@ -142,7 +142,8 @@
 									</s:else>
 
 									<s:if test="%{loginUserID==-1}">
-										<li class=""><a href="reminderDescription.action"> Plan Your Journey </a></li>
+										<li class=""><a href="reminderDescription.action">
+												Plan Your Journey </a></li>
 									</s:if>
 									<s:else>
 										<li class=""><a
@@ -151,8 +152,8 @@
 									</s:else>
 
 									<s:if test="%{loginUserID==-1}">
-										<li class=""><a href="reportDescription.action"> Report
-												Issues </a></li>
+										<li class=""><a href="reportDescription.action">
+												Report Issues </a></li>
 									</s:if>
 									<s:else>
 										<li class=""><a
@@ -384,7 +385,7 @@
 
 										<div class="row" style="Margin:2px;">
 											<!--Result Table-->
-											<div class="col-md-6">
+											<div class="col-md-7">
 												<div class="portlet light ">
 													<div class="portlet-title">
 														<div class="caption">
@@ -404,12 +405,12 @@
 																	<s:iterator value="beachList" status="userStatus">
 																		<li class="search-item clearfix">
 																			<div class="search-content text-left">
-																				<div class="col-md-5">
+																				<div class="col-md-4">
 																					<img
 																						src="https://maps.googleapis.com/maps/api/streetview?size=150x100&location=<s:property value="latitude" />,<s:property value="longitude" />&heading=151.78&pitch=-0.76&key=AIzaSyCKH-MtuoWl-NkYS_m5YxBIY2sQbkvPGfM" />
 																				</div>
 
-																				<div class="col-md-7">
+																				<div class="col-md-4">
 																					<h2 class="search-title">
 																						<s:if test="%{loginUserID==-1}">
 																							<a
@@ -424,12 +425,22 @@
 																							</a>
 																						</s:else>
 																					</h2>
+
 																					<p class="search-desc">
 																						<s:property value="beach_name" />
 																						,
 																						<s:property value="state" />
+																						<%-- <s:hidden id="beachID"
+																							value="beach_id"
+																							name="beachID" /> --%>
 																					</p>
 																				</div>
+
+																				<%-- <div class="col-md-4">
+																					<s:if test="%{loginUserID==-1}">
+																						<s:property value="beach_name" />
+																						</s:if>
+																				</div> --%>
 
 																			</div>
 																		</li>
@@ -442,7 +453,7 @@
 											</div>
 											<!--End Result Table-->
 											<!-- Start Report Issues -->
-											<div class="col-md-6">
+											<div class="col-md-5">
 												<div class="portlet light ">
 													<div class="portlet-title">
 														<div class="caption">
@@ -565,18 +576,35 @@
 				}
 			});
 	
-			setMarkers(map);
+			/* setMarkers(map); */
+	
+			var markers = beaches.map(function(beach, i) {
+				return new google.maps.Marker({
+					position : {
+						lat : beach[1],
+						lng : beach[2]
+					},
+					title : beach[0],
+				});
+			});
+	
+			// Add a marker clusterer to manage the markers.
+			var markerCluster = new MarkerClusterer(map, markers,
+				{
+					imagePath : 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
+				});
+	
 		}
 		// Data for the markers consisting of a name, a LatLng and a zIndex for the
 		// order in which these markers should display on top of each other.
 		var beaches = [];
 		<s:iterator value="beachList" status="userStatus">
-				    var latitude = '<s:property value="latitude"/>';
-					var latitude1 = parseFloat(latitude);
-					var longitude = '<s:property value="longitude"/>';
-					var longitude1 = parseFloat(longitude);
-		     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
-		    </s:iterator>
+					    var latitude = '<s:property value="latitude"/>';
+						var latitude1 = parseFloat(latitude);
+						var longitude = '<s:property value="longitude"/>';
+						var longitude1 = parseFloat(longitude);
+			     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
+			    </s:iterator>
 	
 	
 		function setMarkers(map) {
@@ -618,6 +646,9 @@
 			}
 		}
 	</script>
+	<script
+		src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
 	<script async defer
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUuudit4OFSnhG3ZVXncE3ThuiP6xo25s&callback=initMap">
 </script>
