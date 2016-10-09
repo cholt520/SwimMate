@@ -594,17 +594,51 @@
 					imagePath : 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
 				});
 	
+	
+			var infoWindow = new google.maps.InfoWindow({
+				map : map
+			});
+	
+			// Try HTML5 geolocation.
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(function(position) {
+					var pos = {
+						lat : position.coords.latitude,
+						lng : position.coords.longitude
+					};
+	
+					infoWindow.setPosition(pos);
+					infoWindow.setContent('Your Current Location.');
+					map.setCenter(pos);
+				}, function() {
+					handleLocationError(true, infoWindow, map.getCenter());
+				});
+			} else {
+				// Browser doesn't support Geolocation
+				handleLocationError(false, infoWindow, map.getCenter());
+			}
+			
+	
 		}
+		
+		function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+      }
+		
+		
 		// Data for the markers consisting of a name, a LatLng and a zIndex for the
 		// order in which these markers should display on top of each other.
 		var beaches = [];
 		<s:iterator value="beachList" status="userStatus">
-					    var latitude = '<s:property value="latitude"/>';
-						var latitude1 = parseFloat(latitude);
-						var longitude = '<s:property value="longitude"/>';
-						var longitude1 = parseFloat(longitude);
-			     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
-			    </s:iterator>
+						    var latitude = '<s:property value="latitude"/>';
+							var latitude1 = parseFloat(latitude);
+							var longitude = '<s:property value="longitude"/>';
+							var longitude1 = parseFloat(longitude);
+				     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
+				    </s:iterator>
 	
 	
 		function setMarkers(map) {
