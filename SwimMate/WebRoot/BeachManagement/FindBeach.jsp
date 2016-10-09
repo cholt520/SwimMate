@@ -618,6 +618,30 @@
 				handleLocationError(false, infoWindow, map.getCenter());
 			}
 			
+			var myLocation = new google.maps.Marker({
+				map : map
+			});
+	
+			// Try HTML5 geolocation.
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(function(position) {
+					var pos = {
+						lat : position.coords.latitude,
+						lng : position.coords.longitude
+					};
+	
+					myLocation.setPosition(pos);
+					myLocation.setTitle('Your Current Location.');
+					myLocation.setIcon('http://maps.google.com/mapfiles/ms/icons/ltblue-dot.png')
+					map.setCenter(pos);
+				}, function() {
+					handleLocationError(true, myLocation, map.getCenter());
+				});
+			} else {
+				// Browser doesn't support Geolocation
+				handleLocationError(false, myLocation, map.getCenter());
+			}
+			
 	
 		}
 		
