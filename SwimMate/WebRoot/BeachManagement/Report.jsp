@@ -151,12 +151,12 @@
 
 									<s:if test="%{loginUserID==-1}">
 										<li class=""><a href="reportDescription.action">
-												Report Issues </a></li>
+												Report Beach Hazards </a></li>
 									</s:if>
 									<s:else>
 										<li class=""><a
 											href="report.action?loginUserID=<s:property value="loginUserID"/>">
-												Report Issues </a></li>
+												Report Beach Hazards </a></li>
 									</s:else>
 								</ul>
 							</div>
@@ -181,7 +181,7 @@
 							<div class="container">
 								<!-- BEGIN PAGE TITLE -->
 								<div class="page-title">
-									<h1>Reporting System</h1>
+									<h1>Report Beach Hazards</h1>
 								</div>
 								<!-- END PAGE TITLE -->
 							</div>
@@ -211,7 +211,7 @@
 											<div class="caption">
 												<span
 													class="caption-subject font-green-sharp bold uppercase">
-													Report issues </span>
+													Report Beach Hazards </span>
 											</div>
 										</div>
 										<div class="portlet-body">

@@ -149,12 +149,12 @@
 
 									<s:if test="%{loginUserID==-1}">
 										<li class="active"><a href="reportDescription.action">
-												Report Issues </a></li>
+												Report Beach Hazards </a></li>
 									</s:if>
 									<s:else>
 										<li class="active"><a
 											href="report.action?loginUserID=<s:property value="loginUserID"/>">
-												Report Issues </a></li>
+												Report Beach Hazards </a></li>
 									</s:else>
 								</ul>
 							</div>
@@ -179,7 +179,7 @@
 							<div class="container">
 								<!-- BEGIN PAGE TITLE -->
 								<div class="page-title">
-									<h1>Plan Your Journey</h1>
+									<h1>Report Beach Hazards</h1>
 								</div>
 								<!-- END PAGE TITLE -->
 
@@ -200,7 +200,7 @@
 											href="index.action?loginUserID=<s:property value="loginUserID"/>"
 											class="font-green-sharp">Home</a> <i class="fa fa-circle"></i></li>
 									</s:else>
-									<li><span class="font-blue-oleo">Report Issues</span></li>
+									<li><span class="font-blue-oleo">Report Beach Hazards</span></li>
 								</ul>
 								<!-- END PAGE BREADCRUMBS -->
 								<!-- BEGIN PAGE CONTENT INNER -->
@@ -216,7 +216,7 @@
 															<div class="caption">
 																<span
 																	class="caption-subject font-green-sharp bold uppercase">
-																	<i class="fa fa-warning"></i> Report Issues
+																	<i class="fa fa-warning"></i> Report Beach Hazards
 																</span>
 															</div>
 														</div>
@@ -225,7 +225,7 @@
 															<div class="row">
 																<div class="col-md-6"
 																	style="padding-left:50px; padding-right:50px;">
-																	<h2 class="section-heading bold">Report Issues</h2>
+																	<h2 class="section-heading bold">Report Beach Hazards</h2>
 																	<br />
 																	<p class="lead" style="font-size:140%">
 																		We believe in providing quality information and

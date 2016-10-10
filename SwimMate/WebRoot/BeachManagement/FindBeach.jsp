@@ -153,12 +153,12 @@
 
 									<s:if test="%{loginUserID==-1}">
 										<li class=""><a href="reportDescription.action">
-												Report Issues </a></li>
+												Report Beach Hazards </a></li>
 									</s:if>
 									<s:else>
 										<li class=""><a
 											href="report.action?loginUserID=<s:property value="loginUserID"/>">
-												Report Issues </a></li>
+												Report Beach Hazards </a></li>
 									</s:else>
 								</ul>
 							</div>
@@ -595,7 +595,7 @@
 				});
 	
 	
-			var infoWindow = new google.maps.InfoWindow({
+			/* var infoWindow = new google.maps.InfoWindow({
 				map : map
 			});
 	
@@ -616,9 +616,9 @@
 			} else {
 				// Browser doesn't support Geolocation
 				handleLocationError(false, infoWindow, map.getCenter());
-			}
+			} */
 			
-			var myLocation = new google.maps.Marker({
+			/* var myLocation = new google.maps.Marker({
 				map : map
 			});
 	
@@ -641,17 +641,15 @@
 				// Browser doesn't support Geolocation
 				handleLocationError(false, myLocation, map.getCenter());
 			}
-			
-	
 		}
 		
-		function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
+		function handleLocationError(browserHasGeolocation, myLocation, pos) {
+        myLocation.setPosition(pos);
+        myLocation.setTitle(browserHasGeolocation ?
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
-      }
-		
+      } */
+		}
 		
 		// Data for the markers consisting of a name, a LatLng and a zIndex for the
 		// order in which these markers should display on top of each other.

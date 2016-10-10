@@ -164,12 +164,12 @@
 
 									<s:if test="%{loginUserID==-1}">
 										<li class=""><a href="reportDescription.action">
-												Report Issues </a></li>
+												Report Beach Hazards </a></li>
 									</s:if>
 									<s:else>
 										<li class=""><a
 											href="report.action?loginUserID=<s:property value="loginUserID"/>">
-												Report Issues </a></li>
+												Report Beach Hazards </a></li>
 									</s:else>
 								</ul>
 							</div>
