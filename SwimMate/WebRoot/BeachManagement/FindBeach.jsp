@@ -383,16 +383,16 @@
 
 										<br />
 
-										<div class="row" style="Margin:2px;">
+										<div class="row" >
 											<!--Result Table-->
-											<div class="col-md-7">
+											<div class="col-md-6">
 												<div class="portlet light ">
 													<div class="portlet-title">
 														<div class="caption">
 															<span
 																class="caption-subject font-green-sharp bold uppercase"
 																style="font-size:20px;"> <i class="fa fa-search"></i>
-																Result List
+																Search Beach Result
 															</span>
 														</div>
 													</div>
@@ -453,14 +453,14 @@
 											</div>
 											<!--End Result Table-->
 											<!-- Start Report Issues -->
-											<div class="col-md-5">
+											<div class="col-md-6">
 												<div class="portlet light ">
 													<div class="portlet-title">
 														<div class="caption">
 															<span
 																class="caption-subject font-green-sharp bold uppercase"
 																style="font-size:20px;"> <i class="fa fa-warning"></i>
-																Recent Reports
+																Recent Beach Hazards
 															</span>
 														</div>
 													</div>
@@ -579,13 +579,15 @@
 			/* setMarkers(map); */
 	
 			var markers = beaches.map(function(beach, i) {
-				return new google.maps.Marker({
+				var marker = new google.maps.Marker({
 					position : {
 						lat : beach[1],
 						lng : beach[2]
 					},
 					title : beach[0],
 				});
+				attachBeachInfo(marker, beach);
+				return marker;
 			});
 	
 			// Add a marker clusterer to manage the markers.
@@ -616,9 +618,9 @@
 			} else {
 				// Browser doesn't support Geolocation
 				handleLocationError(false, infoWindow, map.getCenter());
-			} */
-			
-			/* var myLocation = new google.maps.Marker({
+			}
+	
+			var myLocation = new google.maps.Marker({
 				map : map
 			});
 	
@@ -640,27 +642,41 @@
 			} else {
 				// Browser doesn't support Geolocation
 				handleLocationError(false, myLocation, map.getCenter());
+			} */
+	
+			
+			function attachBeachInfo(marker, beach) {
+				var infowindow = new google.maps.InfoWindow({
+					content : beach[0] + '<br/> <s:if test="%{loginUserID==-1}"> <a href="beachInfo.action?id=' + beach[3] + '&loginUserID=-1"> More Info </a> </s:if> <s:else> <a href="beachInfo.action?id=' +beach[3] + '&loginUserID=<s:property value="loginUserID"/>"> More Info </a></s:else>'
+				});
+	
+				marker.addListener('click', function() {
+					infowindow.open(marker.get('map'), marker);
+				});
 			}
+
 		}
-		
-		function handleLocationError(browserHasGeolocation, myLocation, pos) {
-        myLocation.setPosition(pos);
-        myLocation.setTitle(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');
-      } */
-		}
-		
+	
+		/* function handleLocationError(browserHasGeolocation, myLocation, pos) {
+			myLocation.setPosition(pos);
+			myLocation.setTitle(browserHasGeolocation ?
+				'Error: The Geolocation service failed.' :
+				'Error: Your browser doesn\'t support geolocation.');
+		} */
+	
+	
 		// Data for the markers consisting of a name, a LatLng and a zIndex for the
 		// order in which these markers should display on top of each other.
 		var beaches = [];
 		<s:iterator value="beachList" status="userStatus">
-						    var latitude = '<s:property value="latitude"/>';
-							var latitude1 = parseFloat(latitude);
-							var longitude = '<s:property value="longitude"/>';
-							var longitude1 = parseFloat(longitude);
-				     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1]);
-				    </s:iterator>
+			    var latitude = '<s:property value="latitude"/>';
+				var latitude1 = parseFloat(latitude);
+				var longitude = '<s:property value="longitude"/>';
+				var longitude1 = parseFloat(longitude);
+				var beach_id = '<s:property value="beach_id"/>';
+				var beach_id1 = parseFloat(beach_id);
+	     	beaches.push(['<s:property value="beach_name"/>',latitude1,longitude1,beach_id1]);
+	    </s:iterator>
 	
 	
 		function setMarkers(map) {
